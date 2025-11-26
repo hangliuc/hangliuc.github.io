@@ -16,6 +16,11 @@
         <description>&lt;p&gt;这是我的第一篇 Hugo 博客！&lt;/p&gt;
 &lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？
 &lt;/h2&gt;&lt;p&gt;作为 SRE，我喜欢静态二进制文件的简单和纯粹。&lt;/p&gt;
+&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+&lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
+&lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
+&lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
+&lt;p&gt;hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）&lt;/p&gt;
 </description>
         </item>
         

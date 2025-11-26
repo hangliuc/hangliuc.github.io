@@ -2,6 +2,7 @@ baseurl: https://hangliuc.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
 title: Example Site
+enableGitInfo: true
 copyright: Example Person
 
 # Theme i18n support
@@ -212,7 +213,11 @@ params:
 ### See https://stack.jimmycai.com/config/menu
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main: []
+    main: 
+        - identifier: ops
+          name: 🛠️ 运维
+          url: /ops/
+          weight: 10
 
     social:
         - identifier: github
