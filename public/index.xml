@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sun, 26 Nov 2023 10:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 26 Nov 2025 19:20:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hello World</title>
         <link>http://localhost:1313/posts/hello-world/</link>
-        <pubDate>Sun, 26 Nov 2023 10:00:00 +0800</pubDate>
+        <pubDate>Wed, 26 Nov 2025 19:20:00 +0800</pubDate>
         
         <guid>http://localhost:1313/posts/hello-world/</guid>
         <description>&lt;p&gt;这是我的第一篇 Hugo 博客！&lt;/p&gt;
