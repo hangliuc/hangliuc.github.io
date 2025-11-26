@@ -2,19 +2,6 @@ baseurl: https://hangliuc.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
 title: Example Site
-enableGitInfo: true
-frontmatter:
-  date:
-    # 优先读取 Git 的 Author Date (首次提交时间) 作为发布时间
-    - :git
-    - date        # 如果 Git 没读到，再读 FrontMatter 里的 date
-    - publishDate
-  lastmod:
-    # 优先读取 Git 的 Commit Date (最后修改时间)
-    - :git
-    - lastmod
-    - date
-    - publishDate
 copyright: Example Person
 
 # Theme i18n support

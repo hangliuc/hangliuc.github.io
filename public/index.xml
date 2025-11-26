@@ -7,26 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 26 Nov 2025 19:20:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Hello World</title>
-        <link>http://localhost:1313/posts/hello-world/</link>
-        <pubDate>Wed, 26 Nov 2025 19:20:00 +0800</pubDate>
-        
-        <guid>http://localhost:1313/posts/hello-world/</guid>
-        <description>&lt;p&gt;这是我的第一篇 Hugo 博客！&lt;/p&gt;
-&lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？
-&lt;/h2&gt;&lt;p&gt;作为 SRE，我喜欢静态二进制文件的简单和纯粹。&lt;/p&gt;
-&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
-&lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
-&lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
-&lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
-&lt;p&gt;hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Sun, 26 Nov 2023 10:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Ansible 缓存ssh密钥</title>
         <link>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 26 Nov 2023 10:00:00 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
         <description>&lt;h1 id=&#34;ansible-缓存ssh密钥&#34;&gt;ansible 缓存ssh密钥
@@ -42,6 +26,22 @@
 &lt;li&gt;验证密钥是否缓存成功&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;ssh-add -l&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Hello World</title>
+        <link>http://localhost:1313/posts/hello-world/</link>
+        <pubDate>Sun, 26 Nov 2023 10:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/hello-world/</guid>
+        <description>&lt;p&gt;这是我的第一篇 Hugo 博客！&lt;/p&gt;
+&lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？
+&lt;/h2&gt;&lt;p&gt;作为 SRE，我喜欢静态二进制文件的简单和纯粹。&lt;/p&gt;
+&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+&lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
+&lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
+&lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
+&lt;p&gt;hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）&lt;/p&gt;
 </description>
         </item>
         
