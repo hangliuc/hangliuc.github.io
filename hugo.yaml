@@ -27,7 +27,7 @@ languages:
         weight: 1
         params:
             sidebar:
-                subtitle: 专注于SRE 
+                subtitle: 学习
     # ar:
     #     languageName: عربي
     #     languagedirection: rtl
