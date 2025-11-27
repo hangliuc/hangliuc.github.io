@@ -60,8 +60,13 @@ params:
     favicon: # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
-        since: 2020
-        customText:
+        since: 2025
+        customText: |
+            <br>
+            Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> |
+            Theme by <a href="https://stack.jimmycai.com" target="_blank" rel="noopener">Stack</a>
+            <br>
+            Deployed with <strong>GitHub Actions</strong> 🚀
 
     dateFormat:
         published: Jan 02, 2006
@@ -241,6 +246,12 @@ menu:
           url: https://github.com/hangliuc
           params:
               icon: brand-github
+
+        - identifier: email
+          name: Email
+          url: mailto:iliuhang@163.com
+          params:
+              icon: mail
 
         # - identifier: twitter
         #   name: Twitter
