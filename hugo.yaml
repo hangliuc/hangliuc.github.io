@@ -76,12 +76,12 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        emoji: 🍥
+        emoji: 🍌
         subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/head_portrait.jpg # 头像大小建议 150x150px
 
     article:
         math: false
