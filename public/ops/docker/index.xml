@@ -157,7 +157,7 @@ runc (OCI runtime)
         <pubDate>Wed, 26 Nov 2025 10:38:20 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/docker/docker-network-issue/</guid>
-        <description>&lt;h1 id=&#34;容器网络影响宿主机入网问题排查&#34;&gt;容器网络影响宿主机入网问题排查
+        <description>&lt;img src="http://localhost:1313/ops/docker/docker-network-issue/cover.jpg" alt="Featured image of post 容器网络影响宿主机入网问题排查" /&gt;&lt;h1 id=&#34;容器网络影响宿主机入网问题排查&#34;&gt;容器网络影响宿主机入网问题排查
 &lt;/h1&gt;&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
 &lt;/h2&gt;&lt;p&gt;发现172.27.0.0/16，172.26.0.0/16 网段的服务无法访问宿主机的服务&lt;/p&gt;
 &lt;h2 id=&#34;问题排查&#34;&gt;问题排查

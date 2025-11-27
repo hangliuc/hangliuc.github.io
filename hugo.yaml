@@ -46,7 +46,7 @@ services:
     #     id:
 
 pagination:
-    pagerSize: 3
+    pagerSize: 10
 
 permalinks:
     post: /p/:slug/
@@ -55,6 +55,9 @@ permalinks:
 params:
     mainSections:
         - post
+        - ops
+        - topic
+
     featuredImageField: image
     rssFullContent: true
     favicon: # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
@@ -231,7 +234,7 @@ menu:
           url: /ops/
           weight: 10
           params:
-              icon: chart-scatter-3d
+              icon: terminal-2
 
         - identifier: topic
           name: 专题
