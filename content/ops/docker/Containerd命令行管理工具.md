@@ -2,6 +2,11 @@
 title: "Containerd命令行管理工具"
 date: 2025-11-27T10:51:50+08:00
 draft: false
+categories:
+    - 运维
+tags:
+    - docker
+    - containerd
 ---
 
 # Containerd 命令行管理工具

@@ -2,6 +2,10 @@
 title: "Vim"
 date: 2025-11-27T11:02:53+08:00
 draft: false
+categories:
+    - 运维
+tags:
+    - command
 ---
 
 # vim 常用命令

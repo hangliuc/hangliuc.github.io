@@ -1,5 +1,5 @@
 ---
-title: "专题"
-description: "一些专题文章"
+title: "博客"
+description: "一些博客文章"
 weight: 1
 ---

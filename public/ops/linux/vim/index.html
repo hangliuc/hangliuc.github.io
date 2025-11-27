@@ -10,7 +10,7 @@
 <meta property='og:description' content="vim 常用命令 光标移动 h 或 退格：左移一个字符 l 或 空格：右移一个字符 j：下移一行 k：上移一行 gj：移动到一段内的下一行 gk：移动到一段内的上一行 + 或 Enter：移至下一行第一个非空白字符 -：移至上一行第一个非空白字符 w：前移一个单词，停在下一个单词开头 W：前移一个单词（忽略部分标点） e：前移一个单词，停在下一个单词末尾 E：前移一个单词，停在标点（如有） b：后移一个单词，停在上一个单词开头 B：后移一个单词（忽略部分标点） (：前移 1 句 )：后移 1 句 {：前移 1 段 }：后移 1 段 gg：到文件头部 G：到文件尾部 $：到行尾 0：到行首 翻屏 Ctrl + f：下翻一屏 Ctrl + b：上翻一屏 Ctrl + d：下翻半屏 Ctrl + u：上翻半屏 Ctrl + e：向下滚动一行 Ctrl + y：向上滚动一行 n%：到文件 n% 位置 zz：当前行移到屏幕中央 zt：当前行移到屏幕顶端 zb：当前行移到屏幕底端 插入 I：在当前行第一个非空字符前插入 gI：在当前行第一列插入 a：在光标后插入 A：在当前行末尾插入 o：在下方新建一行插入 O：在上方新建一行插入 :r filename：在当前位置插入另一个文件内容 :[n]r filename：在第 n 行插入另一个文件内容 剪切和复制 [n]x：剪切光标右边 n 个字符（相当于 d[n]l） [n]X：剪切光标左边 n 个字符（相当于 d[n]h） y：复制可视模式下选中的文本 yy 或 Y：复制整行 y[n]w：复制 n 个词 y[n]l：复制光标右边 n 个字符 y[n]h：复制光标左边 n 个字符 y$：从光标到行尾复制 y0：从光标到行首复制 :m,ny：复制第 m 到 n 行 y1G 或 ygg：复制光标以上所有行 yG：复制光标以下所有行 d：删除（剪切）可视模式下选中的文本 d$ 或 D：删除到行尾 d[n]w：删除 n 个单词 d[n]l：删除光标右边 n 个字符 d[n]h：删除光标左边 n 个字符 d0：删除到行首 p：在光标后粘贴 P：在光标前粘贴 查找和替换 /something：向后查找 something ?something：向前查找 something n：向后查找下一个 N：向前查找下一个 s/old/new：替换当前行第一个 old s/old/new/g：替换当前行所有 old %s/old/new/g：替换整个文件的所有 old 技巧 :set paste：解决粘贴时格式错乱问题 ">
 <meta property='og:url' content='http://localhost:1313/ops/linux/vim/'>
 <meta property='og:site_name' content='SRE'>
-<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:published_time' content='2025-11-27T11:02:53&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T11:02:53&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='command' /><meta property='article:published_time' content='2025-11-27T11:02:53&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T11:02:53&#43;08:00'/>
 <meta name="twitter:title" content="Vim">
 <meta name="twitter:description" content="vim 常用命令 光标移动 h 或 退格：左移一个字符 l 或 空格：右移一个字符 j：下移一行 k：上移一行 gj：移动到一段内的下一行 gk：移动到一段内的上一行 + 或 Enter：移至下一行第一个非空白字符 -：移至上一行第一个非空白字符 w：前移一个单词，停在下一个单词开头 W：前移一个单词（忽略部分标点） e：前移一个单词，停在下一个单词末尾 E：前移一个单词，停在标点（如有） b：后移一个单词，停在上一个单词开头 B：后移一个单词（忽略部分标点） (：前移 1 句 )：后移 1 句 {：前移 1 段 }：后移 1 段 gg：到文件头部 G：到文件尾部 $：到行尾 0：到行首 翻屏 Ctrl + f：下翻一屏 Ctrl + b：上翻一屏 Ctrl + d：下翻半屏 Ctrl + u：上翻半屏 Ctrl + e：向下滚动一行 Ctrl + y：向上滚动一行 n%：到文件 n% 位置 zz：当前行移到屏幕中央 zt：当前行移到屏幕顶端 zb：当前行移到屏幕底端 插入 I：在当前行第一个非空字符前插入 gI：在当前行第一列插入 a：在光标后插入 A：在当前行末尾插入 o：在下方新建一行插入 O：在上方新建一行插入 :r filename：在当前位置插入另一个文件内容 :[n]r filename：在第 n 行插入另一个文件内容 剪切和复制 [n]x：剪切光标右边 n 个字符（相当于 d[n]l） [n]X：剪切光标左边 n 个字符（相当于 d[n]h） y：复制可视模式下选中的文本 yy 或 Y：复制整行 y[n]w：复制 n 个词 y[n]l：复制光标右边 n 个字符 y[n]h：复制光标左边 n 个字符 y$：从光标到行尾复制 y0：从光标到行首复制 :m,ny：复制第 m 到 n 行 y1G 或 ygg：复制光标以上所有行 yG：复制光标以下所有行 d：删除（剪切）可视模式下选中的文本 d$ 或 D：删除到行尾 d[n]w：删除 n 个单词 d[n]l：删除光标右边 n 个字符 d[n]h：删除光标左边 n 个字符 d0：删除到行首 p：在光标后粘贴 P：在光标前粘贴 查找和替换 /something：向后查找 something ?something：向前查找 something n：向后查找下一个 N：向前查找下一个 s/old/new：替换当前行第一个 old s/old/new/g：替换当前行所有 old %s/old/new/g：替换整个文件的所有 old 技巧 :set paste：解决粘贴时格式错乱问题 ">
     </head>
@@ -251,6 +251,14 @@
 
     <div class="article-details">
     
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BF%90%E7%BB%B4/" >
+                运维
+            </a>
+        
+    </header>
+    
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
@@ -400,6 +408,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/command/">Command</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
@@ -422,6 +436,91 @@
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/ops/linux/tar/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tar</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/ops/linux/git/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Git</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Containerd命令行管理工具</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/ops/docker/docker-network-issue/">
+        
+        
+            <div class="article-image">
+                <img src="/ops/docker/docker-network-issue/cover.a1b71b69268e3b373f38c10c4203323d_hu_2b24a606d341e2b4.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 容器网络影响宿主机入网问题排查"
+                        
+                        data-hash="md5-obcbaSaOOzc/OMEMQgMyPQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">容器网络影响宿主机入网问题排查</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ansible 缓存ssh密钥</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     

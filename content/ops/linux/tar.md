@@ -2,6 +2,10 @@
 title: "Tar"
 date: 2025-11-27T11:02:37+08:00
 draft: false
+categories:
+    - 运维
+tags:
+    - command
 ---
 
 # tar 命令使用

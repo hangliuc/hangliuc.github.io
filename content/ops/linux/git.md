@@ -2,6 +2,10 @@
 title: "Git"
 date: 2025-11-27T11:01:37+08:00
 draft: false
+categories:
+    - 运维
+tags:
+    - command
 ---
 # git 命令使用
 

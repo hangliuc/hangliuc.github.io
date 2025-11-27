@@ -3,6 +3,12 @@ title: "容器网络影响宿主机入网问题排查"
 date: 2025-11-26T10:38:20+08:00
 draft: false
 image: cover.jpg
+categories:
+    - 运维
+tags:
+    - docker
+    - network
+    - troubleshooting
 ---
 
 # 容器网络影响宿主机入网问题排查

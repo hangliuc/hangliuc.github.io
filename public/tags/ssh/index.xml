@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ssh on SRE</title>
+        <link>http://localhost:1313/tags/ssh/</link>
+        <description>Recent content in Ssh on SRE</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sun, 26 Nov 2023 10:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ansible 缓存ssh密钥</title>
+        <link>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</link>
+        <pubDate>Sun, 26 Nov 2023 10:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
+        <description>&lt;h1 id=&#34;ansible-缓存ssh密钥&#34;&gt;ansible 缓存ssh密钥
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;启动 ssh-agent 后台程序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;eval &amp;ldquo;$(ssh-agent -s)&amp;rdquo;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;将密钥添加至 ssh-add，只输入一次密码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh-add ~/.ssh/xxx&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;验证密钥是否缓存成功&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh-add -l&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
