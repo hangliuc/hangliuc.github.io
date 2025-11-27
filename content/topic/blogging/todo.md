@@ -13,6 +13,11 @@ static/: 存放图片、CNAME 文件等静态资源。
 
 hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）
 
+
+## 图标下载网站
+
+https://tabler.io/icons
+
 ## 内容相关
 - [ ] 在github、CSDN、yuque、公众号通过统一的目录结构发布内容，目录结构如下：
 ```

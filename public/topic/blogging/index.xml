@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>专题 on SRE 进化之路</title>
+        <title>专题 on SRE</title>
         <link>http://localhost:1313/topic/blogging/</link>
-        <description>Recent content in 专题 on SRE 进化之路</description>
+        <description>Recent content in 专题 on SRE</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
@@ -18,6 +18,9 @@
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
 &lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
 &lt;p&gt;hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）&lt;/p&gt;
+&lt;h2 id=&#34;图标下载网站&#34;&gt;图标下载网站
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://tabler.io/icons&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tabler.io/icons&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;内容相关&#34;&gt;内容相关
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在github、CSDN、yuque、公众号通过统一的目录结构发布内容，目录结构如下：&lt;/li&gt;

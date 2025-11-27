@@ -23,11 +23,11 @@ languages:
                 subtitle: Example description
     zh-cn:
         languageName: 中文
-        title:  SRE 进化之路 
+        title:  SRE
         weight: 1
         params:
             sidebar:
-                subtitle: 专注于 Kubernetes, Go 与系统稳定性 
+                subtitle: 专注于SRE 
     # ar:
     #     languageName: عربي
     #     languagedirection: rtl
@@ -214,14 +214,26 @@ params:
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
     main: 
+        - identifier: home
+          name: 首页
+          url: /
+          weight: 1
+          params:
+              icon: home
+
         - identifier: ops
           name: 运维
           url: /ops/
           weight: 10
+          params:
+              icon: chart-scatter-3d
+
         - identifier: topic
           name: 专题
           url: /topic/
           weight: 20
+          params:
+              icon: scale-outline
 
     social:
         - identifier: github
@@ -230,11 +242,12 @@ menu:
           params:
               icon: brand-github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
-          params:
-              icon: brand-twitter
+        # - identifier: twitter
+        #   name: Twitter
+        #   url: https://twitter.com
+        #   params:
+        #       icon: brand-twitter
+
 
 related:
     includeNewer: true
