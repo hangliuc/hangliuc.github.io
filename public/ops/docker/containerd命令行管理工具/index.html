@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Containerd 命令行管理工具 1、ctr 为Containerd自带的命令行管理工具 1 2 # 列出所有命名空间 sudo ctr namespaces list 1 2 # 镜像相关命令 sudo ctr -n=k8s.io images -h ctr 上传、拉取镜像时不支持登陆认证，只能通过&ndash;user携带用户密码操作\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n">
 <title>Containerd命令行管理工具</title>
 
 <link rel='canonical' href='http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
 
 <link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="Containerd命令行管理工具">
-<meta property='og:description' content="Containerd 命令行管理工具 1、ctr 为Containerd自带的命令行管理工具 1 2 # 列出所有命名空间 sudo ctr namespaces list 1 2 # 镜像相关命令 sudo ctr -n=k8s.io images -h ctr 上传、拉取镜像时不支持登陆认证，只能通过&ndash;user携带用户密码操作\n">
+<meta property='og:description' content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n">
 <meta property='og:url' content='http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
 <meta property='og:site_name' content='SRE'>
 <meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T10:51:50&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T10:51:50&#43;08:00'/>
 <meta name="twitter:title" content="Containerd命令行管理工具">
-<meta name="twitter:description" content="Containerd 命令行管理工具 1、ctr 为Containerd自带的命令行管理工具 1 2 # 列出所有命名空间 sudo ctr namespaces list 1 2 # 镜像相关命令 sudo ctr -n=k8s.io images -h ctr 上传、拉取镜像时不支持登陆认证，只能通过&ndash;user携带用户密码操作\n">
+<meta name="twitter:description" content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n">
     </head>
     <body class="
     article-page
@@ -229,13 +229,17 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#1ctr-为containerd自带的命令行管理工具">1、ctr 为Containerd自带的命令行管理工具</a></li>
-    <li><a href="#2nerdctl-最接近docker-cli">2、nerdctl (最接近docker CLI)</a></li>
-    <li><a href="#3kubernetes-从-docker-转向-containerd-的原因">3、Kubernetes 从 Docker 转向 containerd 的原因</a>
+    <li><a href="#kubernetes-从-docker-转向-containerd-的原因">Kubernetes 从 Docker 转向 containerd 的原因</a>
       <ol>
         <li><a href="#架构层面的原因">架构层面的原因</a></li>
         <li><a href="#减少维护成本">减少维护成本</a></li>
         <li><a href="#性能提升">性能提升</a></li>
+      </ol>
+    </li>
+    <li><a href="#ctr--containerd自带的命令行管理工具">ctr &ndash; Containerd自带的命令行管理工具</a></li>
+    <li><a href="#nerdctl-最接近docker-cli">nerdctl (最接近docker CLI)</a>
+      <ol>
+        <li><a href="#安装nerdctl">安装nerdctl</a></li>
       </ol>
     </li>
   </ol>
@@ -318,7 +322,92 @@
     
     
     <h1 id="containerd-命令行管理工具">Containerd 命令行管理工具
-</h1><h2 id="1ctr-为containerd自带的命令行管理工具">1、ctr 为Containerd自带的命令行管理工具
+</h1><h2 id="kubernetes-从-docker-转向-containerd-的原因">Kubernetes 从 Docker 转向 containerd 的原因
+</h2><h3 id="架构层面的原因">架构层面的原因
+</h3><p>kubelet 启动一个容器的流程:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubelet
+</span></span><span class="line"><span class="cl"> │
+</span></span><span class="line"><span class="cl"> │ <span class="o">(</span>调用 CRI 接口<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ▼
+</span></span><span class="line"><span class="cl">dockershim <span class="o">(</span>K8s 维护的 CRI 转换层<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> │
+</span></span><span class="line"><span class="cl"> │ <span class="o">(</span>调用 Docker Engine API<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ▼
+</span></span><span class="line"><span class="cl">Docker Engine
+</span></span><span class="line"><span class="cl"> │
+</span></span><span class="line"><span class="cl"> │ <span class="o">(</span>调用 containerd API<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ▼
+</span></span><span class="line"><span class="cl">containerd
+</span></span><span class="line"><span class="cl"> │
+</span></span><span class="line"><span class="cl"> │ <span class="o">(</span>调用 OCI 接口<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ▼
+</span></span><span class="line"><span class="cl">runc <span class="o">(</span>OCI runtime<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> │
+</span></span><span class="line"><span class="cl"> └─&gt; 真正创建 Linux 容器 <span class="o">(</span>namespace, cgroups, rootfs...<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。</li>
+<li>dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。</li>
+<li>实际执行容器的，依然是 containerd + runc。</li>
+</ul>
+<p>当 kubelet 直接使用 containerd 时，调用链简化为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> kubelet
+</span></span><span class="line"><span class="cl">  │
+</span></span><span class="line"><span class="cl">  │ <span class="o">(</span>调用 CRI 接口<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  ▼
+</span></span><span class="line"><span class="cl">containerd <span class="o">(</span>内置 CRI 插件<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  │
+</span></span><span class="line"><span class="cl">  │ <span class="o">(</span>调用 OCI 接口<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  ▼
+</span></span><span class="line"><span class="cl">runc <span class="o">(</span>OCI runtime<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  │
+</span></span><span class="line"><span class="cl">  └─&gt; 真正创建 Linux 容器 <span class="o">(</span>namespace, cgroups, rootfs...<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="减少维护成本">减少维护成本
+</h3><p>kubernetes 从 1.24 开始，默认使用 containerd 作为容器运行时。不再去维护中间dockershim</p>
+<h3 id="性能提升">性能提升
+</h3><p>少一层调用，性能和稳定性更好。</p>
+<h2 id="ctr--containerd自带的命令行管理工具">ctr &ndash; Containerd自带的命令行管理工具
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -352,9 +441,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  myregistry.example.com/myrepo/nginx:latest
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="2nerdctl-最接近docker-cli">2、nerdctl (最接近docker CLI)
+</div><h2 id="nerdctl-最接近docker-cli">nerdctl (最接近docker CLI)
 </h2><p>基本和docker CLI命令一致，只是在命令前添加了<code>nerdctl</code>前缀</p>
-<div class="highlight"><div class="chroma">
+<h3 id="安装nerdctl">安装nerdctl
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -379,81 +469,73 @@
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -e
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">ARCH</span><span class="o">=</span>amd64
+</span></span><span class="line"><span class="cl"><span class="nv">VERSION</span><span class="o">=</span><span class="si">${</span><span class="nv">VERSION</span><span class="k">:-</span><span class="nv">2</span><span class="p">.2.0</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">VERSION</span><span class="o">=</span>2.1.5
+</span></span><span class="line"><span class="cl"><span class="c1"># 自动识别架构</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ARCH</span><span class="o">=</span><span class="k">$(</span>uname -m<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$ARCH</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;x86_64&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">ARCH</span><span class="o">=</span><span class="s2">&#34;amd64&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$ARCH</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;aarch64&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">ARCH</span><span class="o">=</span><span class="s2">&#34;arm64&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Unsupported architecture: </span><span class="nv">$ARCH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 下载 nerdctl 安装包</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/containerd/nerdctl/releases/download/v<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>/nerdctl-<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>-linux-<span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span>.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nv">DOWNLOAD_URL</span><span class="o">=</span><span class="s2">&#34;https://github.com/containerd/nerdctl/releases/download/v</span><span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="s2">/nerdctl-</span><span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="s2">-linux-</span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2">.tar.gz&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 解压</span>
-</span></span><span class="line"><span class="cl">tar -xzvf nerdctl-<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>-linux-<span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span>.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Downloading nerdctl v</span><span class="nv">$VERSION</span><span class="s2"> for </span><span class="nv">$ARCH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">wget -q --show-progress <span class="s2">&#34;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">&#34;</span> -O nerdctl.tgz
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 移动到 /usr/local/bin</span>
-</span></span><span class="line"><span class="cl">sudo mv nerdctl /usr/bin
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Extracting...&#34;</span>
+</span></span><span class="line"><span class="cl">tar -xzf nerdctl.tgz
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 删除安装包</span>
-</span></span><span class="line"><span class="cl">rm -f nerdctl-<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>-linux-<span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span>.tar.gz
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压后会得到 nerdctl、containerd、runc 等二进制</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 一般 nerdctl 位于当前目录的 nerdctl</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TARGET_DIR</span><span class="o">=</span><span class="s2">&#34;/usr/local/bin&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 删除 containerd-rootless 相关脚本</span>
-</span></span><span class="line"><span class="cl">rm -rf containerd-rootless-setuptool.sh containerd-rootless.sh
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Moving binaries to </span><span class="nv">$TARGET_DIR</span><span class="s2"> (require sudo)&#34;</span>
+</span></span><span class="line"><span class="cl">sudo mv nerdctl <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TARGET_DIR</span><span class="si">}</span><span class="s2">/&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;✅ nerdctl v</span><span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="s2"> 安装完成，可以直接运行 &#39;nerdctl --version&#39;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Cleaning up…&#34;</span>
+</span></span><span class="line"><span class="cl">rm -f nerdctl.tgz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🎉 nerdctl installation completed!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Version check:&#34;</span>
+</span></span><span class="line"><span class="cl">sudo <span class="si">${</span><span class="nv">TARGET_DIR</span><span class="si">}</span>/nerdctl --version
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="3kubernetes-从-docker-转向-containerd-的原因">3、Kubernetes 从 Docker 转向 containerd 的原因
-</h2><h3 id="架构层面的原因">架构层面的原因
-</h3><p>kubelet 启动一个容器的流程:</p>
-<blockquote>
-<p>kubelet
-│
-│ (调用 CRI 接口)
-▼
-dockershim (K8s 维护的 CRI 转换层)
-│
-│ (调用 Docker Engine API)
-▼
-Docker Engine
-│
-│ (调用 containerd API)
-▼
-containerd
-│
-│ (调用 OCI 接口)
-▼
-runc (OCI runtime)
-│
-└─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs&hellip;)</p>
-</blockquote>
-<ul>
-<li>Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。</li>
-<li>dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。</li>
-<li>实际执行容器的，依然是 containerd + runc。</li>
-</ul>
-<p>当 kubelet 直接使用 containerd 时，调用链简化为：</p>
-<blockquote>
-<p>kubelet
-│
-│ (调用 CRI 接口)
-▼
-containerd (内置 CRI 插件)
-│
-│ (调用 OCI 接口)
-▼
-runc (OCI runtime)
-│
-└─&gt; 真正创建 Linux 容器</p>
-</blockquote>
-<h3 id="减少维护成本">减少维护成本
-</h3><p>kubernetes 从 1.24 开始，默认使用 containerd 作为容器运行时。不再去维护中间dockershim</p>
-<h3 id="性能提升">性能提升
-</h3><p>少一层调用，性能和稳定性更好。</p>
-
+</div><p>To list local Kubernetes containers:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nerdctl --namespace k8s.io ps -a
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -521,12 +603,25 @@ runc (OCI runtime)
             
                 
 <article class="">
+    <a href="/ops/linux/vim/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vim 使用技巧</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Ansible 缓存ssh密钥</h2>
+            <h2 class="article-title">缓存ssh密钥</h2>
         </div>
     </a>
 </article>

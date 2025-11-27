@@ -1,5 +1,5 @@
 ---
-title: "Ansible 缓存ssh密钥"
+title: "缓存ssh密钥"
 date: 2023-11-26T10:00:00+08:00
 draft: false
 
@@ -10,6 +10,8 @@ tags:
     - ansible
     - network
 ---
+# 背景
+使用ansible时，为了避免每次执行任务都需要输入ssh密码，我们可以缓存ssh密钥。
 
 # ansible 缓存ssh密钥
 

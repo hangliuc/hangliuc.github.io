@@ -1,5 +1,5 @@
 ---
-title: "Vim"
+title: "Vim 使用技巧"
 date: 2025-11-27T11:02:53+08:00
 draft: false
 categories:

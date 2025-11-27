@@ -1,5 +1,5 @@
 ---
-title: "博客写作规范"
+title: "Hugo 相关配置"
 date: 2025-11-27T15:16:29+08:00
 draft: false
 categories:
