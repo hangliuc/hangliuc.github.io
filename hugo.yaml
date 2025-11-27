@@ -23,11 +23,11 @@ languages:
                 subtitle: Example description
     zh-cn:
         languageName: 中文
-        title:  SRE
+        title:  一名SRE
         weight: 1
         params:
             sidebar:
-                subtitle: 学习
+                subtitle: 大道至简
     # ar:
     #     languageName: عربي
     #     languagedirection: rtl

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>运维 on SRE</title>
+        <title>运维 on 一名SRE</title>
         <link>http://localhost:1313/ops/</link>
-        <description>Recent content in 运维 on SRE</description>
+        <description>Recent content in 运维 on 一名SRE</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
