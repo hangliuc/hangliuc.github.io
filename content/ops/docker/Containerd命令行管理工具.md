@@ -110,7 +110,7 @@ fi
 DOWNLOAD_URL="https://github.com/containerd/nerdctl/releases/download/v${VERSION}/nerdctl-${VERSION}-linux-${ARCH}.tar.gz"
 
 echo "Downloading nerdctl v$VERSION for $ARCH"
-wget -q --show-progress "$DOWNLOAD_URL" -O nerdctl.tgz
+wget  "$DOWNLOAD_URL" -O nerdctl.tgz
 
 echo "Extracting..."
 tar -xzf nerdctl.tgz

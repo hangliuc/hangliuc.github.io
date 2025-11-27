@@ -505,7 +505,7 @@
 </span></span><span class="line"><span class="cl"><span class="nv">DOWNLOAD_URL</span><span class="o">=</span><span class="s2">&#34;https://github.com/containerd/nerdctl/releases/download/v</span><span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="s2">/nerdctl-</span><span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="s2">-linux-</span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2">.tar.gz&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Downloading nerdctl v</span><span class="nv">$VERSION</span><span class="s2"> for </span><span class="nv">$ARCH</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">wget -q --show-progress <span class="s2">&#34;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">&#34;</span> -O nerdctl.tgz
+</span></span><span class="line"><span class="cl">wget  <span class="s2">&#34;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">&#34;</span> -O nerdctl.tgz
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Extracting...&#34;</span>
 </span></span><span class="line"><span class="cl">tar -xzf nerdctl.tgz
