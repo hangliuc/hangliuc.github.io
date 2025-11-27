@@ -17,3 +17,4 @@ layouts/ & themes/: 存放前端代码（HTML/CSS 模版）。
 static/: 存放图片、CNAME 文件等静态资源。
 
 hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）
+

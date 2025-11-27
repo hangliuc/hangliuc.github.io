@@ -2,6 +2,7 @@ baseurl: https://hangliuc.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
 title: Example Site
+buildFuture: true 
 copyright: Example Person
 
 # Theme i18n support
@@ -214,9 +215,13 @@ params:
 menu:
     main: 
         - identifier: ops
-          name: 🛠️ 运维
+          name: 运维
           url: /ops/
           weight: 10
+        - identifier: topic
+          name: 专题
+          url: /topic/
+          weight: 20
 
     social:
         - identifier: github
