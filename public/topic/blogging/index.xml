@@ -8,7 +8,7 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Thu, 27 Nov 2025 15:16:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/topic/blogging/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Hugo 相关配置</title>
+        <title>Hugo 基础规划和使用方法</title>
         <link>http://localhost:1313/topic/blogging/usage_method/</link>
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
@@ -95,7 +95,7 @@
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏&lt;/li&gt;

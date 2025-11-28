@@ -1,5 +1,5 @@
 ---
-title: "Hugo 相关配置"
+title: "Hugo 基础规划和使用方法"
 date: 2025-11-27T15:16:29+08:00
 draft: false
 categories:
