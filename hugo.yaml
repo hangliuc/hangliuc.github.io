@@ -23,7 +23,7 @@ languages:
                 subtitle: Example description
     zh-cn:
         languageName: 中文
-        title:  一名SRE
+        title:  hangliuc
         weight: 1
         params:
             sidebar:

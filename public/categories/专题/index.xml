@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>专题 on 一名SRE</title>
+        <title>专题 on hangliuc</title>
         <link>http://localhost:1313/categories/%E4%B8%93%E9%A2%98/</link>
-        <description>Recent content in 专题 on 一名SRE</description>
+        <description>Recent content in 专题 on hangliuc</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
@@ -91,6 +91,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;尽量不更新一些基础的知识，通过浏览器搜索即可，增强搜索知识的能力。重点记录一些在生产环境中遇到的问题和解决方法。&lt;/p&gt;
+&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat、github&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         
