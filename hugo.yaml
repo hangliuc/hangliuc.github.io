@@ -37,10 +37,10 @@ languages:
     #         sidebar:
     #             subtitle: وصف تجريبي
 
-services:
-    # Change it to your Disqus shortname before using
-    disqus:
-        shortname: "hugo-theme-stack"
+# services:
+#     # Change it to your Disqus shortname before using
+#     disqus:
+#         shortname: "hugo-theme-stack"
     # GA Tracking ID
     # googleAnalytics:
     #     id:
@@ -93,7 +93,7 @@ params:
 
     comments:
         enabled: true
-        provider: disqus
+        provider: giscus
 
         disqusjs:
             shortname:
