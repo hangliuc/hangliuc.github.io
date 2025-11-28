@@ -230,8 +230,9 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#hugo-目录结构">Hugo 目录结构</a></li>
-    <li><a href="#图标下载网站">图标下载网站</a></li>
+    <li><a href="#评论系统">评论系统</a></li>
     <li><a href="#分类和标签">分类和标签</a></li>
+    <li><a href="#一些可用链接">一些可用链接</a></li>
   </ol>
 </nav>
         </div>
@@ -300,15 +301,6 @@
                 </time>
             </div>
         
-
-        
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
-            <time>
-                字数 229 
-            </time>
-        </div>
-        
     </footer>
     
 
@@ -325,12 +317,60 @@
 <p>layouts/ &amp; themes/: 存放前端代码（HTML/CSS 模版）。</p>
 <p>static/: 存放图片、CNAME 文件等静态资源。</p>
 <p>hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）</p>
-<h2 id="图标下载网站">图标下载网站
-</h2><p><a class="link" href="https://tabler.io/icons"  target="_blank" rel="noopener"
-    >https://tabler.io/icons</a></p>
+<h2 id="评论系统">评论系统
+</h2><p>Giscus 评论系统
+<a class="link" href="https://giscus.app/zh-CN"  target="_blank" rel="noopener"
+    >https://giscus.app/zh-CN</a></p>
+<p>hugo.yaml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># ... 其他配置 ...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">giscus </span><span class="w"> </span><span class="c"># &lt;--- 将默认的 disqus 改为 giscus</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">giscus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l">hangliuc/blog-hugo </span><span class="w"> </span><span class="c"># &lt;--- 换成你的 &#34;用户名/仓库名&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repoID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;R_kgD...&#34;</span><span class="w">        </span><span class="c"># &lt;--- 填入第二步获取的 data-repo-id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Announcements&#34;</span><span class="w"> </span><span class="c"># &lt;--- 你选择的分类名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">categoryID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;DIC_kw...&#34;</span><span class="w">   </span><span class="c"># &lt;--- 填入第二步获取的 data-category-id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">mapping</span><span class="p">:</span><span class="w"> </span><span class="l">pathname</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">lightTheme</span><span class="p">:</span><span class="w"> </span><span class="l">light</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">darkTheme</span><span class="p">:</span><span class="w"> </span><span class="l">dark_dimmed</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">reactionsEnabled</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">emitMetadata</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>除此之外需要去GitHub 授权 Giscus 评论系统
+参考链接 <a class="link" href="https://giscus.app/zh-CN"  target="_blank" rel="noopener"
+    >https://giscus.app/zh-CN</a></p>
 <h2 id="分类和标签">分类和标签
 </h2><p>Categories (分类)：像文件夹一样，通常是树状、排他性的。一篇文章通常属于 1-2 个分类（例如“运维”、“容器化”）。</p>
 <p>Tags (标签)：像便利贴一样，是扁平、描述性的。一篇文章可以有多个标签（例如“Docker”、“网络”、“Troubleshooting”、“Linux”）。</p>
+<h2 id="一些可用链接">一些可用链接
+</h2><p>图标下载网站 <a class="link" href="https://tabler.io/icons"  target="_blank" rel="noopener"
+    >https://tabler.io/icons</a></p>
 
 </section>
 
