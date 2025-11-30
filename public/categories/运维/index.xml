@@ -338,7 +338,7 @@
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/docker/docker-network-issue/ifconfig.png&#34;
 	width=&#34;1046&#34;
 	height=&#34;1028&#34;
-	srcset=&#34;http://localhost:1313/ops/docker/docker-network-issue/ifconfig_hu_6f6ee34a95a81dc3.png 480w, http://localhost:1313/ops/docker/docker-network-issue/ifconfig_hu_5021277c8fd1b12e.png 1024w&#34;
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;网卡配置&#34;
