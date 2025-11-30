@@ -13,7 +13,7 @@
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/usage_method/</guid>
-        <description>&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
 &lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
 &lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
@@ -80,7 +80,7 @@
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;h2 id=&#34;内容相关&#34;&gt;内容相关
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Blogging Todo" /&gt;&lt;h2 id=&#34;内容相关&#34;&gt;内容相关
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在github、CSDN、yuque、公众号通过统一的目录结构发布内容，目录结构如下：&lt;/li&gt;
 &lt;/ul&gt;
