@@ -8,246 +8,6 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Thu, 27 Nov 2025 15:16:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Hugo 基础规划和使用方法</title>
-        <link>http://localhost:1313/topic/blogging/usage_method/</link>
-        <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
-        
-        <guid>http://localhost:1313/topic/blogging/usage_method/</guid>
-        <description>&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
-&lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
-&lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
-&lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
-&lt;p&gt;hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）&lt;/p&gt;
-&lt;h2 id=&#34;评论系统&#34;&gt;评论系统
-&lt;/h2&gt;&lt;p&gt;Giscus 评论系统
-&lt;a class=&#34;link&#34; href=&#34;https://giscus.app/zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://giscus.app/zh-CN&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;hugo.yaml&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# ... 其他配置 ...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;comments&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;provider&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;giscus &lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 将默认的 disqus 改为 giscus&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;giscus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;hangliuc/blog-hugo &lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 换成你的 &amp;#34;用户名/仓库名&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;repoID&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;R_kgD...&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 填入第二步获取的 data-repo-id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;category&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Announcements&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 你选择的分类名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;categoryID&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;DIC_kw...&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 填入第二步获取的 data-category-id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mapping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;pathname&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;lightTheme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;light&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;darkTheme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;dark_dimmed&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;reactionsEnabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;emitMetadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;除此之外需要去GitHub 授权 Giscus 评论系统
-参考链接 &lt;a class=&#34;link&#34; href=&#34;https://giscus.app/zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://giscus.app/zh-CN&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;分类和标签&#34;&gt;分类和标签
-&lt;/h2&gt;&lt;p&gt;Categories (分类)：像文件夹一样，通常是树状、排他性的。一篇文章通常属于 1-2 个分类（例如“运维”、“容器化”）。&lt;/p&gt;
-&lt;p&gt;Tags (标签)：像便利贴一样，是扁平、描述性的。一篇文章可以有多个标签（例如“Docker”、“网络”、“Troubleshooting”、“Linux”）。&lt;/p&gt;
-&lt;h2 id=&#34;一些可用链接&#34;&gt;一些可用链接
-&lt;/h2&gt;&lt;p&gt;图标下载网站 &lt;a class=&#34;link&#34; href=&#34;https://tabler.io/icons&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://tabler.io/icons&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Blogging Todo</title>
-        <link>http://localhost:1313/topic/blogging/todo/</link>
-        <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
-        
-        <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;h2 id=&#34;内容相关&#34;&gt;内容相关
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在github、CSDN、yuque、公众号通过统一的目录结构发布内容，目录结构如下：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 运维
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Mysql
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Redis
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Kafka
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - ansible
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - k8s
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - aws
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Linux
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Docker
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - prometheus
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Terraform
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 编程
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Python
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Shell
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Go
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - 数据结构
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - 算法
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 专题
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - 博客相关
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - 面试相关
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Liunx 性能优化
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Mysql 实战
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;尽量不更新一些基础的知识，通过浏览器搜索即可，增强搜索知识的能力。重点记录一些在生产环境中遇到的问题和解决方法。&lt;/p&gt;
-&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat、github&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Vim 使用技巧</title>
-        <link>http://localhost:1313/ops/linux/vim/</link>
-        <pubDate>Thu, 27 Nov 2025 11:02:53 +0800</pubDate>
-        
-        <guid>http://localhost:1313/ops/linux/vim/</guid>
-        <description>&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
-&lt;/h1&gt;&lt;h2 id=&#34;光标移动&#34;&gt;光标移动
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;h&lt;/strong&gt; 或 &lt;strong&gt;退格&lt;/strong&gt;：左移一个字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;l&lt;/strong&gt; 或 &lt;strong&gt;空格&lt;/strong&gt;：右移一个字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;j&lt;/strong&gt;：下移一行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;k&lt;/strong&gt;：上移一行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gj&lt;/strong&gt;：移动到一段内的下一行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gk&lt;/strong&gt;：移动到一段内的上一行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;+&lt;/strong&gt; 或 &lt;strong&gt;Enter&lt;/strong&gt;：移至下一行第一个非空白字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-&lt;/strong&gt;：移至上一行第一个非空白字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;w&lt;/strong&gt;：前移一个单词，停在下一个单词开头&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;W&lt;/strong&gt;：前移一个单词（忽略部分标点）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;e&lt;/strong&gt;：前移一个单词，停在下一个单词末尾&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;：前移一个单词，停在标点（如有）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;b&lt;/strong&gt;：后移一个单词，停在上一个单词开头&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt;：后移一个单词（忽略部分标点）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;(&lt;/strong&gt;：前移 1 句&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;)&lt;/strong&gt;：后移 1 句&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;{&lt;/strong&gt;：前移 1 段&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;}&lt;/strong&gt;：后移 1 段&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gg&lt;/strong&gt;：到文件头部&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;G&lt;/strong&gt;：到文件尾部&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;$&lt;/strong&gt;：到行尾&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;0&lt;/strong&gt;：到行首&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;翻屏&#34;&gt;翻屏
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ctrl + f&lt;/strong&gt;：下翻一屏&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ctrl + b&lt;/strong&gt;：上翻一屏&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ctrl + d&lt;/strong&gt;：下翻半屏&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ctrl + u&lt;/strong&gt;：上翻半屏&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ctrl + e&lt;/strong&gt;：向下滚动一行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ctrl + y&lt;/strong&gt;：向上滚动一行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;n%&lt;/strong&gt;：到文件 n% 位置&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;zz&lt;/strong&gt;：当前行移到屏幕中央&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;zt&lt;/strong&gt;：当前行移到屏幕顶端&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;zb&lt;/strong&gt;：当前行移到屏幕底端&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;插入&#34;&gt;插入
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;：在当前行第一个非空字符前插入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gI&lt;/strong&gt;：在当前行第一列插入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;a&lt;/strong&gt;：在光标后插入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;：在当前行末尾插入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;o&lt;/strong&gt;：在下方新建一行插入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;O&lt;/strong&gt;：在上方新建一行插入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;:r filename&lt;/strong&gt;：在当前位置插入另一个文件内容&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;:[n]r filename&lt;/strong&gt;：在第 n 行插入另一个文件内容&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;剪切和复制&#34;&gt;剪切和复制
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[n]x&lt;/strong&gt;：剪切光标右边 n 个字符（相当于 d[n]l）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[n]X&lt;/strong&gt;：剪切光标左边 n 个字符（相当于 d[n]h）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y&lt;/strong&gt;：复制可视模式下选中的文本&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;yy&lt;/strong&gt; 或 &lt;strong&gt;Y&lt;/strong&gt;：复制整行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y[n]w&lt;/strong&gt;：复制 n 个词&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y[n]l&lt;/strong&gt;：复制光标右边 n 个字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y[n]h&lt;/strong&gt;：复制光标左边 n 个字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y$&lt;/strong&gt;：从光标到行尾复制&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y0&lt;/strong&gt;：从光标到行首复制&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;:m,ny&lt;/strong&gt;：复制第 m 到 n 行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;y1G&lt;/strong&gt; 或 &lt;strong&gt;ygg&lt;/strong&gt;：复制光标以上所有行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;yG&lt;/strong&gt;：复制光标以下所有行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;d&lt;/strong&gt;：删除（剪切）可视模式下选中的文本&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;d$&lt;/strong&gt; 或 &lt;strong&gt;D&lt;/strong&gt;：删除到行尾&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;d[n]w&lt;/strong&gt;：删除 n 个单词&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;d[n]l&lt;/strong&gt;：删除光标右边 n 个字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;d[n]h&lt;/strong&gt;：删除光标左边 n 个字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;d0&lt;/strong&gt;：删除到行首&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;p&lt;/strong&gt;：在光标后粘贴&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;：在光标前粘贴&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;查找和替换&#34;&gt;查找和替换
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;/something&lt;/strong&gt;：向后查找 something&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;?something&lt;/strong&gt;：向前查找 something&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;n&lt;/strong&gt;：向后查找下一个&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;：向前查找下一个&lt;/li&gt;
-&lt;li&gt;s/old/new：替换当前行第一个 old&lt;/li&gt;
-&lt;li&gt;s/old/new/g：替换当前行所有 old&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;%s/old/new/g&lt;/strong&gt;：替换整个文件的所有 old&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;技巧&#34;&gt;技巧
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;:set paste&lt;/strong&gt;：解决粘贴时格式错乱问题&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-</description>
-        </item>
-        <item>
         <title>Containerd命令行管理工具</title>
         <link>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Thu, 27 Nov 2025 10:51:50 +0800</pubDate>
@@ -468,6 +228,246 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Hugo 基础规划和使用方法</title>
+        <link>http://localhost:1313/topic/blogging/usage_method/</link>
+        <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/blogging/usage_method/</guid>
+        <description>&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+&lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
+&lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
+&lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
+&lt;p&gt;hugo.toml (或 .yaml/.json): 整个站点的配置文件（相当于 k8s 的 configmap）&lt;/p&gt;
+&lt;h2 id=&#34;评论系统&#34;&gt;评论系统
+&lt;/h2&gt;&lt;p&gt;Giscus 评论系统
+&lt;a class=&#34;link&#34; href=&#34;https://giscus.app/zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://giscus.app/zh-CN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;hugo.yaml&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# ... 其他配置 ...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;comments&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;enabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;provider&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;giscus &lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 将默认的 disqus 改为 giscus&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;giscus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;hangliuc/blog-hugo &lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 换成你的 &amp;#34;用户名/仓库名&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;repoID&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;R_kgD...&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 填入第二步获取的 data-repo-id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;category&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Announcements&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 你选择的分类名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;categoryID&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;DIC_kw...&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 填入第二步获取的 data-category-id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mapping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;pathname&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;lightTheme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;light&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;darkTheme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;dark_dimmed&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;reactionsEnabled&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;emitMetadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;除此之外需要去GitHub 授权 Giscus 评论系统
+参考链接 &lt;a class=&#34;link&#34; href=&#34;https://giscus.app/zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://giscus.app/zh-CN&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;分类和标签&#34;&gt;分类和标签
+&lt;/h2&gt;&lt;p&gt;Categories (分类)：像文件夹一样，通常是树状、排他性的。一篇文章通常属于 1-2 个分类（例如“运维”、“容器化”）。&lt;/p&gt;
+&lt;p&gt;Tags (标签)：像便利贴一样，是扁平、描述性的。一篇文章可以有多个标签（例如“Docker”、“网络”、“Troubleshooting”、“Linux”）。&lt;/p&gt;
+&lt;h2 id=&#34;一些可用链接&#34;&gt;一些可用链接
+&lt;/h2&gt;&lt;p&gt;图标下载网站 &lt;a class=&#34;link&#34; href=&#34;https://tabler.io/icons&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tabler.io/icons&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Blogging Todo</title>
+        <link>http://localhost:1313/topic/blogging/todo/</link>
+        <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/blogging/todo/</guid>
+        <description>&lt;h2 id=&#34;内容相关&#34;&gt;内容相关
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在github、CSDN、yuque、公众号通过统一的目录结构发布内容，目录结构如下：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 运维
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Kafka
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - ansible
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - k8s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - aws
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Linux
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - prometheus
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Terraform
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 编程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Python
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Shell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Go
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - 数据结构
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - 算法
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 专题
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - 博客相关
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - 面试相关
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Liunx 性能优化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Mysql 实战
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;尽量不更新一些基础的知识，通过浏览器搜索即可，增强搜索知识的能力。重点记录一些在生产环境中遇到的问题和解决方法。&lt;/p&gt;
+&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏：添加优秀文章&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat、github&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Vim 使用技巧</title>
+        <link>http://localhost:1313/ops/linux/vim/</link>
+        <pubDate>Thu, 27 Nov 2025 11:02:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ops/linux/vim/</guid>
+        <description>&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
+&lt;/h1&gt;&lt;h2 id=&#34;光标移动&#34;&gt;光标移动
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;h&lt;/strong&gt; 或 &lt;strong&gt;退格&lt;/strong&gt;：左移一个字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;l&lt;/strong&gt; 或 &lt;strong&gt;空格&lt;/strong&gt;：右移一个字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;j&lt;/strong&gt;：下移一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;k&lt;/strong&gt;：上移一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gj&lt;/strong&gt;：移动到一段内的下一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gk&lt;/strong&gt;：移动到一段内的上一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;+&lt;/strong&gt; 或 &lt;strong&gt;Enter&lt;/strong&gt;：移至下一行第一个非空白字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-&lt;/strong&gt;：移至上一行第一个非空白字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;w&lt;/strong&gt;：前移一个单词，停在下一个单词开头&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;W&lt;/strong&gt;：前移一个单词（忽略部分标点）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;e&lt;/strong&gt;：前移一个单词，停在下一个单词末尾&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;：前移一个单词，停在标点（如有）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;b&lt;/strong&gt;：后移一个单词，停在上一个单词开头&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt;：后移一个单词（忽略部分标点）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(&lt;/strong&gt;：前移 1 句&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;)&lt;/strong&gt;：后移 1 句&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;{&lt;/strong&gt;：前移 1 段&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;}&lt;/strong&gt;：后移 1 段&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gg&lt;/strong&gt;：到文件头部&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;G&lt;/strong&gt;：到文件尾部&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$&lt;/strong&gt;：到行尾&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0&lt;/strong&gt;：到行首&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;翻屏&#34;&gt;翻屏
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + f&lt;/strong&gt;：下翻一屏&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + b&lt;/strong&gt;：上翻一屏&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + d&lt;/strong&gt;：下翻半屏&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + u&lt;/strong&gt;：上翻半屏&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + e&lt;/strong&gt;：向下滚动一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + y&lt;/strong&gt;：向上滚动一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;n%&lt;/strong&gt;：到文件 n% 位置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zz&lt;/strong&gt;：当前行移到屏幕中央&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zt&lt;/strong&gt;：当前行移到屏幕顶端&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zb&lt;/strong&gt;：当前行移到屏幕底端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;插入&#34;&gt;插入
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;：在当前行第一个非空字符前插入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gI&lt;/strong&gt;：在当前行第一列插入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;a&lt;/strong&gt;：在光标后插入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;：在当前行末尾插入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;o&lt;/strong&gt;：在下方新建一行插入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;O&lt;/strong&gt;：在上方新建一行插入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:r filename&lt;/strong&gt;：在当前位置插入另一个文件内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:[n]r filename&lt;/strong&gt;：在第 n 行插入另一个文件内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;剪切和复制&#34;&gt;剪切和复制
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[n]x&lt;/strong&gt;：剪切光标右边 n 个字符（相当于 d[n]l）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[n]X&lt;/strong&gt;：剪切光标左边 n 个字符（相当于 d[n]h）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y&lt;/strong&gt;：复制可视模式下选中的文本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;yy&lt;/strong&gt; 或 &lt;strong&gt;Y&lt;/strong&gt;：复制整行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y[n]w&lt;/strong&gt;：复制 n 个词&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y[n]l&lt;/strong&gt;：复制光标右边 n 个字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y[n]h&lt;/strong&gt;：复制光标左边 n 个字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y$&lt;/strong&gt;：从光标到行尾复制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y0&lt;/strong&gt;：从光标到行首复制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:m,ny&lt;/strong&gt;：复制第 m 到 n 行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y1G&lt;/strong&gt; 或 &lt;strong&gt;ygg&lt;/strong&gt;：复制光标以上所有行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;yG&lt;/strong&gt;：复制光标以下所有行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d&lt;/strong&gt;：删除（剪切）可视模式下选中的文本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d$&lt;/strong&gt; 或 &lt;strong&gt;D&lt;/strong&gt;：删除到行尾&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d[n]w&lt;/strong&gt;：删除 n 个单词&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d[n]l&lt;/strong&gt;：删除光标右边 n 个字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d[n]h&lt;/strong&gt;：删除光标左边 n 个字符&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d0&lt;/strong&gt;：删除到行首&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;p&lt;/strong&gt;：在光标后粘贴&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;：在光标前粘贴&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;查找和替换&#34;&gt;查找和替换
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;/something&lt;/strong&gt;：向后查找 something&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;?something&lt;/strong&gt;：向前查找 something&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;n&lt;/strong&gt;：向后查找下一个&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;：向前查找下一个&lt;/li&gt;
+&lt;li&gt;s/old/new：替换当前行第一个 old&lt;/li&gt;
+&lt;li&gt;s/old/new/g：替换当前行所有 old&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;%s/old/new/g&lt;/strong&gt;：替换整个文件的所有 old&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;技巧&#34;&gt;技巧
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;:set paste&lt;/strong&gt;：解决粘贴时格式错乱问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+</description>
         </item>
         <item>
         <title>容器网络影响宿主机入网问题排查</title>
