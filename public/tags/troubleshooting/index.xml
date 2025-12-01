@@ -7,7 +7,83 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 26 Nov 2025 10:38:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Dec 2025 11:45:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ASG Node 数据盘挂载失败</title>
+        <link>http://localhost:1313/ops/linux/asg-node-disk-issue/</link>
+        <pubDate>Mon, 01 Dec 2025 11:45:14 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ops/linux/asg-node-disk-issue/</guid>
+        <description>&lt;img src="http://localhost:1313/img/liunx_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
+&lt;/h2&gt;&lt;p&gt;data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警&lt;/p&gt;
+&lt;p&gt;内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/linux/asg-node-disk-issue/disk_error.png&#34;
+	width=&#34;1567&#34;
+	height=&#34;983&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;disk_error.png&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;159&#34;
+		data-flex-basis=&#34;382px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;解决方法
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum install parted -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /data
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;parted -s /dev/nvme1n1 -- mklabel gpt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;parted -s /dev/nvme1n1 -- mkpart primary ext4 0% 100%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;partprobe /dev/nvme1n1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;udevadm settle
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -e /dev/nvme1n1p1 &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; sleep 1&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkfs -t ext4 /dev/nvme1n1p1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/nvme1n1p1 /data
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/dev/nvme1n1p1 /data ext4 defaults 0 0&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /etc/fstab
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;&#34;&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;parted-中-0-与-0-的区别&#34;&gt;parted 中 0 与 0% 的区别
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;0&lt;/strong&gt;：表示强制要求分区从磁盘的 第 0 个字节/扇区 开始。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;0%&lt;/strong&gt;：自动对齐，最佳对齐点 开始分区。parted 会自动跳过前面的保留空间，通常将起始位置设定在 扇区 2048 开始。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;partprobe-devnvme1n1&#34;&gt;partprobe /dev/nvme1n1
+&lt;/h3&gt;&lt;p&gt;通知内核（Kernel）立即重读分区表&lt;/p&gt;
+&lt;h3 id=&#34;udevadm-settle&#34;&gt;udevadm settle
+&lt;/h3&gt;&lt;p&gt;阻塞（暂停）脚本执行，直到 udev 处理完所有设备事件。
+所有设备文件都创建好，脚本才能继续执行。&lt;/p&gt;
+&lt;h2 id=&#34;用户数据脚本&#34;&gt;用户数据脚本
+&lt;/h2&gt;&lt;p&gt;用户脚本位置：
+/var/lib/cloud/instance/user-data.txt&lt;/p&gt;
+&lt;p&gt;日志位置：
+/var/log/cloud-init-output.log&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>容器网络影响宿主机入网问题排查</title>
         <link>http://localhost:1313/ops/docker/docker-network-issue/</link>
         <pubDate>Wed, 26 Nov 2025 10:38:20 +0800</pubDate>

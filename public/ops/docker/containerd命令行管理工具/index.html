@@ -10,9 +10,10 @@
 <meta property='og:description' content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n">
 <meta property='og:url' content='http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
 <meta property='og:site_name' content='hangliuc'>
-<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T10:51:50&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T10:51:50&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T10:51:50&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T10:51:50&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/docker_cover.jpg' />
 <meta name="twitter:title" content="Containerd命令行管理工具">
-<meta name="twitter:description" content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n">
+<meta name="twitter:description" content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/docker_cover.jpg' />
     </head>
     <body class="
     article-page
@@ -253,8 +254,16 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+                
+                    <img src="/img/docker_cover.jpg" loading="lazy" alt="Featured image of post Containerd命令行管理工具" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -602,9 +611,34 @@
 
             
                 
-<article class="">
+<article class="has-image">
+    <a href="/ops/linux/asg-node-disk-issue/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/liunx_cover.jpg" loading="lazy" data-key="" data-hash="/img/liunx_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ASG Node 数据盘挂载失败</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/ops/linux/vim/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/liunx_cover.jpg" loading="lazy" data-key="" data-hash="/img/liunx_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
