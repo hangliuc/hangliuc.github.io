@@ -8,7 +8,6 @@ categories:
     - 
 tags:
     - ansible
-    - network
 ---
 # 背景
 使用ansible时，为了避免每次执行任务都需要输入ssh密码，我们可以缓存ssh密钥。
