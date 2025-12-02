@@ -55,7 +55,7 @@
                 href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/mysql/</loc>
+    <loc>http://localhost:1313/tags/mysql/</loc>
     <lastmod>2025-12-01T21:14:56+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
@@ -74,13 +74,13 @@
                 href="http://localhost:1313/tags/"
                 />
   </url><url>
+    <loc>http://localhost:1313/categories/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2025-12-01T21:14:56+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/ops/linux/asg-node-disk-issue/</loc>
     <lastmod>2025-12-01T11:45:14+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/troubleshooting/</loc>
-    <lastmod>2025-12-01T11:45:14+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E8%BF%90%E7%BB%B4/</loc>
     <lastmod>2025-12-01T11:45:14+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/blog/</loc>
@@ -121,13 +121,5 @@
   </url><url>
     <loc>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</loc>
     <lastmod>2023-11-26T10:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/m/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/mysq/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
-  </url><url>
-    <loc>http://localhost:1313/categories/ops/</loc>
   </url>
 </urlset>
