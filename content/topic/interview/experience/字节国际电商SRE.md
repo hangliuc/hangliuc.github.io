@@ -2,6 +2,8 @@
 title: "字节国际电商"
 date: 2025-12-02T15:19:21+08:00
 draft: false
+categories:
+    - 面试
 ---
 
 ## 一轮面试
