@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 03 Dec 2025 10:56:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 04 Dec 2025 18:06:35 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Containerd命令行管理工具</title>
         <link>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Thu, 27 Nov 2025 10:51:50 +0800</pubDate>
@@ -228,6 +228,87 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Sre</title>
+        <link>http://localhost:1313/topic/interview/sre/</link>
+        <pubDate>Thu, 04 Dec 2025 18:06:35 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/interview/sre/</guid>
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
+&lt;/h2&gt;&lt;p&gt;SLI：服务水平指示器（正常响应数的百分比）&lt;/p&gt;
+&lt;p&gt;SLO：服务水平目标（99%、99.999%、99.99999%）
+必须和时间挂钩&lt;/p&gt;
+&lt;p&gt;SLA：服务水平协议（SLO的具体实现）&lt;/p&gt;
+&lt;p&gt;SLA 是对客户的外部承诺，SLO 是公司内部为实现承诺设定的目标，SLI 则是用来衡量实际服务表现的指标。&lt;/p&gt;
+&lt;h2 id=&#34;2mttr&#34;&gt;2.MTTR
+&lt;/h2&gt;&lt;p&gt;MTTR：平均故障修复时间（Mean Time to Repair）&lt;/p&gt;
+&lt;p&gt;MTTR = 故障修复总时长 ÷ 故障次数&lt;/p&gt;
+&lt;h3 id=&#34;如何降低-mttr&#34;&gt;如何降低 MTTR？
+&lt;/h3&gt;&lt;h3 id=&#34;监控&#34;&gt;监控
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;完善监控告警体系
+&lt;ul&gt;
+&lt;li&gt;业务指标监控&lt;/li&gt;
+&lt;li&gt;系统指标监控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;告警降噪
+&lt;ul&gt;
+&lt;li&gt;告警分级：p1、p2、p3&lt;/li&gt;
+&lt;li&gt;告警升级：当某告警等级为 P2，且在 1 小时内未被处理（未关闭、未屏蔽等），将自动升级为p 1&lt;/li&gt;
+&lt;li&gt;告警间隔：同一条告警默认重复发送最小间隔时间为15m&lt;/li&gt;
+&lt;li&gt;告警淹没：设置合适的告警策略，避免告警太多，告警漏报&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;快速定位&#34;&gt;快速定位
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;标准化排障 SOP
+&lt;ul&gt;
+&lt;li&gt;CPU、内存飙高怎么查&lt;/li&gt;
+&lt;li&gt;ELB 5xx 怎么查&lt;/li&gt;
+&lt;li&gt;Pod CrashLoop 怎么查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自动抓取现场信息
+&lt;ul&gt;
+&lt;li&gt;C++ core dump&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;统一日志平台
+&lt;ul&gt;
+&lt;li&gt;ELK / Loki&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;全链路追踪&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;快速修复问题&#34;&gt;快速修复问题
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;灰度发布 / 金丝雀发布&lt;/li&gt;
+&lt;li&gt;配置中心(apollo) + 动态切流（像开关一样关闭某个模块）&lt;/li&gt;
+&lt;li&gt;自动扩容（根据业务流量自动扩容，HPA）&lt;/li&gt;
+&lt;li&gt;脚本化修复
+&lt;ul&gt;
+&lt;li&gt;一键重启&lt;/li&gt;
+&lt;li&gt;一键清理DNS缓存&lt;/li&gt;
+&lt;li&gt;&amp;hellip;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高可用部署&#34;&gt;高可用部署
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;高可用&lt;/li&gt;
+&lt;li&gt;多AZ部署&lt;/li&gt;
+&lt;li&gt;自动故障转移&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;持续演练--可靠性测试&#34;&gt;持续演练 &amp;amp; 可靠性测试
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;混沌工程（提前演练故障）&lt;/li&gt;
+&lt;li&gt;增加缺失监控点&lt;/li&gt;
+&lt;li&gt;&amp;hellip;..&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>Liunx</title>
