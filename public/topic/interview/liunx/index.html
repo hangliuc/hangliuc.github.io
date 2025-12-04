@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 进程、线程、协程 进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。 线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。 协程：用户态的轻量级线程，由用户程序控制，不需要操作系统的支持。 2. Linux中的进程优先级与设置方法 进程的优先级决定了其获取 CPU 时间片的顺序。优先级更高（数值更低）的进程会优先获取 CPU 时间片。 进程的优先级由 Nice 值表示，Nice 值的范围是 -20（最高优先级）到 19（最低优先级）。 默认情况下，进程的 Nice 值为 0。\n">
+<title>Liunx</title>
+
+<link rel='canonical' href='http://localhost:1313/topic/interview/liunx/'>
+
+<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="Liunx">
+<meta property='og:description' content="1. 进程、线程、协程 进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。 线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。 协程：用户态的轻量级线程，由用户程序控制，不需要操作系统的支持。 2. Linux中的进程优先级与设置方法 进程的优先级决定了其获取 CPU 时间片的顺序。优先级更高（数值更低）的进程会优先获取 CPU 时间片。 进程的优先级由 Nice 值表示，Nice 值的范围是 -20（最高优先级）到 19（最低优先级）。 默认情况下，进程的 Nice 值为 0。\n">
+<meta property='og:url' content='http://localhost:1313/topic/interview/liunx/'>
+<meta property='og:site_name' content='hangliuc'>
+<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:published_time' content='2025-12-03T10:56:44&#43;08:00'/><meta property='article:modified_time' content='2025-12-03T10:56:44&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/interview_cover.jpg' />
+<meta name="twitter:title" content="Liunx">
+<meta name="twitter:description" content="1. 进程、线程、协程 进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。 线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。 协程：用户态的轻量级线程，由用户程序控制，不需要操作系统的支持。 2. Linux中的进程优先级与设置方法 进程的优先级决定了其获取 CPU 时间片的顺序。优先级更高（数值更低）的进程会优先获取 CPU 时间片。 进程的优先级由 Nice 值表示，Nice 值的范围是 -20（最高优先级）到 19（最低优先级）。 默认情况下，进程的 Nice 值为 0。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/interview_cover.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/head_portrait_hu_42403be09321586.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">hangliuc</a></h1>
+            <h2 class="site-description">SRE。日常输出一些技术内容。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:iliuhang@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/hangliuc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>首页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ops/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-terminal-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3l-3 3" /><path d="M13 15l3 0" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /></svg>
+                
+                <span>运维</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/topic/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-scale-outline"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 4a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /><path d="M12 7c1.956 0 3.724 .802 5 2.095l-2.956 2.904a3 3 0 0 0 -2.038 -.799a3 3 0 0 0 -2.038 .798l-2.956 -2.903a6.979 6.979 0 0 1 5 -2.095z" /></svg>
+                
+                <span>专题</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-进程线程协程">1. <strong>进程、线程、协程</strong></a></li>
+    <li><a href="#2-linux中的进程优先级与设置方法">2. Linux中的进程优先级与设置方法</a></li>
+    <li><a href="#3-什么是僵尸进程">3. 什么是僵尸进程</a></li>
+    <li><a href="#4-什么进程中断">4. 什么进程中断</a>
+      <ol>
+        <li><a href="#41-软中断硬中断不可中断进程">4.1 软中断、硬中断、不可中断进程</a></li>
+      </ol>
+    </li>
+    <li><a href="#5-进程间通信的方式及其使用场景">5. 进程间通信的方式及其使用场景</a></li>
+    <li><a href="#6-cgroup中限制cpu的方式有哪些">6. cgroup中限制CPU的方式有哪些</a></li>
+    <li><a href="#7-内存中的buffers与cached的区别">7. 内存中的buffers与cached的区别</a></li>
+    <li><a href="#8-栈内存和堆内存的区别">8. 栈内存和堆内存的区别</a></li>
+    <li><a href="#9-进程最大数最大线程数进程打开的文件数怎么调整">9. 进程最大数、最大线程数、进程打开的文件数，怎么调整</a>
+      <ol>
+        <li><a href="#查看当前限制">查看当前限制</a></li>
+        <li><a href="#调整最大文件数">调整最大文件数</a></li>
+        <li><a href="#调整最大进程数--最大线程数">调整最大进程数 / 最大线程数</a></li>
+        <li><a href="#注意事项">注意事项</a></li>
+      </ol>
+    </li>
+    <li><a href="#10-load和cpu使用率区别">10. load和cpu使用率区别</a>
+      <ol>
+        <li><a href="#两者之间关系">两者之间关系</a></li>
+      </ol>
+    </li>
+    <li><a href="#11-du--df-查看磁盘结果不一致">11. du 、 df 查看磁盘结果不一致</a>
+      <ol>
+        <li><a href="#解决方法">解决方法</a></li>
+      </ol>
+    </li>
+    <li><a href="#12-硬链接和软链接区别">12. 硬链接和软链接区别</a>
+      <ol>
+        <li><a href="#硬链接">硬链接：</a></li>
+        <li><a href="#软连接">软连接：</a></li>
+      </ol>
+    </li>
+    <li><a href="#lvm怎么划分">lvm怎么划分</a></li>
+    <li><a href="#13-常见的raid有哪些使用场景是什么">13. 常见的raid有哪些，使用场景是什么</a></li>
+    <li><a href="#14-如何创建和管理自定义systemd服务">14. 如何创建和管理自定义systemd服务</a></li>
+    <li><a href="#15-linux-系统中proc是做什么的">15. Linux 系统中/proc是做什么的</a></li>
+    <li><a href="#16-lsof命令使用场景">16. lsof命令使用场景</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/topic/interview/liunx/">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" alt="Featured image of post Liunx" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/topic/interview/liunx/">Liunx</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-03T10:56:44&#43;08:00'>Dec 03, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+ 
+            <time>
+                4263 字
+            </time>
+        </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="1-进程线程协程">1. <strong>进程、线程、协程</strong>
+</h2><ul>
+<li>进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。</li>
+<li>线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。</li>
+<li>协程：用户态的轻量级线程，由用户程序控制，不需要操作系统的支持。</li>
+</ul>
+<h2 id="2-linux中的进程优先级与设置方法">2. Linux中的进程优先级与设置方法
+</h2><p>进程的优先级决定了其获取 CPU 时间片的顺序。优先级更高（数值更低）的进程会优先获取 CPU 时间片。
+进程的优先级由 Nice 值表示，Nice 值的范围是 -20（最高优先级）到 19（最低优先级）。
+默认情况下，进程的 Nice 值为 0。</p>
+<ul>
+<li>nice 命令：nice 命令用于启动一个进程，并设置其 Nice 值。例如，nice -n 10 command 会以 Nice 值为 10 来启动 command。</li>
+<li>renice 命令：renice 命令用于修改已经在运行的进程的 Nice 值。例如，renice +5 -p 1234 会将 PID 为 1234 的进程的 Nice 值增加 5。需要注意的是，只有 root 用户才能降低进程的 Nice 值。</li>
+<li>在代码中调用 nice() 或 setpriority() 函数：如果你正在编写一个程序，你可以在代码中调用 nice() 或 setpriority() 函数来改变你的进程的优先级。</li>
+</ul>
+<h2 id="3-什么是僵尸进程">3. 什么是僵尸进程
+</h2><p>僵尸进程是指一个已经终止运行的进程，但是其进程描述符（process descriptor）还在内存中。
+父进程没有回收子进程的资源。</p>
+<h2 id="4-什么进程中断">4. 什么进程中断
+</h2><p>中断是系统用来响应硬件设备请求的一种机制，会打断进程的正常调度和执行，然后调用内核的中断处理程序来响应设备的请求。
+取外卖案例，不用苦苦等待，打电话的动作就是中断。
+中断是一种异步处理机制，可以提高系统的并发处理能力。</p>
+<h3 id="41-软中断硬中断不可中断进程">4.1 软中断、硬中断、不可中断进程
+</h3><p>Linux将中断分为两上半部分、下半部分
+上半部分直接处理硬件请求，特点是快速执行（硬中断）
+下半部分是由内核触发，特点是延迟执行（软中断）
+不可中断进程表示进程和硬件正在交互，为了保持进程数据和硬件的一致性，系统不允许其他进程或中断打断这个进程。进程长时间处于不可中断状态，通常表示系统IO存在问题。</p>
+<h2 id="5-进程间通信的方式及其使用场景">5. 进程间通信的方式及其使用场景
+</h2><ol>
+<li>管道（Pipe）和命名管道（Named pipe）：管道是一种半双工的通信方式，主要用于具有父子关系的进程间。命名管道则是一种全双工的通信方式，可以用于任意两个进程间的通信。它们主要用于数据的流式传输。</li>
+<li>消息队列（Message Queue）：消息队列是一种列表结构，可以存储要发送的消息。进程可以向消息队列中添加消息，也可以从中读取消息。消息队列常用于不同进程间的数据交换和同步。</li>
+<li>共享内存（Shared Memory）：共享内存是最快的 IPC 方式，它允许两个或多个进程访问同一块内存区域。这种方式常用于大量数据的交换。</li>
+<li>信号（Signal）：信号是一种异步的通信方式，用于通知接收进程某个事件已经发生。例如，当一个进程结束时，它会发送一个 SIGCHLD 信号给其父进程。</li>
+<li>套接字（Socket）：套接字可以用于不同机器之间的进程通信，也可以用于同一机器上的进程通信。它支持 TCP、UDP 等多种协议，常用于网络通信。</li>
+<li>信号量（Semaphore）：信号量主要用于解决竞态条件，保护关键资源的访问。当多个进程需要访问同一资源时，可以使用信号量进行同步。</li>
+<li>文件锁（File Locking）：文件锁可以用于控制多个进程对同一文件的访问。当一个进程正在访问某个文件时，其他进程必须等待，直到该进程释放了文件锁。</li>
+</ol>
+<h2 id="6-cgroup中限制cpu的方式有哪些">6. cgroup中限制CPU的方式有哪些
+</h2><p>cgroups, control groups（控制群组）的简写，是linux内核的一个功能，用来限制、控制与分离一个进程资源（如cpu、内存、磁盘等）。
+在cgroup中，限制CPU的方式有两种：</p>
+<ol>
+<li>基于CPU时间片的限制：通过设置cpu.cfs_quota_us和cpu.cfs_period_us参数，限制进程在每个时间周期内可以使用的CPU时间。</li>
+<li>基于CPU核心的限制：通过设置cpu.shares参数，限制进程在多个CPU核心上的运行时间比例。</li>
+</ol>
+<h2 id="7-内存中的buffers与cached的区别">7. 内存中的buffers与cached的区别
+</h2><p>设计目的，为了提升系统的I/O性能
+Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。
+Cache 是内核页缓存和 Slab 用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。</p>
+<p>Buffers 是用于临时存储待写入硬盘的数据，而 Cached 是用于存储已经从硬盘读取的数据，以便快速访问。
+Buffer 是对磁盘数据的缓存。而 Cache 是文件数据的缓存，它们既会用在读请求中，也会用在写请求中。</p>
+<p>Linux是尽可能使用内存原则，内存会把剩余的空间申请为cache，而cache不属于free，当系统运行时间很长，我们会发现cache很大。</p>
+<p>当我们看到系统内存使用率很高，free几乎为0时，并不代表系统内存容量有瓶颈！只是系统充分发挥了内存作用。而当有进程需要申请大文件内存时，内核会将部分cache空间回收，回收的内存再分配给进程程序使用。</p>
+<h2 id="8-栈内存和堆内存的区别">8. 栈内存和堆内存的区别
+</h2><ol>
+<li>栈内存（Stack）
+特点：栈内存是自动分配和释放的，具有先进后出（LIFO，Last In First Out）的特性。栈内存中的变量会在函数调用时创建，并在函数返回时自动销毁。其管理由编译器控制，因此效率较高。
+用途：通常用于存储局部变量、函数参数等临时数据。栈内存的分配通常很快，因为它只是调整一个指针来跟踪当前的栈顶位置。
+优点：内存分配和释放速度快，不容易产生内存碎片。
+缺点：栈内存的大小通常有限，不能用于存储大量数据或长时间使用的数据。</li>
+<li>堆内存（Heap）
+特点：堆内存是动态分配的，大小不固定，需要程序员手动分配和释放。如果忘记释放，可能会导致内存泄漏。它没有严格的先进后出的顺序，可以在程序的任何位置请求内存分配。
+用途：用于存储需要动态分配的大量数据，如对象、全局数据等。通过 malloc() 或 new 等操作分配，通过 free() 或 delete 等操作释放。
+优点：适合长时间使用的数据或较大的数据结构，比如链表、树等。堆内存的大小相对栈来说几乎是无限的（受制于物理内存和系统限制）。
+缺点：由于需要手动管理，堆内存分配和释放速度较慢，且容易导致内存碎片。</li>
+</ol>
+<p>区别总结：</p>
+<ul>
+<li>生命周期：栈内存中的数据在函数调用期间有效，而堆内存的数据在手动释放前一直有效。</li>
+<li>分配方式：栈是由系统自动分配和管理，堆是由程序员动态分配和管理。</li>
+<li>效率：栈内存效率高，堆内存分配和释放较慢</li>
+</ul>
+<h2 id="9-进程最大数最大线程数进程打开的文件数怎么调整">9. 进程最大数、最大线程数、进程打开的文件数，怎么调整
+</h2><h3 id="查看当前限制">查看当前限制
+</h3><p>ulimit -a
+ulimit -u      # 最大进程/线程数
+ulimit -n      # 最大文件句柄数</p>
+<h3 id="调整最大文件数">调整最大文件数
+</h3><p>临时生效
+ulimit -n 65535</p>
+<p>永久生效
+sudo vim /etc/security/limits.conf</p>
+<p>添加如下内容</p>
+<ul>
+<li>soft nofile 65535</li>
+<li>hard nofile 65535</li>
+</ul>
+<h3 id="调整最大进程数--最大线程数">调整最大进程数 / 最大线程数
+</h3><p>临时生效
+ulimit -u 65535</p>
+<p>永久生效
+sudo vim /etc/security/limits.conf</p>
+<p>添加如下内容</p>
+<ul>
+<li>soft nproc 65535</li>
+<li>hard nproc 65535</li>
+</ul>
+<h3 id="注意事项">注意事项
+</h3><p>soft 软限制：用户可以超过这个值，但是不能超过hard限制。
+hard 硬限制：用户不能超过这个值，也不能低于soft限制。</p>
+<p>/etc/sysctl.conf 属于系统级别内核参数，需要重启生效。
+/etc/security/limits.conf 属于用户级别或者进程级别的参数，需要重新登录生效。</p>
+<h2 id="10-load和cpu使用率区别">10. load和cpu使用率区别
+</h2><p>load 平均负载是指单位时间内，系统处于可运行状态（R）和不可中断状态的平均进程数（D）（平均活跃进程数）。
+cpu 使用率是指单位时间内，CPU 正在处理的任务时间占总时间的比例。</p>
+<p>最理想的情况：平均负载等于CPU的个数，每一个核上都存在一个进程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">查看CPU核心数
+</span></span><span class="line"><span class="cl">grep <span class="s1">&#39;model name&#39;</span> /proc/cpuinfo <span class="p">|</span> wc -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">uptime
+</span></span><span class="line"><span class="cl"> 06:44:50 up <span class="m">190</span> days, 22:44,  <span class="m">4</span> users,  load average: 0.42, 0.14, 0.04
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="两者之间关系">两者之间关系
+</h3><ul>
+<li>CPU 密集型进程，使用大量 CPU 会导致平均负载升高，此时这两者是一致的</li>
+<li>I/O 密集型进程，等待 I/O 也会导致平均负载升高，但 CPU 使用率不一定很高</li>
+<li>大量等待 CPU 的进程调度也会导致平均负载升高，此时的 CPU 使用率也会比较高</li>
+</ul>
+<h2 id="11-du--df-查看磁盘结果不一致">11. du 、 df 查看磁盘结果不一致
+</h2><p>系统中可能存在大量被删除的文件（僵尸文件），且有运行的进程在使用这些文件的句柄。</p>
+<p>当一个文件被删除后，如果有进程仍然打开着该文件，du 不会统计这部分空间，因为文件已经从目录结构中移除；然而，df 会统计这部分空间，因为磁盘空间实际上还被占用。</p>
+<h3 id="解决方法">解决方法
+</h3><ul>
+<li>重启系统：重启系统可以清除所有未使用的文件句柄，包括僵尸文件。</li>
+<li>查找并关闭进程：使用 lsof 或 fuser 等工具查找并关闭使用僵尸文件的进程。
+lsof |grep deleted</li>
+<li>手动删除文件：如果进程无法关闭，只能手动删除文件。但要注意，删除文件后，所有使用该文件的进程都将无法正常工作。</li>
+<li>杀死进程</li>
+</ul>
+<h2 id="12-硬链接和软链接区别">12. 硬链接和软链接区别
+</h2><p>硬链接和软链接是两种不同类型的文件系统链接，用于在目录之间共享文件。</p>
+<h3 id="硬链接">硬链接：
+</h3><p>a. 具有相同inode节点号的多个文件互为硬链接文件；
+b. 硬链接文件是文件的另一个入口
+c. 可以通过给文件设置硬链接文件来防止重要文件被误删；
+d. 删除硬链接文件或者删除源文件，文件实体不会被删除，只有都删除才会生效</p>
+<h3 id="软连接">软连接：
+</h3><p>a. 软链接类似windows系统的快捷方式
+b. 软链接里面存放的是源文件的路径，指向源文件
+c. 删除源文件，软链接依然存在，但无法访问源文件内容
+d. 软链接和源文件是不同的文件，文件类型也不同，inode号也不同；</p>
+<h2 id="lvm怎么划分">lvm怎么划分
+</h2><ul>
+<li>创建物理卷（PV）</li>
+<li>创建卷组（VG）</li>
+<li>创建逻辑卷（LV）</li>
+<li>格式化逻辑卷（LV）</li>
+<li>挂载逻辑卷（LV）</li>
+</ul>
+<p>在公有云运维中 很少见到 LVM 划分磁盘，这其实完全正常，而且是行业趋势。</p>
+<ul>
+<li>云盘可以直接扩容，不需要 LVM 的 PV/VG/LV</li>
+<li>传统 LVM 常用于RAID1（镜像）、RAID0（提升性能）。但是云盘底层已经多副本、且通过 SSD 提供高性能</li>
+<li>k8s 弱化了 LVM 的使用，根盘运行系统、数据放在PVC</li>
+</ul>
+<h2 id="13-常见的raid有哪些使用场景是什么">13. 常见的raid有哪些，使用场景是什么
+</h2><p>常见的RAID级别有以下几种：</p>
+<ul>
+<li>RAID 0：striping（条带化），将数据分成多个块，并行写入多个磁盘，提高读写速度。但不提供数据冗余，一旦磁盘故障，数据将丢失。</li>
+<li>RAID 1：mirroring（镜像），将数据在多个磁盘上进行镜像备份，提供数据冗余。但写入速度受限于较慢的磁盘。</li>
+<li>RAID 5：striping with parity（条带化加校验），将数据分成多个块，并行写入多个磁盘，同时在每个磁盘上存储校验信息。提供数据冗余和读写速度。</li>
+<li>RAID 6：striping with double parity（条带化加双校验），在RAID 5的基础上，增加一个校验信息，提供更高的数据冗余能力。</li>
+</ul>
+<p>使用场景：</p>
+<ul>
+<li>RAID 0：用于对性能要求较高的场景，如数据库、视频编辑等。</li>
+<li>RAID 1：用于对数据冗余要求较高的场景，如企业关键数据存储。</li>
+</ul>
+<h2 id="14-如何创建和管理自定义systemd服务">14. 如何创建和管理自定义systemd服务
+</h2><p>自定义服务配置文件位置/etc/systemd/system/</p>
+<p>创建或者修改单元文件后需要重新加载配置生效
+sudo systemctl daemon-reload</p>
+<h2 id="15-linux-系统中proc是做什么的">15. Linux 系统中/proc是做什么的
+</h2><p>用户和内核交互的接口，性能工具数据（top、free、ps）的来源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">启动当前进程完整命令
+</span></span><span class="line"><span class="cl">/proc/进程号/cmdline
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">当前进程的环境变量列表
+</span></span><span class="line"><span class="cl">/proc/2422772/environ
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>/proc 文件输出是以在C语言及其衍生语言生成，需要分隔才能正常输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat /proc/3824/cmdline <span class="p">|</span> tr <span class="s1">&#39;\0&#39;</span> <span class="s1">&#39;\n&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="16-lsof命令使用场景">16. lsof命令使用场景
+</h2><ul>
+<li>查看某个进程打开的文件
+lsof -p 1234</li>
+<li>查看哪个进程正在使用特定端口
+lsof -i :80</li>
+<li>查看所有网络连接
+lsof -i</li>
+<li>查看某个用户打开文件
+lsof -u username</li>
+<li>文件已经被删除，但仍然被某个进程占用
+lsof | grep deleted</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="hangliuc/hangliuc.github.io"
+    data-repo-id="R_kgDOQdVGlg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOQdVGls4CzJNq"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Example Person
+    </section>
+    
+    <section class="powerby">
+        
+            <br>
+Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> |
+Theme by <a href="https://stack.jimmycai.com" target="_blank" rel="noopener">Stack</a>
+<br>
+Deployed with <strong>GitHub Actions</strong> 🚀
+ <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.42920a384ae147944efd4ae25e3fe3ff8eef37d6fd8930a8f5cc347c76b13191.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
