@@ -61,8 +61,8 @@
 &lt;/li&gt;
 &lt;li&gt;全链路追踪&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;快速修复问题&#34;&gt;快速修复问题
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;快速修复问题&#34;&gt;快速修复问题
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;灰度发布 / 金丝雀发布&lt;/li&gt;
 &lt;li&gt;配置中心(apollo) + 动态切流（像开关一样关闭某个模块）&lt;/li&gt;
 &lt;li&gt;自动扩容（根据业务流量自动扩容，HPA）&lt;/li&gt;
@@ -74,14 +74,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;高可用部署&#34;&gt;高可用部署
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;高可用部署&#34;&gt;高可用部署
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高可用&lt;/li&gt;
 &lt;li&gt;多AZ部署&lt;/li&gt;
 &lt;li&gt;自动故障转移&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;持续演练--可靠性测试&#34;&gt;持续演练 &amp;amp; 可靠性测试
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;持续演练--可靠性测试&#34;&gt;持续演练 &amp;amp; 可靠性测试
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;混沌工程（提前演练故障）&lt;/li&gt;
 &lt;li&gt;增加缺失监控点&lt;/li&gt;
 &lt;li&gt;&amp;hellip;..&lt;/li&gt;
