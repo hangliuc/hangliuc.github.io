@@ -2,6 +2,10 @@
 title: "Sre"
 date: 2025-12-04T18:06:35+08:00
 draft: false
+categories:
+    - 面试
+tags:
+    - sre
 ---
 
 ## 1. SLA、SLO、SLI

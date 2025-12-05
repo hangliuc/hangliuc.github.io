@@ -2,6 +2,10 @@
 title: "Liunx"
 date: 2025-12-03T10:56:44+08:00
 draft: false
+categories:
+    - 面试
+tags:
+    - liunx
 ---
 ## 1. **进程、线程、协程**
 
