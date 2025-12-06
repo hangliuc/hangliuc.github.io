@@ -41,9 +41,9 @@ external-controller: :9090
 proxies:
   - name: "我的V2Ray"
     type: vmess
-    server: 129.226.94.179
+    server: x.x.x.x
     port: 12345
-    uuid: 3f4a9bf6-f8cc-7ff4-97bb-dccfc0b77902
+    uuid: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     alterId: 0
     cipher: auto
     # 如果你没配置 tls/ws，下面这几行不用管。
