@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="mysql 1. mysql查询突然变的很慢，需要怎么排查 检查查询本身 查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。 复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作 查看数据库性能 慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。\n">
+<title>Database</title>
+
+<link rel='canonical' href='http://localhost:1313/topic/interview/database/'>
+
+<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="Database">
+<meta property='og:description' content="mysql 1. mysql查询突然变的很慢，需要怎么排查 检查查询本身 查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。 复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作 查看数据库性能 慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。\n">
+<meta property='og:url' content='http://localhost:1313/topic/interview/database/'>
+<meta property='og:site_name' content='hangliuc'>
+<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:tag' content='Database' /><meta property='article:published_time' content='2025-12-06T18:42:12&#43;08:00'/><meta property='article:modified_time' content='2025-12-06T18:42:12&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/interview_cover.jpg' />
+<meta name="twitter:title" content="Database">
+<meta name="twitter:description" content="mysql 1. mysql查询突然变的很慢，需要怎么排查 检查查询本身 查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。 复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作 查看数据库性能 慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/interview_cover.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/head_portrait_hu_42403be09321586.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">hangliuc</a></h1>
+            <h2 class="site-description">SRE。日常输出一些技术内容。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:iliuhang@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/hangliuc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>首页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ops/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-terminal-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3l-3 3" /><path d="M13 15l3 0" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /></svg>
+                
+                <span>运维</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/topic/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-scale-outline"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 4a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /><path d="M12 7c1.956 0 3.724 .802 5 2.095l-2.956 2.904a3 3 0 0 0 -2.038 -.799a3 3 0 0 0 -2.038 .798l-2.956 -2.903a6.979 6.979 0 0 1 5 -2.095z" /></svg>
+                
+                <span>专题</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-mysql查询突然变的很慢需要怎么排查">1. mysql查询突然变的很慢，需要怎么排查</a>
+      <ol>
+        <li><a href="#检查查询本身">检查查询本身</a></li>
+        <li><a href="#查看数据库性能">查看数据库性能</a></li>
+        <li><a href="#检查系统负载">检查系统负载</a></li>
+        <li><a href="#检查锁和并发问题">检查锁和并发问题</a></li>
+        <li><a href="#网络延迟">网络延迟</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#1热key大key问题">1.热key、大key问题</a>
+      <ol>
+        <li><a href="#热key问题">热key问题</a></li>
+        <li><a href="#大key问题">大key问题</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#1消费堆积如何处理">1.消费堆积如何处理</a>
+      <ol>
+        <li><a href="#消息堆积原因">消息堆积原因</a></li>
+        <li><a href="#解决方法">解决方法</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/topic/interview/database/">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" alt="Featured image of post Database" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E9%9D%A2%E8%AF%95/" >
+                面试
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/topic/interview/database/">Database</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-06T18:42:12&#43;08:00'>Dec 06, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+ 
+            <time>
+                1305 字
+            </time>
+        </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="mysql">mysql
+</h1><h2 id="1-mysql查询突然变的很慢需要怎么排查">1. mysql查询突然变的很慢，需要怎么排查
+</h2><h3 id="检查查询本身">检查查询本身
+</h3><ul>
+<li>查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。</li>
+<li>复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作</li>
+</ul>
+<h3 id="查看数据库性能">查看数据库性能
+</h3><p>慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。</p>
+<h3 id="检查系统负载">检查系统负载
+</h3><p>系统资源：查看CPU、内存、磁盘IO、网络等资源是否有瓶颈，可以通过 top 或 htop 等工具监控。
+磁盘IO：查看磁盘读写是否成为瓶颈。可以用 iostat 或 vmstat 等工具查看磁盘IO情况。</p>
+<h3 id="检查锁和并发问题">检查锁和并发问题
+</h3><p>锁情况：查看是否有锁等待或死锁问题。使用以下SQL语句查看当前的锁状态：
+如果有很多线程处于“Locked”状态，可能需要进一步分析锁的来源和解决方法。</p>
+<h3 id="网络延迟">网络延迟
+</h3><p>如果是远程连接MySQL，确认网络连接是否稳定，延迟是否较高。</p>
+<h1 id="redis">redis
+</h1><h2 id="1热key大key问题">1.热key、大key问题
+</h2><h3 id="热key问题">热key问题
+</h3><ul>
+<li>热key：指被频繁访问的key，可能导致数据库性能下降。</li>
+</ul>
+<p>影响：</p>
+<ul>
+<li>CPU 集中在一个 Redis 节点</li>
+<li>QPS 不均匀，集群负载失衡</li>
+<li>延迟飙升、请求超时</li>
+<li>导致节点触发 failover</li>
+</ul>
+<p>解决方案</p>
+<ul>
+<li>业务层分流/分桶 将热请求拆成多个 key，提高并发承载。</li>
+<li>增加缓存层：本地缓存 + Redis 二级缓存，减少对 Redis 的直接访问</li>
+<li>使用多 Key 拆分读压力，一个热门大 key 分成多个子 key</li>
+<li>Redis Proxy 层热点保护，代理层可识别热点并做降级</li>
+<li>客户端本地限流 + 降级</li>
+</ul>
+<h3 id="大key问题">大key问题
+</h3><ul>
+<li>大key：指key对应的值非常大，占用了大量的内存空间。</li>
+</ul>
+<p>影响：</p>
+<ul>
+<li>迁移槽时（CLUSTER ADDSLOTS/MIGRATE）非常慢</li>
+<li>可能阻塞 Redis 主线程</li>
+<li>删除时触发阻塞（del O(n) 操作</li>
+<li>压垮网络带宽</li>
+<li>读写延迟变大</li>
+<li>Failover 恢复慢</li>
+</ul>
+<p>解决方案</p>
+<ul>
+<li>业务层拆分：将大 key 拆分成多个小 key，每个小 key 只存储一部分数据。</li>
+<li>分页读取：不使用 hgetall/smembers/zrange，使用scan / 分段取</li>
+<li>提前限制 value 的大小： 在服务侧做 key 大小限制</li>
+<li>避免在 Redis 存储日志、消息、长文本</li>
+</ul>
+<p>如何发现大key</p>
+<ul>
+<li>Redis的SCAN命令</li>
+<li>redis-cli -h 127.0.0.1 -p 6379 —bigkeys</li>
+<li>开源工具Redis RDB Tools，分析RDB文件，扫描出Redis大key。</li>
+</ul>
+<h1 id="kafka">kafka
+</h1><h2 id="1消费堆积如何处理">1.消费堆积如何处理
+</h2><h3 id="消息堆积原因">消息堆积原因
+</h3><ul>
+<li>生产者短时间内生产大量消息到Topic，消费者无法及时消费。</li>
+<li>消费者的消费能力不足（消费者并发低、消息处理时间长），导致消费效率低于生产效率。</li>
+<li>消费者异常（如消费者故障、消费者网络异常等）导致无法消费消息。</li>
+<li>Topic分区设置不合理，或新增分区无消费者消费。</li>
+<li>Topic频繁重分配导致消费效率降低。</li>
+</ul>
+<h3 id="解决方法">解决方法
+</h3><p>从消息堆积的原因看，消息堆积问题可以从消费者端、生产者端和服务端三个方面进行处理。</p>
+<ul>
+<li>消费者端
+<ul>
+<li>根据实际业务需求，合理增加消费者个数（消费并发度），确保分区数/消费者数=整数，建议消费者数和分区数保持一致。</li>
+<li>提高消费者的消费速度，通过优化消费者处理逻辑（减少复杂计算、第三方接口调用和读库操作），减少消费时间。</li>
+<li>增加消费者每次拉取消息的数量：拉取数据/处理时间 &gt;= 生产速度。</li>
+</ul>
+</li>
+<li>生产者端
+<ul>
+<li>生产消息时，给消息Key加随机后缀，使消息均衡分布到不同分区上。</li>
+</ul>
+</li>
+<li>服务端
+<ul>
+<li>合理设置Topic的分区数，在不影响业务处理效率的情况下，调大Topic的分区数量。</li>
+<li>当服务端出现消息堆积时，对生产者进行熔断，或将生产者的消息转发到其他Topic。</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/database/">Database</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/topic/interview/k8s/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">K8s</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/interview/docker/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/interview/monitoring/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Monitoring</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/interview/network/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Network</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/interview/sre/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Sre</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="hangliuc/hangliuc.github.io"
+    data-repo-id="R_kgDOQdVGlg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOQdVGls4CzJNq"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Example Person
+    </section>
+    
+    <section class="powerby">
+        
+            <br>
+Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> |
+Theme by <a href="https://stack.jimmycai.com" target="_blank" rel="noopener">Stack</a>
+<br>
+Deployed with <strong>GitHub Actions</strong> 🚀
+ <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.42920a384ae147944efd4ae25e3fe3ff8eef37d6fd8930a8f5cc347c76b13191.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

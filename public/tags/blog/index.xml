@@ -9,10 +9,10 @@
         <copyright>Example Person</copyright>
         <lastBuildDate>Thu, 27 Nov 2025 15:16:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo 基础规划和使用方法</title>
-        <link>http://localhost:1313/topic/blogging/usage_method/</link>
+        <link>http://localhost:1313/topic/blogging/hugo_usage_method/</link>
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/usage_method/</guid>
+        <guid>http://localhost:1313/topic/blogging/hugo_usage_method/</guid>
         <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
 &lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
@@ -80,10 +80,17 @@
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Blogging Todo" /&gt;&lt;h2 id=&#34;内容相关&#34;&gt;内容相关
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Blogging Todo" /&gt;&lt;h2 id=&#34;为什么要构建自己的博客&#34;&gt;为什么要构建自己的博客
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在github、CSDN、yuque、公众号通过统一的目录结构发布内容，目录结构如下：&lt;/li&gt;
+&lt;li&gt;构建私有知识库，记录工作中遇到的问题和解决方法，把一次经验转为长期可复用资产&lt;/li&gt;
+&lt;li&gt;练习写作能力，把复杂的问题讲清楚&lt;/li&gt;
+&lt;li&gt;练习代码与架构能力，编写后端平台&lt;/li&gt;
+&lt;li&gt;自己从0-1实践(监控告警系统、ELK日志、CDN 加速与缓存策略)&lt;/li&gt;
+&lt;li&gt;作为简历展示&lt;/li&gt;
+&lt;li&gt;未来可扩展变现&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;内容相关&#34;&gt;内容相关
+&lt;/h2&gt;&lt;p&gt;目录结构如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -141,26 +148,49 @@
 &lt;/div&gt;&lt;p&gt;尽量不更新一些基础的知识，通过浏览器搜索即可，增强搜索知识的能力。重点记录一些在生产环境中遇到的问题和解决方法。&lt;/p&gt;
 &lt;h2 id=&#34;待办事项&#34;&gt;待办事项
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计网站访问量&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量
+icons 为一只眼睛&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本
-自动将中文文章翻译成英文&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏：添加优秀文章,根据访问量去统计&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat
-yuque api token 需要付费&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器部署网站, 域名备案&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本
+自动将中文文章翻译成英文&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏：添加优秀文章,根据访问量去统计&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat
+yuque api token 需要付费&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器部署网站, 域名备案
+首年  续费
+hangops.win $4.18 $5.18
+hangops.top ¥14 ¥32&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署prometheus&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署grafana&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化浏览器顶层图标&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Database on hangliuc</title>
+        <link>http://localhost:1313/tags/database/</link>
+        <description>Recent content in Database on hangliuc</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sat, 06 Dec 2025 18:42:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Database</title>
+        <link>http://localhost:1313/topic/interview/database/</link>
+        <pubDate>Sat, 06 Dec 2025 18:42:12 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/interview/database/</guid>
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
+&lt;/h1&gt;&lt;h2 id=&#34;1-mysql查询突然变的很慢需要怎么排查&#34;&gt;1. mysql查询突然变的很慢，需要怎么排查
+&lt;/h2&gt;&lt;h3 id=&#34;检查查询本身&#34;&gt;检查查询本身
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。&lt;/li&gt;
+&lt;li&gt;复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;查看数据库性能&#34;&gt;查看数据库性能
+&lt;/h3&gt;&lt;p&gt;慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。&lt;/p&gt;
+&lt;h3 id=&#34;检查系统负载&#34;&gt;检查系统负载
+&lt;/h3&gt;&lt;p&gt;系统资源：查看CPU、内存、磁盘IO、网络等资源是否有瓶颈，可以通过 top 或 htop 等工具监控。
+磁盘IO：查看磁盘读写是否成为瓶颈。可以用 iostat 或 vmstat 等工具查看磁盘IO情况。&lt;/p&gt;
+&lt;h3 id=&#34;检查锁和并发问题&#34;&gt;检查锁和并发问题
+&lt;/h3&gt;&lt;p&gt;锁情况：查看是否有锁等待或死锁问题。使用以下SQL语句查看当前的锁状态：
+如果有很多线程处于“Locked”状态，可能需要进一步分析锁的来源和解决方法。&lt;/p&gt;
+&lt;h3 id=&#34;网络延迟&#34;&gt;网络延迟
+&lt;/h3&gt;&lt;p&gt;如果是远程连接MySQL，确认网络连接是否稳定，延迟是否较高。&lt;/p&gt;
+&lt;h1 id=&#34;redis&#34;&gt;redis
+&lt;/h1&gt;&lt;h2 id=&#34;1热key大key问题&#34;&gt;1.热key、大key问题
+&lt;/h2&gt;&lt;h3 id=&#34;热key问题&#34;&gt;热key问题
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;热key：指被频繁访问的key，可能导致数据库性能下降。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;影响：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU 集中在一个 Redis 节点&lt;/li&gt;
+&lt;li&gt;QPS 不均匀，集群负载失衡&lt;/li&gt;
+&lt;li&gt;延迟飙升、请求超时&lt;/li&gt;
+&lt;li&gt;导致节点触发 failover&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解决方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;业务层分流/分桶 将热请求拆成多个 key，提高并发承载。&lt;/li&gt;
+&lt;li&gt;增加缓存层：本地缓存 + Redis 二级缓存，减少对 Redis 的直接访问&lt;/li&gt;
+&lt;li&gt;使用多 Key 拆分读压力，一个热门大 key 分成多个子 key&lt;/li&gt;
+&lt;li&gt;Redis Proxy 层热点保护，代理层可识别热点并做降级&lt;/li&gt;
+&lt;li&gt;客户端本地限流 + 降级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;大key问题&#34;&gt;大key问题
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;大key：指key对应的值非常大，占用了大量的内存空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;影响：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;迁移槽时（CLUSTER ADDSLOTS/MIGRATE）非常慢&lt;/li&gt;
+&lt;li&gt;可能阻塞 Redis 主线程&lt;/li&gt;
+&lt;li&gt;删除时触发阻塞（del O(n) 操作&lt;/li&gt;
+&lt;li&gt;压垮网络带宽&lt;/li&gt;
+&lt;li&gt;读写延迟变大&lt;/li&gt;
+&lt;li&gt;Failover 恢复慢&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解决方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;业务层拆分：将大 key 拆分成多个小 key，每个小 key 只存储一部分数据。&lt;/li&gt;
+&lt;li&gt;分页读取：不使用 hgetall/smembers/zrange，使用scan / 分段取&lt;/li&gt;
+&lt;li&gt;提前限制 value 的大小： 在服务侧做 key 大小限制&lt;/li&gt;
+&lt;li&gt;避免在 Redis 存储日志、消息、长文本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如何发现大key&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis的SCAN命令&lt;/li&gt;
+&lt;li&gt;redis-cli -h 127.0.0.1 -p 6379 —bigkeys&lt;/li&gt;
+&lt;li&gt;开源工具Redis RDB Tools，分析RDB文件，扫描出Redis大key。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;kafka&#34;&gt;kafka
+&lt;/h1&gt;&lt;h2 id=&#34;1消费堆积如何处理&#34;&gt;1.消费堆积如何处理
+&lt;/h2&gt;&lt;h3 id=&#34;消息堆积原因&#34;&gt;消息堆积原因
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;生产者短时间内生产大量消息到Topic，消费者无法及时消费。&lt;/li&gt;
+&lt;li&gt;消费者的消费能力不足（消费者并发低、消息处理时间长），导致消费效率低于生产效率。&lt;/li&gt;
+&lt;li&gt;消费者异常（如消费者故障、消费者网络异常等）导致无法消费消息。&lt;/li&gt;
+&lt;li&gt;Topic分区设置不合理，或新增分区无消费者消费。&lt;/li&gt;
+&lt;li&gt;Topic频繁重分配导致消费效率降低。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解决方法&#34;&gt;解决方法
+&lt;/h3&gt;&lt;p&gt;从消息堆积的原因看，消息堆积问题可以从消费者端、生产者端和服务端三个方面进行处理。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;消费者端
+&lt;ul&gt;
+&lt;li&gt;根据实际业务需求，合理增加消费者个数（消费并发度），确保分区数/消费者数=整数，建议消费者数和分区数保持一致。&lt;/li&gt;
+&lt;li&gt;提高消费者的消费速度，通过优化消费者处理逻辑（减少复杂计算、第三方接口调用和读库操作），减少消费时间。&lt;/li&gt;
+&lt;li&gt;增加消费者每次拉取消息的数量：拉取数据/处理时间 &amp;gt;= 生产速度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;生产者端
+&lt;ul&gt;
+&lt;li&gt;生产消息时，给消息Key加随机后缀，使消息均衡分布到不同分区上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;服务端
+&lt;ul&gt;
+&lt;li&gt;合理设置Topic的分区数，在不影响业务处理效率的情况下，调大Topic的分区数量。&lt;/li&gt;
+&lt;li&gt;当服务端出现消息堆积时，对生产者进行熔断，或将生产者的消息转发到其他Topic。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

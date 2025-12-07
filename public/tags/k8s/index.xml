@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>K8s on hangliuc</title>
+        <link>http://localhost:1313/tags/k8s/</link>
+        <description>Recent content in K8s on hangliuc</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sat, 06 Dec 2025 18:15:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/k8s/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>K8s</title>
+        <link>http://localhost:1313/topic/interview/k8s/</link>
+        <pubDate>Sat, 06 Dec 2025 18:15:30 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/interview/k8s/</guid>
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
+&lt;/h2&gt;&lt;p&gt;集群内的各个功能模块通过API Server将信息存入etcd，当需要获取和操作这些数据时，则通过API Server提供的REST接口（用GET、LIST或WATCH方法）来实现，从而实现各模块之间的信息交互。&lt;/p&gt;
+&lt;p&gt;Kubernetes中各模块通过标准的HTTP/HTTPS请求与API Server交互，通过认证和鉴权机制保证安全性，并利用Watch机制实现实时的资源状态监控与同步。&lt;/p&gt;
+&lt;h2 id=&#34;2kubelet监控worker节点如何实现&#34;&gt;2.kubelet监控worker节点如何实现
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Linux 内核
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cAdvisor 采集容器与节点指标
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubelet 处理、聚合、判断节点状态
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apiserver + metrics server 汇总
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl top / HPA / 调度器 决策
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3集群节点规模上千注意事项&#34;&gt;3.集群节点规模上千注意事项
+&lt;/h2&gt;&lt;p&gt;官方文档https://kubernetes.io/zh-cn/docs/setup/best-practices/cluster-large/&lt;/p&gt;
+&lt;h2 id=&#34;4-kubeconfig存放内容&#34;&gt;4. kubeconfig存放内容
+&lt;/h2&gt;&lt;p&gt;有关集群、用户、命名空间和身份验证机制的信息&lt;/p&gt;
+&lt;h2 id=&#34;5-kube-proxy-的作用&#34;&gt;5. kube-proxy 的作用
+&lt;/h2&gt;&lt;p&gt;核心职责 维护 Service 的转发规则
+kube-proxy 监听 API Server 中 Service、Endpoints/EndpointSlice 的变化，在节点上维护 iptables 或 IPVS 规则，实现 Service 到后端 Pod 的流量转发。&lt;/p&gt;
+&lt;h3 id=&#34;类型&#34;&gt;类型
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;iptables：默认模式，使用 iptables 规则实现 Service 转发。&lt;/li&gt;
+&lt;li&gt;IPVS：基于Linux 内核 IPVS 进行四层负载均衡，性能高，规则更新快。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-scheduler调度流程&#34;&gt;6. scheduler调度流程
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;监听与获取 (Listen &amp;amp; Get)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Scheduler 监听 K8s API Server，发现未绑定到节点的 Pod&lt;/li&gt;
+&lt;li&gt;通过 Informer 机制，从本地缓存获取 Pod 和 Node 的实时信息，提高效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;预选阶段 (Predicates/Filter)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;快速过滤掉不满足条件的节点，减少后续计算量&lt;/li&gt;
+&lt;li&gt;节点资源（CPU, Memory）、Node Selector/Affinity/Anti-Affinity、Taints/Tolerations、Pod 预留等。得到一个通过所有过滤器的“候选节点”列表。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;优选阶段 (Priority)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;打分：为通过预选的节点打分，评估其“好坏”。&lt;/li&gt;
+&lt;li&gt;节点资源利用率、负载均衡、拓扑位置（如优先同一机架/区域）。
+结果: 得到一个按分数降序排列的节点列表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;绑定阶段 (Bind)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;选择得分最高的节点&lt;/li&gt;
+&lt;li&gt;将选择结果写入本地缓存 (Scheduler Cache)，记录资源占用，并尝试预留资源。&lt;/li&gt;
+&lt;li&gt;异步调用 API Server，更新 Pod 的 spec.nodeName，将 Pod 绑定到选定节点。&lt;/li&gt;
+&lt;li&gt;Kubelet 监听到 Pod 绑定事件后，开始创建容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-pod-的启动流程&#34;&gt;7. POD 的启动流程
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;用户通过kubectl或其他工具提交pod的yaml配置到API Server&lt;/li&gt;
+&lt;li&gt;API Server 收到请求后，将配置存储到etcd中&lt;/li&gt;
+&lt;li&gt;Scheduler 根据调度策略，将 Pod 绑定到合适的节点&lt;/li&gt;
+&lt;li&gt;Kubelet 监听到 Pod 绑定事件后，开始创建容器
+&lt;ul&gt;
+&lt;li&gt;拉取镜像&lt;/li&gt;
+&lt;li&gt;创建sandbox，sandbox中所有容器共享网络和存储命名空间&lt;/li&gt;
+&lt;li&gt;调用容器运行时创建pod中的容器&lt;/li&gt;
+&lt;li&gt;如果有init容器，kubelet先于应用容器启动他们&lt;/li&gt;
+&lt;li&gt;aws-node 创建pod网卡，分配IP地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;容器启动后，Kubelet 向 API Server 发送状态更新&lt;/li&gt;
+&lt;li&gt;API Server 收到更新后，将状态存储到etcd中&lt;/li&gt;
+&lt;li&gt;用户通过kubectl或其他工具查询 Pod 状态时，API Server 从etcd中获取最新状态并返回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-pod-dns-解析失败排查&#34;&gt;8. pod dns 解析失败排查
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;检查 Pod 内部和配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;kubectl exec -it &lt;pod&gt; &amp;ndash; nslookup kubernetes.default  集群内部 DNS 故障&lt;/li&gt;
+&lt;li&gt;kubectl exec -it &lt;pod&gt; &amp;ndash; curl &lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.google.com&lt;/a&gt; 上游 DNS 或 CoreDNS 配置问题&lt;/li&gt;
+&lt;li&gt;检查 DNS Policy：查看 Pod YAML，确保 dnsPolicy (如 ClusterFirst) 配置正确.
+Default: Pod 从运行所在的节点继承域名解析配置
+ClusterFirst: Pod 先从集群内部 DNS 解析，失败后再使用节点 DNS 配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;检查coredns&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;检查core dns 负载&lt;/li&gt;
+&lt;li&gt;检查coredns configmap forward&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;排查 kube-proxy
+DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
+&lt;li&gt;检查 CNI 网络插件&lt;/li&gt;
+&lt;li&gt;是否使用了 Istio / Linkerd / Envoy sidecar&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;9-pod的常见调度方式&#34;&gt;9. Pod的常见调度方式
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;默认调度器（Default Scheduler）&lt;/li&gt;
+&lt;li&gt;节点选择器（Node Selector）&lt;/li&gt;
+&lt;li&gt;亲和性和反亲和性（Affinity and Anti-Affinity）&lt;/li&gt;
+&lt;li&gt;污点和容忍度（Taints and Tolerations）&lt;/li&gt;
+&lt;li&gt;资源请求和限制（Resource Requests and Limits）&lt;/li&gt;
+&lt;li&gt;Pod 拓扑调度（Pod Topology Spread）： 不同节点/机架均匀分布&lt;/li&gt;
+&lt;li&gt;抢占调度（Preemption）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;10-pause容器的用途&#34;&gt;10. Pause容器的用途
+&lt;/h2&gt;&lt;p&gt;Pause 容器唯一的作用是 保证即使 Pod 中没有任何容器运行也不会被删除，因为这时候还有 Pause 容器在运行。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;网络命名空间隔离&lt;/li&gt;
+&lt;li&gt;进程隔离&lt;/li&gt;
+&lt;li&gt;资源隔离&lt;/li&gt;
+&lt;li&gt;生命周期管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;11-pod健康检查失败可能的原因和排查思路&#34;&gt;11. pod健康检查失败可能的原因和排查思路
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;探针配置问题&lt;/li&gt;
+&lt;li&gt;应用未启动/响应慢：超出initialDelaySeconds，进程退出 (CrashLoopBackOff)&lt;/li&gt;
+&lt;li&gt;资源限制：CPU/内存不足，导致Kubelet无法正常运行检查&lt;/li&gt;
+&lt;li&gt;网络问题：容器无法访问外部服务，如DNS解析失败&lt;/li&gt;
+&lt;li&gt;依赖不可用： 数据库、缓存等依赖服务未就绪&lt;/li&gt;
+&lt;li&gt;数据库、缓存等依赖服务未就绪&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;排查思路&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kubectl describe pod&lt;/li&gt;
+&lt;li&gt;kubectl logs&lt;/li&gt;
+&lt;li&gt;检查健康检查配置&lt;/li&gt;
+&lt;li&gt;进入容器内部排查
+&lt;ul&gt;
+&lt;li&gt;使用curl, wget测试HTTP探针路径。&lt;/li&gt;
+&lt;li&gt;netstat -tulnp或ss -tulnp确认端口是否监听&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;检查资源与节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-pod之间访问不通怎么排查&#34;&gt;12. pod之间访问不通怎么排查
+&lt;/h2&gt;&lt;h2 id=&#34;13-pod几种常见状态&#34;&gt;13. pod几种常见状态
+&lt;/h2&gt;&lt;p&gt;Pod Phase&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Running&lt;/li&gt;
+&lt;li&gt;Succeeded Job 完成、CronJob 完成&lt;/li&gt;
+&lt;li&gt;Failed 程序崩溃、容器启动失败&lt;/li&gt;
+&lt;li&gt;Pending 资源不足、NodeSelector 无匹配、拉镜像慢&lt;/li&gt;
+&lt;li&gt;Unknown kubelet 无法上报状态，节点掉线、网络中断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;创建/调度相关&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ContainerCreating 容器正在创建容器，拉取镜像&lt;/li&gt;
+&lt;li&gt;PodInitializing 容器正在初始化，执行 init 容器&lt;/li&gt;
+&lt;li&gt;ImagePullBackOff 拉镜像失败（认证问题、镜像不存在）&lt;/li&gt;
+&lt;li&gt;ErrImagePull 同上，比 BackOff 更早期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;运行中异常&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CrashLoopBackOff 容器崩溃后，kubelet 会根据 backoff 策略（默认 10s 后重试）重启容器&lt;/li&gt;
+&lt;li&gt;OOMKilled 容器内存超出限制，被 kubelet 强制kill&lt;/li&gt;
+&lt;li&gt;BackOff 多次失败后进入退避（如 init 容器失败）&lt;/li&gt;
+&lt;li&gt;CrashLoopBackOff 主容器不断崩溃重启&lt;/li&gt;
+&lt;li&gt;CreateContainerConfigError 容器创建配置错误（如挂载卷不存在）&lt;/li&gt;
+&lt;li&gt;Error 容器非0退出（但不一定重启策略触发失败）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;退出/终止&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Terminating 容器正在终止（如删除 pod）&lt;/li&gt;
+&lt;li&gt;Completed 容器正常退出（如主容器退出）&lt;/li&gt;
+&lt;li&gt;Failed 容器非0退出，且重启策略为 Never&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
