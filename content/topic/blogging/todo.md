@@ -3,9 +3,7 @@ title: "Blogging Todo"
 date: 2025-11-27T11:04:45+08:00
 draft: false
 categories:
-    - blog
-tags:
-    - blog
+    - 博客
 ---
 
 ## 为什么要构建自己的博客
@@ -60,10 +58,10 @@ tags:
 - [ ] 美化网站右侧边栏：添加优秀文章,根据访问量去统计
 - [ ] 开发agent 同时发布上传yuque、csdn、weichat
       yuque api token 需要付费
-- [ ] 服务器部署网站, 域名备案
+- [x] 服务器部署网站
             首年  续费
-hangops.win $4.18 $5.18
-hangops.top ¥14 ¥32
+    hangops.top ¥14 ¥32
+服务器不在国内可以先不备案。
 
 - [ ] 部署监控系统
     - [ ] 部署prometheus

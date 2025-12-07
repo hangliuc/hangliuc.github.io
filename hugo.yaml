@@ -27,7 +27,7 @@ languages:
         weight: 1
         params:
             sidebar:
-                subtitle: SRE。日常输出一些技术内容。
+                subtitle: SRE 日常输出一些技术内容。
     # ar:
     #     languageName: عربي
     #     languagedirection: rtl
