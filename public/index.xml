@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 06 Dec 2025 18:42:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 07 Dec 2025 18:31:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Containerd命令行管理工具</title>
         <link>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Thu, 27 Nov 2025 10:51:50 +0800</pubDate>
@@ -228,6 +228,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Blogging_deploy</title>
+        <link>http://localhost:1313/topic/blogging/blogging_deploy/</link>
+        <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/blogging/blogging_deploy/</guid>
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Blogging_deploy" /&gt;</description>
         </item>
         <item>
         <title>Database</title>

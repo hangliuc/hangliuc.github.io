@@ -7,18 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 06 Dec 2025 09:56:07 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Interview</title>
-        <link>http://localhost:1313/categories/interview/</link>
-        <pubDate>Sat, 06 Dec 2025 09:56:07 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/interview/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Sun, 07 Dec 2025 18:31:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Blog</title>
         <link>http://localhost:1313/categories/blog/</link>
-        <pubDate>Fri, 05 Dec 2025 16:38:33 +0800</pubDate>
+        <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/blog/</guid>
         <description></description>
@@ -26,7 +18,7 @@
         <item>
         <title>面试</title>
         <link>http://localhost:1313/categories/%E9%9D%A2%E8%AF%95/</link>
-        <pubDate>Fri, 05 Dec 2025 13:38:56 +0800</pubDate>
+        <pubDate>Sat, 06 Dec 2025 18:42:12 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E9%9D%A2%E8%AF%95/</guid>
         <description></description>
