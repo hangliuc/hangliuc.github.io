@@ -230,12 +230,12 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>服务器部署网站</title>
+        <title>如何在服务器部署网站</title>
         <link>http://localhost:1313/topic/blogging/blogging_deploy/</link>
         <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 服务器部署网站" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 如何在服务器部署网站" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
 &lt;h2 id=&#34;安装基础软件&#34;&gt;安装基础软件
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
