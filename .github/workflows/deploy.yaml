@@ -25,6 +25,10 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      # 运行 Pagefind 生成索引
+      - name: Index content with Pagefind
+        run: npx pagefind --site public
+
       # 4. 部署 (rsync)
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v5.0.0

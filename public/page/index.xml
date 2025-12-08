@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on hangliuc</title>
+        <link>http://localhost:1313/page/</link>
+        <description>Recent content in Pages on hangliuc</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>站内搜索</title>
+        <link>http://localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/search/</guid>
+        <description>&lt;link href=&#34;http://localhost:1313/pagefind/pagefind-ui.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;script src=&#34;http://localhost:1313/pagefind/pagefind-ui.js&#34;&gt;&lt;/script&gt;
+&lt;div id=&#34;search&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+    window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
+        new PagefindUI({ 
+            element: &#34;#search&#34;, 
+            showSubResults: true,
+            translations: {
+                placeholder: &#34;搜索文档...&#34;,
+                zero_results: &#34;没有找到 [SEARCH_TERM]&#34;,
+                count_one: &#34;找到 1 篇&#34;,
+                count_many: &#34;找到 [COUNT] 篇&#34;,
+            }
+        });
+    });
+&lt;/script&gt;
+&lt;style&gt;
+    #search {
+        margin-top: 20px;
+        min-height: 200px;
+    }
+    .pagefind-ui__result-title {
+        font-weight: bold;
+        color: var(--primary);
+    }
+&lt;/style&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
