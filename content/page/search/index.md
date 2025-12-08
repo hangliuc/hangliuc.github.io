@@ -5,7 +5,7 @@ layout: "page"
 description: "Powered by Pagefind"
 menu:
     main:
-        weight: -2
+        weight: 3
         params:
             icon: search
 ---

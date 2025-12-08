@@ -353,7 +353,7 @@
 &lt;h2 id=&#34;待办事项&#34;&gt;待办事项
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/p&gt;
@@ -377,14 +377,21 @@ icons 为一只眼睛&lt;/li&gt;
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏：添加优秀文章,根据访问量去统计&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat
-yuque api token 需要付费&lt;/p&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; yuque api token 需要付费&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器部署网站
-首年  续费
-hangops.top ¥14 ¥32
-服务器不在国内可以先不备案。&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器部署网站&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;pre&gt;&lt;code&gt;   首年  续费
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;hangops.top ¥14 ¥32
+服务器不在国内可以先不备案。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统&lt;/p&gt;
