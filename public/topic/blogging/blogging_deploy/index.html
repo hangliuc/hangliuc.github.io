@@ -14,6 +14,8 @@
 <meta name="twitter:title" content="如何在服务器部署网站">
 <meta name="twitter:description" content="以前采用的是github pages部署网站，现在进行服务器部署网站。\n安装基础软件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # 更新系统并安装 EPEL 源 sudo yum update -y sudo yum install epel-release -y # 安装 Nginx, Git, 和 Certbot sudo yum install nginx git certbot certbot-nginx -y # 启动 Nginx 并设置开机自启 sudo systemctl start nginx sudo systemctl enable nginx # 创建目录 sudo mkdir -p /var/www/hangops sudo chown -R root:root /var/www/hangops sudo chmod -R 755 /var/www/hangops 配置 Nginx 与 HTTPS 1 2 3 4 5 6 sudo vi /etc/nginx/conf.d/hangops.top.conf # 检查语法是否正确 sudo nginx -t # 如果显示 successful，则重启 sudo systemctl reload nginx nginx 配置\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/img/blog_cover.jpg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
     </head>
     <body class="
     article-page
@@ -114,25 +116,6 @@
         
         
         <li >
-            <a href='/search/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>搜索</span>
-            </a>
-        </li>
-        
-        
-        <li >
             <a href='/' >
                 
                 
@@ -148,6 +131,25 @@
 
                 
                 <span>首页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
             </a>
         </li>
         
