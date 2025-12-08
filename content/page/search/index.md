@@ -1,11 +1,11 @@
 ---
-title: "站内搜索"
+title: "搜索"
 slug: "search"
 layout: "page" 
 description: "Powered by Pagefind"
 menu:
     main:
-        weight: -1
+        weight: -2
         params:
             icon: search
 ---
