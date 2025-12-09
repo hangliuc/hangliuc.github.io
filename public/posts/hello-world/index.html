@@ -326,6 +326,54 @@
                 133 字
             </time>
         </div>
+        
+            <div id="article_views_container" style="display: none; align-items: center; margin-left: 10px;">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="2" />
+                    <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+                </svg>
+                
+                <span id="article_views">...</span>&nbsp;次阅读
+            </div>
+
+            <script>
+            (function() {
+                const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+        
+                
+                const API_URL = isLocal 
+                    ? "http://localhost:8080/api/article/visit"  
+                    : "https://hangops.top/api/article/visit";   
+                
+                const path = window.location.pathname;
+                
+                
+                if (path === "/" || path === "") return;
+
+                fetch(API_URL, {
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: path }) 
+                })
+                .then(response => response.json()) 
+                .then(data => {
+                    const container = document.getElementById("article_views_container");
+                    const viewEl = document.getElementById("article_views");
+                    
+                    if (container && viewEl && data.views) {
+                        viewEl.innerText = data.views;
+                        
+                        container.style.display = "flex";
+                    }
+                })
+                .catch(err => {
+                    console.error("阅读量获取失败:", err);
+                });
+            })();
+            </script>
+        
     </footer>
     
 
