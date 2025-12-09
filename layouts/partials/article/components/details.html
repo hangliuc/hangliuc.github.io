@@ -47,7 +47,7 @@
         {{ end }}
 
         <div>
-            {{ partial "helper/icon" "tag" }} 
+            {{ partial "helper/icon" "file-text" }} 
             <time>
                 {{ .WordCount }} 字
             </time>
@@ -70,8 +70,8 @@
         
                 // 动态选择 API 地址
                 const API_URL = isLocal 
-                    ? "http://localhost:8080/api/article/visit"  // 本地开发环境
-                    : "https://hangops.top/api/article/visit";   // 线上生产环境
+                    ? "http://localhost:8080/api/article/visit" 
+                    : "https://hangops.top/api/article/visit"; 
                 
                 const path = window.location.pathname;
                 

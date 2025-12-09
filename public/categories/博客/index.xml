@@ -365,7 +365,7 @@
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计网站访问量&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量
 icons 为一只眼睛&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -405,6 +405,9 @@ icons 为一只眼睛&lt;/li&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 写关于我的一些说明&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 文章中添加返回顶部功能&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
