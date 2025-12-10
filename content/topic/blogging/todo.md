@@ -49,10 +49,9 @@ categories:
 - [x] 完善搜索功能
 - [x] 完善评论功能
 - [x] 添加文章字数统计
-- [ ] 添加网站访问统计
-    - [ ] 统计网站访问量
+- [x] 添加网站访问统计
+    - [x] 统计网站访问量，显示在网站底部
     - [x] 统计文章访问量
-    icons 为一只眼睛
 - [ ] 添加自动化英文版本
       自动将中文文章翻译成英文
 - [ ] 美化网站右侧边栏：添加优秀文章,根据访问量去统计
@@ -70,3 +69,17 @@ categories:
 - [x] 美化浏览器顶层图标
 - [ ] 写关于我的一些说明
 - [ ] 文章中添加返回顶部功能
+- [ ] 解决第二页、第三页首篇文章访问统计异常问题
+- [ ] 评论功能修改
+
+
+## 一些使用hugo-theme-stack 搭建的优秀网站
+https://liuhouliang.com/categories/web/
+
+https://munlelee.github.io/
+
+https://blog.reincarnatey.net/
+
+https://zfj1441.com/archives/
+
+https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA

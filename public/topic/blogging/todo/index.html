@@ -254,6 +254,7 @@
     <li><a href="#为什么要构建自己的博客">为什么要构建自己的博客</a></li>
     <li><a href="#内容相关">内容相关</a></li>
     <li><a href="#待办事项">待办事项</a></li>
+    <li><a href="#一些使用hugo-theme-stack-搭建的优秀网站">一些使用hugo-theme-stack 搭建的优秀网站</a></li>
   </ol>
 </nav>
         </div>
@@ -334,7 +335,7 @@
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
-                504 字
+                565 字
             </time>
         </div>
         
@@ -472,11 +473,10 @@
 <p><input checked="" disabled="" type="checkbox"> 添加文章字数统计</p>
 </li>
 <li>
-<p><input disabled="" type="checkbox"> 添加网站访问统计</p>
+<p><input checked="" disabled="" type="checkbox"> 添加网站访问统计</p>
 <ul>
-<li><input disabled="" type="checkbox"> 统计网站访问量</li>
-<li><input checked="" disabled="" type="checkbox"> 统计文章访问量
-icons 为一只眼睛</li>
+<li><input checked="" disabled="" type="checkbox"> 统计网站访问量，显示在网站底部</li>
+<li><input checked="" disabled="" type="checkbox"> 统计文章访问量</li>
 </ul>
 </li>
 <li>
@@ -519,7 +519,24 @@ icons 为一只眼睛</li>
 <li>
 <p><input disabled="" type="checkbox"> 文章中添加返回顶部功能</p>
 </li>
+<li>
+<p><input disabled="" type="checkbox"> 解决第二页、第三页首篇文章访问统计异常问题</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> 评论功能修改</p>
+</li>
 </ul>
+<h2 id="一些使用hugo-theme-stack-搭建的优秀网站">一些使用hugo-theme-stack 搭建的优秀网站
+</h2><p><a class="link" href="https://liuhouliang.com/categories/web/"  target="_blank" rel="noopener"
+    >https://liuhouliang.com/categories/web/</a></p>
+<p><a class="link" href="https://munlelee.github.io/"  target="_blank" rel="noopener"
+    >https://munlelee.github.io/</a></p>
+<p><a class="link" href="https://blog.reincarnatey.net/"  target="_blank" rel="noopener"
+    >https://blog.reincarnatey.net/</a></p>
+<p><a class="link" href="https://zfj1441.com/archives/"  target="_blank" rel="noopener"
+    >https://zfj1441.com/archives/</a></p>
+<p><a class="link" href="https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA"  target="_blank" rel="noopener"
+    >https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA</a></p>
 
 </section>
 
@@ -672,25 +689,47 @@ icons 为一只眼睛</li>
     
 
     <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-        2025 Example Person
-    </section>
-    
-    <section class="powerby">
-        
-            <br>
-Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> |
-Theme by <a href="https://stack.jimmycai.com" target="_blank" rel="noopener">Stack</a>
-<br>
-Deployed with <strong>GitHub Actions</strong> 🚀
- <br/>
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
+    <p>
+        <span>文章发布数量📝 <a id="footer_total_articles">...</a></span>
+        <span>文章累计访问次数📖 <a id="footer_total_views">...</a></span><br>
+        网站已稳定运行 <strong id="footer_uptime">...</strong><br>
+        Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a><br>
+        Theme <a>Stack</a> designed by Jimmy<br>
+    </p>    
 </footer>
 
+<script>
+(function() {
+    
+    const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+    const API_URL = isLocal 
+        ? "http://localhost:8080/api/site/info"
+        : "https://hangops.top/api/site/info";
+
+    fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+        
+        if(data.total_views !== undefined) {
+            document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
+        }
+        
+        if(data.total_articles !== undefined) {
+            document.getElementById("footer_total_articles").innerText = data.total_articles;
+        }
+        
+        if(data.uptime_seconds !== undefined) {
+            const days = Math.floor(data.uptime_seconds / 86400);
+            document.getElementById("footer_uptime").innerText = days + " 天";
+        }
+    })
+    .catch(err => {
+        console.error("Footer stats load failed:", err);
+        
+        
+    });
+})();
+</script>
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

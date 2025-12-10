@@ -362,11 +362,10 @@
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计网站访问量&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量
-icons 为一只眼睛&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计网站访问量，显示在网站底部&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -409,7 +408,24 @@ icons 为一只眼睛&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 文章中添加返回顶部功能&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 解决第二页、第三页首篇文章访问统计异常问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论功能修改&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;一些使用hugo-theme-stack-搭建的优秀网站&#34;&gt;一些使用hugo-theme-stack 搭建的优秀网站
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://liuhouliang.com/categories/web/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://liuhouliang.com/categories/web/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://munlelee.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://munlelee.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.reincarnatey.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.reincarnatey.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zfj1441.com/archives/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zfj1441.com/archives/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         

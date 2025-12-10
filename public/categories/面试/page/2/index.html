@@ -388,25 +388,47 @@
     </nav>
 
 <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-        2025 Example Person
-    </section>
-    
-    <section class="powerby">
-        
-            <br>
-Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> |
-Theme by <a href="https://stack.jimmycai.com" target="_blank" rel="noopener">Stack</a>
-<br>
-Deployed with <strong>GitHub Actions</strong> 🚀
- <br/>
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
+    <p>
+        <span>文章发布数量📝 <a id="footer_total_articles">...</a></span>
+        <span>文章累计访问次数📖 <a id="footer_total_views">...</a></span><br>
+        网站已稳定运行 <strong id="footer_uptime">...</strong><br>
+        Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a><br>
+        Theme <a>Stack</a> designed by Jimmy<br>
+    </p>    
 </footer>
 
+<script>
+(function() {
+    
+    const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+    const API_URL = isLocal 
+        ? "http://localhost:8080/api/site/info"
+        : "https://hangops.top/api/site/info";
+
+    fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+        
+        if(data.total_views !== undefined) {
+            document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
+        }
+        
+        if(data.total_articles !== undefined) {
+            document.getElementById("footer_total_articles").innerText = data.total_articles;
+        }
+        
+        if(data.uptime_seconds !== undefined) {
+            const days = Math.floor(data.uptime_seconds / 86400);
+            document.getElementById("footer_uptime").innerText = days + " 天";
+        }
+    })
+    .catch(err => {
+        console.error("Footer stats load failed:", err);
+        
+        
+    });
+})();
+</script>
 
             </main>
         </div>
