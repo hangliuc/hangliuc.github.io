@@ -1,5 +1,5 @@
 ---
-title: "Hugo 基础规划和使用方法"
+title: "博客 | Hugo 基础规划和使用方法"
 date: 2025-11-27T15:16:29+08:00
 draft: false
 categories:
@@ -53,3 +53,14 @@ Tags (标签)：像便利贴一样，是扁平、描述性的。一篇文章可�
 ## 一些可用链接
 
 图标下载网站 https://tabler.io/icons
+
+## 一些使用 hugo-theme-stack 搭建的优秀网站
+https://liuhouliang.com/categories/web/
+
+https://munlelee.github.io/
+
+https://blog.reincarnatey.net/
+
+https://zfj1441.com/archives/
+
+https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA

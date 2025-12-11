@@ -1,5 +1,5 @@
 ---
-title: "如何在服务器部署网站"
+title: "博客 | 服务器部署"
 date: 2025-12-07T18:31:24+08:00
 draft: false
 categories:
@@ -66,3 +66,4 @@ sudo certbot --nginx -d hangops.top -d www.hangops.top
 
 ## 配置 GitHub 自动部署 (CI/CD)
 看仓库源码即可
+
