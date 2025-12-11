@@ -231,18 +231,36 @@
         <h1 class="article-title">404 错误</h1>
         <h2 class="article-subtitle">页面不存在</h2>
     </div><footer class="site-footer">
-    <p>
-        <span>文章发布数量📝 <a id="footer_total_articles">...</a></span>
-        <span>文章累计访问次数📖 <a id="footer_total_views">...</a></span><br>
-        网站已稳定运行 <strong id="footer_uptime">...</strong><br>
-        Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a><br>
-        Theme <a>Stack</a> designed by Jimmy<br>
-    </p>    
+    <section class="copyright">
+        &copy; 
+        
+            
+                
+                    2025
+                
+            
+        
+        hangliuc
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b>Stack</b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 🚀
+    </section>
+    
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+        <span>文章发布: <strong>24</strong> 篇</span>
+        &nbsp;|&nbsp;
+        
+        <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>
+        &nbsp;|&nbsp;
+        
+        <span>网站稳定运行: <strong id="footer_uptime">...</strong></span>
+    </section>
 </footer>
 
 <script>
 (function() {
-    
     const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
     const API_URL = isLocal 
         ? "http://localhost:8080/api/site/info"
@@ -255,21 +273,14 @@
         if(data.total_views !== undefined) {
             document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
         }
-        
-        if(data.total_articles !== undefined) {
-            document.getElementById("footer_total_articles").innerText = data.total_articles;
-        }
+                
         
         if(data.uptime_seconds !== undefined) {
             const days = Math.floor(data.uptime_seconds / 86400);
             document.getElementById("footer_uptime").innerText = days + " 天";
         }
     })
-    .catch(err => {
-        console.error("Footer stats load failed:", err);
-        
-        
-    });
+    .catch(console.error);
 })();
 </script>
 

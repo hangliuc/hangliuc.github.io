@@ -1,16 +1,40 @@
 <footer class="site-footer">
-    <p>
-        <span>文章发布数量📝 <a id="footer_total_articles">...</a></span>
-        <span>文章累计访问次数📖 <a id="footer_total_views">...</a></span><br>
-        网站已稳定运行 <strong id="footer_uptime">...</strong><br>
-        Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a><br>
-        Theme <a>Stack</a> designed by Jimmy<br>
-    </p>    
+    <section class="copyright">
+        &copy; 
+        {{ if or (.Site.Params.footer.since) (.Site.Params.footer.customText) }}
+            {{ if .Site.Params.footer.since }}
+                {{ if lt .Site.Params.footer.since now.Year }}
+                    {{ .Site.Params.footer.since }} - {{ now.Year }}
+                {{ else }}
+                    {{ now.Year }}
+                {{ end }}
+            {{ else }}
+                {{ now.Year }}
+            {{ end }}
+        {{ else }}
+            {{ now.Year }}
+        {{ end }}
+        {{ .Site.Title }}
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b>Stack</b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 🚀
+    </section>
+    
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+        <span>文章发布: <strong>{{ len .Site.RegularPages }}</strong> 篇</span>
+        &nbsp;|&nbsp;
+        
+        <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>
+        &nbsp;|&nbsp;
+        
+        <span>网站稳定运行: <strong id="footer_uptime">...</strong></span>
+    </section>
 </footer>
 
 <script>
 (function() {
-    // 1. 自动判断环境
     const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
     const API_URL = isLocal 
         ? "http://localhost:8080/api/site/info"
@@ -19,24 +43,17 @@
     fetch(API_URL)
     .then(res => res.json())
     .then(data => {
-        // 更新总访问量
+        // 更新访问量
         if(data.total_views !== undefined) {
             document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
         }
-        // 更新文章总数
-        if(data.total_articles !== undefined) {
-            document.getElementById("footer_total_articles").innerText = data.total_articles;
-        }
-        // 更新运行时间 (处理成天数)
+                
+        // 更新运行时间
         if(data.uptime_seconds !== undefined) {
             const days = Math.floor(data.uptime_seconds / 86400);
             document.getElementById("footer_uptime").innerText = days + " 天";
         }
     })
-    .catch(err => {
-        console.error("Footer stats load failed:", err);
-        // 如果加载失败，可以选择清空或显示 "-"
-        // document.getElementById("footer_total_views").innerText = "-";
-    });
+    .catch(console.error);
 })();
 </script>
