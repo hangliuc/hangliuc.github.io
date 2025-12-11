@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一些实现方式 目前看到网上关于网站统计功能的实现方式：\n基于busuanzi js的统计功能 Waline给Hugo网站增加文章浏览量功能 基于服务器端的统计功能 关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务器端的统计功能。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一些实现方式 目前看到网上关于网站统计功能的实现方式：\n基于busuanzi js的统计功能 基于Waline 的统计功能 基于服务器端的统计功能 关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务端的统计功能。\n">
 <title>博客 | 网站统计功能</title>
 
 <link rel='canonical' href='http://localhost:1313/topic/blogging/site_statistics/'>
 
 <link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="博客 | 网站统计功能">
-<meta property='og:description' content="一些实现方式 目前看到网上关于网站统计功能的实现方式：\n基于busuanzi js的统计功能 Waline给Hugo网站增加文章浏览量功能 基于服务器端的统计功能 关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务器端的统计功能。\n">
+<meta property='og:description' content="一些实现方式 目前看到网上关于网站统计功能的实现方式：\n基于busuanzi js的统计功能 基于Waline 的统计功能 基于服务器端的统计功能 关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务端的统计功能。\n">
 <meta property='og:url' content='http://localhost:1313/topic/blogging/site_statistics/'>
 <meta property='og:site_name' content='hangliuc'>
 <meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:published_time' content='2025-12-11T14:23:32&#43;08:00'/><meta property='article:modified_time' content='2025-12-11T14:23:32&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/blog_cover.jpg' />
 <meta name="twitter:title" content="博客 | 网站统计功能">
-<meta name="twitter:description" content="一些实现方式 目前看到网上关于网站统计功能的实现方式：\n基于busuanzi js的统计功能 Waline给Hugo网站增加文章浏览量功能 基于服务器端的统计功能 关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务器端的统计功能。\n"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="一些实现方式 目前看到网上关于网站统计功能的实现方式：\n基于busuanzi js的统计功能 基于Waline 的统计功能 基于服务器端的统计功能 关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务端的统计功能。\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/img/blog_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
@@ -258,6 +258,7 @@
       </ol>
     </li>
     <li><a href="#目前统计功能">目前统计功能</a></li>
+    <li><a href="#实现方式">实现方式</a></li>
   </ol>
 </nav>
         </div>
@@ -330,7 +331,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -338,7 +339,7 @@
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
-                253 字
+                729 字
             </time>
         </div>
         
@@ -405,10 +406,10 @@
 </h2><p>目前看到网上关于网站统计功能的实现方式：</p>
 <ul>
 <li>基于busuanzi js的统计功能</li>
-<li>Waline给Hugo网站增加文章浏览量功能</li>
+<li>基于Waline 的统计功能</li>
 <li>基于服务器端的统计功能</li>
 </ul>
-<p>关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务器端的统计功能。</p>
+<p>关于上面的两种方式大家可以自行在网上搜索，这里就不展开讲了，主要讲一下基于自行服务端的统计功能。</p>
 <h2 id="基于服务器端的统计功能">基于服务器端的统计功能
 </h2><h3 id="优点">优点
 </h3><ul>
@@ -417,6 +418,7 @@
 <li>可以进行强一致性统计（文章访问量、文章数量、评论数量等）</li>
 <li>不依赖第三方服务</li>
 <li>后续可以接入监控告警系统，实时观察</li>
+<li>后续可以在自研管理平台展示</li>
 </ul>
 <h2 id="目前统计功能">目前统计功能
 </h2><ul>
@@ -426,7 +428,141 @@
 <li>网站运行时间</li>
 <li>&hellip;.</li>
 </ul>
-
+<h2 id="实现方式">实现方式
+</h2><p>采用gin web 框架
+<a class="link" href="https://github.com/gin-gonic/gin"  target="_blank" rel="noopener"
+    >https://github.com/gin-gonic/gin</a></p>
+<p>使用 GORM 做数据库对象关系映射
+<a class="link" href="https://github.com/go-gorm/gorm"  target="_blank" rel="noopener"
+    >https://github.com/go-gorm/gorm</a></p>
+<p>以处理POST /api/article/visit，其他接口处理基本相同</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">articleRepo</span><span class="p">)</span><span class="w"> </span><span class="nf">IncreaseViewCount</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">int64</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 1. 执行 Upsert (存在则更新，不存在则插入)，体现原子性操作，避免并发问题</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// SQL: INSERT INTO article_stats ... ON DUPLICATE KEY UPDATE view_count = view_count + 1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nf">Clauses</span><span class="p">(</span><span class="nx">clause</span><span class="p">.</span><span class="nx">OnConflict</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">Columns</span><span class="p">:</span><span class="w">   </span><span class="p">[]</span><span class="nx">clause</span><span class="p">.</span><span class="nx">Column</span><span class="p">{{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;path&#34;</span><span class="p">}},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">DoUpdates</span><span class="p">:</span><span class="w"> </span><span class="nx">clause</span><span class="p">.</span><span class="nf">Assignments</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="s">&#34;view_count&#34;</span><span class="p">:</span><span class="w"> </span><span class="nx">gorm</span><span class="p">.</span><span class="nf">Expr</span><span class="p">(</span><span class="s">&#34;view_count + 1&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}).</span><span class="nf">Create</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">model</span><span class="p">.</span><span class="nx">ArticleStat</span><span class="p">{</span><span class="nx">Path</span><span class="p">:</span><span class="w"> </span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="nx">ViewCount</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}).</span><span class="nx">Error</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 2. 查出最新的值返回</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">stat</span><span class="w"> </span><span class="nx">model</span><span class="p">.</span><span class="nx">ArticleStat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="s">&#34;view_count&#34;</span><span class="p">).</span><span class="nf">Where</span><span class="p">(</span><span class="s">&#34;path = ?&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">).</span><span class="nf">First</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">stat</span><span class="p">).</span><span class="nx">Error</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="nx">stat</span><span class="p">.</span><span class="nx">ViewCount</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>前端逻辑
+上报/article/visit 接口时如果是首页(/)或者分页(/page/1)或者搜索(/search/query)，也会添加到文章计数，这里排除了这个bug</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">isLocal</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="s2">&#34;127.0.0.1&#34;</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">API_URL</span> <span class="o">=</span> <span class="nx">isLocal</span> 
+</span></span><span class="line"><span class="cl">                    <span class="o">?</span> <span class="s2">&#34;http://localhost:8080/api/article/visit&#34;</span> 
+</span></span><span class="line"><span class="cl">                    <span class="o">:</span> <span class="s2">&#34;https://hangops.top/api/article/visit&#34;</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 如果是首页(/)或者分页(/page/1)或者搜索(/search/query)，直接什么都不做
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="nx">path</span> <span class="o">===</span> <span class="s2">&#34;/&#34;</span> <span class="o">||</span> 
+</span></span><span class="line"><span class="cl">                    <span class="nx">path</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&#34;/page/&#34;</span><span class="p">)</span> <span class="o">||</span> 
+</span></span><span class="line"><span class="cl">                    <span class="nx">path</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&#34;/search/&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="nx">fetch</span><span class="p">(</span><span class="nx">API_URL</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span> <span class="p">})</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">})</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;article_views_container&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="kr">const</span> <span class="nx">viewEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;article_views&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">(</span><span class="nx">container</span> <span class="o">&amp;&amp;</span> <span class="nx">viewEl</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">views</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="nx">viewEl</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">views</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        
+</span></span><span class="line"><span class="cl">                        <span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;flex&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">})</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&#34;阅读量获取失败:&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">});</span>
+</span></span><span class="line"><span class="cl">            <span class="p">})();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/script&gt;       </span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
