@@ -659,6 +659,9 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
 
     <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
         <span>网站稳定运行: <strong id="footer_uptime">...</strong></span>
+        &nbsp;|&nbsp;
+        
+        <span>网站总访问量: <strong id="footer_total_site_visits">...</strong> 次</span>
     </section>
 
 </footer>
@@ -679,16 +682,28 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
     }
 
     const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-    const API_URL = isLocal 
+    
+    const INFO_URL = isLocal 
         ? "http://localhost:8080/api/site/info"
         : "https://hangops.top/api/site/info";
 
-    fetch(API_URL)
+    const VISIT_URL = isLocal 
+        ? "http://localhost:8080/api/site/visit"
+        : "https://hangops.top/api/site/visit";
+
+    fetch(VISIT_URL, { method: 'POST' }).catch(() => {});
+
+    
+    fetch(INFO_URL)
     .then(res => res.json())
     .then(data => {
         
         if(data.total_views !== undefined) {
             document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
+        }
+        
+        if(data.site_total_visits !== undefined) {
+            document.getElementById("footer_total_site_visits").innerText = data.site_total_visits.toLocaleString();
         }
                 
         
