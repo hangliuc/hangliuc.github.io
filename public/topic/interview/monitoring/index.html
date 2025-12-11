@@ -654,14 +654,30 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
         &nbsp;|&nbsp;
         
         <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>
-        &nbsp;|&nbsp;
         
+    </section>
+
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
         <span>网站稳定运行: <strong id="footer_uptime">...</strong></span>
     </section>
+
 </footer>
 
 <script>
 (function() {
+    function formatUptime(seconds) {
+        const days = Math.floor(seconds / 86400);
+        seconds %= 86400;
+
+        const hours = Math.floor(seconds / 3600);
+        seconds %= 3600;
+
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+
+        return `${days} 天 ${hours} 小时 ${minutes} 分 ${secs} 秒`;
+    }
+
     const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
     const API_URL = isLocal 
         ? "http://localhost:8080/api/site/info"
@@ -677,8 +693,18 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
                 
         
         if(data.uptime_seconds !== undefined) {
-            const days = Math.floor(data.uptime_seconds / 86400);
-            document.getElementById("footer_uptime").innerText = days + " 天";
+            let uptime = data.uptime_seconds;
+
+            
+            document.getElementById("footer_uptime").innerText =
+                formatUptime(uptime);
+
+            
+            setInterval(() => {
+                uptime++;
+                document.getElementById("footer_uptime").innerText =
+                    formatUptime(uptime);
+            }, 1000);
         }
     })
     .catch(console.error);
