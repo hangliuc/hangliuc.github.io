@@ -72,9 +72,12 @@
                     : "https://hangops.top/api/article/visit"; 
                 
                 const path = window.location.pathname;
-                
-                // 如果是首页(/)或者空路径，直接什么都不做
-                if (path === "/" || path === "") return;
+                // 如果是首页(/)或者分页(/page/1)或者搜索(/search/query)，直接什么都不做
+                if (path === "/" || 
+                    path.includes("/page/") || 
+                    path.includes("/search/")) {
+                    return;
+                }
 
                 fetch(API_URL, {
                     method: 'POST', 
