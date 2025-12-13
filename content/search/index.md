@@ -1,13 +1,7 @@
 ---
 title: "搜索"
 slug: "search"
-layout: "page" 
-description: "Powered by Pagefind"
-menu:
-    main:
-        weight: 3
-        params:
-            icon: search
+layout: "search"
 ---
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">

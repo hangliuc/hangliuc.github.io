@@ -4,6 +4,11 @@ theme: hugo-theme-stack
 title: Example Site
 buildFuture: true 
 copyright: Example Person
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -14,13 +19,13 @@ DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 
 languages:
-    en:
-        languageName: English
-        title: Example Site
-        weight: 1
-        params:
-            sidebar:
-                subtitle: Example description
+    # en:
+    #     languageName: English
+    #     title: Example Site
+    #     weight: 1
+    #     params:
+    #         sidebar:
+    #             subtitle: Example description
     zh-cn:
         languageName: 中文
         title:  hangliuc
@@ -28,6 +33,7 @@ languages:
         params:
             sidebar:
                 subtitle: SRE 日常输出一些技术内容。
+        
     # ar:
     #     languageName: عربي
     #     languagedirection: rtl
@@ -82,6 +88,9 @@ params:
             enabled: true
             local: true
             src: img/head_portrait.jpg # 头像大小建议 150x150px
+    search:
+        enabled: true
+        type: local
 
     article:
         math: false
@@ -229,19 +238,32 @@ menu:
           params:
               icon: home
 
-        - identifier: ops
-          name: 运维
-          url: /ops/
-          weight: 10
-          params:
-              icon: terminal-2
-
-        - identifier: topic
-          name: 专题
-          url: /topic/
+        # - identifier: ops
+        #   name: 运维
+        #   url: /ops/
+        #   weight: 10
+        #   params:
+        #       icon: terminal-2
+        
+        - identifier: search
+          name: 搜索
+          url: /search/
           weight: 20
           params:
-              icon: scale-outline
+              icon: search
+        # - identifier: topic
+        #   name: 专题
+        #   url: /topic/
+        #   weight: 20
+        #   params:
+        #       icon: scale-outline
+
+        - identifier: archives
+          name: 归档
+          url: /archives/
+          weight: 30
+          params:
+              icon: archive
 
     social:
         - identifier: github
