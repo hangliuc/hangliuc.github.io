@@ -264,6 +264,13 @@ menu:
           weight: 30
           params:
               icon: archive
+        
+        - identifier: about
+          name: 关于
+          url: /about/
+          weight: 40
+          params:
+              icon: user
 
     social:
         - identifier: github
