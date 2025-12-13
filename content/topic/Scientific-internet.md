@@ -2,8 +2,6 @@
 title: "科学上网"
 date: 2025-12-05T16:38:33+08:00
 draft: false
-categories:
-    - 博客
 tags:
     - Network
 ---

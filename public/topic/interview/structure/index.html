@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 面试经历 liunx container &amp;&amp; k8s network database Prometheus program SRE &hellip;.. 面试题来自崔亮的博客\nhttps://www.cuiliangblog.cn/detail/article/89\n">
-<title>面试专题的一些规划</title>
+<title>面试 | 面试专题的一些规划</title>
 
 <link rel='canonical' href='http://localhost:1313/topic/interview/structure/'>
 
-<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="面试专题的一些规划">
+<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="面试 | 面试专题的一些规划">
 <meta property='og:description' content=" 面试经历 liunx container &amp;&amp; k8s network database Prometheus program SRE &hellip;.. 面试题来自崔亮的博客\nhttps://www.cuiliangblog.cn/detail/article/89\n">
 <meta property='og:url' content='http://localhost:1313/topic/interview/structure/'>
 <meta property='og:site_name' content='hangliuc'>
 <meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:published_time' content='2025-12-02T15:06:33&#43;08:00'/><meta property='article:modified_time' content='2025-12-02T15:06:33&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/interview_cover.jpg' />
-<meta name="twitter:title" content="面试专题的一些规划">
+<meta name="twitter:title" content="面试 | 面试专题的一些规划">
 <meta name="twitter:description" content=" 面试经历 liunx container &amp;&amp; k8s network database Prometheus program SRE &hellip;.. 面试题来自崔亮的博客\nhttps://www.cuiliangblog.cn/detail/article/89\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/img/interview_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -214,7 +214,7 @@
         <div class="article-image">
             <a href="/topic/interview/structure/">
                 
-                    <img src="/img/interview_cover.jpg" loading="lazy" alt="Featured image of post 面试专题的一些规划" />
+                    <img src="/img/interview_cover.jpg" loading="lazy" alt="Featured image of post 面试 | 面试专题的一些规划" />
                 
             </a>
         </div>
@@ -225,7 +225,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/topic/interview/structure/">面试专题的一些规划</a>
+            <a href="/topic/interview/structure/">面试 | 面试专题的一些规划</a>
         </h2>
     
         
@@ -524,6 +524,85 @@
         }
     })
     .catch(console.error);
+})();
+</script>
+
+<div id="back-to-top" class="back-to-top" aria-label="回到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 5l0 14"></path>
+        <path d="M18 11l-6 -6"></path>
+        <path d="M6 11l6 -6"></path>
+    </svg>
+</div>
+
+<style>
+    .back-to-top {
+        position: fixed;
+        bottom: 150px;
+        right: 200px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--card-background);  
+        color: var(--card-text-color-main);        
+        box-shadow: var(--shadow-l1);              
+        border-radius: 50%;                        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;                                
+        visibility: hidden;
+        transform: translateY(20px);               
+        transition: all 0.3s ease;                 
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        background-color: var(--primary);          
+        color: #fff;
+        transform: translateY(-3px);               
+        box-shadow: var(--shadow-l2);
+    }
+
+     
+    @media (max-width: 768px) {
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<script>
+(function() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    
+    window.addEventListener('scroll', () => {
+        
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 })();
 </script>
 

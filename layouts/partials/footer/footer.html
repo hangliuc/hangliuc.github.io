@@ -98,3 +98,82 @@
     .catch(console.error);
 })();
 </script>
+
+<div id="back-to-top" class="back-to-top" aria-label="回到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 5l0 14"></path>
+        <path d="M18 11l-6 -6"></path>
+        <path d="M6 11l6 -6"></path>
+    </svg>
+</div>
+
+<style>
+    .back-to-top {
+        position: fixed;
+        bottom: 150px;
+        right: 200px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--card-background); /* 适配日/夜间模式背景 */
+        color: var(--card-text-color-main);       /* 适配日/夜间模式文字 */
+        box-shadow: var(--shadow-l1);             /* 主题自带阴影 */
+        border-radius: 50%;                       /* 圆形按钮 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;                               /* 默认隐藏 */
+        visibility: hidden;
+        transform: translateY(20px);              /* 默认向下偏移 */
+        transition: all 0.3s ease;                /* 平滑过渡动画 */
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        background-color: var(--primary);         /* 悬停变色 */
+        color: #fff;
+        transform: translateY(-3px);              /* 悬停轻微上浮 */
+        box-shadow: var(--shadow-l2);
+    }
+
+    /* 移动端调整位置，避免遮挡内容 */
+    @media (max-width: 768px) {
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<script>
+(function() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    // 1. 监听滚动，控制按钮显示/隐藏
+    window.addEventListener('scroll', () => {
+        // 当滚动超过 300px 时显示按钮
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    // 2. 点击按钮，平滑回到顶部
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+</script>

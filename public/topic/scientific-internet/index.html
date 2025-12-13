@@ -250,14 +250,6 @@
 
     <div class="article-details">
     
-    <header class="article-category">
-        
-            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
-                博客
-            </a>
-        
-    </header>
-    
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
@@ -485,91 +477,6 @@
 
     
 
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/topic/blogging/site_statistics/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">博客 | 网站统计功能</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/topic/blogging/blogging_deploy/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">博客 | 服务器部署</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/topic/blogging/hugo_usage_method/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">博客 | Hugo 基础规划和使用方法</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/topic/blogging/todo/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">博客 | 待办事项</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
-
      
     
         
@@ -718,6 +625,85 @@
         }
     })
     .catch(console.error);
+})();
+</script>
+
+<div id="back-to-top" class="back-to-top" aria-label="回到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 5l0 14"></path>
+        <path d="M18 11l-6 -6"></path>
+        <path d="M6 11l6 -6"></path>
+    </svg>
+</div>
+
+<style>
+    .back-to-top {
+        position: fixed;
+        bottom: 150px;
+        right: 200px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--card-background);  
+        color: var(--card-text-color-main);        
+        box-shadow: var(--shadow-l1);              
+        border-radius: 50%;                        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;                                
+        visibility: hidden;
+        transform: translateY(20px);               
+        transition: all 0.3s ease;                 
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        background-color: var(--primary);          
+        color: #fff;
+        transform: translateY(-3px);               
+        box-shadow: var(--shadow-l2);
+    }
+
+     
+    @media (max-width: 768px) {
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<script>
+(function() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    
+    window.addEventListener('scroll', () => {
+        
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 })();
 </script>
 
