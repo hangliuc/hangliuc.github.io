@@ -48,8 +48,8 @@ languages:
 #     disqus:
 #         shortname: "hugo-theme-stack"
     # GA Tracking ID
-    # googleAnalytics:
-    #     id:
+    googleAnalytics:
+        id: G-ZQB4X81BE5
 
 pagination:
     pagerSize: 10
