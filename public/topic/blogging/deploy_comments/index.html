@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="mysql 1. mysql查询突然变的很慢，需要怎么排查 检查查询本身 查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。 复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作 查看数据库性能 慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。\n">
-<title>面试 | Database</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Waline 评论系统 博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。\n支持匿名评论（无需登录） UI 简洁美观 可以配置邮箱/weixin 接收通知 本地部署(Waline) docker-compose 部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 version: &#39;3&#39; services: waline: image: lizheming/waline:latest container_name: waline-standalone restart: always ports: - &#34;8360:8360&#34; environment: - MYSQL_HOST=blog-stats-db - MYSQL_PORT=3306 - MYSQL_DB=waline_db - MYSQL_USER=root - MYSQL_PASSWORD=xxxx - MYSQL_CHARSET=utf8mb4 - MYSQL_SSL=false - TABLE_PREFIX=wl_ - TZ=Asia/Shanghai - LANG=zh_CN.UTF-8 - JWT_SECRET=Standalone_Waline_Secret_2025 # --- 通知配置 --- - SMTP_SERVICE=163 - SMTP_USER=iliuhang@163.com - SMTP_PASS=xxxx - SENDER_NAME=HangOps评论 - AUTHOR_EMAIL=iliuhang@163.com - SITE_NAME=HangOps - SITE_URL=https://hangops.top - PUSH_PLUS_KEY=xxxx networks: - ext-blog-net networks: ext-blog-net: external: true name: blog-stats_blog-net #因为 Waline 和 MySQL 不在同一个 docker-compose.yaml 文件里，它们默认是隔离的。需要让 Waline 加入到 MySQL 所在的网络中。 使用时请先导入 waline.sql 以完成表和表结构的创建，之后在项目中配置如下环境变量。 Waline 数据库配置\n">
+<title>博客 | 本地部署waline 评论系统</title>
 
-<link rel='canonical' href='http://localhost:1313/topic/interview/database/'>
+<link rel='canonical' href='http://localhost:1313/topic/blogging/deploy_comments/'>
 
-<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="面试 | Database">
-<meta property='og:description' content="mysql 1. mysql查询突然变的很慢，需要怎么排查 检查查询本身 查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。 复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作 查看数据库性能 慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。\n">
-<meta property='og:url' content='http://localhost:1313/topic/interview/database/'>
+<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="博客 | 本地部署waline 评论系统">
+<meta property='og:description' content="Waline 评论系统 博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。\n支持匿名评论（无需登录） UI 简洁美观 可以配置邮箱/weixin 接收通知 本地部署(Waline) docker-compose 部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 version: &#39;3&#39; services: waline: image: lizheming/waline:latest container_name: waline-standalone restart: always ports: - &#34;8360:8360&#34; environment: - MYSQL_HOST=blog-stats-db - MYSQL_PORT=3306 - MYSQL_DB=waline_db - MYSQL_USER=root - MYSQL_PASSWORD=xxxx - MYSQL_CHARSET=utf8mb4 - MYSQL_SSL=false - TABLE_PREFIX=wl_ - TZ=Asia/Shanghai - LANG=zh_CN.UTF-8 - JWT_SECRET=Standalone_Waline_Secret_2025 # --- 通知配置 --- - SMTP_SERVICE=163 - SMTP_USER=iliuhang@163.com - SMTP_PASS=xxxx - SENDER_NAME=HangOps评论 - AUTHOR_EMAIL=iliuhang@163.com - SITE_NAME=HangOps - SITE_URL=https://hangops.top - PUSH_PLUS_KEY=xxxx networks: - ext-blog-net networks: ext-blog-net: external: true name: blog-stats_blog-net #因为 Waline 和 MySQL 不在同一个 docker-compose.yaml 文件里，它们默认是隔离的。需要让 Waline 加入到 MySQL 所在的网络中。 使用时请先导入 waline.sql 以完成表和表结构的创建，之后在项目中配置如下环境变量。 Waline 数据库配置\n">
+<meta property='og:url' content='http://localhost:1313/topic/blogging/deploy_comments/'>
 <meta property='og:site_name' content='hangliuc'>
-<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:tag' content='Database' /><meta property='article:published_time' content='2025-12-06T18:42:12&#43;08:00'/><meta property='article:modified_time' content='2025-12-06T18:42:12&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/interview_cover.jpg' />
-<meta name="twitter:title" content="面试 | Database">
-<meta name="twitter:description" content="mysql 1. mysql查询突然变的很慢，需要怎么排查 检查查询本身 查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。 复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作 查看数据库性能 慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/img/interview_cover.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:published_time' content='2025-12-14T17:53:12&#43;08:00'/><meta property='article:modified_time' content='2025-12-14T17:53:12&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/blog_cover.jpg' />
+<meta name="twitter:title" content="博客 | 本地部署waline 评论系统">
+<meta name="twitter:description" content="Waline 评论系统 博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。\n支持匿名评论（无需登录） UI 简洁美观 可以配置邮箱/weixin 接收通知 本地部署(Waline) docker-compose 部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 version: &#39;3&#39; services: waline: image: lizheming/waline:latest container_name: waline-standalone restart: always ports: - &#34;8360:8360&#34; environment: - MYSQL_HOST=blog-stats-db - MYSQL_PORT=3306 - MYSQL_DB=waline_db - MYSQL_USER=root - MYSQL_PASSWORD=xxxx - MYSQL_CHARSET=utf8mb4 - MYSQL_SSL=false - TABLE_PREFIX=wl_ - TZ=Asia/Shanghai - LANG=zh_CN.UTF-8 - JWT_SECRET=Standalone_Waline_Secret_2025 # --- 通知配置 --- - SMTP_SERVICE=163 - SMTP_USER=iliuhang@163.com - SMTP_PASS=xxxx - SENDER_NAME=HangOps评论 - AUTHOR_EMAIL=iliuhang@163.com - SITE_NAME=HangOps - SITE_URL=https://hangops.top - PUSH_PLUS_KEY=xxxx networks: - ext-blog-net networks: ext-blog-net: external: true name: blog-stats_blog-net #因为 Waline 和 MySQL 不在同一个 docker-compose.yaml 文件里，它们默认是隔离的。需要让 Waline 加入到 MySQL 所在的网络中。 使用时请先导入 waline.sql 以完成表和表结构的创建，之后在项目中配置如下环境变量。 Waline 数据库配置\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/blog_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
     </head>
@@ -228,31 +228,12 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#1-mysql查询突然变的很慢需要怎么排查">1. mysql查询突然变的很慢，需要怎么排查</a>
+    <li><a href="#waline-评论系统">Waline 评论系统</a></li>
+    <li><a href="#本地部署waline">本地部署(Waline)</a>
       <ol>
-        <li><a href="#检查查询本身">检查查询本身</a></li>
-        <li><a href="#查看数据库性能">查看数据库性能</a></li>
-        <li><a href="#检查系统负载">检查系统负载</a></li>
-        <li><a href="#检查锁和并发问题">检查锁和并发问题</a></li>
-        <li><a href="#网络延迟">网络延迟</a></li>
-      </ol>
-    </li>
-  </ol>
-
-  <ol>
-    <li><a href="#1热key大key问题">1.热key、大key问题</a>
-      <ol>
-        <li><a href="#热key问题">热key问题</a></li>
-        <li><a href="#大key问题">大key问题</a></li>
-      </ol>
-    </li>
-  </ol>
-
-  <ol>
-    <li><a href="#1消费堆积如何处理">1.消费堆积如何处理</a>
-      <ol>
-        <li><a href="#消息堆积原因">消息堆积原因</a></li>
-        <li><a href="#解决方法">解决方法</a></li>
+        <li><a href="#docker-compose-部署">docker-compose 部署</a></li>
+        <li><a href="#nginx-反向代理">Nginx 反向代理</a></li>
+        <li><a href="#hugo-配置">Hugo 配置</a></li>
       </ol>
     </li>
   </ol>
@@ -269,9 +250,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/topic/interview/database/">
+            <a href="/topic/blogging/deploy_comments/">
                 
-                    <img src="/img/interview_cover.jpg" loading="lazy" alt="Featured image of post 面试 | Database" />
+                    <img src="/img/blog_cover.jpg" loading="lazy" alt="Featured image of post 博客 | 本地部署waline 评论系统" />
                 
             </a>
         </div>
@@ -281,8 +262,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E9%9D%A2%E8%AF%95/" >
-                面试
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
+                博客
             </a>
         
     </header>
@@ -290,7 +271,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/topic/interview/database/">面试 | Database</a>
+            <a href="/topic/blogging/deploy_comments/">博客 | 本地部署waline 评论系统</a>
         </h2>
     
         
@@ -312,7 +293,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published" datetime='2025-12-06T18:42:12&#43;08:00'>Dec 06, 2025</time>
+                <time class="article-time--published" datetime='2025-12-14T17:53:12&#43;08:00'>Dec 14, 2025</time>
             </div>
         
 
@@ -327,7 +308,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -335,7 +316,7 @@
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
-                1305 字
+                479 字
             </time>
         </div>
         
@@ -398,114 +379,216 @@
     <section class="article-content">
     
     
-    <h1 id="mysql">mysql
-</h1><h2 id="1-mysql查询突然变的很慢需要怎么排查">1. mysql查询突然变的很慢，需要怎么排查
-</h2><h3 id="检查查询本身">检查查询本身
-</h3><ul>
-<li>查看SQL查询是否可以优化，比如使用合适的索引、避免全表扫描等。</li>
-<li>复杂的JOIN操作：确认是否有多个大的表连接，或者是不必要的复杂操作</li>
-</ul>
-<h3 id="查看数据库性能">查看数据库性能
-</h3><p>慢查询日志：启用并查看慢查询日志（slow_query_log）。查看最近哪些查询执行时间较长。</p>
-<h3 id="检查系统负载">检查系统负载
-</h3><p>系统资源：查看CPU、内存、磁盘IO、网络等资源是否有瓶颈，可以通过 top 或 htop 等工具监控。
-磁盘IO：查看磁盘读写是否成为瓶颈。可以用 iostat 或 vmstat 等工具查看磁盘IO情况。</p>
-<h3 id="检查锁和并发问题">检查锁和并发问题
-</h3><p>锁情况：查看是否有锁等待或死锁问题。使用以下SQL语句查看当前的锁状态：
-如果有很多线程处于“Locked”状态，可能需要进一步分析锁的来源和解决方法。</p>
-<h3 id="网络延迟">网络延迟
-</h3><p>如果是远程连接MySQL，确认网络连接是否稳定，延迟是否较高。</p>
-<h1 id="redis">redis
-</h1><h2 id="1热key大key问题">1.热key、大key问题
-</h2><h3 id="热key问题">热key问题
-</h3><ul>
-<li>热key：指被频繁访问的key，可能导致数据库性能下降。</li>
-</ul>
-<p>影响：</p>
+    <h2 id="waline-评论系统">Waline 评论系统
+</h2><p>博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。</p>
 <ul>
-<li>CPU 集中在一个 Redis 节点</li>
-<li>QPS 不均匀，集群负载失衡</li>
-<li>延迟飙升、请求超时</li>
-<li>导致节点触发 failover</li>
+<li>支持匿名评论（无需登录）</li>
+<li>UI 简洁美观</li>
+<li>可以配置邮箱/weixin 接收通知</li>
 </ul>
-<p>解决方案</p>
-<ul>
-<li>业务层分流/分桶 将热请求拆成多个 key，提高并发承载。</li>
-<li>增加缓存层：本地缓存 + Redis 二级缓存，减少对 Redis 的直接访问</li>
-<li>使用多 Key 拆分读压力，一个热门大 key 分成多个子 key</li>
-<li>Redis Proxy 层热点保护，代理层可识别热点并做降级</li>
-<li>客户端本地限流 + 降级</li>
-</ul>
-<h3 id="大key问题">大key问题
-</h3><ul>
-<li>大key：指key对应的值非常大，占用了大量的内存空间。</li>
-</ul>
-<p>影响：</p>
-<ul>
-<li>迁移槽时（CLUSTER ADDSLOTS/MIGRATE）非常慢</li>
-<li>可能阻塞 Redis 主线程</li>
-<li>删除时触发阻塞（del O(n) 操作</li>
-<li>压垮网络带宽</li>
-<li>读写延迟变大</li>
-<li>Failover 恢复慢</li>
-</ul>
-<p>解决方案</p>
-<ul>
-<li>业务层拆分：将大 key 拆分成多个小 key，每个小 key 只存储一部分数据。</li>
-<li>分页读取：不使用 hgetall/smembers/zrange，使用scan / 分段取</li>
-<li>提前限制 value 的大小： 在服务侧做 key 大小限制</li>
-<li>避免在 Redis 存储日志、消息、长文本</li>
-</ul>
-<p>如何发现大key</p>
-<ul>
-<li>Redis的SCAN命令</li>
-<li>redis-cli -h 127.0.0.1 -p 6379 —bigkeys</li>
-<li>开源工具Redis RDB Tools，分析RDB文件，扫描出Redis大key。</li>
-</ul>
-<h1 id="kafka">kafka
-</h1><h2 id="1消费堆积如何处理">1.消费堆积如何处理
-</h2><h3 id="消息堆积原因">消息堆积原因
-</h3><ul>
-<li>生产者短时间内生产大量消息到Topic，消费者无法及时消费。</li>
-<li>消费者的消费能力不足（消费者并发低、消息处理时间长），导致消费效率低于生产效率。</li>
-<li>消费者异常（如消费者故障、消费者网络异常等）导致无法消费消息。</li>
-<li>Topic分区设置不合理，或新增分区无消费者消费。</li>
-<li>Topic频繁重分配导致消费效率降低。</li>
-</ul>
-<h3 id="解决方法">解决方法
-</h3><p>从消息堆积的原因看，消息堆积问题可以从消费者端、生产者端和服务端三个方面进行处理。</p>
-<ul>
-<li>消费者端
-<ul>
-<li>根据实际业务需求，合理增加消费者个数（消费并发度），确保分区数/消费者数=整数，建议消费者数和分区数保持一致。</li>
-<li>提高消费者的消费速度，通过优化消费者处理逻辑（减少复杂计算、第三方接口调用和读库操作），减少消费时间。</li>
-<li>增加消费者每次拉取消息的数量：拉取数据/处理时间 &gt;= 生产速度。</li>
-</ul>
-</li>
-<li>生产者端
-<ul>
-<li>生产消息时，给消息Key加随机后缀，使消息均衡分布到不同分区上。</li>
-</ul>
-</li>
-<li>服务端
-<ul>
-<li>合理设置Topic的分区数，在不影响业务处理效率的情况下，调大Topic的分区数量。</li>
-<li>当服务端出现消息堆积时，对生产者进行熔断，或将生产者的消息转发到其他Topic。</li>
-</ul>
-</li>
-</ul>
-
+<h2 id="本地部署waline">本地部署(Waline)
+</h2><h3 id="docker-compose-部署">docker-compose 部署
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">waline</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">lizheming/waline:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">waline-standalone</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8360:8360&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_HOST=blog-stats-db  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_PORT=3306</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_DB=waline_db        </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_USER=root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_PASSWORD=xxxx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_CHARSET=utf8mb4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_SSL=false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TABLE_PREFIX=wl_</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TZ=Asia/Shanghai</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">LANG=zh_CN.UTF-8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">JWT_SECRET=Standalone_Waline_Secret_2025</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># --- 通知配置 ---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SMTP_SERVICE=163</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SMTP_USER=iliuhang@163.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SMTP_PASS=xxxx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SENDER_NAME=HangOps评论</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">AUTHOR_EMAIL=iliuhang@163.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SITE_NAME=HangOps</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SITE_URL=https://hangops.top</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PUSH_PLUS_KEY=xxxx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">ext-blog-net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ext-blog-net</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">blog-stats_blog-net  </span><span class="w"> </span><span class="c">#因为 Waline 和 MySQL 不在同一个 docker-compose.yaml 文件里，它们默认是隔离的。需要让 Waline 加入到 MySQL 所在的网络中。</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用时请先导入 waline.sql 以完成表和表结构的创建，之后在项目中配置如下环境变量。
+<a class="link" href="https://waline.js.org/guide/database.html#mysql"  target="_blank" rel="noopener"
+    >Waline 数据库配置</a></p>
+<h3 id="nginx-反向代理">Nginx 反向代理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">if</span> <span class="s">(</span><span class="nv">$host</span> <span class="p">=</span> <span class="s">comment.hangops.top)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="c1"># managed by Certbot
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">comment.hangops.top</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 强制跳转 HTTPS (可选，建议加上)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">comment.hangops.top</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate</span> <span class="s">/etc/letsencrypt/live/comment.hangops.top/fullchain.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/letsencrypt/live/comment.hangops.top/privkey.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8360</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 必须带上的 Header，否则 Waline 无法获取用户真实
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="nv">$scheme</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate</span> <span class="s">/etc/letsencrypt/live/comment.hangops.top/fullchain.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/letsencrypt/live/comment.hangops.top/privkey.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="hugo-配置">Hugo 配置
+</h3><p><a class="link" href="https://waline.js.org/reference/client/props.html"  target="_blank" rel="noopener"
+    >Waline 组件配置</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">waline</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">waline</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">serverURL</span><span class="p">:</span><span class="w"> </span><span class="l">https://comment.hangops.top</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">pageview</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># 开启阅读量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">requiredMeta</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span>- <span class="l">nick</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span>- <span class="l">mail </span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/database/">Database</a>
-        
-    </section>
-
 
     
     <section class="article-copyright">
@@ -536,18 +619,18 @@
             
                 
 <article class="has-image">
-    <a href="/topic/interview/k8s/">
+    <a href="/topic/blogging/site_statistics/">
         
         
             <div class="article-image">
                 
-                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">面试 | K8s</h2>
+            <h2 class="article-title">博客 | 网站统计功能</h2>
         </div>
     </a>
 </article>
@@ -555,18 +638,18 @@
             
                 
 <article class="has-image">
-    <a href="/topic/interview/docker/">
+    <a href="/topic/blogging/blogging_deploy/">
         
         
             <div class="article-image">
                 
-                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">面试 | Docker</h2>
+            <h2 class="article-title">博客 | 服务器部署</h2>
         </div>
     </a>
 </article>
@@ -574,18 +657,18 @@
             
                 
 <article class="has-image">
-    <a href="/topic/interview/monitoring/">
+    <a href="/topic/blogging/hugo_usage_method/">
         
         
             <div class="article-image">
                 
-                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">面试 | Monitoring</h2>
+            <h2 class="article-title">博客 | Hugo 基础规划和使用方法</h2>
         </div>
     </a>
 </article>
@@ -593,37 +676,18 @@
             
                 
 <article class="has-image">
-    <a href="/topic/interview/network/">
+    <a href="/topic/blogging/todo/">
         
         
             <div class="article-image">
                 
-                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">面试 | Network</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/topic/interview/sre/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/img/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/interview_cover.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">面试 | Sre</h2>
+            <h2 class="article-title">博客 | 待办事项</h2>
         </div>
     </a>
 </article>

@@ -317,7 +317,7 @@
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
-                539 字
+                556 字
             </time>
         </div>
         
@@ -414,6 +414,9 @@
 </li>
 <li>
 <p><input disabled="" type="checkbox"> 评论功能修改</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> 让博客在google、百度 中被搜索</p>
 </li>
 </ul>
 <h3 id="部署与监控">部署与监控
@@ -541,6 +544,25 @@ hangops.top ¥14 ¥32</p>
             
                 
 <article class="has-image">
+    <a href="/topic/blogging/deploy_comments/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客 | 本地部署waline 评论系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/topic/blogging/site_statistics/">
         
         
@@ -603,55 +625,23 @@ hangops.top ¥14 ¥32</p>
      
     
         
-    <script
-    src="https://giscus.app/client.js"
-    data-repo="hangliuc/hangliuc.github.io"
-    data-repo-id="R_kgDOQdVGlg"
-    data-category="Announcements"
-    data-category-id="DIC_kwDOQdVGls4CzJNq"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="light"
-    data-lang="en"
-    data-loading=""
-    crossorigin="anonymous"
-    async
-></script>
-<script>
-    function setGiscusTheme(theme) {
-        let giscus = document.querySelector("iframe.giscus-frame");
-        if (giscus) {
-            giscus.contentWindow.postMessage(
-                {
-                    giscus: {
-                        setConfig: {
-                            theme: theme,
-                        },
-                    },
-                },
-                "https://giscus.app"
-            );
-        }
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
     }
-
-    (function () {
-        addEventListener("message", (e) => {
-            if (event.origin !== "https://giscus.app") return;
-            handler();
-        });
-        window.addEventListener("onColorSchemeChange", handler);
-
-        function handler() {
-            if (document.documentElement.dataset.scheme === "light") {
-                setGiscusTheme('light');
-            } else {
-                setGiscusTheme('dark_dimmed');
-            }
-        }
-    })();
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":"欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。","reactiontitle":"这篇文章对你有帮助吗？","sofa":"还没有人评论哦！快来抢沙发吧~"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"});
 </script>
 
     
@@ -675,7 +665,7 @@ hangops.top ¥14 ¥32</p>
     </section>
     
     <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
-        <span>文章发布: <strong>27</strong> 篇</span>
+        <span>文章发布: <strong>28</strong> 篇</span>
         &nbsp;|&nbsp;
         
         <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>

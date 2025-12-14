@@ -57,10 +57,12 @@ Tags (标签)：像便利贴一样，是扁平、描述性的。一篇文章可�
 ## 一些使用 hugo-theme-stack 搭建的优秀网站
 https://liuhouliang.com/categories/web/
 
-https://munlelee.github.io/
 
 https://blog.reincarnatey.net/
 
 https://zfj1441.com/archives/
 
 https://hyrtee.github.io/2023/start-blog/#%E8%AF%84%E8%AE%BA
+
+
+https://www.shaohantian.com/

@@ -11,7 +11,7 @@
 <meta property='og:description' content="SRE 日常输出一些技术内容。">
 <meta property='og:url' content='http://localhost:1313/'>
 <meta property='og:site_name' content='hangliuc'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-11T14:23:32&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-14T17:53:12&#43;08:00 '/>
 <meta name="twitter:title" content="hangliuc">
 <meta name="twitter:description" content="SRE 日常输出一些技术内容。"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/index.xml"><link rel="alternate" type="application/json" href="http://localhost:1313/index.json">
     <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -249,7 +249,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">22</span>
+                            <span class="count">23</span>
                         
                     </a> 
                 </div>
@@ -292,7 +292,7 @@
                 运维
             </a>
         
-            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="font_size_4">
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="font_size_5">
                 博客
             </a>
         
@@ -443,7 +443,7 @@
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
-                539 字
+                556 字
             </time>
         </div>
         
@@ -575,6 +575,137 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
                 710 字
+            </time>
+        </div>
+        
+            <div id="article_views_container" style="display: none">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+                
+                <time class="article-time--reading">
+                    <span id="article_views">0</span> 次阅读
+                </time>
+            </div>
+
+            <script>
+            (function() {
+                const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+        
+                
+                const API_URL = isLocal 
+                    ? "http://localhost:8080/api/article/visit" 
+                    : "https://hangops.top/api/article/visit"; 
+                
+                const path = window.location.pathname;
+                
+                if (path === "/" || 
+                    path.includes("/page/") || 
+                    path.includes("/search/")) {
+                    return;
+                }
+
+                fetch(API_URL, {
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: path }) 
+                })
+                .then(response => response.json()) 
+                .then(data => {
+                    const container = document.getElementById("article_views_container");
+                    const viewEl = document.getElementById("article_views");
+                    
+                    if (container && viewEl && data.views) {
+                        viewEl.innerText = data.views;
+                        
+                        container.style.display = "flex";
+                    }
+                })
+                .catch(err => {
+                    console.error("阅读量获取失败:", err);
+                });
+            })();
+            </script>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="has-image">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/topic/blogging/deploy_comments/">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" alt="Featured image of post 博客 | 本地部署waline 评论系统" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
+                博客
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/topic/blogging/deploy_comments/">博客 | 本地部署waline 评论系统</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-14T17:53:12&#43;08:00'>Dec 14, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
+            <time class="article-time--reading">
+                479 字
             </time>
         </div>
         
@@ -1536,137 +1667,6 @@
 </header>
 </article>
         
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/topic/interview/network/">
-                
-                    <img src="/img/interview_cover.jpg" loading="lazy" alt="Featured image of post 面试 | Network" />
-                
-            </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E9%9D%A2%E8%AF%95/" >
-                面试
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/topic/interview/network/">面试 | Network</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2025-12-04T19:36:01&#43;08:00'>Dec 04, 2025</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 6 分钟
-                </time>
-            </div>
-        
-
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
-            <time class="article-time--reading">
-                2742 字
-            </time>
-        </div>
-        
-            <div id="article_views_container" style="display: none">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
-                
-                <time class="article-time--reading">
-                    <span id="article_views">0</span> 次阅读
-                </time>
-            </div>
-
-            <script>
-            (function() {
-                const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-        
-                
-                const API_URL = isLocal 
-                    ? "http://localhost:8080/api/article/visit" 
-                    : "https://hangops.top/api/article/visit"; 
-                
-                const path = window.location.pathname;
-                
-                if (path === "/" || 
-                    path.includes("/page/") || 
-                    path.includes("/search/")) {
-                    return;
-                }
-
-                fetch(API_URL, {
-                    method: 'POST', 
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ path: path }) 
-                })
-                .then(response => response.json()) 
-                .then(data => {
-                    const container = document.getElementById("article_views_container");
-                    const viewEl = document.getElementById("article_views");
-                    
-                    if (container && viewEl && data.views) {
-                        viewEl.innerText = data.views;
-                        
-                        container.style.display = "flex";
-                    }
-                })
-                .catch(err => {
-                    console.error("阅读量获取失败:", err);
-                });
-            })();
-            </script>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
     </section>
     <nav class='pagination'>
         
@@ -1706,7 +1706,7 @@
     </section>
     
     <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
-        <span>文章发布: <strong>27</strong> 篇</span>
+        <span>文章发布: <strong>28</strong> 篇</span>
         &nbsp;|&nbsp;
         
         <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>

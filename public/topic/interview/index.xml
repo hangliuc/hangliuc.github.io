@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Sat, 06 Dec 2025 18:42:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/topic/interview/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Database</title>
+        <title>面试 | Database</title>
         <link>http://localhost:1313/topic/interview/database/</link>
         <pubDate>Sat, 06 Dec 2025 18:42:12 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/database/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
 &lt;/h1&gt;&lt;h2 id=&#34;1-mysql查询突然变的很慢需要怎么排查&#34;&gt;1. mysql查询突然变的很慢，需要怎么排查
 &lt;/h2&gt;&lt;h3 id=&#34;检查查询本身&#34;&gt;检查查询本身
 &lt;/h3&gt;&lt;ul&gt;
@@ -112,12 +112,12 @@
 </description>
         </item>
         <item>
-        <title>K8s</title>
+        <title>面试 | K8s</title>
         <link>http://localhost:1313/topic/interview/k8s/</link>
         <pubDate>Sat, 06 Dec 2025 18:15:30 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/k8s/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
 &lt;/h2&gt;&lt;p&gt;集群内的各个功能模块通过API Server将信息存入etcd，当需要获取和操作这些数据时，则通过API Server提供的REST接口（用GET、LIST或WATCH方法）来实现，从而实现各模块之间的信息交互。&lt;/p&gt;
 &lt;p&gt;Kubernetes中各模块通过标准的HTTP/HTTPS请求与API Server交互，通过认证和鉴权机制保证安全性，并利用Watch机制实现实时的资源状态监控与同步。&lt;/p&gt;
 &lt;h2 id=&#34;2kubelet监控worker节点如何实现&#34;&gt;2.kubelet监控worker节点如何实现
@@ -307,12 +307,12 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>Docker</title>
+        <title>面试 | Docker</title>
         <link>http://localhost:1313/topic/interview/docker/</link>
         <pubDate>Sat, 06 Dec 2025 09:56:07 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/docker/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
 &lt;/h2&gt;&lt;p&gt;容器技术的基础原理是基于 Linux 内核的 Namespace 和 Cgroups 技术。&lt;/p&gt;
 &lt;p&gt;解决问题：最初解决本地与云端不一致版本问题&lt;/p&gt;
 &lt;p&gt;容器镜像：利用Linux的Union FS技术，将应用程序所依赖的运行操作系统、工具包、依赖库、配置文件、运行脚本等各种环境信息以分层的方式联合挂载到同一个目录下，作为镜像的根目录&lt;/p&gt;
@@ -453,12 +453,12 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>Monitoring</title>
+        <title>面试 | Monitoring</title>
         <link>http://localhost:1313/topic/interview/monitoring/</link>
         <pubDate>Fri, 05 Dec 2025 13:38:56 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/monitoring/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
 &lt;/h2&gt;&lt;p&gt;1、 计数器（Counter）：用于记录事件的数量，例如请求次数、错误次数等。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;特点：单调递增，只增不减，重启时被设置为0&lt;/li&gt;
@@ -501,12 +501,12 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
 </description>
         </item>
         <item>
-        <title>Network</title>
+        <title>面试 | Network</title>
         <link>http://localhost:1313/topic/interview/network/</link>
         <pubDate>Thu, 04 Dec 2025 19:36:01 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/network/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Network" /&gt;&lt;h2 id=&#34;1osi七层模型&#34;&gt;1.OSI七层模型
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Network" /&gt;&lt;h2 id=&#34;1osi七层模型&#34;&gt;1.OSI七层模型
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -878,12 +878,12 @@ mtr -rwzbc 100 &lt;target-ip&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Sre</title>
+        <title>面试 | Sre</title>
         <link>http://localhost:1313/topic/interview/sre/</link>
         <pubDate>Thu, 04 Dec 2025 18:06:35 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/sre/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
 &lt;/h2&gt;&lt;p&gt;SLI：服务水平指示器（正常响应数的百分比）&lt;/p&gt;
 &lt;p&gt;SLO：服务水平目标（99%、99.999%、99.99999%）
 必须和时间挂钩&lt;/p&gt;
@@ -959,12 +959,12 @@ mtr -rwzbc 100 &lt;target-ip&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Liunx</title>
+        <title>面试 | Liunx</title>
         <link>http://localhost:1313/topic/interview/liunx/</link>
         <pubDate>Wed, 03 Dec 2025 10:56:44 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/liunx/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。&lt;/li&gt;
 &lt;li&gt;线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。&lt;/li&gt;
@@ -1190,12 +1190,12 @@ lsof | grep deleted&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>面试专题的一些规划</title>
+        <title>面试 | 面试专题的一些规划</title>
         <link>http://localhost:1313/topic/interview/structure/</link>
         <pubDate>Tue, 02 Dec 2025 15:06:33 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/structure/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试专题的一些规划" /&gt;&lt;ul&gt;
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | 面试专题的一些规划" /&gt;&lt;ul&gt;
 &lt;li&gt;面试经历&lt;/li&gt;
 &lt;li&gt;liunx&lt;/li&gt;
 &lt;li&gt;container &amp;amp;&amp;amp; k8s&lt;/li&gt;

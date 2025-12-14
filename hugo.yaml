@@ -102,7 +102,7 @@ params:
 
     comments:
         enabled: true
-        provider: giscus
+        provider: waline
 
         disqusjs:
             shortname:
@@ -137,18 +137,21 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
-            serverURL:
-            lang:
-            pageview:
-            emoji:
-                - https://unpkg.com/@waline/emojis@1.0.1/weibo
+            serverURL: https://comment.hangops.top
+            lang: zh-CN
+            search: false
+            pageview: 
+            comment: true
+            emoji: 
+                - https://unpkg.com/@waline/emojis@1.4.0/weibo
+            reaction: true
             requiredMeta:
                 - name
-                - email
-                - url
             locale:
-                admin: Admin
-                placeholder:
+                admin: 站长
+                placeholder: "欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。"
+                sofa: 还没有人评论哦！快来抢沙发吧~
+                reactionTitle: 这篇文章对你有帮助吗？
 
         twikoo:
             envId:

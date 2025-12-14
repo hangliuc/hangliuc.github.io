@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Thu, 04 Dec 2025 18:06:35 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/sre/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Sre</title>
+        <title>面试 | Sre</title>
         <link>http://localhost:1313/topic/interview/sre/</link>
         <pubDate>Thu, 04 Dec 2025 18:06:35 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/sre/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
 &lt;/h2&gt;&lt;p&gt;SLI：服务水平指示器（正常响应数的百分比）&lt;/p&gt;
 &lt;p&gt;SLO：服务水平目标（99%、99.999%、99.99999%）
 必须和时间挂钩&lt;/p&gt;

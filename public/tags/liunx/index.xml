@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Wed, 03 Dec 2025 10:56:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/liunx/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Liunx</title>
+        <title>面试 | Liunx</title>
         <link>http://localhost:1313/topic/interview/liunx/</link>
         <pubDate>Wed, 03 Dec 2025 10:56:44 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/liunx/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。&lt;/li&gt;
 &lt;li&gt;线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。&lt;/li&gt;

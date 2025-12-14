@@ -230,12 +230,12 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Docker</title>
+        <title>面试 | Docker</title>
         <link>http://localhost:1313/topic/interview/docker/</link>
         <pubDate>Sat, 06 Dec 2025 09:56:07 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/docker/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
 &lt;/h2&gt;&lt;p&gt;容器技术的基础原理是基于 Linux 内核的 Namespace 和 Cgroups 技术。&lt;/p&gt;
 &lt;p&gt;解决问题：最初解决本地与云端不一致版本问题&lt;/p&gt;
 &lt;p&gt;容器镜像：利用Linux的Union FS技术，将应用程序所依赖的运行操作系统、工具包、依赖库、配置文件、运行脚本等各种环境信息以分层的方式联合挂载到同一个目录下，作为镜像的根目录&lt;/p&gt;
