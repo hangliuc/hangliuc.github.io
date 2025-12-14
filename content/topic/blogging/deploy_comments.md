@@ -30,7 +30,7 @@ services:
       - MYSQL_PORT=3306
       - MYSQL_DB=waline_db        
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=xxxx
+      - MYSQL_PASSWORD=xxx
       - MYSQL_CHARSET=utf8mb4
       - MYSQL_SSL=false
       - TABLE_PREFIX=wl_
@@ -42,12 +42,12 @@ services:
       # --- 通知配置 ---
       - SMTP_SERVICE=163
       - SMTP_USER=iliuhang@163.com
-      - SMTP_PASS=xxxx
-      - SENDER_NAME=HangOps评论
+      - SMTP_PASS=LFhKHxbNZpjAEk7Q
+      - SMTP_SECURE=true
+      - SITE_NAME=Hangliuc
+      - SITE_URL=https://hangliuc.top
       - AUTHOR_EMAIL=iliuhang@163.com
-      - SITE_NAME=HangOps
-      - SITE_URL=https://hangops.top
-      - PUSH_PLUS_KEY=xxxx
+      - MAIL_SUBJECT=【Hangliuc 博客】评论通知
 
     networks:
       - ext-blog-net
@@ -56,6 +56,7 @@ networks:
   ext-blog-net:
     external: true
     name: blog-stats_blog-net   #因为 Waline 和 MySQL 不在同一个 docker-compose.yaml 文件里，它们默认是隔离的。需要让 Waline 加入到 MySQL 所在的网络中。
+
 
 ```
 使用时请先导入 waline.sql 以完成表和表结构的创建，之后在项目中配置如下环境变量。
