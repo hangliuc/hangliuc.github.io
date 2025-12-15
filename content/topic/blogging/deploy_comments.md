@@ -40,14 +40,16 @@ services:
       - JWT_SECRET=Standalone_Waline_Secret_2025
 
       # --- 通知配置 ---
+      - SITE_NAME=Hangliuc
+      - SITE_URL=https://hangops.top
+
+      # 163
       - SMTP_SERVICE=163
       - SMTP_USER=iliuhang@163.com
-      - SMTP_PASS=LFhKHxbNZpjAEk7Q
+      - SMTP_PASS=xxxxx
       - SMTP_SECURE=true
-      - SITE_NAME=Hangliuc
-      - SITE_URL=https://hangliuc.top
       - AUTHOR_EMAIL=iliuhang@163.com
-      - MAIL_SUBJECT=【Hangliuc 博客】评论通知
+      - SENDER_EMAIL=iliuhang@163.com
 
     networks:
       - ext-blog-net
@@ -62,6 +64,9 @@ networks:
 使用时请先导入 waline.sql 以完成表和表结构的创建，之后在项目中配置如下环境变量。
 [Waline 数据库配置](https://waline.js.org/guide/database.html#mysql)
 
+```shell
+docker exec -i blog-stats-db   mysql -uroot -p'xxxxx' -Dwaline_db < waline.sql
+```
 
 ### Nginx 反向代理
 ```nginx
