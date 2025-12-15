@@ -49,7 +49,7 @@ languages:
 #         shortname: "hugo-theme-stack"
     # GA Tracking ID
     googleAnalytics:
-        id: G-ZQB4X81BE5
+        id: G-4ZCZRY28LY
 
 pagination:
     pagerSize: 10
