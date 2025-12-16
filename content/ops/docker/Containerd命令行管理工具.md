@@ -7,7 +7,6 @@ categories:
 tags:
     - docker
     - containerd
-weight: 1
 ---
 
 # Containerd 命令行管理工具

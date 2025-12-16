@@ -13,6 +13,7 @@ weight: 1
     添加优秀文章,根据访问量去统计
 - [x] 美化浏览器顶层图标
 - [ ] 单独制作首页，可以参考https://www.shaohantian.com/
+- [ ] SEO 搜索结果片段优化，提高搜索结果的美观性
 
 
 ### 功能开发与内容扩展
@@ -29,6 +30,8 @@ weight: 1
 - [x] 评论功能迁移到waline
 - [x] 让博客在google、百度 中被搜索
    百度提交sitemap时需要备案号，这里先不添加。
+- [ ]备份blog 数据库
+- [ ] 开发管理平台
 
 ### 部署与监控
 - [x] 服务器部署网站
@@ -38,9 +41,11 @@ weight: 1
     首年  续费
     hangops.top ¥14 ¥32
 
-- [ ] 部署监控系统
-    - [ ] 部署prometheus
-    - [ ] 部署grafana
+- [x] 部署监控系统
+    - [x] 部署prometheus
+    - [x] 部署grafana
+
+https://monitor.hangops.top/
 - [x] 添加网站访问统计
     - [x] 统计网站访问量
     - [x] 统计文章访问量
