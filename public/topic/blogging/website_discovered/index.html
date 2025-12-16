@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="部署完博客后，需要让搜索引擎检索到博客。\ngoogle 获取Measurement ID google 分析官方网站 在 google 分析中，每个网站都有一个唯一的 Measurement ID，格式为 G-XXXXXXXXXX。这个 ID 用于将网站的访问数据发送到 google 分析。\n">
+<title>Hugo ｜ 如何让搜索引擎检索到博客</title>
+
+<link rel='canonical' href='http://localhost:1313/topic/blogging/website_discovered/'>
+
+<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="Hugo ｜ 如何让搜索引擎检索到博客">
+<meta property='og:description' content="部署完博客后，需要让搜索引擎检索到博客。\ngoogle 获取Measurement ID google 分析官方网站 在 google 分析中，每个网站都有一个唯一的 Measurement ID，格式为 G-XXXXXXXXXX。这个 ID 用于将网站的访问数据发送到 google 分析。\n">
+<meta property='og:url' content='http://localhost:1313/topic/blogging/website_discovered/'>
+<meta property='og:site_name' content='hangliuc'>
+<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:published_time' content='2025-12-15T19:45:07&#43;08:00'/><meta property='article:modified_time' content='2025-12-15T19:45:07&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/blog_cover.jpg' />
+<meta name="twitter:title" content="Hugo ｜ 如何让搜索引擎检索到博客">
+<meta name="twitter:description" content="部署完博客后，需要让搜索引擎检索到博客。\ngoogle 获取Measurement ID google 分析官方网站 在 google 分析中，每个网站都有一个唯一的 Measurement ID，格式为 G-XXXXXXXXXX。这个 ID 用于将网站的访问数据发送到 google 分析。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/blog_cover.jpg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZCZRY28LY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4ZCZRY28LY');
+        }
+      </script><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8317433e9623fbadf7108c0f111f35a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/head_portrait_hu_42403be09321586.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">hangliuc</a></h1>
+            <h2 class="site-description">SRE 日常输出一些技术内容。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:iliuhang@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/hangliuc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>首页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-archive"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12l4 0" /></svg>
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#google">google</a>
+      <ol>
+        <li><a href="#获取measurement-id">获取Measurement ID</a></li>
+        <li><a href="#提交sitemap">提交siteMap</a></li>
+        <li><a href="#如何验证文章已经被google-收录">如何验证文章已经被Google 收录</a>
+          <ol>
+            <li><a href="#google-search-console-验证">Google Search Console 验证</a></li>
+            <li><a href="#google-搜索验证">google 搜索验证</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#refs">refs</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/topic/blogging/website_discovered/">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
+                博客
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/topic/blogging/website_discovered/">Hugo ｜ 如何让搜索引擎检索到博客</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-15T19:45:07&#43;08:00'>Dec 15, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
+            <time class="article-time--reading">
+                447 字
+            </time>
+        </div>
+        
+            <div id="article_views_container" style="display: none">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+                
+                <time class="article-time--reading">
+                    <span id="article_views">0</span> 次阅读
+                </time>
+            </div>
+
+            <script>
+            (function() {
+                const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+        
+                
+                const API_URL = isLocal 
+                    ? "http://localhost:8080/api/article/visit" 
+                    : "https://hangops.top/api/article/visit"; 
+                
+                const path = window.location.pathname;
+                
+                if (path === "/" || 
+                    path.includes("/page/") || 
+                    path.includes("/search/")) {
+                    return;
+                }
+
+                fetch(API_URL, {
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: path }) 
+                })
+                .then(response => response.json()) 
+                .then(data => {
+                    const container = document.getElementById("article_views_container");
+                    const viewEl = document.getElementById("article_views");
+                    
+                    if (container && viewEl && data.views) {
+                        viewEl.innerText = data.views;
+                        
+                        container.style.display = "flex";
+                    }
+                })
+                .catch(err => {
+                    console.error("阅读量获取失败:", err);
+                });
+            })();
+            </script>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>部署完博客后，需要让搜索引擎检索到博客。</p>
+<h2 id="google">google
+</h2><h3 id="获取measurement-id">获取Measurement ID
+</h3><p><a class="link" href="https://analytics.google.com/analytics/web/provision/#/provision"  target="_blank" rel="noopener"
+    >google 分析官方网站</a>
+在 google 分析中，每个网站都有一个唯一的 Measurement ID，格式为 <code>G-XXXXXXXXXX</code>。这个 ID 用于将网站的访问数据发送到 google 分析。</p>
+<p>在hugo.yaml 中添加如下配置：</p>
+<p>如果你是yaml 格式，注意要是最顶级的配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">googleAnalytics</span><span class="p">:</span><span class="w"> </span><span class="l">G-xxxx</span><span class="w"> </span><span class="c"># &lt;--- 换成你的 Measurement ID</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="提交sitemap">提交siteMap
+</h3><p>siteMap 是一个 xml 文件，用于告诉搜索引擎你的网站有哪些页面。</p>
+<p>Hugo 会在生成和部署网站时在 public 文件夹根目录下自动生成 sitemap.xml 文件</p>
+<p>登录<a class="link" href="https://search.google.com/search-console"  target="_blank" rel="noopener"
+    >谷歌搜索控制台</a>。在验证所有权的选项中选择 “Google Analytics”，输入你的 Measurement ID 即可验证所有权。</p>
+<p>下面就是已经成功提交的截图
+<img src="/img/blog/google_search_console.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="google 搜索控制台验证所有权"
+	
+	
+></p>
+<h3 id="如何验证文章已经被google-收录">如何验证文章已经被Google 收录
+</h3><p>对于一个新站，Google 可能需要 几天甚至几周 才能把所有页面全部收录</p>
+<h4 id="google-search-console-验证">Google Search Console 验证
+</h4><p>直接在顶部的搜索框查询，输入你的文章链接，即可验证是否被收录。
+<img src="/img/blog/gcs01.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="google 搜索控制台验证所有权"
+	
+	
+></p>
+<p>也可以直接点击请求编入索引，请求 Google 收录你的文章。</p>
+<h4 id="google-搜索验证">google 搜索验证
+</h4><p><img src="/img/blog/gcs02.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="google 搜索控制台验证所有权"
+	
+	
+></p>
+<p>tips:</p>
+<ul>
+<li>验证收录可能需要 几天甚至几周 才能完成。</li>
+<li>文章的标题尽可能增加关键词密度，更加吸晴，让用户有点击的欲望。</li>
+</ul>
+<h2 id="refs">refs
+</h2><p><a class="link" href="https://hyrtee.github.io/2023/start-blog/#refs"  target="_blank" rel="noopener"
+    >https://hyrtee.github.io/2023/start-blog/#refs</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/topic/blogging/deploy_comments/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo ｜ Waline 评论系统私有化部署</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/blogging/site_statistics/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo ｜ 如何自定义实现网站统计功能</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/blogging/blogging_deploy/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo ｜ 本地服务器部署</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/blogging/hugo_usage_method/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo ｜ 基础规划和使用方法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/topic/blogging/todo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/blog_cover.jpg" loading="lazy" data-key="" data-hash="/img/blog_cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo ｜ to do list</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":"欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。","reactiontitle":"这篇文章对你有帮助吗？","sofa":"还没有人评论哦！快来抢沙发吧~"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            
+                
+                    2025
+                
+            
+        
+        hangliuc
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b>Stack</b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 🚀
+    </section>
+    
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+        <span>文章发布: <strong>29</strong> 篇</span>
+        &nbsp;|&nbsp;
+        
+        <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>
+        
+    </section>
+
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+        <span>网站稳定运行: <strong id="footer_uptime">...</strong></span>
+        &nbsp;|&nbsp;
+        
+        <span>网站总访问量: <strong id="footer_total_site_visits">...</strong> 次</span>
+    </section>
+
+</footer>
+
+<script>
+(function() {
+    function formatUptime(seconds) {
+        const days = Math.floor(seconds / 86400);
+        seconds %= 86400;
+
+        const hours = Math.floor(seconds / 3600);
+        seconds %= 3600;
+
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+
+        return `${days} 天 ${hours} 小时 ${minutes} 分 ${secs} 秒`;
+    }
+
+    const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+    
+    const INFO_URL = isLocal 
+        ? "http://localhost:8080/api/site/info"
+        : "https://hangops.top/api/site/info";
+
+    const VISIT_URL = isLocal 
+        ? "http://localhost:8080/api/site/visit"
+        : "https://hangops.top/api/site/visit";
+
+    fetch(VISIT_URL, { method: 'POST' }).catch(() => {});
+
+    
+    fetch(INFO_URL)
+    .then(res => res.json())
+    .then(data => {
+        
+        if(data.total_views !== undefined) {
+            document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
+        }
+        
+        if(data.site_total_visits !== undefined) {
+            document.getElementById("footer_total_site_visits").innerText = data.site_total_visits.toLocaleString();
+        }
+                
+        
+        if(data.uptime_seconds !== undefined) {
+            let uptime = data.uptime_seconds;
+
+            
+            document.getElementById("footer_uptime").innerText =
+                formatUptime(uptime);
+
+            
+            setInterval(() => {
+                uptime++;
+                document.getElementById("footer_uptime").innerText =
+                    formatUptime(uptime);
+            }, 1000);
+        }
+    })
+    .catch(console.error);
+})();
+</script>
+
+<div id="back-to-top" class="back-to-top" aria-label="回到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 5l0 14"></path>
+        <path d="M18 11l-6 -6"></path>
+        <path d="M6 11l6 -6"></path>
+    </svg>
+</div>
+
+<style>
+    .back-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 100px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--card-background);  
+        color: var(--card-text-color-main);        
+        box-shadow: var(--shadow-l1);              
+        border-radius: 50%;                        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;                                
+        visibility: hidden;
+        transform: translateY(20px);               
+        transition: all 0.3s ease;                 
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        background-color: var(--primary);          
+        color: #fff;
+        transform: translateY(-3px);               
+        box-shadow: var(--shadow-l2);
+    }
+
+     
+    @media (max-width: 768px) {
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<script>
+(function() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    
+    window.addEventListener('scroll', () => {
+        
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+</script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.42920a384ae147944efd4ae25e3fe3ff8eef37d6fd8930a8f5cc347c76b13191.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

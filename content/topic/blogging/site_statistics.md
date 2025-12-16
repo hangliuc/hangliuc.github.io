@@ -1,5 +1,5 @@
 ---
-title: "博客 | 网站统计功能"
+title: "Hugo ｜ 如何自定义实现网站统计功能"
 date: 2025-12-11T14:23:32+08:00
 draft: false
 categories:

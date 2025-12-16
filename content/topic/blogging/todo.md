@@ -1,5 +1,5 @@
 ---
-title: "博客 | 待办事项"
+title: "Hugo ｜ to do list"
 date: 2025-11-27T11:04:45+08:00
 draft: false
 categories:

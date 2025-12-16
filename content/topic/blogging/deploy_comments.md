@@ -1,5 +1,5 @@
 ---
-title: "博客 | 本地部署waline 评论系统"
+title: "Hugo ｜ Waline 评论系统私有化部署"
 date: 2025-12-14T17:53:12+08:00
 draft: false
 categories:

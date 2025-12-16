@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sun, 14 Dec 2025 17:53:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>博客 | 待办事项</title>
+        <lastBuildDate>Mon, 15 Dec 2025 19:45:07 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo ｜ to do list</title>
         <link>http://localhost:1313/topic/blogging/todo/</link>
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 待办事项" /&gt;&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
 &lt;/h2&gt;&lt;h3 id=&#34;美化与用户体验优化&#34;&gt;美化与用户体验优化
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
@@ -367,12 +367,86 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>博客 | 本地部署waline 评论系统</title>
+        <title>Hugo ｜ 如何让搜索引擎检索到博客</title>
+        <link>http://localhost:1313/topic/blogging/website_discovered/</link>
+        <pubDate>Mon, 15 Dec 2025 19:45:07 +0800</pubDate>
+        
+        <guid>http://localhost:1313/topic/blogging/website_discovered/</guid>
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" /&gt;&lt;p&gt;部署完博客后，需要让搜索引擎检索到博客。&lt;/p&gt;
+&lt;h2 id=&#34;google&#34;&gt;google
+&lt;/h2&gt;&lt;h3 id=&#34;获取measurement-id&#34;&gt;获取Measurement ID
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/analytics/web/provision/#/provision&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;google 分析官方网站&lt;/a&gt;
+在 google 分析中，每个网站都有一个唯一的 Measurement ID，格式为 &lt;code&gt;G-XXXXXXXXXX&lt;/code&gt;。这个 ID 用于将网站的访问数据发送到 google 分析。&lt;/p&gt;
+&lt;p&gt;在hugo.yaml 中添加如下配置：&lt;/p&gt;
+&lt;p&gt;如果你是yaml 格式，注意要是最顶级的配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;googleAnalytics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;G-xxxx&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 换成你的 Measurement ID&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;提交sitemap&#34;&gt;提交siteMap
+&lt;/h3&gt;&lt;p&gt;siteMap 是一个 xml 文件，用于告诉搜索引擎你的网站有哪些页面。&lt;/p&gt;
+&lt;p&gt;Hugo 会在生成和部署网站时在 public 文件夹根目录下自动生成 sitemap.xml 文件&lt;/p&gt;
+&lt;p&gt;登录&lt;a class=&#34;link&#34; href=&#34;https://search.google.com/search-console&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;谷歌搜索控制台&lt;/a&gt;。在验证所有权的选项中选择 “Google Analytics”，输入你的 Measurement ID 即可验证所有权。&lt;/p&gt;
+&lt;p&gt;下面就是已经成功提交的截图
+&lt;img src=&#34;http://localhost:1313/img/blog/google_search_console.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;google 搜索控制台验证所有权&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何验证文章已经被google-收录&#34;&gt;如何验证文章已经被Google 收录
+&lt;/h3&gt;&lt;p&gt;对于一个新站，Google 可能需要 几天甚至几周 才能把所有页面全部收录&lt;/p&gt;
+&lt;h4 id=&#34;google-search-console-验证&#34;&gt;Google Search Console 验证
+&lt;/h4&gt;&lt;p&gt;直接在顶部的搜索框查询，输入你的文章链接，即可验证是否被收录。
+&lt;img src=&#34;http://localhost:1313/img/blog/gcs01.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;google 搜索控制台验证所有权&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;也可以直接点击请求编入索引，请求 Google 收录你的文章。&lt;/p&gt;
+&lt;h4 id=&#34;google-搜索验证&#34;&gt;google 搜索验证
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/gcs02.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;google 搜索控制台验证所有权&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;tips:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;验证收录可能需要 几天甚至几周 才能完成。&lt;/li&gt;
+&lt;li&gt;文章的标题尽可能增加关键词密度，更加吸晴，让用户有点击的欲望。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;refs&#34;&gt;refs
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hyrtee.github.io/2023/start-blog/#refs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hyrtee.github.io/2023/start-blog/#refs&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Hugo ｜ Waline 评论系统私有化部署</title>
         <link>http://localhost:1313/topic/blogging/deploy_comments/</link>
         <pubDate>Sun, 14 Dec 2025 17:53:12 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/deploy_comments/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 本地部署waline 评论系统" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ Waline 评论系统私有化部署" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
 &lt;/h2&gt;&lt;p&gt;博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;支持匿名评论（无需登录）&lt;/li&gt;
@@ -591,12 +665,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>博客 | 网站统计功能</title>
+        <title>Hugo ｜ 如何自定义实现网站统计功能</title>
         <link>http://localhost:1313/topic/blogging/site_statistics/</link>
         <pubDate>Thu, 11 Dec 2025 14:23:32 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/site_statistics/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何自定义实现网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
 &lt;/h2&gt;&lt;p&gt;目前看到网上关于网站统计功能的实现方式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;基于busuanzi js的统计功能&lt;/li&gt;
@@ -759,12 +833,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>博客 | 服务器部署</title>
+        <title>Hugo ｜ 本地服务器部署</title>
         <link>http://localhost:1313/topic/blogging/blogging_deploy/</link>
         <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 本地服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
 &lt;h2 id=&#34;安装基础软件&#34;&gt;安装基础软件
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -874,12 +948,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>面试 | Database</title>
+        <title>SRE面试题汇总 | Database</title>
         <link>http://localhost:1313/topic/interview/database/</link>
         <pubDate>Sat, 06 Dec 2025 18:42:12 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/database/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
 &lt;/h1&gt;&lt;h2 id=&#34;1-mysql查询突然变的很慢需要怎么排查&#34;&gt;1. mysql查询突然变的很慢，需要怎么排查
 &lt;/h2&gt;&lt;h3 id=&#34;检查查询本身&#34;&gt;检查查询本身
 &lt;/h3&gt;&lt;ul&gt;
@@ -978,12 +1052,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>面试 | K8s</title>
+        <title>SRE面试题汇总 | K8s</title>
         <link>http://localhost:1313/topic/interview/k8s/</link>
         <pubDate>Sat, 06 Dec 2025 18:15:30 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/k8s/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
 &lt;/h2&gt;&lt;p&gt;集群内的各个功能模块通过API Server将信息存入etcd，当需要获取和操作这些数据时，则通过API Server提供的REST接口（用GET、LIST或WATCH方法）来实现，从而实现各模块之间的信息交互。&lt;/p&gt;
 &lt;p&gt;Kubernetes中各模块通过标准的HTTP/HTTPS请求与API Server交互，通过认证和鉴权机制保证安全性，并利用Watch机制实现实时的资源状态监控与同步。&lt;/p&gt;
 &lt;h2 id=&#34;2kubelet监控worker节点如何实现&#34;&gt;2.kubelet监控worker节点如何实现
@@ -1173,12 +1247,12 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>面试 | Docker</title>
+        <title>SRE面试题汇总 | Docker</title>
         <link>http://localhost:1313/topic/interview/docker/</link>
         <pubDate>Sat, 06 Dec 2025 09:56:07 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/docker/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
 &lt;/h2&gt;&lt;p&gt;容器技术的基础原理是基于 Linux 内核的 Namespace 和 Cgroups 技术。&lt;/p&gt;
 &lt;p&gt;解决问题：最初解决本地与云端不一致版本问题&lt;/p&gt;
 &lt;p&gt;容器镜像：利用Linux的Union FS技术，将应用程序所依赖的运行操作系统、工具包、依赖库、配置文件、运行脚本等各种环境信息以分层的方式联合挂载到同一个目录下，作为镜像的根目录&lt;/p&gt;
@@ -1408,12 +1482,12 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>面试 | Monitoring</title>
+        <title>SRE面试题汇总 | Monitoring</title>
         <link>http://localhost:1313/topic/interview/monitoring/</link>
         <pubDate>Fri, 05 Dec 2025 13:38:56 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/monitoring/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
 &lt;/h2&gt;&lt;p&gt;1、 计数器（Counter）：用于记录事件的数量，例如请求次数、错误次数等。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;特点：单调递增，只增不减，重启时被设置为0&lt;/li&gt;
@@ -1456,12 +1530,12 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
 </description>
         </item>
         <item>
-        <title>面试 | Network</title>
+        <title>SRE面试题汇总 | Network</title>
         <link>http://localhost:1313/topic/interview/network/</link>
         <pubDate>Thu, 04 Dec 2025 19:36:01 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/network/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Network" /&gt;&lt;h2 id=&#34;1osi七层模型&#34;&gt;1.OSI七层模型
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Network" /&gt;&lt;h2 id=&#34;1osi七层模型&#34;&gt;1.OSI七层模型
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1833,12 +1907,12 @@ mtr -rwzbc 100 &lt;target-ip&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>面试 | Sre</title>
+        <title>SRE面试题汇总 | Sre</title>
         <link>http://localhost:1313/topic/interview/sre/</link>
         <pubDate>Thu, 04 Dec 2025 18:06:35 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/sre/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
 &lt;/h2&gt;&lt;p&gt;SLI：服务水平指示器（正常响应数的百分比）&lt;/p&gt;
 &lt;p&gt;SLO：服务水平目标（99%、99.999%、99.99999%）
 必须和时间挂钩&lt;/p&gt;
@@ -1914,12 +1988,12 @@ mtr -rwzbc 100 &lt;target-ip&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>面试 | Liunx</title>
+        <title>SRE面试题汇总 | Liunx</title>
         <link>http://localhost:1313/topic/interview/liunx/</link>
         <pubDate>Wed, 03 Dec 2025 10:56:44 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/liunx/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。&lt;/li&gt;
 &lt;li&gt;线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。&lt;/li&gt;
@@ -2490,12 +2564,12 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
 &lt;/h3&gt;</description>
         </item>
         <item>
-        <title>面试 | 面试专题的一些规划</title>
+        <title>SRE面试题汇总 | 面试专题的一些规划</title>
         <link>http://localhost:1313/topic/interview/structure/</link>
         <pubDate>Tue, 02 Dec 2025 15:06:33 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/structure/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | 面试专题的一些规划" /&gt;&lt;ul&gt;
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | 面试专题的一些规划" /&gt;&lt;ul&gt;
 &lt;li&gt;面试经历&lt;/li&gt;
 &lt;li&gt;liunx&lt;/li&gt;
 &lt;li&gt;container &amp;amp;&amp;amp; k8s&lt;/li&gt;
@@ -2642,12 +2716,12 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
 </description>
         </item>
         <item>
-        <title>博客 | Hugo 基础规划和使用方法</title>
+        <title>Hugo ｜ 基础规划和使用方法</title>
         <link>http://localhost:1313/topic/blogging/hugo_usage_method/</link>
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/hugo_usage_method/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | Hugo 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
 &lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
 &lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;

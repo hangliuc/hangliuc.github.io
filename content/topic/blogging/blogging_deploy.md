@@ -1,5 +1,5 @@
 ---
-title: "博客 | 服务器部署"
+title: "Hugo ｜ 本地服务器部署"
 date: 2025-12-07T18:31:24+08:00
 draft: false
 categories:
