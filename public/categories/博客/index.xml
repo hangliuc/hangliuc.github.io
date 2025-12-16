@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Mon, 15 Dec 2025 19:45:07 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>博客 | 待办事项</title>
+        <title>Hugo ｜ to do list</title>
         <link>http://localhost:1313/topic/blogging/todo/</link>
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 待办事项" /&gt;&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
 &lt;/h2&gt;&lt;h3 id=&#34;美化与用户体验优化&#34;&gt;美化与用户体验优化
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
@@ -50,7 +50,8 @@
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论功能迁移到waline&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索
+百度提交sitemap时需要备案号，这里先不添加。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;部署与监控&#34;&gt;部署与监控
@@ -145,12 +146,13 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>博客 ｜ 如何让搜索引擎检索到博客</title>
+        <title>Hugo ｜ 如何让搜索引擎检索到博客</title>
         <link>http://localhost:1313/topic/blogging/website_discovered/</link>
         <pubDate>Mon, 15 Dec 2025 19:45:07 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/website_discovered/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 ｜ 如何让搜索引擎检索到博客" /&gt;&lt;h2 id=&#34;google&#34;&gt;google
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" /&gt;&lt;p&gt;部署完博客后，需要让搜索引擎检索到博客。&lt;/p&gt;
+&lt;h2 id=&#34;google&#34;&gt;google
 &lt;/h2&gt;&lt;h3 id=&#34;获取measurement-id&#34;&gt;获取Measurement ID
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/analytics/web/provision/#/provision&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;google 分析官方网站&lt;/a&gt;
@@ -165,13 +167,13 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;googleAnalytics&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;G-xxxx&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# &amp;lt;--- 换成你的 Measurement ID&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;提交站点地图&#34;&gt;提交站点地图
+&lt;/div&gt;&lt;h3 id=&#34;提交sitemap&#34;&gt;提交siteMap
 &lt;/h3&gt;&lt;p&gt;siteMap 是一个 xml 文件，用于告诉搜索引擎你的网站有哪些页面。&lt;/p&gt;
 &lt;p&gt;Hugo 会在生成和部署网站时在 public 文件夹根目录下自动生成 sitemap.xml 文件&lt;/p&gt;
 &lt;p&gt;登录&lt;a class=&#34;link&#34; href=&#34;https://search.google.com/search-console&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;谷歌搜索控制台&lt;/a&gt;。在验证所有权的选项中选择 “Google Analytics”，输入你的 Measurement ID 即可验证所有权。&lt;/p&gt;
 &lt;p&gt;下面就是已经成功提交的截图
-&lt;img src=&#34;http://localhost:1313/google_search_console.png&#34;
+&lt;img src=&#34;http://localhost:1313/img/blog/google_search_console.png&#34;
 	
 	
 	
@@ -181,18 +183,69 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何验证文章已经被google-收录&#34;&gt;如何验证文章已经被Google 收录
+&lt;/h3&gt;&lt;p&gt;对于一个新站，Google 可能需要 几天甚至几周 才能把所有页面全部收录&lt;/p&gt;
+&lt;h4 id=&#34;google-search-console-验证&#34;&gt;Google Search Console 验证
+&lt;/h4&gt;&lt;p&gt;直接在顶部的搜索框查询，输入你的文章链接，即可验证是否被收录。
+&lt;img src=&#34;http://localhost:1313/img/blog/gcs01.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;google 搜索控制台验证所有权&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;也可以直接点击请求编入索引，请求 Google 收录你的文章。&lt;/p&gt;
+&lt;h4 id=&#34;google-搜索验证&#34;&gt;google 搜索验证
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/gcs02.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;google 搜索控制台验证所有权&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;tips:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;验证收录可能需要 几天甚至几周 才能完成。&lt;/li&gt;
+&lt;li&gt;文章的标题尽可能增加关键词密度，更加吸晴，让用户有点击的欲望。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;百度&#34;&gt;百度
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;登录&lt;a class=&#34;link&#34; href=&#34;https://ziyuan.baidu.com/?castk=LTE%3D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;百度搜索控制台&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;按照要求添加域名后，使用普通收录推送资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/baidu_search.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;百度搜索控制台添加域名&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提交 sitemap.xml 文件时，需要备案号，这里先不添加。&lt;/li&gt;
+&lt;li&gt;api 提交每天会有条数限制&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;refs&#34;&gt;refs
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hyrtee.github.io/2023/start-blog/#refs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://hyrtee.github.io/2023/start-blog/#refs&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>博客 | 本地部署waline 评论系统</title>
+        <title>Hugo ｜ Waline 评论系统私有化部署</title>
         <link>http://localhost:1313/topic/blogging/deploy_comments/</link>
         <pubDate>Sun, 14 Dec 2025 17:53:12 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/deploy_comments/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 本地部署waline 评论系统" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ Waline 评论系统私有化部署" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
 &lt;/h2&gt;&lt;p&gt;博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;支持匿名评论（无需登录）&lt;/li&gt;
@@ -411,12 +464,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>博客 | 网站统计功能</title>
+        <title>Hugo ｜ 如何自定义实现网站统计功能</title>
         <link>http://localhost:1313/topic/blogging/site_statistics/</link>
         <pubDate>Thu, 11 Dec 2025 14:23:32 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/site_statistics/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何自定义实现网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
 &lt;/h2&gt;&lt;p&gt;目前看到网上关于网站统计功能的实现方式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;基于busuanzi js的统计功能&lt;/li&gt;
@@ -579,12 +632,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>博客 | 服务器部署</title>
+        <title>Hugo ｜ 本地服务器部署</title>
         <link>http://localhost:1313/topic/blogging/blogging_deploy/</link>
         <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | 服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 本地服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
 &lt;h2 id=&#34;安装基础软件&#34;&gt;安装基础软件
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -694,12 +747,12 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>博客 | Hugo 基础规划和使用方法</title>
+        <title>Hugo ｜ 基础规划和使用方法</title>
         <link>http://localhost:1313/topic/blogging/hugo_usage_method/</link>
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/hugo_usage_method/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post 博客 | Hugo 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
 &lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
 &lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="vim 常用命令 光标移动 h 或 退格：左移一个字符 l 或 空格：右移一个字符 j：下移一行 k：上移一行 gj：移动到一段内的下一行 gk：移动到一段内的上一行 + 或 Enter：移至下一行第一个非空白字符 -：移至上一行第一个非空白字符 w：前移一个单词，停在下一个单词开头 W：前移一个单词（忽略部分标点） e：前移一个单词，停在下一个单词末尾 E：前移一个单词，停在标点（如有） b：后移一个单词，停在上一个单词开头 B：后移一个单词（忽略部分标点） (：前移 1 句 )：后移 1 句 {：前移 1 段 }：后移 1 段 gg：到文件头部 G：到文件尾部 $：到行尾 0：到行首 翻屏 Ctrl + f：下翻一屏 Ctrl + b：上翻一屏 Ctrl + d：下翻半屏 Ctrl + u：上翻半屏 Ctrl + e：向下滚动一行 Ctrl + y：向上滚动一行 n%：到文件 n% 位置 zz：当前行移到屏幕中央 zt：当前行移到屏幕顶端 zb：当前行移到屏幕底端 插入 I：在当前行第一个非空字符前插入 gI：在当前行第一列插入 a：在光标后插入 A：在当前行末尾插入 o：在下方新建一行插入 O：在上方新建一行插入 :r filename：在当前位置插入另一个文件内容 :[n]r filename：在第 n 行插入另一个文件内容 剪切和复制 [n]x：剪切光标右边 n 个字符（相当于 d[n]l） [n]X：剪切光标左边 n 个字符（相当于 d[n]h） y：复制可视模式下选中的文本 yy 或 Y：复制整行 y[n]w：复制 n 个词 y[n]l：复制光标右边 n 个字符 y[n]h：复制光标左边 n 个字符 y$：从光标到行尾复制 y0：从光标到行首复制 :m,ny：复制第 m 到 n 行 y1G 或 ygg：复制光标以上所有行 yG：复制光标以下所有行 d：删除（剪切）可视模式下选中的文本 d$ 或 D：删除到行尾 d[n]w：删除 n 个单词 d[n]l：删除光标右边 n 个字符 d[n]h：删除光标左边 n 个字符 d0：删除到行首 p：在光标后粘贴 P：在光标前粘贴 查找和替换 /something：向后查找 something ?something：向前查找 something n：向后查找下一个 N：向前查找下一个 s/old/new：替换当前行第一个 old s/old/new/g：替换当前行所有 old %s/old/new/g：替换整个文件的所有 old 技巧 :set paste：解决粘贴时格式错乱问题 ">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="整理了 Linux 运维中最常用的 Vim 快捷键与技巧，包含光标移动、文本编辑、分屏操作等必备技能。">
 <title>Vim 使用技巧</title>
 
 <link rel='canonical' href='http://localhost:1313/ops/linux/vim/'>
 
 <link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="Vim 使用技巧">
-<meta property='og:description' content="vim 常用命令 光标移动 h 或 退格：左移一个字符 l 或 空格：右移一个字符 j：下移一行 k：上移一行 gj：移动到一段内的下一行 gk：移动到一段内的上一行 + 或 Enter：移至下一行第一个非空白字符 -：移至上一行第一个非空白字符 w：前移一个单词，停在下一个单词开头 W：前移一个单词（忽略部分标点） e：前移一个单词，停在下一个单词末尾 E：前移一个单词，停在标点（如有） b：后移一个单词，停在上一个单词开头 B：后移一个单词（忽略部分标点） (：前移 1 句 )：后移 1 句 {：前移 1 段 }：后移 1 段 gg：到文件头部 G：到文件尾部 $：到行尾 0：到行首 翻屏 Ctrl + f：下翻一屏 Ctrl + b：上翻一屏 Ctrl + d：下翻半屏 Ctrl + u：上翻半屏 Ctrl + e：向下滚动一行 Ctrl + y：向上滚动一行 n%：到文件 n% 位置 zz：当前行移到屏幕中央 zt：当前行移到屏幕顶端 zb：当前行移到屏幕底端 插入 I：在当前行第一个非空字符前插入 gI：在当前行第一列插入 a：在光标后插入 A：在当前行末尾插入 o：在下方新建一行插入 O：在上方新建一行插入 :r filename：在当前位置插入另一个文件内容 :[n]r filename：在第 n 行插入另一个文件内容 剪切和复制 [n]x：剪切光标右边 n 个字符（相当于 d[n]l） [n]X：剪切光标左边 n 个字符（相当于 d[n]h） y：复制可视模式下选中的文本 yy 或 Y：复制整行 y[n]w：复制 n 个词 y[n]l：复制光标右边 n 个字符 y[n]h：复制光标左边 n 个字符 y$：从光标到行尾复制 y0：从光标到行首复制 :m,ny：复制第 m 到 n 行 y1G 或 ygg：复制光标以上所有行 yG：复制光标以下所有行 d：删除（剪切）可视模式下选中的文本 d$ 或 D：删除到行尾 d[n]w：删除 n 个单词 d[n]l：删除光标右边 n 个字符 d[n]h：删除光标左边 n 个字符 d0：删除到行首 p：在光标后粘贴 P：在光标前粘贴 查找和替换 /something：向后查找 something ?something：向前查找 something n：向后查找下一个 N：向前查找下一个 s/old/new：替换当前行第一个 old s/old/new/g：替换当前行所有 old %s/old/new/g：替换整个文件的所有 old 技巧 :set paste：解决粘贴时格式错乱问题 ">
+<meta property='og:description' content="整理了 Linux 运维中最常用的 Vim 快捷键与技巧，包含光标移动、文本编辑、分屏操作等必备技能。">
 <meta property='og:url' content='http://localhost:1313/ops/linux/vim/'>
 <meta property='og:site_name' content='hangliuc'>
 <meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='command' /><meta property='article:published_time' content='2025-11-27T11:02:53&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T11:02:53&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/liunx_cover.jpg' />
 <meta name="twitter:title" content="Vim 使用技巧">
-<meta name="twitter:description" content="vim 常用命令 光标移动 h 或 退格：左移一个字符 l 或 空格：右移一个字符 j：下移一行 k：上移一行 gj：移动到一段内的下一行 gk：移动到一段内的上一行 + 或 Enter：移至下一行第一个非空白字符 -：移至上一行第一个非空白字符 w：前移一个单词，停在下一个单词开头 W：前移一个单词（忽略部分标点） e：前移一个单词，停在下一个单词末尾 E：前移一个单词，停在标点（如有） b：后移一个单词，停在上一个单词开头 B：后移一个单词（忽略部分标点） (：前移 1 句 )：后移 1 句 {：前移 1 段 }：后移 1 段 gg：到文件头部 G：到文件尾部 $：到行尾 0：到行首 翻屏 Ctrl + f：下翻一屏 Ctrl + b：上翻一屏 Ctrl + d：下翻半屏 Ctrl + u：上翻半屏 Ctrl + e：向下滚动一行 Ctrl + y：向上滚动一行 n%：到文件 n% 位置 zz：当前行移到屏幕中央 zt：当前行移到屏幕顶端 zb：当前行移到屏幕底端 插入 I：在当前行第一个非空字符前插入 gI：在当前行第一列插入 a：在光标后插入 A：在当前行末尾插入 o：在下方新建一行插入 O：在上方新建一行插入 :r filename：在当前位置插入另一个文件内容 :[n]r filename：在第 n 行插入另一个文件内容 剪切和复制 [n]x：剪切光标右边 n 个字符（相当于 d[n]l） [n]X：剪切光标左边 n 个字符（相当于 d[n]h） y：复制可视模式下选中的文本 yy 或 Y：复制整行 y[n]w：复制 n 个词 y[n]l：复制光标右边 n 个字符 y[n]h：复制光标左边 n 个字符 y$：从光标到行尾复制 y0：从光标到行首复制 :m,ny：复制第 m 到 n 行 y1G 或 ygg：复制光标以上所有行 yG：复制光标以下所有行 d：删除（剪切）可视模式下选中的文本 d$ 或 D：删除到行尾 d[n]w：删除 n 个单词 d[n]l：删除光标右边 n 个字符 d[n]h：删除光标左边 n 个字符 d0：删除到行首 p：在光标后粘贴 P：在光标前粘贴 查找和替换 /something：向后查找 something ?something：向前查找 something n：向后查找下一个 N：向前查找下一个 s/old/new：替换当前行第一个 old s/old/new/g：替换当前行所有 old %s/old/new/g：替换整个文件的所有 old 技巧 :set paste：解决粘贴时格式错乱问题 "><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="整理了 Linux 运维中最常用的 Vim 快捷键与技巧，包含光标移动、文本编辑、分屏操作等必备技能。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/img/liunx_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
@@ -29,16 +29,7 @@
           gtag('js', new Date());
           gtag('config', 'G-4ZCZRY28LY');
         }
-      </script><script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8317433e9623fbadf7108c0f111f35a0";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
+      </script>
     </head>
     <body class="
     article-page
@@ -295,6 +286,10 @@ var _hmt = _hmt || [];
             <a href="/ops/linux/vim/">Vim 使用技巧</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            整理了 Linux 运维中最常用的 Vim 快捷键与技巧，包含光标移动、文本编辑、分屏操作等必备技能。
+        </h3>
         
     </div>
 
@@ -610,7 +605,7 @@ var _hmt = _hmt || [];
         
 
         <div class="article-details">
-            <h2 class="article-title">ansible | 缓存ssh密钥</h2>
+            <h2 class="article-title">ansible | 缓存ssh密钥避免每次输入密码</h2>
         </div>
     </a>
 </article>
@@ -751,8 +746,8 @@ var _hmt = _hmt || [];
 <style>
     .back-to-top {
         position: fixed;
-        bottom: 150px;
-        right: 200px;
+        bottom: 50px;
+        right: 100px;
         width: 50px;
         height: 50px;
         background-color: var(--card-background);  

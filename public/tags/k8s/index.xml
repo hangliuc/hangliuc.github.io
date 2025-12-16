@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Sat, 06 Dec 2025 18:15:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/k8s/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>面试 | K8s</title>
+        <title>SRE面试题汇总 | K8s</title>
         <link>http://localhost:1313/topic/interview/k8s/</link>
         <pubDate>Sat, 06 Dec 2025 18:15:30 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/k8s/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
 &lt;/h2&gt;&lt;p&gt;集群内的各个功能模块通过API Server将信息存入etcd，当需要获取和操作这些数据时，则通过API Server提供的REST接口（用GET、LIST或WATCH方法）来实现，从而实现各模块之间的信息交互。&lt;/p&gt;
 &lt;p&gt;Kubernetes中各模块通过标准的HTTP/HTTPS请求与API Server交互，通过认证和鉴权机制保证安全性，并利用Watch机制实现实时的资源状态监控与同步。&lt;/p&gt;
 &lt;h2 id=&#34;2kubelet监控worker节点如何实现&#34;&gt;2.kubelet监控worker节点如何实现

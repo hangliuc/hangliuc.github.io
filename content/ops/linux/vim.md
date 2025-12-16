@@ -2,6 +2,7 @@
 title: "Vim 使用技巧"
 date: 2025-11-27T11:02:53+08:00
 draft: false
+description: "整理了 Linux 运维中最常用的 Vim 快捷键与技巧，包含光标移动、文本编辑、分屏操作等必备技能。"
 categories:
     - 运维
 tags:

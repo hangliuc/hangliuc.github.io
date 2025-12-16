@@ -1,7 +1,7 @@
 baseurl: https://hangops.top/
 languageCode: en-us
 theme: hugo-theme-stack
-title: Example Site
+title: HangOps | SRE
 buildFuture: true 
 copyright: Example Person
 outputs:
@@ -60,6 +60,7 @@ permalinks:
     page: /:slug/
 
 params:
+    description: "专注 SRE 运维技术分享，涵盖 Kubernetes, Docker, Go, AWS 云原生架构实战与踩坑记录。"
     mainSections:
         - post
         - ops
@@ -84,7 +85,7 @@ params:
 
     sidebar:
         emoji: 🍌
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: "SRE 运维 / 云原生 / Go"
         avatar:
             enabled: true
             local: true

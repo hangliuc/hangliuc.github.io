@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Fri, 05 Dec 2025 13:38:56 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>面试 | Monitoring</title>
+        <title>SRE面试题汇总 | Monitoring</title>
         <link>http://localhost:1313/topic/interview/monitoring/</link>
         <pubDate>Fri, 05 Dec 2025 13:38:56 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/interview/monitoring/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post 面试 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
 &lt;/h2&gt;&lt;p&gt;1、 计数器（Counter）：用于记录事件的数量，例如请求次数、错误次数等。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;特点：单调递增，只增不减，重启时被设置为0&lt;/li&gt;
