@@ -46,6 +46,16 @@ tips:
 - 验证收录可能需要 几天甚至几周 才能完成。
 - 文章的标题尽可能增加关键词密度，更加吸晴，让用户有点击的欲望。
 
+## 百度
+- 登录[百度搜索控制台](https://ziyuan.baidu.com/?castk=LTE%3D)
+- 按照要求添加域名后，使用普通收录推送资源
+
+![百度搜索控制台添加域名](img/blog/baidu_search.png)
+- 提交 sitemap.xml 文件时，需要备案号，这里先不添加。
+- api 提交每天会有条数限制
+
+
+
 
 ## refs
 https://hyrtee.github.io/2023/start-blog/#refs

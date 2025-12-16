@@ -50,7 +50,8 @@
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论功能迁移到waline&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索
+百度提交sitemap时需要备案号，这里先不添加。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;部署与监控&#34;&gt;部署与监控
@@ -434,6 +435,26 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;验证收录可能需要 几天甚至几周 才能完成。&lt;/li&gt;
 &lt;li&gt;文章的标题尽可能增加关键词密度，更加吸晴，让用户有点击的欲望。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;百度&#34;&gt;百度
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;登录&lt;a class=&#34;link&#34; href=&#34;https://ziyuan.baidu.com/?castk=LTE%3D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;百度搜索控制台&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;按照要求添加域名后，使用普通收录推送资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/baidu_search.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;百度搜索控制台添加域名&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提交 sitemap.xml 文件时，需要备案号，这里先不添加。&lt;/li&gt;
+&lt;li&gt;api 提交每天会有条数限制&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;refs&#34;&gt;refs
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hyrtee.github.io/2023/start-blog/#refs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2992,7 +3013,7 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>ansible | 缓存ssh密钥</title>
+        <title>ansible | 缓存ssh密钥避免每次输入密码</title>
         <link>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</link>
         <pubDate>Tue, 26 Nov 2024 10:00:00 +0800</pubDate>
         
