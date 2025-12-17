@@ -237,7 +237,7 @@ params:
 menu:
     main: 
         - identifier: home
-          name: 首页
+          name: home
           url: /
           weight: 1
           params:
@@ -251,7 +251,7 @@ menu:
         #       icon: terminal-2
         
         - identifier: search
-          name: 搜索
+          name: search
           url: /search/
           weight: 20
           params:
@@ -264,14 +264,14 @@ menu:
         #       icon: scale-outline
 
         - identifier: archives
-          name: 归档
+          name: archives
           url: /archives/
           weight: 30
           params:
               icon: archive
         
         - identifier: about
-          name: 关于我
+          name: about
           url: /about/
           weight: 40
           params:

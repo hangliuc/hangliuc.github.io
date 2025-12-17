@@ -45,10 +45,13 @@
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 写关于我的一些说明&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加“返回顶部”功能&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加&amp;quot;返回顶部&amp;quot;功能&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论功能迁移到waline&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论通知wechat、email&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索

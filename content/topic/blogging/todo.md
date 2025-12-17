@@ -26,8 +26,9 @@ weight: 1
 
       目前yuque api token 需要付费
 - [x] 写关于我的一些说明
-- [x] 添加“返回顶部”功能
+- [x] 添加"返回顶部"功能
 - [x] 评论功能迁移到waline
+  - [x]评论通知wechat、email
 - [x] 让博客在google、百度 中被搜索
    百度提交sitemap时需要备案号，这里先不添加。
 - [ ]备份blog 数据库
