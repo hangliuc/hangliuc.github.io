@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>博客 on hangliuc</title>
+        <title>博客 on Hang</title>
         <link>http://localhost:1313/topic/blogging/</link>
-        <description>Recent content in 博客 on hangliuc</description>
+        <description>Recent content in 博客 on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
@@ -21,6 +21,7 @@
 添加优秀文章,根据访问量去统计&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化浏览器顶层图标&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 单独制作首页，可以参考https://www.shaohantian.com/&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SEO 搜索结果片段优化，提高搜索结果的美观性&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;功能开发与内容扩展&#34;&gt;功能开发与内容扩展
 &lt;/h3&gt;&lt;ul&gt;
@@ -53,6 +54,12 @@
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索
 百度提交sitemap时需要备案号，这里先不添加。&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备份blog 数据库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发管理平台&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;部署与监控&#34;&gt;部署与监控
 &lt;/h3&gt;&lt;ul&gt;
@@ -63,28 +70,22 @@
 hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统&lt;/p&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署prometheus&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署grafana&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署prometheus&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署grafana&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://monitor.hangops.top/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://monitor.hangops.top/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计网站访问量&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;为什么要构建自己的博客&#34;&gt;为什么要构建自己的博客
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;构建私有知识库，记录工作中遇到的问题和解决方法，把一次经验转为长期可复用资产&lt;/li&gt;
-&lt;li&gt;练习写作能力，把复杂的问题讲清楚&lt;/li&gt;
-&lt;li&gt;练习代码与架构能力，编写后端平台&lt;/li&gt;
-&lt;li&gt;自己从0-1实践(监控告警系统、ELK日志、CDN 加速与缓存策略)&lt;/li&gt;
-&lt;li&gt;作为简历展示&lt;/li&gt;
-&lt;li&gt;未来可扩展变现&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;内容相关&#34;&gt;内容相关
 &lt;/h2&gt;&lt;p&gt;目录结构如下：&lt;/p&gt;

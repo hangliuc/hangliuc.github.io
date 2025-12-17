@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="Containerd命令行管理工具">
 <meta property='og:description' content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n">
 <meta property='og:url' content='http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
-<meta property='og:site_name' content='hangliuc'>
+<meta property='og:site_name' content='Hang'>
 <meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T10:51:50&#43;08:00'/><meta property='article:modified_time' content='2025-11-27T10:51:50&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/docker_cover.jpg' />
 <meta name="twitter:title" content="Containerd命令行管理工具">
 <meta name="twitter:description" content="Containerd 命令行管理工具 Kubernetes 从 Docker 转向 containerd 的原因 架构层面的原因 kubelet 启动一个容器的流程:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (调用 CRI 接口) ▼ dockershim (K8s 维护的 CRI 转换层) │ │ (调用 Docker Engine API) ▼ Docker Engine │ │ (调用 containerd API) ▼ containerd │ │ (调用 OCI 接口) ▼ runc (OCI runtime) │ └─&gt; 真正创建 Linux 容器 (namespace, cgroups, rootfs...) Docker Engine 是一个 完整平台（构建镜像、管理网络、Volume、Swarm 等），这些对 K8s 来说都是多余的。 dockershim 只是为了把 CRI（K8s 语言）翻译成 Docker API（Docker 语言）。 实际执行容器的，依然是 containerd + runc。 当 kubelet 直接使用 containerd 时，调用链简化为：\n"><meta name="twitter:card" content="summary_large_image">
@@ -86,8 +86,8 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">hangliuc</a></h1>
-            <h2 class="site-description">SRE 日常输出一些技术内容。</h2>
+            <h1 class="site-name"><a href="/">Hang</a></h1>
+            <h2 class="site-description">有建议和问题，欢迎评论或者直接联系我</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -187,7 +187,7 @@
                 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
                 
-                <span>关于</span>
+                <span>关于我</span>
             </a>
         </li>
         
@@ -780,7 +780,7 @@
                 
             
         
-        hangliuc
+        Hang
     </section>
 
     <section class="powerby">

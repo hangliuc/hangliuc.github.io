@@ -28,11 +28,11 @@ languages:
     #             subtitle: Example description
     zh-cn:
         languageName: 中文
-        title:  hangliuc
+        title:  Hang
         weight: 1
         params:
             sidebar:
-                subtitle: SRE 日常输出一些技术内容。
+                subtitle: 有建议和问题，欢迎评论或者直接联系我
         
     # ar:
     #     languageName: عربي
@@ -271,7 +271,7 @@ menu:
               icon: archive
         
         - identifier: about
-          name: 关于
+          name: 关于我
           url: /about/
           weight: 40
           params:
