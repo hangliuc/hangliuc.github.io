@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Background When using Ansible, to avoid the need to enter the SSH password each time a task is executed, we can cache the SSH key.\nCaching SSH Keys with Ansible Start the ssh-agent background program eval &ldquo;$(ssh-agent -s)&rdquo;\nAdd the key to ssh-add, only input the password once ssh-add ~/.ssh/xxx\nVerify if the key is successfully cached ssh-add -l\n">
+<title>ansible | Cache SSH key to avoid password input each time</title>
+
+<link rel='canonical' href='http://localhost:1313/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/'>
+
+<link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="ansible | Cache SSH key to avoid password input each time">
+<meta property='og:description' content="Background When using Ansible, to avoid the need to enter the SSH password each time a task is executed, we can cache the SSH key.\nCaching SSH Keys with Ansible Start the ssh-agent background program eval &ldquo;$(ssh-agent -s)&rdquo;\nAdd the key to ssh-add, only input the password once ssh-add ~/.ssh/xxx\nVerify if the key is successfully cached ssh-add -l\n">
+<meta property='og:url' content='http://localhost:1313/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/'>
+<meta property='og:site_name' content='Hang'>
+<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Ansible' /><meta property='article:published_time' content='2024-11-26T02:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-26T02:00:00&#43;00:00'/>
+<meta name="twitter:title" content="ansible | Cache SSH key to avoid password input each time">
+<meta name="twitter:description" content="Background When using Ansible, to avoid the need to enter the SSH password each time a task is executed, we can cache the SSH key.\nCaching SSH Keys with Ansible Start the ssh-agent background program eval &ldquo;$(ssh-agent -s)&rdquo;\nAdd the key to ssh-add, only input the password once ssh-add ~/.ssh/xxx\nVerify if the key is successfully cached ssh-add -l\n">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZCZRY28LY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4ZCZRY28LY');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/head_portrait_hu_42403be09321586.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Hang</a></h1>
+            <h2 class="site-description">If you have any suggestions or questions, feel free to leave a comment or contact me directly</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-archive"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12l4 0" /></svg>
+                
+                <span>archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" >中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" selected>English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/operations-maintenance/" >
+                Operations Maintenance
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/">ansible | Cache SSH key to avoid password input each time</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2024-11-26T02:00:00Z'>Nov 26, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
+            <time class="article-time--reading">
+                59 
+            </time>
+        </div>
+        
+            <div id="article_views_container" style="display: none">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+                
+                <time class="article-time--reading">
+                    <span id="article_views">0</span> 
+                </time>
+            </div>
+
+            <script>
+            (function() {
+                const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+        
+                
+                const API_URL = isLocal 
+                    ? "http://localhost:8080/api/article/visit" 
+                    : "https://hangops.top/api/article/visit"; 
+                
+                const path = window.location.pathname;
+                if (path.startsWith('/en/')) {
+                    path = path.replace(/^\/en/, '');
+                }
+                
+                if (path === "/" || 
+                    path.includes("/page/") || 
+                    path.includes("/search/")) {
+                    return;
+                }
+
+                fetch(API_URL, {
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ path: path }) 
+                })
+                .then(response => response.json()) 
+                .then(data => {
+                    const container = document.getElementById("article_views_container");
+                    const viewEl = document.getElementById("article_views");
+                    
+                    if (container && viewEl && data.views) {
+                        viewEl.innerText = data.views;
+                        
+                        container.style.display = "flex";
+                    }
+                })
+                .catch(err => {
+                    console.error("阅读量获取失败:", err);
+                });
+            })();
+            </script>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/" class="link">中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="background">Background
+</h1><p>When using Ansible, to avoid the need to enter the SSH password each time a task is executed, we can cache the SSH key.</p>
+<h1 id="caching-ssh-keys-with-ansible">Caching SSH Keys with Ansible
+</h1><ol>
+<li>Start the ssh-agent background program</li>
+</ol>
+<p>eval &ldquo;$(ssh-agent -s)&rdquo;</p>
+<ol start="2">
+<li>Add the key to ssh-add, only input the password once</li>
+</ol>
+<p>ssh-add ~/.ssh/xxx</p>
+<ol start="3">
+<li>Verify if the key is successfully cached</li>
+</ol>
+<p>ssh-add -l</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/ansible/">Ansible</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/en/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySQL Common Commands</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/ops/linux/asg-node-disk-issue/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ASG Node data disk mount failed</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/ops/linux/vim/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vim Tips</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Containerd Command Line Management Tool</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/ops/docker/docker-network-issue/">
+        
+        
+            <div class="article-image">
+                <img src="/ops/docker/docker-network-issue/cover.a1b71b69268e3b373f38c10c4203323d.jpg" 
+                        width="6000" 
+                        height="4000" 
+                        loading="lazy"
+                        alt="Featured image of post Container network affects host network access troubleshooting"
+                        
+                        data-hash="md5-obcbaSaOOzc/OMEMQgMyPQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Container network affects host network access troubleshooting</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":"欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。","reactiontitle":"这篇文章对你有帮助吗？","sofa":"还没有人评论哦！快来抢沙发吧~"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            
+                
+                    2025
+                
+            
+        
+        Hang
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b>Stack</b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 🚀
+    </section>
+    
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        <span>Published: <strong>58</strong> Posts</span>
+        &nbsp;|&nbsp;
+        <span>Total Views: <strong id="footer_total_views">...</strong> views</span>
+    </section>
+
+    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+        <span>Uptime: <strong id="footer_uptime">...</strong></span>
+        &nbsp;|&nbsp;
+        <span>Site Visits: <strong id="footer_total_site_visits">...</strong> views</span>
+    </section>
+</footer>
+
+<script>
+(function() {
+    
+    const isEn = window.location.pathname.startsWith('/en/');
+    
+    
+    const timeUnits = isEn 
+        ? { d: " days ", h: " hrs ", m: " min ", s: " sec" }
+        : { d: " 天 ", h: " 小时 ", m: " 分 ", s: " 秒" };
+
+    function formatUptime(seconds) {
+        const days = Math.floor(seconds / 86400);
+        seconds %= 86400;
+        const hours = Math.floor(seconds / 3600);
+        seconds %= 3600;
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+
+        return `${days}${timeUnits.d}${hours}${timeUnits.h}${minutes}${timeUnits.m}${secs}${timeUnits.s}`;
+    }
+
+    const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+    const INFO_URL = isLocal 
+        ? "http://localhost:8080/api/site/info"
+        : "https://hangops.top/api/site/info";
+
+    const VISIT_URL = isLocal 
+        ? "http://localhost:8080/api/site/visit"
+        : "https://hangops.top/api/site/visit";
+
+    
+    fetch(VISIT_URL, { method: 'POST' }).catch(() => {});
+
+    
+    fetch(INFO_URL)
+    .then(res => res.json())
+    .then(data => {
+        if(data.total_views !== undefined) {
+            document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
+        }
+        if(data.site_total_visits !== undefined) {
+            document.getElementById("footer_total_site_visits").innerText = data.site_total_visits.toLocaleString();
+        }
+        if(data.uptime_seconds !== undefined) {
+            let uptime = data.uptime_seconds;
+            const uptimeEl = document.getElementById("footer_uptime");
+            
+            uptimeEl.innerText = formatUptime(uptime);
+            setInterval(() => {
+                uptime++;
+                uptimeEl.innerText = formatUptime(uptime);
+            }, 1000);
+        }
+    })
+    .catch(console.error);
+})();
+</script>
+
+<div id="back-to-top" class="back-to-top" aria-label="回到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 5l0 14"></path>
+        <path d="M18 11l-6 -6"></path>
+        <path d="M6 11l6 -6"></path>
+    </svg>
+</div>
+
+<style>
+    .back-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 100px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--card-background);  
+        color: var(--card-text-color-main);        
+        box-shadow: var(--shadow-l1);              
+        border-radius: 50%;                        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;                                
+        visibility: hidden;
+        transform: translateY(20px);               
+        transition: all 0.3s ease;                 
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        background-color: var(--primary);          
+        color: #fff;
+        transform: translateY(-3px);               
+        box-shadow: var(--shadow-l2);
+    }
+
+     
+    @media (max-width: 768px) {
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<script>
+(function() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    
+    window.addEventListener('scroll', () => {
+        
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+</script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.42920a384ae147944efd4ae25e3fe3ff8eef37d6fd8930a8f5cc347c76b13191.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

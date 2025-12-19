@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Command on Hang</title>
+        <link>http://localhost:1313/en/tags/command/</link>
+        <description>Recent content in Command on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Mon, 01 Dec 2025 13:14:56 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/command/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MySQL Common Commands</title>
+        <link>http://localhost:1313/en/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Mon, 01 Dec 2025 13:14:56 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;-- Switch to the MySQL database
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;none&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-- View users
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-- View user permissions
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;grants&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-- Create a user
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CREATE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;USER&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;xxx&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IDENTIFIED&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;BY&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;xxxx&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-- Grant permissions
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;GRANT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;INSERT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;UPDATE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;DELETE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ON&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据库&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;数据表&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;TO&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-- Delete a user
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;DROP&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;USER&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;XXX&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Vim Tips</title>
+        <link>http://localhost:1313/en/ops/linux/vim/</link>
+        <pubDate>Thu, 27 Nov 2025 03:02:53 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/ops/linux/vim/</guid>
+        <description>&lt;h1 id=&#34;vim-common-commands&#34;&gt;vim Common Commands
+&lt;/h1&gt;&lt;h2 id=&#34;cursor-movement&#34;&gt;Cursor Movement
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;h&lt;/strong&gt; or &lt;strong&gt;Backspace&lt;/strong&gt;: Move left by one character&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;l&lt;/strong&gt; or &lt;strong&gt;Space&lt;/strong&gt;: Move right by one character&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;j&lt;/strong&gt;: Move down by one line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;k&lt;/strong&gt;: Move up by one line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gj&lt;/strong&gt;: Move to the next line within a paragraph&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gk&lt;/strong&gt;: Move to the previous line within a paragraph&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;+&lt;/strong&gt; or &lt;strong&gt;Enter&lt;/strong&gt;: Move to the first non-blank character of the next line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-&lt;/strong&gt;: Move to the first non-blank character of the previous line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;w&lt;/strong&gt;: Move forward by one word, stopping at the start of the next word&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;W&lt;/strong&gt;: Move forward by one word (ignoring some punctuation)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;e&lt;/strong&gt;: Move forward by one word, stopping at the end of the next word&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;: Move forward by one word, stopping at punctuation (if any)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;b&lt;/strong&gt;: Move backward by one word, stopping at the start of the previous word&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt;: Move backward by one word (ignoring some punctuation)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(&lt;/strong&gt;: Move forward by 1 sentence&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;)&lt;/strong&gt;: Move backward by 1 sentence&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;{&lt;/strong&gt;: Move forward by 1 paragraph&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;}&lt;/strong&gt;: Move backward by 1 paragraph&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gg&lt;/strong&gt;: Move to the beginning of the file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;G&lt;/strong&gt;: Move to the end of the file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$&lt;/strong&gt;: Move to the end of the line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0&lt;/strong&gt;: Move to the beginning of the line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;scrolling&#34;&gt;Scrolling
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + f&lt;/strong&gt;: Scroll down one screen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + b&lt;/strong&gt;: Scroll up one screen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + d&lt;/strong&gt;: Scroll down half a screen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + u&lt;/strong&gt;: Scroll up half a screen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + e&lt;/strong&gt;: Scroll down one line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ctrl + y&lt;/strong&gt;: Scroll up one line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;n%&lt;/strong&gt;: Go to n% of the file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zz&lt;/strong&gt;: Move the current line to the center of the screen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zt&lt;/strong&gt;: Move the current line to the top of the screen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zb&lt;/strong&gt;: Move the current line to the bottom of the screen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;insertion&#34;&gt;Insertion
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;: Insert at the first non-blank character of the current line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gI&lt;/strong&gt;: Insert at the first column of the current line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;a&lt;/strong&gt;: Insert after the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;: Insert at the end of the current line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;o&lt;/strong&gt;: Insert a new line below and move to it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;O&lt;/strong&gt;: Insert a new line above and move to it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:r filename&lt;/strong&gt;: Insert the contents of another file at the current position&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:[n]r filename&lt;/strong&gt;: Insert the contents of another file at line n&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cutting-and-copying&#34;&gt;Cutting and Copying
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[n]x&lt;/strong&gt;: Cut n characters to the right of the cursor (equivalent to d[n]l)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[n]X&lt;/strong&gt;: Cut n characters to the left of the cursor (equivalent to d[n]h)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y&lt;/strong&gt;: Copy the text in visual mode&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;yy&lt;/strong&gt; or &lt;strong&gt;Y&lt;/strong&gt;: Copy the entire line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y[n]w&lt;/strong&gt;: Copy n words&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y[n]l&lt;/strong&gt;: Copy n characters to the right of the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y[n]h&lt;/strong&gt;: Copy n characters to the left of the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y$&lt;/strong&gt;: Copy from the cursor to the end of the line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y0&lt;/strong&gt;: Copy from the cursor to the beginning of the line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;:m,ny&lt;/strong&gt;: Copy lines m to n&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;y1G&lt;/strong&gt; or &lt;strong&gt;ygg&lt;/strong&gt;: Copy all lines above the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;yG&lt;/strong&gt;: Copy all lines below the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d&lt;/strong&gt;: Delete (cut) the text in visual mode&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d$&lt;/strong&gt; or &lt;strong&gt;D&lt;/strong&gt;: Delete to the end of the line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d[n]w&lt;/strong&gt;: Delete n words&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d[n]l&lt;/strong&gt;: Delete n characters to the right of the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d[n]h&lt;/strong&gt;: Delete n characters to the left of the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d0&lt;/strong&gt;: Delete to the beginning of the line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;p&lt;/strong&gt;: Paste after the cursor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;: Paste before the cursor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;searching-and-replacing&#34;&gt;Searching and Replacing
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;/something&lt;/strong&gt;: Search for &amp;ldquo;something&amp;rdquo; forward&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;?something&lt;/strong&gt;: Search for &amp;ldquo;something&amp;rdquo; backward&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;n&lt;/strong&gt;: Search for the next occurrence&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;: Search for the previous occurrence&lt;/li&gt;
+&lt;li&gt;s/old/new: Replace the first occurrence of &amp;ldquo;old&amp;rdquo; in the current line&lt;/li&gt;
+&lt;li&gt;s/old/new/g: Replace all occurrences of &amp;ldquo;old&amp;rdquo; in the current line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;%s/old/new/g&lt;/strong&gt;: Replace all occurrences of &amp;ldquo;old&amp;rdquo; in the entire file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;:set paste&lt;/strong&gt;: Solve the problem of formatting errors when pasting&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

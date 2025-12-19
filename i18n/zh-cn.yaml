@@ -1,0 +1,11 @@
+footer:
+  published: "文章发布"
+  articles: "篇"
+  total_views: "文章总访问"
+  times: "次"
+  uptime: "网站稳定运行"
+  site_visits: "网站总访问量"
+article:
+  readingTime: "阅读时长: {{ .Count }} 分钟"
+  words: "字"         
+  views: "次阅读"     

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Database on Hang</title>
+        <link>http://localhost:1313/en/tags/database/</link>
+        <description>Recent content in Database on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sat, 06 Dec 2025 10:42:12 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/database/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SRE Interview Questions | Database</title>
+        <link>http://localhost:1313/en/topic/interview/database/</link>
+        <pubDate>Sat, 06 Dec 2025 10:42:12 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/topic/interview/database/</guid>
+        <description>&lt;h1 id=&#34;mysql&#34;&gt;mysql
+&lt;/h1&gt;&lt;h2 id=&#34;1-how-to-troubleshoot-a-sudden-slow-mysql-query&#34;&gt;1. How to troubleshoot a sudden slow MySQL query
+&lt;/h2&gt;&lt;h3 id=&#34;check-the-query-itself&#34;&gt;Check the query itself
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Review if the SQL query can be optimized, such as using appropriate indexes, avoiding full table scans, etc.&lt;/li&gt;
+&lt;li&gt;Complex JOIN operations: Confirm if there are multiple large table joins or unnecessary complex operations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;check-database-performance&#34;&gt;Check database performance
+&lt;/h3&gt;&lt;p&gt;Slow query log: Enable and check the slow query log (slow_query_log). Review which queries have been running for a long time recently.&lt;/p&gt;
+&lt;h3 id=&#34;check-system-load&#34;&gt;Check system load
+&lt;/h3&gt;&lt;p&gt;System resources: Check if there are bottlenecks in CPU, memory, disk IO, and network resources. Use tools like top or htop to monitor.
+Disk IO: Check if disk read/write has become a bottleneck. Use tools like iostat or vmstat to view disk IO status.&lt;/p&gt;
+&lt;h3 id=&#34;check-lock-and-concurrency-issues&#34;&gt;Check lock and concurrency issues
+&lt;/h3&gt;&lt;p&gt;Lock status: Check if there are lock waiting or deadlock issues. Use the following SQL statements to view the current lock status:
+If there are many threads in the &amp;ldquo;Locked&amp;rdquo; state, it may be necessary to further analyze the source of the locks and find solutions.&lt;/p&gt;
+&lt;h3 id=&#34;network-latency&#34;&gt;Network latency
+&lt;/h3&gt;&lt;p&gt;If connecting to MySQL remotely, confirm if the network connection is stable and if there is high latency.&lt;/p&gt;
+&lt;h1 id=&#34;redis&#34;&gt;redis
+&lt;/h1&gt;&lt;h2 id=&#34;1-hotkey-and-large-key-issues&#34;&gt;1. Hotkey and large key issues
+&lt;/h2&gt;&lt;h3 id=&#34;hotkey-issues&#34;&gt;Hotkey issues
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Hotkey: Refers to frequently accessed keys that may lead to decreased database performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Impact:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU concentrated on a single Redis node&lt;/li&gt;
+&lt;li&gt;QPS uneven, cluster load imbalance&lt;/li&gt;
+&lt;li&gt;Latency spikes, request timeouts&lt;/li&gt;
+&lt;li&gt;Triggering failover in nodes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solutions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Business layer sharding/bucketing: Split hot requests into multiple keys to improve concurrency capacity.&lt;/li&gt;
+&lt;li&gt;Increase cache layer: Local cache + Redis secondary cache to reduce direct access to Redis.&lt;/li&gt;
+&lt;li&gt;Use multi-key splitting to read pressure, breaking a hot large key into multiple sub-keys.&lt;/li&gt;
+&lt;li&gt;Hotspot protection at the Redis Proxy layer, where the proxy layer can identify hotspots and perform degradation.&lt;/li&gt;
+&lt;li&gt;Client-side local throttling + degradation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;large-key-issues&#34;&gt;Large key issues
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Large key: Refers to keys with very large values that occupy a large amount of memory space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Impact:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slow during migration slots (CLUSTER ADDSLOTS/MIGRATE)&lt;/li&gt;
+&lt;li&gt;May block the Redis main thread&lt;/li&gt;
+&lt;li&gt;Trigger blocking during deletion (del O(n) operation)&lt;/li&gt;
+&lt;li&gt;Overload network bandwidth&lt;/li&gt;
+&lt;li&gt;Increase in read/write latency&lt;/li&gt;
+&lt;li&gt;Slow failover recovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solutions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Business layer splitting: Split large keys into multiple small keys, with each small key storing only a portion of the data.&lt;/li&gt;
+&lt;li&gt;Pagination read: Do not use hgetall/smembers/zrange, use scan / segmented retrieval.&lt;/li&gt;
+&lt;li&gt;Pre-limit the size of the value: Do key size limits on the service side.&lt;/li&gt;
+&lt;li&gt;Avoid storing logs, messages, and long texts in Redis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;How to find large keys&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis&amp;rsquo;s SCAN command&lt;/li&gt;
+&lt;li&gt;redis-cli -h 127.0.0.1 -p 6379 —bigkeys&lt;/li&gt;
+&lt;li&gt;Open-source tool Redis RDB Tools, analyze RDB files, and scan out Redis large keys.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;kafka&#34;&gt;kafka
+&lt;/h1&gt;&lt;h2 id=&#34;1-how-to-handle-message-backlog&#34;&gt;1. How to handle message backlog
+&lt;/h2&gt;&lt;h3 id=&#34;causes-of-message-backlog&#34;&gt;Causes of message backlog
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Producers produce a large number of messages to a Topic in a short period of time, and consumers cannot consume them in time.&lt;/li&gt;
+&lt;li&gt;Consumers have insufficient consumption capacity (low consumer concurrency, long message processing time), leading to consumption efficiency lower than production efficiency.&lt;/li&gt;
+&lt;li&gt;Consumer anomalies (such as consumer failures, consumer network anomalies, etc.) causing inability to consume messages.&lt;/li&gt;
+&lt;li&gt;Topic partition settings are not reasonable, or new partitions are added without consumers consuming them.&lt;/li&gt;
+&lt;li&gt;Topic frequent rebalancing leads to reduced consumption efficiency.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;solutions&#34;&gt;Solutions
+&lt;/h3&gt;&lt;p&gt;From the causes of message backlog, the message backlog problem can be handled from three aspects: consumer side, producer side, and service side.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consumer side
+&lt;ul&gt;
+&lt;li&gt;Increase the number of consumers according to actual business needs to ensure that the number of partitions/consumers is an integer, and it is recommended that the number of consumers and partitions be consistent.&lt;/li&gt;
+&lt;li&gt;Increase the consumption speed of consumers by optimizing consumer processing logic (reducing complex calculations, third-party interface calls, and read database operations), reducing consumption time.&lt;/li&gt;
+&lt;li&gt;Increase the number of messages pulled by consumers each time: Pull data/process time &amp;gt;= production speed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Producer side
+&lt;ul&gt;
+&lt;li&gt;Add a random suffix to the message Key when producing messages to balance the distribution of messages to different partitions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Service side
+&lt;ul&gt;
+&lt;li&gt;Reasonably set the number of partitions for the Topic, and increase the number of Topic partitions without affecting business processing efficiency.&lt;/li&gt;
+&lt;li&gt;When message backlog occurs on the service side, implement circuit breaking for producers or forward producers&amp;rsquo; messages to other Topics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

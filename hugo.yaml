@@ -19,13 +19,6 @@ DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 
 languages:
-    # en:
-    #     languageName: English
-    #     title: Example Site
-    #     weight: 1
-    #     params:
-    #         sidebar:
-    #             subtitle: Example description
     zh-cn:
         languageName: 中文
         title:  Hang
@@ -33,8 +26,44 @@ languages:
         params:
             sidebar:
                 subtitle: 有建议和问题，欢迎评论或者直接联系我
-        
-    # ar:
+    en:
+        languageName: English
+        title: Hang
+        weight: 1
+        params:
+            sidebar:
+                subtitle: If you have any suggestions or questions, feel free to leave a comment or contact me directly
+        menu:
+          main: 
+            - identifier: home
+              name: home
+              url: /en
+              weight: 1
+              params:
+                    icon: home
+            - identifier: search
+              name: search
+              url: /en/search/
+              weight: 2
+              params:
+                    icon: search
+            
+        # ar:
+            - identifier: archives
+              name: archives
+              url: /en/archives/
+              weight: 2
+              params:
+                    icon: archive
+            
+            - identifier: about
+              name: about
+              url: /en/about/
+              weight: 3
+              params:
+                    icon: user
+            
+        # ar:
     #     languageName: عربي
     #     languagedirection: rtl
     #     title: موقع تجريبي
@@ -237,7 +266,7 @@ params:
 menu:
     main: 
         - identifier: home
-          name: home
+          name: 主页
           url: /
           weight: 1
           params:
@@ -251,7 +280,7 @@ menu:
         #       icon: terminal-2
         
         - identifier: search
-          name: search
+          name: 搜索
           url: /search/
           weight: 20
           params:
@@ -264,14 +293,14 @@ menu:
         #       icon: scale-outline
 
         - identifier: archives
-          name: archives
+          name: 文章
           url: /archives/
           weight: 30
           params:
               icon: archive
         
         - identifier: about
-          name: about
+          name: 关于
           url: /about/
           weight: 40
           params:

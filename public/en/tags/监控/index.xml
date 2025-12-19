@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>监控 on Hang</title>
+        <link>http://localhost:1313/en/tags/%E7%9B%91%E6%8E%A7/</link>
+        <description>Recent content in 监控 on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Fri, 05 Dec 2025 05:38:56 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SRE Interview Questions Summary | Monitoring</title>
+        <link>http://localhost:1313/en/topic/interview/monitoring/</link>
+        <pubDate>Fri, 05 Dec 2025 05:38:56 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/topic/interview/monitoring/</guid>
+        <description>&lt;h2 id=&#34;1-types-of-monitoring-metrics-and-application-scenarios&#34;&gt;1. Types of Monitoring Metrics and Application Scenarios
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Counter: Used to record the number of events, such as the number of requests, number of errors, etc.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Characteristics: Monotonically increasing, only increases, reset to 0 on restart&lt;/li&gt;
+&lt;li&gt;Scenarios: qps, error, number of completed tasks, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gauge: Used to record current values, such as memory usage, CPU utilization, etc.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Characteristics: Can increase or decrease, a metric that can change arbitrarily&lt;/li&gt;
+&lt;li&gt;Scenarios: cpu, mem, disk, network, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Histogram and Summary are mainly used for calculating quantiles and analyzing the distribution of samples.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Histogram: Used to record the distribution of events, with Prometheus server calculating quantiles through buckets.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Characteristics: Buckets need to be predefined (such as 10ms, 50ms, 100ms…), used to bucket sample values. Can aggregate global quantiles across instances (Summary cannot do this)&lt;/li&gt;
+&lt;li&gt;Scenarios: Business interface latency monitoring, p95, p99&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;histogram_quantile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;http_request_duration_seconds_bucket&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;le&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Summary:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Characteristics: No need for buckets, quantiles are automatically maintained in the code. Cannot calculate global p99 across instances
+If you have 10 pods, each exposing p99, then Prometheus can no longer calculate the &amp;ldquo;p99 of the entire service&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Scenarios: Independent statistical needs for each instance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The quantiles of Summary are calculated on the client (application) locally. Prometheus only needs to store the final p95, p99 values. However, it cannot aggregate global quantiles across instances.
+Histogram calculates quantiles on the server, and Histogram can aggregate data from multiple instances to get the global quantiles of the entire service, which is the most commonly used method in k8s production environments.&lt;/p&gt;
+&lt;h2 id=&#34;2-golden-metrics&#34;&gt;2. Golden Metrics
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Latency&lt;/li&gt;
+&lt;li&gt;qps&lt;/li&gt;
+&lt;li&gt;Error Rate&lt;/li&gt;
+&lt;li&gt;Saturation&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

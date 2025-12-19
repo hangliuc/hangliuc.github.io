@@ -49,31 +49,34 @@
         <div>
             {{ partial "helper/icon" "file-text" }} 
             <time class="article-time--reading">
-                {{ .WordCount }} 字
+                {{ .WordCount }} {{ T "article.words" }}
             </time>
         </div>
+
         {{ if .IsPage }}
             <div id="article_views_container" style="display: none">
-                
                 {{ partial "helper/icon" "eye" }}
-                
                 <time class="article-time--reading">
-                    <span id="article_views">0</span> 次阅读
+                    <span id="article_views">0</span> {{ T "article.views" }}
                 </time>
             </div>
 
             <script>
             (function() {
                 const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-        
-                // 动态选择 API 地址
                 const API_URL = isLocal 
                     ? "http://localhost:8080/api/article/visit" 
                     : "https://hangops.top/api/article/visit"; 
                 
-                const path = window.location.pathname;
-                // 如果是首页(/)或者分页(/page/1)或者搜索(/search/query)，直接什么都不做
-                if (path === "/" || 
+                let path = window.location.pathname;
+
+                // 强制移除 /en 前缀
+                // 这样英文页面的 path 就会变成 /posts/xxx，从而能查到中文站的数据库记录
+                if (path.startsWith('/en/')) {
+                    path = path.replace(/^\/en/, '');
+                }
+
+                if (path === "/" || path === "" ||
                     path.includes("/page/") || 
                     path.includes("/search/")) {
                     return;
@@ -89,9 +92,8 @@
                     const container = document.getElementById("article_views_container");
                     const viewEl = document.getElementById("article_views");
                     
-                    if (container && viewEl && data.views) {
+                    if (container && viewEl && data.views !== undefined) {
                         viewEl.innerText = data.views;
-                        
                         container.style.display = "flex";
                     }
                 })

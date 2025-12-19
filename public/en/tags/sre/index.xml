@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Sre on Hang</title>
+        <link>http://localhost:1313/en/tags/sre/</link>
+        <description>Recent content in Sre on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Thu, 04 Dec 2025 10:06:35 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/sre/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SRE Interview Questions Summary | SRE</title>
+        <link>http://localhost:1313/en/topic/interview/sre/</link>
+        <pubDate>Thu, 04 Dec 2025 10:06:35 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/topic/interview/sre/</guid>
+        <description>&lt;h2 id=&#34;1-sla-slo-sli&#34;&gt;1. SLA, SLO, SLI
+&lt;/h2&gt;&lt;p&gt;SLI: Service Level Indicator (percentage of normal response counts)&lt;/p&gt;
+&lt;p&gt;SLO: Service Level Objective (99%, 99.999%, 99.99999%)
+Must be tied to time&lt;/p&gt;
+&lt;p&gt;SLA: Service Level Agreement (the specific implementation of SLO)&lt;/p&gt;
+&lt;p&gt;SLA is the external commitment to the customer, SLO is the internal goal set by the company to achieve the commitment, and SLI is the indicator used to measure the actual service performance.&lt;/p&gt;
+&lt;h2 id=&#34;2-mttr&#34;&gt;2. MTTR
+&lt;/h2&gt;&lt;p&gt;MTTR: Mean Time to Repair (Average Time to Repair)&lt;/p&gt;
+&lt;p&gt;MTTR = Total Time to Repair ÷ Number of Faults&lt;/p&gt;
+&lt;h3 id=&#34;how-to-reduce-mttr&#34;&gt;How to Reduce MTTR?
+&lt;/h3&gt;&lt;h3 id=&#34;monitoring&#34;&gt;Monitoring
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Improve the monitoring and alerting system
+&lt;ul&gt;
+&lt;li&gt;Business metric monitoring&lt;/li&gt;
+&lt;li&gt;System metric monitoring&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Alert Noise Reduction
+&lt;ul&gt;
+&lt;li&gt;Alert Grading: p1, p2, p3&lt;/li&gt;
+&lt;li&gt;Alert Escalation: When an alert level is P2 and has not been handled (not closed, not suppressed, etc.) within 1 hour, it will automatically escalate to p1&lt;/li&gt;
+&lt;li&gt;Alert Interval: The minimum interval for the same alert to be sent by default is 15m&lt;/li&gt;
+&lt;li&gt;Alert Flood: Set appropriate alert strategies to avoid too many alerts and alert loss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fast-location&#34;&gt;Fast Location
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Standardized troubleshooting SOP
+&lt;ul&gt;
+&lt;li&gt;How to check when CPU and memory are soaring&lt;/li&gt;
+&lt;li&gt;How to check when ELB 5xx occurs&lt;/li&gt;
+&lt;li&gt;How to check when Pod CrashLoop occurs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Automatically capture on-site information
+&lt;ul&gt;
+&lt;li&gt;C++ core dump&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Unified logging platform
+&lt;ul&gt;
+&lt;li&gt;ELK / Loki&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Full-link tracking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fast-problem-resolution&#34;&gt;Fast Problem Resolution
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Gray release / Canary release&lt;/li&gt;
+&lt;li&gt;Configuration center (apollo) + dynamic traffic splitting (like a switch to turn off a module)&lt;/li&gt;
+&lt;li&gt;Auto-scaling (auto-scaling based on business traffic, HPA)&lt;/li&gt;
+&lt;li&gt;Scripted repair
+&lt;ul&gt;
+&lt;li&gt;One-click restart&lt;/li&gt;
+&lt;li&gt;One-click clear DNS cache&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;high-availability-deployment&#34;&gt;High Availability Deployment
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;High availability&lt;/li&gt;
+&lt;li&gt;Multi-AZ deployment&lt;/li&gt;
+&lt;li&gt;Automatic failover&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;continuous-drills--reliability-testing&#34;&gt;Continuous Drills &amp;amp; Reliability Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Chaos engineering (pre-drill faults)&lt;/li&gt;
+&lt;li&gt;Add missing monitoring points&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

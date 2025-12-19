@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>K8s on Hang</title>
+        <link>http://localhost:1313/en/tags/k8s/</link>
+        <description>Recent content in K8s on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Sat, 06 Dec 2025 10:15:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/k8s/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SRE Interview Questions Summary | K8s</title>
+        <link>http://localhost:1313/en/topic/interview/k8s/</link>
+        <pubDate>Sat, 06 Dec 2025 10:15:30 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/topic/interview/k8s/</guid>
+        <description>&lt;h2 id=&#34;1-how-different-modules-communicate-with-api-server&#34;&gt;1. How Different Modules Communicate with API Server
+&lt;/h2&gt;&lt;p&gt;Various functional modules within the cluster store information in etcd through the API Server. When they need to retrieve and operate on these data, they achieve inter-module information interaction by using the REST interfaces provided by the API Server (using GET, LIST, or WATCH methods).&lt;/p&gt;
+&lt;p&gt;In Kubernetes, different modules interact with the API Server through standard HTTP/HTTPS requests, ensuring security through authentication and authorization mechanisms, and utilizing the Watch mechanism to implement real-time resource status monitoring and synchronization.&lt;/p&gt;
+&lt;h2 id=&#34;2-how-kubelet-monitors-worker-nodes&#34;&gt;2. How kubelet Monitors Worker Nodes
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Linux Kernel
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cAdvisor Collects Container and Node Metrics
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubelet Processes, Aggregates, and Judges Node Status
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apiserver + metrics server Aggregate
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl top / HPA / Scheduler Make Decisions
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3-considerations-for-clusters-with-over-a-thousand-nodes&#34;&gt;3. Considerations for Clusters with Over a Thousand Nodes
+&lt;/h2&gt;&lt;p&gt;Official documentation: &lt;a class=&#34;link&#34; href=&#34;https://kubernetes.io/zh-cn/docs/setup/best-practices/cluster-large/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://kubernetes.io/zh-cn/docs/setup/best-practices/cluster-large/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-content-stored-in-kubeconfig&#34;&gt;4. Content Stored in kubeconfig
+&lt;/h2&gt;&lt;p&gt;Information about clusters, users, namespaces, and authentication mechanisms.&lt;/p&gt;
+&lt;h2 id=&#34;5-the-role-of-kube-proxy&#34;&gt;5. The Role of kube-proxy
+&lt;/h2&gt;&lt;p&gt;Core Responsibility: Maintain Service Forwarding Rules
+kube-proxy listens for changes to Service, Endpoints/EndpointSlice in the API Server, maintains iptables or IPVS rules on the node to achieve traffic forwarding from Service to backend Pods.&lt;/p&gt;
+&lt;h3 id=&#34;types&#34;&gt;Types
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;iptables: Default mode, uses iptables rules to implement Service forwarding.&lt;/li&gt;
+&lt;li&gt;IPVS: Based on Linux kernel IPVS for four-layer load balancing, high performance, and fast rule updates.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-scheduler-scheduling-process&#34;&gt;6. Scheduler Scheduling Process
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Listening and Getting (Listen &amp;amp; Get)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Scheduler listens to the K8s API Server for unbound Pods&lt;/li&gt;
+&lt;li&gt;Through the Informer mechanism, it gets real-time information of Pods and Nodes from the local cache to improve efficiency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Preselection Phase (Predicates/Filter)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Quickly filter out nodes that do not meet the conditions to reduce subsequent calculation volume&lt;/li&gt;
+&lt;li&gt;Node resources (CPU, Memory), Node Selector/Affinity/Anti-Affinity, Taints/Tolerations, Pod reservation, etc. Get a list of &amp;ldquo;candidate nodes&amp;rdquo; that pass all filters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Priority Selection Phase (Priority)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Scoring: Score the nodes that pass the preselection to evaluate their &amp;ldquo;goodness&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Node resource utilization, load balancing, topology location (such as prioritizing the same rack/region).
+Result: Get a node list sorted by score in descending order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Binding Phase (Bind)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the node with the highest score&lt;/li&gt;
+&lt;li&gt;Write the selection result to the local cache (Scheduler Cache), record resource usage, and try to reserve resources.&lt;/li&gt;
+&lt;li&gt;Asynchronously call the API Server to update the spec.nodeName of the Pod, binding the Pod to the selected node.&lt;/li&gt;
+&lt;li&gt;After the Kubelet detects the Pod binding event, it starts creating containers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-pod-startup-process&#34;&gt;7. POD Startup Process
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Users submit the pod&amp;rsquo;s yaml configuration to the API Server through kubectl or other tools&lt;/li&gt;
+&lt;li&gt;After receiving the request, the API Server stores the configuration in etcd&lt;/li&gt;
+&lt;li&gt;Scheduler binds the Pod to an appropriate node according to the scheduling strategy&lt;/li&gt;
+&lt;li&gt;After the Kubelet detects the Pod binding event, it starts creating containers
+&lt;ul&gt;
+&lt;li&gt;Pull images&lt;/li&gt;
+&lt;li&gt;Create sandbox, where all containers share network and storage namespaces&lt;/li&gt;
+&lt;li&gt;Call the container runtime to create containers in the pod&lt;/li&gt;
+&lt;li&gt;If there are init containers, the kubelet starts them before the application containers&lt;/li&gt;
+&lt;li&gt;aws-node creates pod network interface, assigns IP address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;After the container starts, the Kubelet sends a status update to the API Server&lt;/li&gt;
+&lt;li&gt;After receiving the update, the API Server stores the status in etcd&lt;/li&gt;
+&lt;li&gt;When users query the Pod status through kubectl or other tools, the API Server retrieves the latest status from etcd and returns it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-troubleshooting-failed-dns-resolution-for-pods&#34;&gt;8. Troubleshooting Failed DNS Resolution for Pods
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Check Pod Internal and Configuration&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;kubectl exec -it &lt;pod&gt; &amp;ndash; nslookup kubernetes.default Cluster internal DNS failure&lt;/li&gt;
+&lt;li&gt;kubectl exec -it &lt;pod&gt; &amp;ndash; curl &lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.google.com&lt;/a&gt; Upstream DNS or CoreDNS configuration issue&lt;/li&gt;
+&lt;li&gt;Check DNS Policy: View the Pod YAML to ensure that the dnsPolicy (such as ClusterFirst) configuration is correct.
+Default: Pod inherits the domain name resolution configuration from the node it runs on.
+ClusterFirst: Pod first resolves from the cluster internal DNS, and then uses the node DNS configuration if it fails.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Check coredns&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Check coredns load&lt;/li&gt;
+&lt;li&gt;Check coredns configmap forward&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Investigate kube-proxy
+DNS traffic is Pod → kube-proxy → CoreDNS Pod&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check CNI Network Plugin&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Whether Istio / Linkerd / Envoy sidecar is used&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;9-common-pod-scheduling-methods&#34;&gt;9. Common Pod Scheduling Methods
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Default Scheduler&lt;/li&gt;
+&lt;li&gt;Node Selector&lt;/li&gt;
+&lt;li&gt;Affinity and Anti-Affinity&lt;/li&gt;
+&lt;li&gt;Taints and Tolerations&lt;/li&gt;
+&lt;li&gt;Resource Requests and Limits&lt;/li&gt;
+&lt;li&gt;Pod Topology Spread Scheduling: Uniform distribution across different nodes/racks&lt;/li&gt;
+&lt;li&gt;Preemption Scheduling&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;10-the-purpose-of-the-pause-container&#34;&gt;10. The Purpose of the Pause Container
+&lt;/h2&gt;&lt;p&gt;The only role of the Pause container is to ensure that the Pod will not be deleted even if there are no containers running in it, because there is still a Pause container running at this time.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Network namespace isolation&lt;/li&gt;
+&lt;li&gt;Process isolation&lt;/li&gt;
+&lt;li&gt;Resource isolation&lt;/li&gt;
+&lt;li&gt;Lifecycle management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;11-possible-causes-and-troubleshooting-for-failed-pod-health-checks&#34;&gt;11. Possible Causes and Troubleshooting for Failed Pod Health Checks
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Probe configuration issues&lt;/li&gt;
+&lt;li&gt;Application not started/responding slowly: Exceeds initialDelaySeconds, process exits (CrashLoopBackOff)&lt;/li&gt;
+&lt;li&gt;Resource constraints: CPU/Memory insufficient, causing Kubelet to fail to run health checks&lt;/li&gt;
+&lt;li&gt;Network issues: Container cannot access external services, such as DNS resolution failure&lt;/li&gt;
+&lt;li&gt;Unavailable dependencies: Database, cache, etc. dependent services are not ready&lt;/li&gt;
+&lt;li&gt;Database, cache, etc. dependent services are not ready&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Troubleshooting Approach&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kubectl describe pod&lt;/li&gt;
+&lt;li&gt;kubectl logs&lt;/li&gt;
+&lt;li&gt;Check health check configuration&lt;/li&gt;
+&lt;li&gt;Enter the container internally to troubleshoot
+&lt;ul&gt;
+&lt;li&gt;Use curl, wget to test the HTTP probe path.&lt;/li&gt;
+&lt;li&gt;netstat -tulnp or ss -tulnp to confirm that the port is listening&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Check resources and nodes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-how-to-troubleshoot-inability-to-access-pods&#34;&gt;12. How to Troubleshoot Inability to Access Pods
+&lt;/h2&gt;&lt;h2 id=&#34;13-common-states-of-pods&#34;&gt;13. Common States of Pods
+&lt;/h2&gt;&lt;p&gt;Pod Phase&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Running&lt;/li&gt;
+&lt;li&gt;Succeeded (Job completed, CronJob completed)&lt;/li&gt;
+&lt;li&gt;Failed (Program crash, container startup failed)&lt;/li&gt;
+&lt;li&gt;Pending (Resource insufficient, NodeSelector no match, image pull slow)&lt;/li&gt;
+&lt;li&gt;Unknown (Kubelet cannot report status, node offline, network interruption)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Creation/Scheduling Related&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ContainerCreating (Container is being created, pulling images)&lt;/li&gt;
+&lt;li&gt;PodInitializing (Container is initializing, executing init container)&lt;/li&gt;
+&lt;li&gt;ImagePullBackOff (Image pull failed, such as authentication issue, image does not exist)&lt;/li&gt;
+&lt;li&gt;ErrImagePull (Same as above, earlier than BackOff)&lt;/li&gt;
+&lt;li&gt;CreateContainerConfigError (Container creation configuration error, such as mount volume does not exist)&lt;/li&gt;
+&lt;li&gt;Error (Container exits with a non-zero exit code, but may not trigger failure due to restart policy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Running Abnormally&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CrashLoopBackOff (Container crashes, kubelet restarts the container according to the backoff strategy, default 10s)&lt;/li&gt;
+&lt;li&gt;OOMKilled (Container exceeds memory limit, forcibly killed by kubelet)&lt;/li&gt;
+&lt;li&gt;BackOff (After multiple failures, enter the avoidance state, such as init container failure)&lt;/li&gt;
+&lt;li&gt;CrashLoopBackOff (Main container keeps crashing and restarting)&lt;/li&gt;
+&lt;li&gt;CreateContainerConfigError (Container creation configuration error, such as mount volume does not exist)&lt;/li&gt;
+&lt;li&gt;Error (Container exits with a non-zero exit code, but may not trigger failure due to restart policy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Termination/Completion&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Terminating (Container is terminating, such as deleting pod)&lt;/li&gt;
+&lt;li&gt;Completed (Container exits normally, such as the main container exits)&lt;/li&gt;
+&lt;li&gt;Failed (Container exits with a non-zero exit code, and the restart policy is Never)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,11 @@
+footer:
+  published: "Published"
+  articles: "Posts"
+  total_views: "Total Views"
+  times: "views" 
+  uptime: "Uptime"
+  site_visits: "Site Visits"
+article:
+  readingTime: "{{ .Count }} min read"
+  words: "Words"     
+  views: "Views"

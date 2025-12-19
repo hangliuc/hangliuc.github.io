@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Liunx on Hang</title>
+        <link>http://localhost:1313/en/tags/liunx/</link>
+        <description>Recent content in Liunx on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Wed, 03 Dec 2025 02:56:44 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/liunx/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SRE Interview Questions Summary | Linux</title>
+        <link>http://localhost:1313/en/topic/interview/liunx/</link>
+        <pubDate>Wed, 03 Dec 2025 02:56:44 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/topic/interview/liunx/</guid>
+        <description>&lt;h2 id=&#34;1-processes-threads-and-coroutines&#34;&gt;1. &lt;strong&gt;Processes, Threads, and Coroutines&lt;/strong&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Process: The smallest unit of resource allocation in an operating system, such as CPU, memory, and disk I/O. A process can have multiple threads.&lt;/li&gt;
+&lt;li&gt;Thread: The execution unit within a process. A process can have multiple threads, and threads share the resources of the process.&lt;/li&gt;
+&lt;li&gt;Coroutine: A lightweight user-space thread controlled by the user program, which does not require support from the operating system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-process-priority-in-linux-and-setting-methods&#34;&gt;2. Process Priority in Linux and Setting Methods
+&lt;/h2&gt;&lt;p&gt;The priority of a process determines the order in which it gets CPU time slices. Processes with higher priority (lower numerical value) get CPU time slices first.
+The priority of a process is represented by the Nice value, which ranges from -20 (highest priority) to 19 (lowest priority). By default, the Nice value of a process is 0.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;nice command: The nice command is used to start a process and set its Nice value. For example, nice -n 10 command will start command with a Nice value of 10.&lt;/li&gt;
+&lt;li&gt;renice command: The renice command is used to modify the Nice value of a running process. For example, renice +5 -p 1234 will increase the Nice value of the process with PID 1234 by 5. Note that only the root user can lower the Nice value of a process.&lt;/li&gt;
+&lt;li&gt;Calling nice() or setpriority() functions in code: If you are writing a program, you can call the nice() or setpriority() functions in your code to change the priority of your process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-what-is-a-zombie-process&#34;&gt;3. What is a Zombie Process
+&lt;/h2&gt;&lt;p&gt;A zombie process is a process that has terminated but whose process descriptor (process descriptor) is still in memory.
+The parent process has not yet reclaimed the resources of the child process.&lt;/p&gt;
+&lt;h2 id=&#34;4-what-is-process-interrupt&#34;&gt;4. What is Process Interrupt
+&lt;/h2&gt;&lt;p&gt;An interrupt is a mechanism used by the system to respond to hardware device requests, which interrupts the normal scheduling and execution of a process, and then calls the kernel&amp;rsquo;s interrupt handling program to respond to the device request.
+For example, in the case of ordering takeout food, instead of waiting, the action of calling is an interrupt.
+Interrupts are an asynchronous processing mechanism that can improve the concurrency processing capability of the system.&lt;/p&gt;
+&lt;h3 id=&#34;41-soft-interrupts-hard-interrupts-and-uninterruptible-processes&#34;&gt;4.1 Soft Interrupts, Hard Interrupts, and Uninterruptible Processes
+&lt;/h3&gt;&lt;p&gt;Linux divides interrupts into two parts: the upper part and the lower part.
+The upper part directly handles hardware requests and is characterized by fast execution (hard interrupt).
+The lower part is triggered by the kernel and is characterized by delayed execution (soft interrupt).
+An uninterruptible process indicates that the process and hardware are interacting, and to maintain consistency between process data and hardware, the system does not allow other processes or interrupts to interrupt this process. A process that remains in an uninterruptible state for a long time usually indicates that there is an issue with system I/O.&lt;/p&gt;
+&lt;h2 id=&#34;5-ways-of-inter-process-communication-and-their-use-cases&#34;&gt;5. Ways of Inter-Process Communication and Their Use Cases
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Pipe (Pipe) and Named Pipe (Named pipe): A pipe is a half-duplex communication method, mainly used for inter-process communication between processes with parent-child relationships. A named pipe is a full-duplex communication method that can be used for communication between any two processes. They are mainly used for streaming data transmission.&lt;/li&gt;
+&lt;li&gt;Message Queue (Message Queue): A message queue is a list structure that can store messages to be sent. A process can add messages to a message queue and also read messages from it. Message queues are often used for data exchange and synchronization between different processes.&lt;/li&gt;
+&lt;li&gt;Shared Memory (Shared Memory): Shared memory is the fastest IPC method, which allows two or more processes to access the same memory area. This method is often used for exchanging large amounts of data.&lt;/li&gt;
+&lt;li&gt;Signal (Signal): Signals are an asynchronous communication method used to notify the receiving process that an event has occurred. For example, when a process ends, it sends a SIGCHLD signal to its parent process.&lt;/li&gt;
+&lt;li&gt;Socket (Socket): Sockets can be used for inter-process communication between processes on different machines, as well as on the same machine. It supports TCP, UDP, and other protocols and is often used for network communication.&lt;/li&gt;
+&lt;li&gt;Semaphore (Semaphore): Semaphores are mainly used to solve race conditions and protect the access to critical resources. When multiple processes need to access the same resource, they can use semaphores for synchronization.&lt;/li&gt;
+&lt;li&gt;File Locking (File Locking): File locking can be used to control the access of multiple processes to the same file. When a process is accessing a file, other processes must wait until the process releases the file lock.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;6-ways-to-limit-cpu-in-cgroup&#34;&gt;6. Ways to Limit CPU in cgroup
+&lt;/h2&gt;&lt;p&gt;cgroups, short for control groups, is a feature of the Linux kernel that is used to limit, control, and isolate the resources of a process (such as CPU, memory, disk, etc.).
+In cgroup, there are two ways to limit CPU:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CPU time slice-based limitation: By setting the cpu.cfs_quota_us and cpu.cfs_period_us parameters, the CPU time that a process can use in each time period is limited.&lt;/li&gt;
+&lt;li&gt;CPU core-based limitation: By setting the cpu.shares parameter, the running time ratio of a process on multiple CPU cores is limited.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;7-the-difference-between-buffers-and-cached-in-memory&#34;&gt;7. The Difference Between Buffers and Cached in Memory
+&lt;/h2&gt;&lt;p&gt;The purpose of design is to improve system I/O performance
+Buffers are the kernel buffer area used by memory, corresponding to the Buffers value in /proc/meminfo.
+Cache is the memory used by the kernel page cache and Slab, corresponding to the sum of Cached and SReclaimable in /proc/meminfo.&lt;/p&gt;
+&lt;p&gt;Buffers are used to temporarily store data to be written to the hard disk, while Cached is used to store data that has been read from the hard disk for fast access.
+Buffer is a cache for disk data. Cache is a cache for file data, which is used in both read and write requests.&lt;/p&gt;
+&lt;p&gt;Linux follows the principle of using as much memory as possible, and memory will allocate the remaining space as cache, while cache does not belong to free. When the system runs for a long time, we will find that the cache is very large.&lt;/p&gt;
+&lt;p&gt;When we see that the system memory usage is very high and free is almost 0, it does not mean that the system memory capacity has a bottleneck! It just means that the system is fully utilizing the memory. When a process needs to apply for a large file memory, the kernel will reclaim some cache space, and the reclaimed memory will be allocated to the process program to use.&lt;/p&gt;
+&lt;h2 id=&#34;8-the-difference-between-stack-memory-and-heap-memory&#34;&gt;8. The Difference Between Stack Memory and Heap Memory
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Stack Memory (Stack)
+Characteristics: Stack memory is automatically allocated and released, and has the Last In First Out (LIFO, Last In First Out) characteristic. Variables in stack memory are created when a function call is made and are automatically destroyed when the function returns. Its management is controlled by the compiler, so it is efficient.
+Usage: It is usually used to store temporary data such as local variables and function parameters. The allocation of stack memory is usually fast because it just adjusts a pointer to track the current stack top position.
+Advantages: Fast memory allocation and release, and it is not easy to produce memory fragmentation.
+Disadvantages: The size of stack memory is usually limited, and it cannot be used to store a large amount of data or data that needs to be used for a long time.&lt;/li&gt;
+&lt;li&gt;Heap Memory (Heap)
+Characteristics: Heap memory is dynamically allocated, and its size is not fixed. It needs to be manually allocated and released by the programmer. If it is forgotten to release, it may cause memory leaks. It does not have a strict LIFO order and can request memory allocation at any location in the program.
+Usage: It is used to store a large amount of data that needs to be dynamically allocated, such as objects, global data, etc. It is allocated through malloc() or new and released through free() or delete.
+Advantages: Suitable for long-term use of data or large data structures, such as linked lists, trees, etc. The size of heap memory is almost infinite compared to the stack (subject to physical memory and system limitations).
+Disadvantages: Since it needs to be manually managed, the allocation and release of heap memory is slower, and it is easy to cause memory fragmentation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Summary of differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lifecycle: The data in stack memory is valid during the function call period, while the data in heap memory is valid until the manual release.&lt;/li&gt;
+&lt;li&gt;Allocation method: The stack is automatically allocated and managed by the system, while the heap is dynamically allocated and managed by the programmer.&lt;/li&gt;
+&lt;li&gt;Efficiency: Stack memory is efficient, while heap memory allocation and release is slower&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;9-how-to-adjust-the-maximum-number-of-processes-maximum-number-of-threads-and-maximum-number-of-open-files&#34;&gt;9. How to Adjust the Maximum Number of Processes, Maximum Number of Threads, and Maximum Number of Open Files
+&lt;/h2&gt;&lt;h3 id=&#34;check-current-limits&#34;&gt;Check Current Limits
+&lt;/h3&gt;&lt;p&gt;ulimit -a
+ulimit -u      # Maximum number of processes/threads
+ulimit -n      # Maximum number of file handles&lt;/p&gt;
+&lt;h3 id=&#34;adjust-maximum-file-number&#34;&gt;Adjust Maximum File Number
+&lt;/h3&gt;&lt;p&gt;Temporary effect
+ulimit -n 65535&lt;/p&gt;
+&lt;p&gt;Permanent effect
+sudo vim /etc/security/limits.conf&lt;/p&gt;
+&lt;p&gt;Add the following content&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;soft nofile 65535&lt;/li&gt;
+&lt;li&gt;hard nofile 65535&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;adjust-maximum-process-number--maximum-thread-number&#34;&gt;Adjust Maximum Process Number / Maximum Thread Number
+&lt;/h3&gt;&lt;p&gt;Temporary effect
+ulimit -u 65535&lt;/p&gt;
+&lt;p&gt;Permanent effect
+sudo vim /etc/security/limits.conf&lt;/p&gt;
+&lt;p&gt;Add the following content&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;soft nproc 65535&lt;/li&gt;
+&lt;li&gt;hard nproc 65535&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes
+&lt;/h3&gt;&lt;p&gt;soft limit: Users can exceed this value, but cannot exceed the hard limit.
+hard limit: Users cannot exceed this value, nor can they be lower than the soft limit.&lt;/p&gt;
+&lt;p&gt;/etc/sysctl.conf belongs to system-level kernel parameters and needs to be restarted to take effect.
+/etc/security/limits.conf belongs to user-level or process-level parameters and needs to be relogged in to take effect.&lt;/p&gt;
+&lt;h2 id=&#34;10-the-difference-between-load-and-cpu-usage&#34;&gt;10. The Difference Between Load and CPU Usage
+&lt;/h2&gt;&lt;p&gt;Load average refers to the average number of processes in the system that are in a state of runnable (R) and uninterruptible (D) (average active process count) within a unit of time.
+CPU usage refers to the proportion of the total time that the CPU is processing tasks within a unit of time.&lt;/p&gt;
+&lt;p&gt;The ideal situation: The average load is equal to the number of CPU cores, and there is a process on each core.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Check the number of CPU cores
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grep &lt;span class=&#34;s1&#34;&gt;&amp;#39;model name&amp;#39;&lt;/span&gt; /proc/cpuinfo &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; wc -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uptime
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 06:44:50 up &lt;span class=&#34;m&#34;&gt;190&lt;/span&gt; days, 22:44,  &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; users,  load average: 0.42, 0.14, 0.04
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;relationship-between-the-two&#34;&gt;Relationship between the two
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;CPU-intensive processes, using a lot of CPU will cause the average load to rise, and these two are consistent&lt;/li&gt;
+&lt;li&gt;I/O-intensive processes, waiting for I/O will also cause the average load to rise, but the CPU usage may not be very high&lt;/li&gt;
+&lt;li&gt;A large number of waiting CPU processes scheduling will also cause the average load to rise, and the CPU usage will also be relatively high&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;11-why-du-and-df-show-different-disk-results&#34;&gt;11. Why du and df Show Different Disk Results
+&lt;/h2&gt;&lt;p&gt;In the system, there may be a large number of deleted files (zombie files), and there are running processes using these file handles.&lt;/p&gt;
+&lt;p&gt;When a file is deleted, if a process is still using the file, du will not count this part of the space because the file has been removed from the directory structure; however, df will count this part of the space because the disk space is actually still being occupied.&lt;/p&gt;
+&lt;h3 id=&#34;solution&#34;&gt;Solution
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Restart the system: Restarting the system can clear all unused file handles, including zombie files.&lt;/li&gt;
+&lt;li&gt;Find and close the process: Use tools such as lsof or fuser to find and close the process using the zombie file.
+lsof |grep deleted&lt;/li&gt;
+&lt;li&gt;Manually delete the file: If the process cannot be closed, the file must be manually deleted. However, be careful that deleting the file will cause all processes using the file to fail to work properly.&lt;/li&gt;
+&lt;li&gt;Kill the process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-the-difference-between-hard-links-and-soft-links&#34;&gt;12. The Difference Between Hard Links and Soft Links
+&lt;/h2&gt;&lt;p&gt;Hard links and soft links are two different types of file system links used for sharing files between directories.&lt;/p&gt;
+&lt;h3 id=&#34;hard-links&#34;&gt;Hard Links:
+&lt;/h3&gt;&lt;p&gt;a. Multiple files with the same inode node number are mutually hard linked files;
+b. Hard link files are another entry for the file;
+c. Hard links can be set on files to prevent important files from being deleted by mistake;
+d. Deleting a hard link file or deleting the source file will not delete the file entity, only when both are deleted will it take effect&lt;/p&gt;
+&lt;h3 id=&#34;soft-links&#34;&gt;Soft Links:
+&lt;/h3&gt;&lt;p&gt;a. Soft links are similar to shortcut links in Windows systems
+b. Soft links store the path to the source file, pointing to the source file
+c. Deleting the source file, the soft link still exists, but cannot access the content of the source file
+d. Soft links and source files are different files, and the file types are also different, and the inode number is also different&lt;/p&gt;
+&lt;h2 id=&#34;13-how-to-partition-lvm&#34;&gt;13. How to Partition LVM
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Create physical volume (PV)&lt;/li&gt;
+&lt;li&gt;Create volume group (VG)&lt;/li&gt;
+&lt;li&gt;Create logical volume (LV)&lt;/li&gt;
+&lt;li&gt;Format logical volume (LV)&lt;/li&gt;
+&lt;li&gt;Mount logical volume (LV)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In public cloud operations, it is rare to see LVM partitioning disks, which is actually completely normal and is an industry trend.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cloud disks can be expanded directly, so there is no need for LVM&amp;rsquo;s PV/VG/LV&lt;/li&gt;
+&lt;li&gt;Traditional LVM is often used for RAID1 (mirroring) and RAID0 (performance enhancement). However, cloud disks at the bottom are already multi-replicated and provide high performance through SSD&lt;/li&gt;
+&lt;li&gt;k8s weakens the use of LVM, the root disk runs the system, and data is stored in PVC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;14-how-to-create-and-manage-custom-systemd-services&#34;&gt;14. How to Create and Manage Custom systemd Services
+&lt;/h2&gt;&lt;p&gt;The location of the custom service configuration file is /etc/systemd/system/&lt;/p&gt;
+&lt;p&gt;After creating or modifying the unit file, you need to reload the configuration to take effect
+sudo systemctl daemon-reload&lt;/p&gt;
+&lt;h2 id=&#34;15-what-is-proc-in-the-linux-system&#34;&gt;15. What is /proc in the Linux System
+&lt;/h2&gt;&lt;p&gt;An interface for user and kernel interaction, the source of performance tool data (top, free, ps)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The &lt;span class=&#34;nb&#34;&gt;complete&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; to start the current process
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/proc/进程号/cmdline
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The list of environment variables of the current process
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/proc/2422772/environ
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The output of /proc files is generated in C language and its derivatives, and needs to be separated to be output normally&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /proc/3824/cmdline &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr &lt;span class=&#34;s1&#34;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;16-use-cases-of-lsof-command&#34;&gt;16. Use Cases of lsof Command
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;View the files opened by a process
+lsof -p 1234&lt;/li&gt;
+&lt;li&gt;View which process is using a specific port
+lsof -i :80&lt;/li&gt;
+&lt;li&gt;View all network connections
+lsof -i&lt;/li&gt;
+&lt;li&gt;View the files opened by a user
+lsof -u username&lt;/li&gt;
+&lt;li&gt;A file has been deleted, but it is still being used by a process
+lsof | grep deleted&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

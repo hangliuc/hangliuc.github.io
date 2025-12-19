@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ansible on Hang</title>
+        <link>http://localhost:1313/en/tags/ansible/</link>
+        <description>Recent content in Ansible on Hang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Tue, 26 Nov 2024 02:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/ansible/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ansible | Cache SSH key to avoid password input each time</title>
+        <link>http://localhost:1313/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</link>
+        <pubDate>Tue, 26 Nov 2024 02:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
+        <description>&lt;h1 id=&#34;background&#34;&gt;Background
+&lt;/h1&gt;&lt;p&gt;When using Ansible, to avoid the need to enter the SSH password each time a task is executed, we can cache the SSH key.&lt;/p&gt;
+&lt;h1 id=&#34;caching-ssh-keys-with-ansible&#34;&gt;Caching SSH Keys with Ansible
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;Start the ssh-agent background program&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;eval &amp;ldquo;$(ssh-agent -s)&amp;rdquo;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Add the key to ssh-add, only input the password once&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh-add ~/.ssh/xxx&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Verify if the key is successfully cached&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh-add -l&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

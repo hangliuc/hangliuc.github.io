@@ -144,7 +144,7 @@
 
 
                 
-                <span>home</span>
+                <span>主页</span>
             </a>
         </li>
         
@@ -163,7 +163,7 @@
 
 
                 
-                <span>search</span>
+                <span>搜索</span>
             </a>
         </li>
         
@@ -175,7 +175,7 @@
                 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-archive"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12l4 0" /></svg>
                 
-                <span>archives</span>
+                <span>文章</span>
             </a>
         </li>
         
@@ -187,12 +187,35 @@
                 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
                 
-                <span>about</span>
+                <span>关于</span>
             </a>
         </li>
         
         <li class="menu-bottom-section">
             <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
 
                 
                     <li id="dark-mode-toggle">
@@ -329,7 +352,7 @@
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg> 
             <time class="article-time--reading">
-                864 字
+                864 
             </time>
         </div>
         
@@ -338,7 +361,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
                 
                 <time class="article-time--reading">
-                    <span id="article_views">0</span> 次阅读
+                    <span id="article_views">0</span> 
                 </time>
             </div>
 
@@ -352,6 +375,9 @@
                     : "https://hangops.top/api/article/visit"; 
                 
                 const path = window.location.pathname;
+                if (path.startsWith('/en/')) {
+                    path = path.replace(/^\/en/, '');
+                }
                 
                 if (path === "/" || 
                     path.includes("/page/") || 
@@ -384,6 +410,25 @@
     </footer>
     
 
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/en/topic/interview/experience/%E7%99%BE%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%BF%90%E7%BB%B4/" class="link">English</a>
+                
+            </div>
+        </footer>
     
 </div>
 
@@ -705,39 +750,49 @@
     </section>
     
     <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
-        <span>文章发布: <strong>29</strong> 篇</span>
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        <span>文章发布: <strong>58</strong> 篇</span>
         &nbsp;|&nbsp;
-        
         <span>文章总访问: <strong id="footer_total_views">...</strong> 次</span>
-        
     </section>
 
     <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
         <span>网站稳定运行: <strong id="footer_uptime">...</strong></span>
         &nbsp;|&nbsp;
-        
         <span>网站总访问量: <strong id="footer_total_site_visits">...</strong> 次</span>
     </section>
-
 </footer>
 
 <script>
 (function() {
+    
+    const isEn = window.location.pathname.startsWith('/en/');
+    
+    
+    const timeUnits = isEn 
+        ? { d: " days ", h: " hrs ", m: " min ", s: " sec" }
+        : { d: " 天 ", h: " 小时 ", m: " 分 ", s: " 秒" };
+
     function formatUptime(seconds) {
         const days = Math.floor(seconds / 86400);
         seconds %= 86400;
-
         const hours = Math.floor(seconds / 3600);
         seconds %= 3600;
-
         const minutes = Math.floor(seconds / 60);
         const secs = seconds % 60;
 
-        return `${days} 天 ${hours} 小时 ${minutes} 分 ${secs} 秒`;
+        return `${days}${timeUnits.d}${hours}${timeUnits.h}${minutes}${timeUnits.m}${secs}${timeUnits.s}`;
     }
 
     const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-    
     const INFO_URL = isLocal 
         ? "http://localhost:8080/api/site/info"
         : "https://hangops.top/api/site/info";
@@ -746,34 +801,27 @@
         ? "http://localhost:8080/api/site/visit"
         : "https://hangops.top/api/site/visit";
 
+    
     fetch(VISIT_URL, { method: 'POST' }).catch(() => {});
 
     
     fetch(INFO_URL)
     .then(res => res.json())
     .then(data => {
-        
         if(data.total_views !== undefined) {
             document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
         }
-        
         if(data.site_total_visits !== undefined) {
             document.getElementById("footer_total_site_visits").innerText = data.site_total_visits.toLocaleString();
         }
-                
-        
         if(data.uptime_seconds !== undefined) {
             let uptime = data.uptime_seconds;
-
+            const uptimeEl = document.getElementById("footer_uptime");
             
-            document.getElementById("footer_uptime").innerText =
-                formatUptime(uptime);
-
-            
+            uptimeEl.innerText = formatUptime(uptime);
             setInterval(() => {
                 uptime++;
-                document.getElementById("footer_uptime").innerText =
-                    formatUptime(uptime);
+                uptimeEl.innerText = formatUptime(uptime);
             }, 1000);
         }
     })
