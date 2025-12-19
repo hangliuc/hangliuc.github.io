@@ -3,7 +3,7 @@ categories:
 - Blog
 date: 2025-11-27 03:04:45
 draft: false
-title: Hugo | To Do List
+title: Hugo | To-Do List
 weight: 1
 ---
 
@@ -20,18 +20,20 @@ weight: 1
 ### Feature Development and Content Expansion
 - [x] Improve search functionality
 - [x] Add word count for articles
-- [ ] Add automated English version
-
-      Automatically translate Chinese articles into English without manual publishing
+- [x] Add an English version of the site with automatic translation from Chinese to English
+  - Script calls a large model to automatically translate Chinese articles to English
+  - Header website statistics information adapted for the English version
+  - Article top word count and reading count statistics adapted for the English version
+  - Left sidebar switch button changed from dropdown to direct switch
+  - Script translation adds intelligent incremental updates (logic: compare file modification time)
 - [ ] Develop an agent to simultaneously publish to yuque, csdn, weichat
-
-      Currently, the yuque API token requires a paid subscription
-- [x] Write some information about me
-- [x] Add "Back to Top" feature
+   - Currently, the yuque API token requires a fee
+- [x] Write a brief introduction about myself
+- [x] Add "Back to Top" functionality
 - [x] Migrate comment feature to waline
-  - [x] Notify wechat, email for comment notifications
+  - [x] Comment notifications to wechat, email
 - [x] Make the blog searchable on google, baidu
-   Baidu requires a license number to submit sitemap, so it will not be added for now.
+   Baidu requires a record number for sitemap submission, so it will not be added for now.
 - [ ] Backup blog database
 - [ ] Develop a management platform
 
@@ -39,7 +41,7 @@ weight: 1
 ### Deployment and Monitoring
 - [x] Deploy the website on the server
 
-    The server is not in China, so there is no need to register for the first year
+    The server is not in China, so there is no need to file a record for the first year
 
     First Year  Renewal
     hangops.top ¥14 ¥32
@@ -52,6 +54,7 @@ https://monitor.hangops.top/
 - [x] Add website visit statistics
     - [x] Count website visits
     - [x] Count article visits
+
 
 ## Content Related
 The directory structure is as follows:

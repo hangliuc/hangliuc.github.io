@@ -24,6 +24,12 @@ languages:
         title:  Hang
         weight: 1
         params:
+            comments:
+                waline:
+                    locale:
+                        admin: 站长
+                        placeholder: "欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。"
+                        sofa: 还没有人评论哦！快来抢沙发吧~
             sidebar:
                 subtitle: 有建议和问题，欢迎评论或者直接联系我
     en:
@@ -31,6 +37,12 @@ languages:
         title: Hang
         weight: 1
         params:
+            comments:
+                waline:
+                    locale:
+                        admin: Admin
+                        placeholder: "Welcome to leave your valuable comments! Please leave the correct email address for email reminder when there is a reply. Do not post any content unrelated to this article."
+                        sofa: No comments yet. Be the first to comment!
             sidebar:
                 subtitle: If you have any suggestions or questions, feel free to leave a comment or contact me directly
         menu:
@@ -62,7 +74,6 @@ languages:
               weight: 3
               params:
                     icon: user
-            
         # ar:
     #     languageName: عربي
     #     languagedirection: rtl
@@ -178,11 +189,11 @@ params:
             reaction: true
             requiredMeta:
                 - name
-            locale:
-                admin: 站长
-                placeholder: "欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。"
-                sofa: 还没有人评论哦！快来抢沙发吧~
-                reactionTitle: 这篇文章对你有帮助吗？
+            # locale:
+            #     admin: 站长
+            #     placeholder: "欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。"
+            #     sofa: 还没有人评论哦！快来抢沙发吧~
+            #     reactionTitle: 这篇文章对你有帮助吗？
 
         twikoo:
             envId:

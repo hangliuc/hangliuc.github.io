@@ -194,16 +194,10 @@
         <li class="menu-bottom-section">
             <ol class="menu">
                 
-                
 
-                
-                
                     
                     
                     
-                    
-                        
-                        
                         
                         
                         
@@ -213,10 +207,6 @@
                         
                         
                         
-                        
-                        
-                            
-                            
                             
                             
                             
@@ -226,7 +216,6 @@
                                 
                             
 
-                            
                             <li>
                                 <a href="http://localhost:1313/en/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -623,9 +612,17 @@
         color: var(--card-text-color-main);
     }
 </style><script>
-    
-    Waline.init({"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":"欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。","reactiontitle":"这篇文章对你有帮助吗？","sofa":"还没有人评论哦！快来抢沙发吧~"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"});
-</script>
+        
+        
+        const currentLanguage = window.location.href.includes('/en/') ? 'en' : 'zh-CN';
+        
+        console.log('🌍 Waline Current Language:', currentLanguage);
+
+        
+        Waline.init(Object.assign({}, {"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":"欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。","sofa":"还没有人评论哦！快来抢沙发吧~"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"}, {
+            lang: currentLanguage
+        }));
+    </script>
 
     
 

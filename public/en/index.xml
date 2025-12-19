@@ -8,7 +8,7 @@
         <language>en</language>
         <copyright>Example Person</copyright>
         <lastBuildDate>Mon, 15 Dec 2025 11:45:07 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Hugo | To Do List</title>
+        <title>Hugo | To-Do List</title>
         <link>http://localhost:1313/en/topic/blogging/todo/</link>
         <pubDate>Thu, 27 Nov 2025 03:04:45 +0000</pubDate>
         
@@ -26,50 +26,39 @@ Add excellent articles, and count based on the number of visits&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;feature-development-and-content-expansion&#34;&gt;Feature Development and Content Expansion
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Improve search functionality&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add word count for articles&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add automated English version&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Automatically translate Chinese articles into English without manual publishing
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop an agent to simultaneously publish to yuque, csdn, weichat&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Currently, the yuque API token requires a paid subscription
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write some information about me&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add &amp;ldquo;Back to Top&amp;rdquo; feature&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Migrate comment feature to waline&lt;/p&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Improve search functionality&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add word count for articles&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add an English version of the site with automatic translation from Chinese to English
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Notify wechat, email for comment notifications&lt;/li&gt;
+&lt;li&gt;Script calls a large model to automatically translate Chinese articles to English&lt;/li&gt;
+&lt;li&gt;Header website statistics information adapted for the English version&lt;/li&gt;
+&lt;li&gt;Article top word count and reading count statistics adapted for the English version&lt;/li&gt;
+&lt;li&gt;Left sidebar switch button changed from dropdown to direct switch&lt;/li&gt;
+&lt;li&gt;Script translation adds intelligent incremental updates (logic: compare file modification time)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Make the blog searchable on google, baidu
-Baidu requires a license number to submit sitemap, so it will not be added for now.&lt;/p&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop an agent to simultaneously publish to yuque, csdn, weichat
+&lt;ul&gt;
+&lt;li&gt;Currently, the yuque API token requires a fee&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Backup blog database&lt;/p&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write a brief introduction about myself&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add &amp;ldquo;Back to Top&amp;rdquo; functionality&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Migrate comment feature to waline
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Comment notifications to wechat, email&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop a management platform&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Make the blog searchable on google, baidu
+Baidu requires a record number for sitemap submission, so it will not be added for now.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Backup blog database&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop a management platform&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;deployment-and-monitoring&#34;&gt;Deployment and Monitoring
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy the website on the server&lt;/p&gt;
-&lt;p&gt;The server is not in China, so there is no need to register for the first year&lt;/p&gt;
+&lt;p&gt;The server is not in China, so there is no need to file a record for the first year&lt;/p&gt;
 &lt;p&gt;First Year  Renewal
 hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/li&gt;
