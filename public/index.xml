@@ -33,8 +33,11 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加自动化英文版本&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;自动将中文文章翻译成英文，不用手动发布文章
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本调用大模型自动翻译中文文章为英文&lt;/li&gt;
+&lt;li&gt;页眉网站统计信息适配英文版&lt;/li&gt;
+&lt;li&gt;文章顶部字数统计、阅读量统计适配英文版&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat&lt;/p&gt;
