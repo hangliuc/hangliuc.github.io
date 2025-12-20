@@ -13,7 +13,7 @@
         <pubDate>Sat, 06 Dec 2025 10:42:12 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/interview/database/</guid>
-        <description>&lt;h1 id=&#34;mysql&#34;&gt;mysql
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE Interview Questions | Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
 &lt;/h1&gt;&lt;h2 id=&#34;1-how-to-troubleshoot-a-sudden-slow-mysql-query&#34;&gt;1. How to troubleshoot a sudden slow MySQL query
 &lt;/h2&gt;&lt;h3 id=&#34;check-the-query-itself&#34;&gt;Check the query itself
 &lt;/h3&gt;&lt;ul&gt;

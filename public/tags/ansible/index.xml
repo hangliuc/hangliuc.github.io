@@ -13,7 +13,7 @@
         <pubDate>Tue, 26 Nov 2024 10:00:00 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
-        <description>&lt;h1 id=&#34;背景&#34;&gt;背景
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ansible | 缓存ssh密钥避免每次输入密码" /&gt;&lt;h1 id=&#34;背景&#34;&gt;背景
 &lt;/h1&gt;&lt;p&gt;使用ansible时，为了避免每次执行任务都需要输入ssh密码，我们可以缓存ssh密钥。&lt;/p&gt;
 &lt;h1 id=&#34;ansible-缓存ssh密钥&#34;&gt;ansible 缓存ssh密钥
 &lt;/h1&gt;&lt;ol&gt;

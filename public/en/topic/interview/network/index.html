@@ -10,9 +10,10 @@
 <meta property='og:description' content="1. OSI Seven-Layer Model 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 发送端（电脑A） 接收端（电脑B） +----------------+ +----------------+ | 应用层：Data | | 应用层：Data | | &#34;Hi&#34; | | &#34;Hi&#34; | +-------+--------+ +-------^--------+ | | | 表示层：Data + 表示头 表示层：Data（剥离表示头） +-------+--------+ +-------^--------+ | | | 会话层：Data + 会话头 会话层：Data（剥离会话头） +-------+--------+ +-------^--------+ | | | 传输层：Segment（Data + 端口头） 传输层：Data（剥离端口头） +-------+--------+ +-------^--------+ | | | 网络层：Packet（Segment + IP头） 网络层：Segment（剥离IP头） +-------+--------+ +-------^--------+ | | | 数据链路层：Frame（Packet + MAC头 + CRC）数据链路层：Packet（剥离MAC头+CRC） +-------+--------+ +-------^--------+ | | | 物理层：Bits（Frame转换） 物理层：Frame（Bits转换） +-------+--------+ +-------^--------+ | | +---------------------------------------+ 物理介质（网线/无线） OSI Layer Core Function Key Devices/Components Application Layer Provides communication between applications Browsers, FTP clients, SMTP clients Presentation Layer Data representation and transformation Encryption, compression Session Layer Manages session connections Session ID Transport Layer End-to-end communication TCP, UDP Network Layer Routing across networks and IP address recognition Routers, switches Data Link Layer Frame transmission and MAC address recognition Network cards, switches Physical Layer Bitstream transmission Wires, fiber optics 2. Differences between HTTP/1.1 and HTTP/2 Feature HTTP/1.1 HTTP/2 Transmission Overhead Text-based transmission, higher overhead Binary stream transmission, lower overhead Multiplexing Sequential loading of resources, one resource blockage affects subsequent resources Multiple data streams can be sent simultaneously over a single TCP connection, without blocking each other Server Push Not supported Supported, the server can push content before the client requests it Header Compression Not compressed or simple compression, redundant information Uses HPACK compression, reduces redundancy, improves loading speed 3. TCP Connection States ">
 <meta property='og:url' content='http://localhost:1313/en/topic/interview/network/'>
 <meta property='og:site_name' content='Hang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:tag' content='network' /><meta property='article:published_time' content='2025-12-04T11:36:01&#43;00:00'/><meta property='article:modified_time' content='2025-12-04T11:36:01&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Topic' /><meta property='article:tag' content='network' /><meta property='article:published_time' content='2025-12-04T11:36:01&#43;00:00'/><meta property='article:modified_time' content='2025-12-04T11:36:01&#43;00:00'/><meta property='og:image' content='http://localhost:1313/img/cover/interview_cover.jpg' />
 <meta name="twitter:title" content="SRE Interview Questions Summary | Network">
-<meta name="twitter:description" content="1. OSI Seven-Layer Model 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 发送端（电脑A） 接收端（电脑B） +----------------+ +----------------+ | 应用层：Data | | 应用层：Data | | &#34;Hi&#34; | | &#34;Hi&#34; | +-------+--------+ +-------^--------+ | | | 表示层：Data + 表示头 表示层：Data（剥离表示头） +-------+--------+ +-------^--------+ | | | 会话层：Data + 会话头 会话层：Data（剥离会话头） +-------+--------+ +-------^--------+ | | | 传输层：Segment（Data + 端口头） 传输层：Data（剥离端口头） +-------+--------+ +-------^--------+ | | | 网络层：Packet（Segment + IP头） 网络层：Segment（剥离IP头） +-------+--------+ +-------^--------+ | | | 数据链路层：Frame（Packet + MAC头 + CRC）数据链路层：Packet（剥离MAC头+CRC） +-------+--------+ +-------^--------+ | | | 物理层：Bits（Frame转换） 物理层：Frame（Bits转换） +-------+--------+ +-------^--------+ | | +---------------------------------------+ 物理介质（网线/无线） OSI Layer Core Function Key Devices/Components Application Layer Provides communication between applications Browsers, FTP clients, SMTP clients Presentation Layer Data representation and transformation Encryption, compression Session Layer Manages session connections Session ID Transport Layer End-to-end communication TCP, UDP Network Layer Routing across networks and IP address recognition Routers, switches Data Link Layer Frame transmission and MAC address recognition Network cards, switches Physical Layer Bitstream transmission Wires, fiber optics 2. Differences between HTTP/1.1 and HTTP/2 Feature HTTP/1.1 HTTP/2 Transmission Overhead Text-based transmission, higher overhead Binary stream transmission, lower overhead Multiplexing Sequential loading of resources, one resource blockage affects subsequent resources Multiple data streams can be sent simultaneously over a single TCP connection, without blocking each other Server Push Not supported Supported, the server can push content before the client requests it Header Compression Not compressed or simple compression, redundant information Uses HPACK compression, reduces redundancy, improves loading speed 3. TCP Connection States ">
+<meta name="twitter:description" content="1. OSI Seven-Layer Model 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 发送端（电脑A） 接收端（电脑B） +----------------+ +----------------+ | 应用层：Data | | 应用层：Data | | &#34;Hi&#34; | | &#34;Hi&#34; | +-------+--------+ +-------^--------+ | | | 表示层：Data + 表示头 表示层：Data（剥离表示头） +-------+--------+ +-------^--------+ | | | 会话层：Data + 会话头 会话层：Data（剥离会话头） +-------+--------+ +-------^--------+ | | | 传输层：Segment（Data + 端口头） 传输层：Data（剥离端口头） +-------+--------+ +-------^--------+ | | | 网络层：Packet（Segment + IP头） 网络层：Segment（剥离IP头） +-------+--------+ +-------^--------+ | | | 数据链路层：Frame（Packet + MAC头 + CRC）数据链路层：Packet（剥离MAC头+CRC） +-------+--------+ +-------^--------+ | | | 物理层：Bits（Frame转换） 物理层：Frame（Bits转换） +-------+--------+ +-------^--------+ | | +---------------------------------------+ 物理介质（网线/无线） OSI Layer Core Function Key Devices/Components Application Layer Provides communication between applications Browsers, FTP clients, SMTP clients Presentation Layer Data representation and transformation Encryption, compression Session Layer Manages session connections Session ID Transport Layer End-to-end communication TCP, UDP Network Layer Routing across networks and IP address recognition Routers, switches Data Link Layer Frame transmission and MAC address recognition Network cards, switches Physical Layer Bitstream transmission Wires, fiber optics 2. Differences between HTTP/1.1 and HTTP/2 Feature HTTP/1.1 HTTP/2 Transmission Overhead Text-based transmission, higher overhead Binary stream transmission, lower overhead Multiplexing Sequential loading of resources, one resource blockage affects subsequent resources Multiple data streams can be sent simultaneously over a single TCP connection, without blocking each other Server Push Not supported Supported, the server can push content before the client requests it Header Compression Not compressed or simple compression, redundant information Uses HPACK compression, reduces redundancy, improves loading speed 3. TCP Connection States "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/cover/interview_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZCZRY28LY"></script>
@@ -274,8 +275,16 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/en/topic/interview/network/">
+                
+                    <img src="/img/cover/interview_cover.jpg" loading="lazy" alt="Featured image of post SRE Interview Questions Summary | Network" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -830,9 +839,15 @@ A protocol that allows full-duplex communication over a single TCP connection, a
         <div class="flex article-list--tile">
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/topic/interview/database/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/interview_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -843,9 +858,15 @@ A protocol that allows full-duplex communication over a single TCP connection, a
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/topic/interview/k8s/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/interview_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -856,9 +877,15 @@ A protocol that allows full-duplex communication over a single TCP connection, a
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/topic/interview/docker/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/interview_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -869,9 +896,15 @@ A protocol that allows full-duplex communication over a single TCP connection, a
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/topic/interview/monitoring/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/interview_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -882,9 +915,15 @@ A protocol that allows full-duplex communication over a single TCP connection, a
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/topic/interview/sre/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/interview_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/interview_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">

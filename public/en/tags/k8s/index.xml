@@ -13,7 +13,7 @@
         <pubDate>Sat, 06 Dec 2025 10:15:30 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/interview/k8s/</guid>
-        <description>&lt;h2 id=&#34;1-how-different-modules-communicate-with-api-server&#34;&gt;1. How Different Modules Communicate with API Server
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE Interview Questions Summary | K8s" /&gt;&lt;h2 id=&#34;1-how-different-modules-communicate-with-api-server&#34;&gt;1. How Different Modules Communicate with API Server
 &lt;/h2&gt;&lt;p&gt;Various functional modules within the cluster store information in etcd through the API Server. When they need to retrieve and operate on these data, they achieve inter-module information interaction by using the REST interfaces provided by the API Server (using GET, LIST, or WATCH methods).&lt;/p&gt;
 &lt;p&gt;In Kubernetes, different modules interact with the API Server through standard HTTP/HTTPS requests, ensuring security through authentication and authorization mechanisms, and utilizing the Watch mechanism to implement real-time resource status monitoring and synchronization.&lt;/p&gt;
 &lt;h2 id=&#34;2-how-kubelet-monitors-worker-nodes&#34;&gt;2. How kubelet Monitors Worker Nodes

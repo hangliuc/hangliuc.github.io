@@ -13,7 +13,7 @@
         <pubDate>Thu, 27 Nov 2025 02:51:50 +0000</pubDate>
         
         <guid>http://localhost:1313/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
-        <description>&lt;h1 id=&#34;containerd-command-line-management-tool&#34;&gt;Containerd Command Line Management Tool
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Containerd Command Line Management Tool" /&gt;&lt;h1 id=&#34;containerd-command-line-management-tool&#34;&gt;Containerd Command Line Management Tool
 &lt;/h1&gt;&lt;h2 id=&#34;reasons-for-kubernetes-to-shift-from-docker-to-containerd&#34;&gt;Reasons for Kubernetes to Shift from Docker to containerd
 &lt;/h2&gt;&lt;h3 id=&#34;architectural-reasons&#34;&gt;Architectural Reasons
 &lt;/h3&gt;&lt;p&gt;The process of starting a container by kubelet:&lt;/p&gt;

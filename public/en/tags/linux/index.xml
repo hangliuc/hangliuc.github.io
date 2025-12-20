@@ -13,7 +13,7 @@
         <pubDate>Wed, 03 Dec 2025 02:56:44 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/interview/liunx/</guid>
-        <description>&lt;h2 id=&#34;1-processes-threads-and-coroutines&#34;&gt;1. &lt;strong&gt;Processes, Threads, and Coroutines&lt;/strong&gt;
+        <description>&lt;img src="http://localhost:1313/img/interview_cover.jpg" alt="Featured image of post SRE Interview Questions Summary | Linux" /&gt;&lt;h2 id=&#34;1-processes-threads-and-coroutines&#34;&gt;1. &lt;strong&gt;Processes, Threads, and Coroutines&lt;/strong&gt;
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Process&lt;/strong&gt;: The smallest unit of resource allocation in an operating system, including CPU, memory, and disk I/O. A process can have multiple threads.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Thread&lt;/strong&gt;: The execution unit within a process. A process can have multiple threads, and threads share the resources of the process.&lt;/li&gt;

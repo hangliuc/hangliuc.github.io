@@ -13,12 +13,12 @@
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;-博客待办清单&#34;&gt;📝 博客待办清单
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;-博客待办清单&#34;&gt;📝 博客待办清单
 &lt;/h2&gt;&lt;h3 id=&#34;-p0&#34;&gt;🔥 P0
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客可以在google、百度等搜索引擎中被收录
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 提交 google sitemap&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 提交 google sitemap&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 提交百度 sitemap,百度提交sitemap时需要备案号才能增加提交次数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -27,7 +27,6 @@
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开启 BBR 拥塞控制 net.ipv4.tcp_congestion_control = bbr&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备份blog 所用到数据库&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;-p1&#34;&gt;🛠 p1
 &lt;/h3&gt;&lt;ul&gt;
@@ -43,6 +42,7 @@
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SEO 搜索结果片段优化，提高搜索结果的美观性&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 写关于我的一些说明&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发管理平台&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 增加常用工具列表&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;archived---已上线功能&#34;&gt;✅Archived - 已上线功能
 &lt;/h3&gt;&lt;ul&gt;
@@ -81,6 +81,7 @@
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计文章访问量&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备份blog mysql 数据库到cos 存储桶&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;内容相关&#34;&gt;内容相关
 &lt;/h2&gt;&lt;p&gt;目录结构如下：&lt;/p&gt;
@@ -146,7 +147,7 @@
         <pubDate>Mon, 15 Dec 2025 19:45:07 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/website_discovered/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" /&gt;&lt;p&gt;部署完博客后，需要让搜索引擎检索到博客。&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" /&gt;&lt;p&gt;部署完博客后，需要让搜索引擎检索到博客。&lt;/p&gt;
 &lt;h2 id=&#34;google&#34;&gt;google
 &lt;/h2&gt;&lt;h3 id=&#34;获取measurement-id&#34;&gt;获取Measurement ID
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/analytics/web/provision/#/provision&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -240,7 +241,7 @@
         <pubDate>Sun, 14 Dec 2025 17:53:12 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/deploy_comments/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ Waline 评论系统私有化部署" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ Waline 评论系统私有化部署" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
 &lt;/h2&gt;&lt;p&gt;博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;支持匿名评论（无需登录）&lt;/li&gt;
@@ -464,7 +465,7 @@
         <pubDate>Thu, 11 Dec 2025 14:23:32 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/site_statistics/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何自定义实现网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何自定义实现网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
 &lt;/h2&gt;&lt;p&gt;目前看到网上关于网站统计功能的实现方式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;基于busuanzi js的统计功能&lt;/li&gt;
@@ -632,7 +633,7 @@
         <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 本地服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 本地服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
 &lt;h2 id=&#34;安装基础软件&#34;&gt;安装基础软件
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -747,7 +748,7 @@
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/hugo_usage_method/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
 &lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
 &lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;

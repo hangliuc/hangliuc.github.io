@@ -13,7 +13,7 @@
         <pubDate>Mon, 01 Dec 2025 11:45:14 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/linux/asg-node-disk-issue/</guid>
-        <description>&lt;img src="http://localhost:1313/img/liunx_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
 &lt;/h2&gt;&lt;p&gt;data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警&lt;/p&gt;
 &lt;p&gt;内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/linux/asg-node-disk-issue/disk_error.png&#34;
@@ -89,7 +89,7 @@
         <pubDate>Thu, 27 Nov 2025 11:02:53 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/linux/vim/</guid>
-        <description>&lt;img src="http://localhost:1313/img/liunx_cover.jpg" alt="Featured image of post Vim 使用技巧" /&gt;&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Vim 使用技巧" /&gt;&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
 &lt;/h1&gt;&lt;h2 id=&#34;光标移动&#34;&gt;光标移动
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;h&lt;/strong&gt; 或 &lt;strong&gt;退格&lt;/strong&gt;：左移一个字符&lt;/li&gt;

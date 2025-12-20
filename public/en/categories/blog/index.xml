@@ -13,72 +13,76 @@
         <pubDate>Thu, 27 Nov 2025 03:04:45 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/blogging/todo/</guid>
-        <description>&lt;h2 id=&#34;to-do-list&#34;&gt;To-Do List
-&lt;/h2&gt;&lt;h3 id=&#34;aesthetics-and-user-experience-optimization&#34;&gt;Aesthetics and User Experience Optimization
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | To-Do List" /&gt;&lt;h2 id=&#34;-blog-to-do-list&#34;&gt;📝 Blog To-Do List
+&lt;/h2&gt;&lt;h3 id=&#34;-p0&#34;&gt;🔥 P0
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Improve comment feature&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Make the blog indexable by search engines like Google, Baidu, etc.
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Submit Google sitemap&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Submit Baidu sitemap; a record number is required to increase the submission frequency when submitting Baidu sitemap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Optimize website access speed
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Enable BBR congestion control net.ipv4.tcp_congestion_control = bbr&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-p1&#34;&gt;🛠 P1
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop an agent that simultaneously publishes to yuque, csdn, weichat
+&lt;ul&gt;
+&lt;li&gt;yuque API token requires payment&lt;/li&gt;
+&lt;li&gt;csdn currently has not found a suitable API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Beautify the website&amp;rsquo;s right sidebar
-Add excellent articles, and count based on the number of visits&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Beautify the browser&amp;rsquo;s top icon&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a separate homepage, for reference: &lt;a class=&#34;link&#34; href=&#34;https://www.shaohantian.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+Add excellent articles, and count based on access volume&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a separate homepage, you can refer to &lt;a class=&#34;link&#34; href=&#34;https://www.shaohantian.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.shaohantian.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Optimize SEO search result snippets for better aesthetics&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;feature-development-and-content-expansion&#34;&gt;Feature Development and Content Expansion
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Improve search functionality&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add word count for articles&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add an English version of the site with automatic translation from Chinese to English
-&lt;ul&gt;
-&lt;li&gt;Script calls a large model to automatically translate Chinese articles to English&lt;/li&gt;
-&lt;li&gt;Header website statistics information adapted for the English version&lt;/li&gt;
-&lt;li&gt;Article top word count and reading count statistics adapted for the English version&lt;/li&gt;
-&lt;li&gt;Left sidebar switch button changed from dropdown to direct switch&lt;/li&gt;
-&lt;li&gt;Script translation adds intelligent incremental updates (logic: compare file modification time)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop an agent to simultaneously publish to yuque, csdn, weichat
-&lt;ul&gt;
-&lt;li&gt;Currently, the yuque API token requires a fee&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write a brief introduction about myself&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add &amp;ldquo;Back to Top&amp;rdquo; functionality&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Migrate comment feature to waline
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Comment notifications to wechat, email&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Make the blog searchable on google, baidu
-Baidu requires a record number for sitemap submission, so it will not be added for now.&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Backup blog database&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Optimize SEO search result snippets to improve the aesthetics of search results&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write some introductions about myself&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Develop a management platform&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add a list of commonly used tools&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;deployment-and-monitoring&#34;&gt;Deployment and Monitoring
+&lt;h3 id=&#34;archived---launched-features&#34;&gt;✅Archived - Launched Features
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy the website on the server&lt;/p&gt;
-&lt;p&gt;The server is not in China, so there is no need to file a record for the first year&lt;/p&gt;
-&lt;p&gt;First Year  Renewal
-hangops.top ¥14 ¥32&lt;/p&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add comment functionality
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Migrate comment functionality to waline&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Notify wechat, email, and other channels for comments&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy monitoring system&lt;/p&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Improve keyword search functionality&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add article word count&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add an English version of the site, implementing automatic translation from Chinese to English
+&lt;ul&gt;
+&lt;li&gt;Script calls a large model to automatically translate Chinese articles into English&lt;/li&gt;
+&lt;li&gt;Script translation adds intelligent incremental updates (implementation logic: compare file modification time)&lt;/li&gt;
+&lt;li&gt;Page header website statistics information adapts to the English version&lt;/li&gt;
+&lt;li&gt;Article top word count and reading volume statistics adapt to the English version&lt;/li&gt;
+&lt;li&gt;The left sidebar switch button changes from a dropdown box to direct switching&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Beautify the browser top icon&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add &amp;ldquo;Back to Top&amp;rdquo; functionality to the homepage and articles&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy the website on the server
+The server is not in China, so it can be备案
+Domain: hangops.top, first year ¥14, renewal ¥32&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy monitoring system
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy Prometheus&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy Grafana&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deploy Grafana(&lt;a class=&#34;link&#34; href=&#34;https://monitor.hangops.top/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://monitor.hangops.top/&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://monitor.hangops.top/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://monitor.hangops.top/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add website visit statistics
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add website access statistics
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Count website visits&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Count article visits&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Backup blog mysql database to cos storage bucket&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;content-related&#34;&gt;Content Related
 &lt;/h2&gt;&lt;p&gt;The directory structure is as follows:&lt;/p&gt;
@@ -130,14 +134,13 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Algorithms
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- Special Topics
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Blog-related
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Interview-related
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Blog Related
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Interview Related
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Linux Performance Optimization
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Mysql Practical Application
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Try not to update basic knowledge, which can be searched through the browser to enhance search knowledge skills. Focus on recording problems encountered and solutions in production environments.&lt;/p&gt;
-</description>
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Hugo | How to make a blog searchable by search engines</title>
@@ -145,7 +148,7 @@ hangops.top ¥14 ¥32&lt;/p&gt;
         <pubDate>Mon, 15 Dec 2025 11:45:07 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/blogging/website_discovered/</guid>
-        <description>&lt;p&gt;After deploying the blog, you need to ensure that search engines can index the blog.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | How to make a blog searchable by search engines" /&gt;&lt;p&gt;After deploying the blog, you need to ensure that search engines can index the blog.&lt;/p&gt;
 &lt;h2 id=&#34;google&#34;&gt;Google
 &lt;/h2&gt;&lt;h3 id=&#34;obtain-measurement-id&#34;&gt;Obtain Measurement ID
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/analytics/web/provision/#/provision&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -239,7 +242,7 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
         <pubDate>Sun, 14 Dec 2025 09:53:12 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/blogging/deploy_comments/</guid>
-        <description>&lt;h2 id=&#34;waline-comment-system&#34;&gt;Waline Comment System
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Waline comment system private deployment" /&gt;&lt;h2 id=&#34;waline-comment-system&#34;&gt;Waline Comment System
 &lt;/h2&gt;&lt;p&gt;The blog originally used GitHub Giscus as the comment system, but has now migrated to the Waline comment system.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Supports anonymous comments (no login required)&lt;/li&gt;
@@ -463,7 +466,7 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
         <pubDate>Thu, 11 Dec 2025 06:23:32 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/blogging/site_statistics/</guid>
-        <description>&lt;h2 id=&#34;some-implementation-methods&#34;&gt;Some Implementation Methods
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | How to Custom Implement Website Statistics" /&gt;&lt;h2 id=&#34;some-implementation-methods&#34;&gt;Some Implementation Methods
 &lt;/h2&gt;&lt;p&gt;Currently, there are several ways to implement website statistics functionality that I have seen on the internet:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Statistics based on busuanzi js&lt;/li&gt;
@@ -631,7 +634,7 @@ When reporting the /article/visit API, if it is the homepage (/) or pagination (
         <pubDate>Sun, 07 Dec 2025 10:31:24 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;h2 id=&#34;previous-deployment-method-github-pages&#34;&gt;Previous Deployment Method: GitHub Pages
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Local Server Deployment" /&gt;&lt;h2 id=&#34;previous-deployment-method-github-pages&#34;&gt;Previous Deployment Method: GitHub Pages
 &lt;/h2&gt;&lt;p&gt;Now, we are deploying the website on a server.&lt;/p&gt;
 &lt;h2 id=&#34;installing-basic-software&#34;&gt;Installing Basic Software
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -747,7 +750,7 @@ When reporting the /article/visit API, if it is the homepage (/) or pagination (
         <pubDate>Thu, 27 Nov 2025 07:16:29 +0000</pubDate>
         
         <guid>http://localhost:1313/en/topic/blogging/hugo_usage_method/</guid>
-        <description>&lt;h2 id=&#34;hugo-directory-structure&#34;&gt;Hugo Directory Structure
+        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Basic Planning and Usage Method" /&gt;&lt;h2 id=&#34;hugo-directory-structure&#34;&gt;Hugo Directory Structure
 &lt;/h2&gt;&lt;p&gt;content/: Stores your Markdown articles (database).&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: Stores frontend code (HTML/CSS templates).&lt;/p&gt;
 &lt;p&gt;static/: Stores images, CNAME files, and other static resources.&lt;/p&gt;

@@ -13,7 +13,7 @@
         <pubDate>Mon, 01 Dec 2025 03:45:14 +0000</pubDate>
         
         <guid>http://localhost:1313/en/ops/linux/asg-node-disk-issue/</guid>
-        <description>&lt;h2 id=&#34;problem-background&#34;&gt;Problem Background
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ASG Node data disk mount failed" /&gt;&lt;h2 id=&#34;problem-background&#34;&gt;Problem Background
 &lt;/h2&gt;&lt;p&gt;The data disk failed to mount, causing log files to be written to the root disk, leading to multiple disk alarms.&lt;/p&gt;
 &lt;p&gt;The kernel had not yet refreshed the partition table to generate the /dev/nvme1n1p1 device file when the mkfs command was executed, resulting in a failed formatting.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/linux/asg-node-disk-issue/disk_error.png&#34;
@@ -87,7 +87,7 @@
         <pubDate>Wed, 26 Nov 2025 02:38:20 +0000</pubDate>
         
         <guid>http://localhost:1313/en/ops/docker/docker-network-issue/</guid>
-        <description>&lt;img src="http://localhost:1313/ops/docker/docker-network-issue/cover.jpg" alt="Featured image of post Container network affects host network access troubleshooting" /&gt;&lt;h1 id=&#34;troubleshooting-container-network-impacting-host-network-access&#34;&gt;Troubleshooting Container Network Impacting Host Network Access
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Container network affects host network access troubleshooting" /&gt;&lt;h1 id=&#34;troubleshooting-container-network-impacting-host-network-access&#34;&gt;Troubleshooting Container Network Impacting Host Network Access
 &lt;/h1&gt;&lt;h2 id=&#34;problem-description&#34;&gt;Problem Description
 &lt;/h2&gt;&lt;p&gt;Services in the 172.27.0.0/16 and 172.26.0.0/16 subnets are unable to access the host&amp;rsquo;s services.&lt;/p&gt;
 &lt;h2 id=&#34;problem-troubleshooting&#34;&gt;Problem Troubleshooting

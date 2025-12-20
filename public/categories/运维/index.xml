@@ -13,7 +13,7 @@
         <pubDate>Mon, 01 Dec 2025 21:14:56 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post mysql 常用命令" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -67,7 +67,7 @@
         <pubDate>Mon, 01 Dec 2025 11:45:14 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/linux/asg-node-disk-issue/</guid>
-        <description>&lt;img src="http://localhost:1313/img/liunx_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
 &lt;/h2&gt;&lt;p&gt;data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警&lt;/p&gt;
 &lt;p&gt;内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/linux/asg-node-disk-issue/disk_error.png&#34;
@@ -143,7 +143,7 @@
         <pubDate>Thu, 27 Nov 2025 11:02:53 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/linux/vim/</guid>
-        <description>&lt;img src="http://localhost:1313/img/liunx_cover.jpg" alt="Featured image of post Vim 使用技巧" /&gt;&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Vim 使用技巧" /&gt;&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
 &lt;/h1&gt;&lt;h2 id=&#34;光标移动&#34;&gt;光标移动
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;h&lt;/strong&gt; 或 &lt;strong&gt;退格&lt;/strong&gt;：左移一个字符&lt;/li&gt;
@@ -239,7 +239,7 @@
         <pubDate>Thu, 27 Nov 2025 10:51:50 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
-        <description>&lt;img src="http://localhost:1313/img/docker_cover.jpg" alt="Featured image of post Containerd命令行管理工具" /&gt;&lt;h1 id=&#34;containerd-命令行管理工具&#34;&gt;Containerd 命令行管理工具
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Containerd命令行管理工具" /&gt;&lt;h1 id=&#34;containerd-命令行管理工具&#34;&gt;Containerd 命令行管理工具
 &lt;/h1&gt;&lt;h2 id=&#34;kubernetes-从-docker-转向-containerd-的原因&#34;&gt;Kubernetes 从 Docker 转向 containerd 的原因
 &lt;/h2&gt;&lt;h3 id=&#34;架构层面的原因&#34;&gt;架构层面的原因
 &lt;/h3&gt;&lt;p&gt;kubelet 启动一个容器的流程:&lt;/p&gt;
@@ -461,7 +461,7 @@
         <pubDate>Wed, 26 Nov 2025 10:38:20 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/docker/docker-network-issue/</guid>
-        <description>&lt;img src="http://localhost:1313/ops/docker/docker-network-issue/cover.jpg" alt="Featured image of post 容器网络影响宿主机入网问题排查" /&gt;&lt;h1 id=&#34;容器网络影响宿主机入网问题排查&#34;&gt;容器网络影响宿主机入网问题排查
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post 容器网络影响宿主机入网问题排查" /&gt;&lt;h1 id=&#34;容器网络影响宿主机入网问题排查&#34;&gt;容器网络影响宿主机入网问题排查
 &lt;/h1&gt;&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
 &lt;/h2&gt;&lt;p&gt;发现172.27.0.0/16，172.26.0.0/16 网段的服务无法访问宿主机的服务&lt;/p&gt;
 &lt;h2 id=&#34;问题排查&#34;&gt;问题排查
@@ -563,7 +563,7 @@
         <pubDate>Tue, 26 Nov 2024 10:00:00 +0800</pubDate>
         
         <guid>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
-        <description>&lt;h1 id=&#34;背景&#34;&gt;背景
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ansible | 缓存ssh密钥避免每次输入密码" /&gt;&lt;h1 id=&#34;背景&#34;&gt;背景
 &lt;/h1&gt;&lt;p&gt;使用ansible时，为了避免每次执行任务都需要输入ssh密码，我们可以缓存ssh密钥。&lt;/p&gt;
 &lt;h1 id=&#34;ansible-缓存ssh密钥&#34;&gt;ansible 缓存ssh密钥
 &lt;/h1&gt;&lt;ol&gt;

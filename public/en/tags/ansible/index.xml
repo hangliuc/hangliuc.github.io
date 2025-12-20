@@ -13,7 +13,7 @@
         <pubDate>Tue, 26 Nov 2024 02:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
-        <description>&lt;h1 id=&#34;background&#34;&gt;Background
+        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ansible | Cache SSH key to avoid password input each time" /&gt;&lt;h1 id=&#34;background&#34;&gt;Background
 &lt;/h1&gt;&lt;p&gt;When using Ansible, to avoid the need to enter the SSH password each time a task is executed, we can cache the SSH key.&lt;/p&gt;
 &lt;h1 id=&#34;caching-ssh-keys-with-ansible&#34;&gt;Caching SSH Keys with Ansible
 &lt;/h1&gt;&lt;ol&gt;

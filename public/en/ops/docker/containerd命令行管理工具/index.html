@@ -10,9 +10,10 @@
 <meta property='og:description' content="Containerd Command Line Management Tool Reasons for Kubernetes to Shift from Docker to containerd Architectural Reasons The process of starting a container by kubelet:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (Calls CRI interface) ▼ dockershim (K8s-maintained CRI translation layer) │ │ (Calls Docker Engine API) ▼ Docker Engine │ │ (Calls containerd API) ▼ containerd │ │ (Calls OCI interface) ▼ runc (OCI runtime) │ └─&gt; Truly create Linux container (namespace, cgroups, rootfs...) Docker Engine is a complete platform (building images, managing network, Volume, Swarm, etc.), which are redundant for K8s. dockershim is only for translating the CRI (K8s language) into Docker API (Docker language). The actual execution of containers is still containerd + runc. When kubelet directly uses containerd, the call chain is simplified to:\n">
 <meta property='og:url' content='http://localhost:1313/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
 <meta property='og:site_name' content='Hang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='article:modified_time' content='2025-11-27T02:51:50&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='article:modified_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='og:image' content='http://localhost:1313/img/cover/ops_cover.jpg' />
 <meta name="twitter:title" content="Containerd Command Line Management Tool">
-<meta name="twitter:description" content="Containerd Command Line Management Tool Reasons for Kubernetes to Shift from Docker to containerd Architectural Reasons The process of starting a container by kubelet:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (Calls CRI interface) ▼ dockershim (K8s-maintained CRI translation layer) │ │ (Calls Docker Engine API) ▼ Docker Engine │ │ (Calls containerd API) ▼ containerd │ │ (Calls OCI interface) ▼ runc (OCI runtime) │ └─&gt; Truly create Linux container (namespace, cgroups, rootfs...) Docker Engine is a complete platform (building images, managing network, Volume, Swarm, etc.), which are redundant for K8s. dockershim is only for translating the CRI (K8s language) into Docker API (Docker language). The actual execution of containers is still containerd + runc. When kubelet directly uses containerd, the call chain is simplified to:\n">
+<meta name="twitter:description" content="Containerd Command Line Management Tool Reasons for Kubernetes to Shift from Docker to containerd Architectural Reasons The process of starting a container by kubelet:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (Calls CRI interface) ▼ dockershim (K8s-maintained CRI translation layer) │ │ (Calls Docker Engine API) ▼ Docker Engine │ │ (Calls containerd API) ▼ containerd │ │ (Calls OCI interface) ▼ runc (OCI runtime) │ └─&gt; Truly create Linux container (namespace, cgroups, rootfs...) Docker Engine is a complete platform (building images, managing network, Volume, Swarm, etc.), which are redundant for K8s. dockershim is only for translating the CRI (K8s language) into Docker API (Docker language). The actual execution of containers is still containerd + runc. When kubelet directly uses containerd, the call chain is simplified to:\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/cover/ops_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZCZRY28LY"></script>
@@ -271,8 +272,16 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+                
+                    <img src="/img/cover/ops_cover.jpg" loading="lazy" alt="Featured image of post Containerd Command Line Management Tool" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -677,13 +686,8 @@
         
         
             <div class="article-image">
-                <img src="/ops/docker/docker-network-issue/cover.a1b71b69268e3b373f38c10c4203323d.jpg" 
-                        width="6000" 
-                        height="4000" 
-                        loading="lazy"
-                        alt="Featured image of post Container network affects host network access troubleshooting"
-                        
-                        data-hash="md5-obcbaSaOOzc/OMEMQgMyPQ==">
+                
+                    <img src="/img/cover/ops_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/ops_cover.jpg"/>
                 
             </div>
         
@@ -696,9 +700,15 @@
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/ops_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/ops_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -709,9 +719,15 @@
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/ops/linux/asg-node-disk-issue/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/ops_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/ops_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -722,9 +738,15 @@
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/ops/linux/vim/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/ops_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/ops_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -735,9 +757,15 @@
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/en/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/">
         
+        
+            <div class="article-image">
+                
+                    <img src="/img/cover/ops_cover.jpg" loading="lazy" data-key="" data-hash="/img/cover/ops_cover.jpg"/>
+                
+            </div>
         
 
         <div class="article-details">

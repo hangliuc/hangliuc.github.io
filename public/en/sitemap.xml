@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/en/topic/interview/</loc>
+    <lastmod>2025-12-06T10:42:12+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/topic/interview/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/topic/interview/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/ops/</loc>
+    <lastmod>2025-12-01T13:14:56+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/ops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/ops/"
+                />
+  </url><url>
     <loc>http://localhost:1313/en/topic/blogging/todo/</loc>
     <lastmod>2025-11-27T03:04:45+00:00</lastmod>
     <xhtml:link
@@ -13,6 +39,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/en/topic/blogging/todo/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/topic/blogging/</loc>
+    <lastmod>2025-12-15T11:45:07+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/topic/blogging/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/topic/blogging/"
                 />
   </url><url>
     <loc>http://localhost:1313/en/categories/blog/</loc>
@@ -406,19 +445,6 @@
   </url><url>
     <loc>http://localhost:1313/en/categories/operations-maintenance/</loc>
     <lastmod>2025-12-01T13:14:56+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/ops/</loc>
-    <lastmod>2025-12-01T13:14:56+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://localhost:1313/ops/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/ops/"
-                />
   </url><url>
     <loc>http://localhost:1313/en/ops/linux/asg-node-disk-issue/</loc>
     <lastmod>2025-12-01T03:45:14+00:00</lastmod>

@@ -4,6 +4,16 @@
   <url>
     <loc>http://localhost:1313/topic/interview/</loc>
     <lastmod>2025-12-06T18:42:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/topic/interview/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/topic/interview/"
+                />
   </url><url>
     <loc>http://localhost:1313/ops/</loc>
     <lastmod>2025-12-01T21:14:56+08:00</lastmod>
@@ -36,6 +46,16 @@
   </url><url>
     <loc>http://localhost:1313/topic/blogging/</loc>
     <lastmod>2025-12-15T19:45:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/topic/blogging/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/topic/blogging/"
+                />
   </url><url>
     <loc>http://localhost:1313/ops/ansible/</loc>
     <lastmod>2024-11-26T10:00:00+08:00</lastmod>

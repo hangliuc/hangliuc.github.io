@@ -3,7 +3,6 @@ categories:
 - Operations Maintenance
 date: 2025-11-26 02:38:20
 draft: false
-image: cover.jpg
 tags:
 - Docker
 - network
