@@ -10,11 +10,10 @@ weight: 1
 ## 📝 博客待办清单
 ### 🔥 P0 
 - [ ] 让博客可以在google、百度等搜索引擎中被收录
-    - [ ] 提交 google sitemap
+    - [x] 提交 google sitemap
     - [ ] 提交百度 sitemap,百度提交sitemap时需要备案号才能增加提交次数
 - [ ] 优化网站访问速度
     - [x]开启 BBR 拥塞控制 net.ipv4.tcp_congestion_control = bbr
-- [ ] 备份blog 所用到数据库
 
 
 ### 🛠 p1
@@ -27,6 +26,7 @@ weight: 1
 - [ ] SEO 搜索结果片段优化，提高搜索结果的美观性 
 - [ ] 写关于我的一些说明
 - [ ] 开发管理平台
+- [ ] 增加常用工具列表
 
 ### ✅Archived - 已上线功能
 - [x] 增加评论功能
@@ -51,6 +51,8 @@ weight: 1
 - [x] 添加网站访问统计
     - [x] 统计网站访问量
     - [x] 统计文章访问量
+- [x] 备份blog mysql 数据库到cos 存储桶
+
 
 
 ## 内容相关
