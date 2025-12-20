@@ -13,65 +13,68 @@
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
         <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;待办事项&#34;&gt;待办事项
-&lt;/h2&gt;&lt;h3 id=&#34;美化与用户体验优化&#34;&gt;美化与用户体验优化
+        <description>&lt;img src="http://localhost:1313/img/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;-博客待办清单&#34;&gt;📝 博客待办清单
+&lt;/h2&gt;&lt;h3 id=&#34;-p0&#34;&gt;🔥 P0
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善评论功能&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客可以在google、百度等搜索引擎中被收录
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 提交 google sitemap&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 提交百度 sitemap,百度提交sitemap时需要备案号才能增加提交次数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 优化网站访问速度
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开启 BBR 拥塞控制 net.ipv4.tcp_congestion_control = bbr&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备份blog 所用到数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-p1&#34;&gt;🛠 p1
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat
+&lt;ul&gt;
+&lt;li&gt;yuque api token 需要付费&lt;/li&gt;
+&lt;li&gt;csdn 目前没有找到合适的api&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化网站右侧边栏
 添加优秀文章,根据访问量去统计&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化浏览器顶层图标&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 单独制作首页，可以参考https://www.shaohantian.com/&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SEO 搜索结果片段优化，提高搜索结果的美观性&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 写关于我的一些说明&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发管理平台&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;功能开发与内容扩展&#34;&gt;功能开发与内容扩展
+&lt;h3 id=&#34;archived---已上线功能&#34;&gt;✅Archived - 已上线功能
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善搜索功能&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 增加评论功能
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论功能迁移到waline&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论通知 wechat、email 等渠道&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善关键字搜索功能&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加文章字数统计&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加英文站，实现中文到英文的自动翻译
 &lt;ul&gt;
 &lt;li&gt;脚本调用大模型自动翻译中文文章为英文&lt;/li&gt;
+&lt;li&gt;脚本翻译时添加智能增量(实现逻辑：比较文件的修改时间)&lt;/li&gt;
 &lt;li&gt;页眉网站统计信息适配英文版&lt;/li&gt;
 &lt;li&gt;文章顶部字数统计、阅读量统计适配英文版&lt;/li&gt;
 &lt;li&gt;左侧边栏切换按钮由下拉框改为直接切换&lt;/li&gt;
-&lt;li&gt;脚本翻译时添加智能增量(实现逻辑：比较文件的修改时间)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发agent 同时发布上传yuque、csdn、weichat
-&lt;ul&gt;
-&lt;li&gt;目前yuque api token 需要付费&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 写关于我的一些说明&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加&amp;quot;返回顶部&amp;quot;功能&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论功能迁移到waline
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 评论通知wechat、email&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客在google、百度 中被搜索
-百度提交sitemap时需要备案号，这里先不添加。&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备份blog 数据库&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 开发管理平台&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;部署与监控&#34;&gt;部署与监控
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器部署网站&lt;/p&gt;
-&lt;p&gt;服务器不在国内可以先不备案&lt;/p&gt;
-&lt;p&gt;首年  续费
-hangops.top ¥14 ¥32&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统&lt;/p&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化浏览器顶层图标&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 首页和文章添加&amp;quot;返回顶部&amp;quot;功能&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器部署网站
+服务器不在国内可以先不备案
+域名：hangops.top，首年 ¥14，续费 ¥32&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署监控系统
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署prometheus&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署grafana&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 部署grafana(&lt;a class=&#34;link&#34; href=&#34;https://monitor.hangops.top/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://monitor.hangops.top/&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://monitor.hangops.top/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://monitor.hangops.top/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加网站访问统计
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统计网站访问量&lt;/li&gt;
@@ -135,8 +138,7 @@ hangops.top ¥14 ¥32&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - Mysql 实战
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;尽量不更新一些基础的知识，通过浏览器搜索即可，增强搜索知识的能力。重点记录一些在生产环境中遇到的问题和解决方法。&lt;/p&gt;
-</description>
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Hugo ｜ 如何让搜索引擎检索到博客</title>

@@ -598,17 +598,9 @@ Reference link: <a class="link" href="https://giscus.app/zh-CN"  target="_blank"
         color: var(--card-text-color-main);
     }
 </style><script>
-        
-        
-        const currentLanguage = window.location.href.includes('/en/') ? 'en' : 'zh-CN';
-        
-        console.log('🌍 Waline Current Language:', currentLanguage);
-
-        
-        Waline.init(Object.assign({}, {"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":"Welcome to leave your valuable comments! Please leave the correct email address for email reminder when there is a reply. Do not post any content unrelated to this article.","sofa":"No comments yet. Be the first to comment!"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"}, {
-            lang: currentLanguage
-        }));
-    </script>
+    
+    Waline.init({"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.4.0/weibo"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":"Welcome to leave your valuable comments! Please leave the correct email address for email reminder when there is a reply. Do not post any content unrelated to this article.","sofa":"No comments yet. Be the first to comment!"},"reaction":true,"requiredMeta":["name"],"search":false,"serverURL":"https://comment.hangops.top"});
+</script>
 
     
 
