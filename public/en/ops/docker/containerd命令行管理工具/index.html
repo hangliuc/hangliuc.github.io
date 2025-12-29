@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Containerd Command Line Management Tool Reasons for Kubernetes to Shift from Docker to containerd Architectural Reasons The process of starting a container by kubelet:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (Calls CRI interface) ▼ dockershim (K8s-maintained CRI translation layer) │ │ (Calls Docker Engine API) ▼ Docker Engine │ │ (Calls containerd API) ▼ containerd │ │ (Calls OCI interface) ▼ runc (OCI runtime) │ └─&gt; Truly create Linux container (namespace, cgroups, rootfs...) Docker Engine is a complete platform (building images, managing network, Volume, Swarm, etc.), which are redundant for K8s. dockershim is only for translating the CRI (K8s language) into Docker API (Docker language). The actual execution of containers is still containerd + runc. When kubelet directly uses containerd, the call chain is simplified to:\n">
 <title>Containerd Command Line Management Tool</title>
 
-<link rel='canonical' href='http://localhost:1313/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
+<link rel='canonical' href='https://hangops.top/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
 
 <link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="Containerd Command Line Management Tool">
 <meta property='og:description' content="Containerd Command Line Management Tool Reasons for Kubernetes to Shift from Docker to containerd Architectural Reasons The process of starting a container by kubelet:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (Calls CRI interface) ▼ dockershim (K8s-maintained CRI translation layer) │ │ (Calls Docker Engine API) ▼ Docker Engine │ │ (Calls containerd API) ▼ containerd │ │ (Calls OCI interface) ▼ runc (OCI runtime) │ └─&gt; Truly create Linux container (namespace, cgroups, rootfs...) Docker Engine is a complete platform (building images, managing network, Volume, Swarm, etc.), which are redundant for K8s. dockershim is only for translating the CRI (K8s language) into Docker API (Docker language). The actual execution of containers is still containerd + runc. When kubelet directly uses containerd, the call chain is simplified to:\n">
-<meta property='og:url' content='http://localhost:1313/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
+<meta property='og:url' content='https://hangops.top/en/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/'>
 <meta property='og:site_name' content='Hang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='article:modified_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='og:image' content='http://localhost:1313/img/cover/ops_cover.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='containerd' /><meta property='article:published_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='article:modified_time' content='2025-11-27T02:51:50&#43;00:00'/><meta property='og:image' content='https://hangops.top/img/cover/ops_cover.jpg' />
 <meta name="twitter:title" content="Containerd Command Line Management Tool">
 <meta name="twitter:description" content="Containerd Command Line Management Tool Reasons for Kubernetes to Shift from Docker to containerd Architectural Reasons The process of starting a container by kubelet:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 kubelet │ │ (Calls CRI interface) ▼ dockershim (K8s-maintained CRI translation layer) │ │ (Calls Docker Engine API) ▼ Docker Engine │ │ (Calls containerd API) ▼ containerd │ │ (Calls OCI interface) ▼ runc (OCI runtime) │ └─&gt; Truly create Linux container (namespace, cgroups, rootfs...) Docker Engine is a complete platform (building images, managing network, Volume, Swarm, etc.), which are redundant for K8s. dockershim is only for translating the CRI (K8s language) into Docker API (Docker language). The actual execution of containers is still containerd + runc. When kubelet directly uses containerd, the call chain is simplified to:\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/img/cover/ops_cover.jpg' />
+    <meta name="twitter:image" content='https://hangops.top/img/cover/ops_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZCZRY28LY"></script>
@@ -177,7 +177,7 @@
                             
 
                             <li>
-                                <a href="http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+                                <a href="https://hangops.top/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
@@ -413,7 +413,7 @@
 
             <div>
                 
-                    <a href="http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="link">中文</a>
+                    <a href="https://hangops.top/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="link">中文</a>
                 
             </div>
         </footer>
@@ -1064,7 +1064,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.42920a384ae147944efd4ae25e3fe3ff8eef37d6fd8930a8f5cc347c76b13191.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

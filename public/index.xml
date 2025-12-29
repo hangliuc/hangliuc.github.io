@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hang</title>
-        <link>http://localhost:1313/</link>
+        <link>https://hangops.top/</link>
         <description>Recent content on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 19:45:07 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 19:45:07 +0800</lastBuildDate><atom:link href="https://hangops.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo ｜ to do list</title>
-        <link>http://localhost:1313/topic/blogging/todo/</link>
+        <link>https://hangops.top/topic/blogging/todo/</link>
         <pubDate>Thu, 27 Nov 2025 11:04:45 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;-博客待办清单&#34;&gt;📝 博客待办清单
+        <guid>https://hangops.top/topic/blogging/todo/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ to do list" /&gt;&lt;h2 id=&#34;-博客待办清单&#34;&gt;📝 博客待办清单
 &lt;/h2&gt;&lt;h3 id=&#34;-p0&#34;&gt;🔥 P0
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 让博客可以在google、百度等搜索引擎中被收录
@@ -143,11 +143,11 @@
         </item>
         <item>
         <title>Hugo ｜ 如何让搜索引擎检索到博客</title>
-        <link>http://localhost:1313/topic/blogging/website_discovered/</link>
+        <link>https://hangops.top/topic/blogging/website_discovered/</link>
         <pubDate>Mon, 15 Dec 2025 19:45:07 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/website_discovered/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" /&gt;&lt;p&gt;部署完博客后，需要让搜索引擎检索到博客。&lt;/p&gt;
+        <guid>https://hangops.top/topic/blogging/website_discovered/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何让搜索引擎检索到博客" /&gt;&lt;p&gt;部署完博客后，需要让搜索引擎检索到博客。&lt;/p&gt;
 &lt;h2 id=&#34;google&#34;&gt;google
 &lt;/h2&gt;&lt;h3 id=&#34;获取measurement-id&#34;&gt;获取Measurement ID
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/analytics/web/provision/#/provision&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -169,7 +169,7 @@
 &lt;p&gt;登录&lt;a class=&#34;link&#34; href=&#34;https://search.google.com/search-console&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;谷歌搜索控制台&lt;/a&gt;。在验证所有权的选项中选择 “Google Analytics”，输入你的 Measurement ID 即可验证所有权。&lt;/p&gt;
 &lt;p&gt;下面就是已经成功提交的截图
-&lt;img src=&#34;http://localhost:1313/img/blog/google_search_console.png&#34;
+&lt;img src=&#34;https://hangops.top/img/blog/google_search_console.png&#34;
 	
 	
 	
@@ -183,7 +183,7 @@
 &lt;/h3&gt;&lt;p&gt;对于一个新站，Google 可能需要 几天甚至几周 才能把所有页面全部收录&lt;/p&gt;
 &lt;h4 id=&#34;google-search-console-验证&#34;&gt;Google Search Console 验证
 &lt;/h4&gt;&lt;p&gt;直接在顶部的搜索框查询，输入你的文章链接，即可验证是否被收录。
-&lt;img src=&#34;http://localhost:1313/img/blog/gcs01.png&#34;
+&lt;img src=&#34;https://hangops.top/img/blog/gcs01.png&#34;
 	
 	
 	
@@ -195,7 +195,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;也可以直接点击请求编入索引，请求 Google 收录你的文章。&lt;/p&gt;
 &lt;h4 id=&#34;google-搜索验证&#34;&gt;google 搜索验证
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/gcs02.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/blog/gcs02.png&#34;
 	
 	
 	
@@ -216,7 +216,7 @@
     &gt;百度搜索控制台&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;按照要求添加域名后，使用普通收录推送资源&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/baidu_search.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/blog/baidu_search.png&#34;
 	
 	
 	
@@ -237,11 +237,11 @@
         </item>
         <item>
         <title>Hugo ｜ Waline 评论系统私有化部署</title>
-        <link>http://localhost:1313/topic/blogging/deploy_comments/</link>
+        <link>https://hangops.top/topic/blogging/deploy_comments/</link>
         <pubDate>Sun, 14 Dec 2025 17:53:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/deploy_comments/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ Waline 评论系统私有化部署" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
+        <guid>https://hangops.top/topic/blogging/deploy_comments/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ Waline 评论系统私有化部署" /&gt;&lt;h2 id=&#34;waline-评论系统&#34;&gt;Waline 评论系统
 &lt;/h2&gt;&lt;p&gt;博客原本使用github giscus 作为评论系统，现在迁移至 Waline 评论系统。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;支持匿名评论（无需登录）&lt;/li&gt;
@@ -461,11 +461,11 @@
         </item>
         <item>
         <title>Hugo ｜ 如何自定义实现网站统计功能</title>
-        <link>http://localhost:1313/topic/blogging/site_statistics/</link>
+        <link>https://hangops.top/topic/blogging/site_statistics/</link>
         <pubDate>Thu, 11 Dec 2025 14:23:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/site_statistics/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何自定义实现网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
+        <guid>https://hangops.top/topic/blogging/site_statistics/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 如何自定义实现网站统计功能" /&gt;&lt;h2 id=&#34;一些实现方式&#34;&gt;一些实现方式
 &lt;/h2&gt;&lt;p&gt;目前看到网上关于网站统计功能的实现方式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;基于busuanzi js的统计功能&lt;/li&gt;
@@ -629,11 +629,11 @@
         </item>
         <item>
         <title>Hugo ｜ 本地服务器部署</title>
-        <link>http://localhost:1313/topic/blogging/blogging_deploy/</link>
+        <link>https://hangops.top/topic/blogging/blogging_deploy/</link>
         <pubDate>Sun, 07 Dec 2025 18:31:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 本地服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
+        <guid>https://hangops.top/topic/blogging/blogging_deploy/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 本地服务器部署" /&gt;&lt;p&gt;以前采用的是github pages部署网站，现在进行服务器部署网站。&lt;/p&gt;
 &lt;h2 id=&#34;安装基础软件&#34;&gt;安装基础软件
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -744,11 +744,11 @@
         </item>
         <item>
         <title>SRE面试题汇总 | Database</title>
-        <link>http://localhost:1313/topic/interview/database/</link>
+        <link>https://hangops.top/topic/interview/database/</link>
         <pubDate>Sat, 06 Dec 2025 18:42:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/database/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
+        <guid>https://hangops.top/topic/interview/database/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Database" /&gt;&lt;h1 id=&#34;mysql&#34;&gt;mysql
 &lt;/h1&gt;&lt;h2 id=&#34;1-mysql查询突然变的很慢需要怎么排查&#34;&gt;1. mysql查询突然变的很慢，需要怎么排查
 &lt;/h2&gt;&lt;h3 id=&#34;检查查询本身&#34;&gt;检查查询本身
 &lt;/h3&gt;&lt;ul&gt;
@@ -848,11 +848,11 @@
         </item>
         <item>
         <title>SRE面试题汇总 | K8s</title>
-        <link>http://localhost:1313/topic/interview/k8s/</link>
+        <link>https://hangops.top/topic/interview/k8s/</link>
         <pubDate>Sat, 06 Dec 2025 18:15:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/k8s/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
+        <guid>https://hangops.top/topic/interview/k8s/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | K8s" /&gt;&lt;h2 id=&#34;1各模块如何与api-server通信&#34;&gt;1.各模块如何与API Server通信
 &lt;/h2&gt;&lt;p&gt;集群内的各个功能模块通过API Server将信息存入etcd，当需要获取和操作这些数据时，则通过API Server提供的REST接口（用GET、LIST或WATCH方法）来实现，从而实现各模块之间的信息交互。&lt;/p&gt;
 &lt;p&gt;Kubernetes中各模块通过标准的HTTP/HTTPS请求与API Server交互，通过认证和鉴权机制保证安全性，并利用Watch机制实现实时的资源状态监控与同步。&lt;/p&gt;
 &lt;h2 id=&#34;2kubelet监控worker节点如何实现&#34;&gt;2.kubelet监控worker节点如何实现
@@ -1043,11 +1043,11 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
         </item>
         <item>
         <title>SRE面试题汇总 | Docker</title>
-        <link>http://localhost:1313/topic/interview/docker/</link>
+        <link>https://hangops.top/topic/interview/docker/</link>
         <pubDate>Sat, 06 Dec 2025 09:56:07 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/docker/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
+        <guid>https://hangops.top/topic/interview/docker/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Docker" /&gt;&lt;h2 id=&#34;1容器技术的基础原理&#34;&gt;1.容器技术的基础原理
 &lt;/h2&gt;&lt;p&gt;容器技术的基础原理是基于 Linux 内核的 Namespace 和 Cgroups 技术。&lt;/p&gt;
 &lt;p&gt;解决问题：最初解决本地与云端不一致版本问题&lt;/p&gt;
 &lt;p&gt;容器镜像：利用Linux的Union FS技术，将应用程序所依赖的运行操作系统、工具包、依赖库、配置文件、运行脚本等各种环境信息以分层的方式联合挂载到同一个目录下，作为镜像的根目录&lt;/p&gt;
@@ -1189,10 +1189,10 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
         </item>
         <item>
         <title>科学上网</title>
-        <link>http://localhost:1313/topic/scientific-internet/</link>
+        <link>https://hangops.top/topic/scientific-internet/</link>
         <pubDate>Fri, 05 Dec 2025 16:38:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/scientific-internet/</guid>
+        <guid>https://hangops.top/topic/scientific-internet/</guid>
         <description>&lt;p&gt;此搭建教程只用于个人学习，不可用于非法用途。&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://itlanyan.com/v2ray-tutorial/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1278,11 +1278,11 @@ DNS 的流量是 Pod → kube-proxy → CoreDNS Pod&lt;/li&gt;
         </item>
         <item>
         <title>SRE面试题汇总 | Monitoring</title>
-        <link>http://localhost:1313/topic/interview/monitoring/</link>
+        <link>https://hangops.top/topic/interview/monitoring/</link>
         <pubDate>Fri, 05 Dec 2025 13:38:56 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/monitoring/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
+        <guid>https://hangops.top/topic/interview/monitoring/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Monitoring" /&gt;&lt;h2 id=&#34;1监控指标类型及应用场景&#34;&gt;1.监控指标类型及应用场景
 &lt;/h2&gt;&lt;p&gt;1、 计数器（Counter）：用于记录事件的数量，例如请求次数、错误次数等。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;特点：单调递增，只增不减，重启时被设置为0&lt;/li&gt;
@@ -1326,11 +1326,11 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
         </item>
         <item>
         <title>SRE面试题汇总 | Network</title>
-        <link>http://localhost:1313/topic/interview/network/</link>
+        <link>https://hangops.top/topic/interview/network/</link>
         <pubDate>Thu, 04 Dec 2025 19:36:01 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/network/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Network" /&gt;&lt;h2 id=&#34;1osi七层模型&#34;&gt;1.OSI七层模型
+        <guid>https://hangops.top/topic/interview/network/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Network" /&gt;&lt;h2 id=&#34;1osi七层模型&#34;&gt;1.OSI七层模型
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1468,7 +1468,7 @@ Histogram在服务端计算分位数，Histogram 能够将多个实例的数据�
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;3tcp-的链接状态&#34;&gt;3.TCP 的链接状态
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/interview/tcp_netstat.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/interview/tcp_netstat.png&#34;
 	
 	
 	
@@ -1703,11 +1703,11 @@ mtr -rwzbc 100 &lt;target-ip&gt;&lt;/p&gt;
         </item>
         <item>
         <title>SRE面试题汇总 | Sre</title>
-        <link>http://localhost:1313/topic/interview/sre/</link>
+        <link>https://hangops.top/topic/interview/sre/</link>
         <pubDate>Thu, 04 Dec 2025 18:06:35 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/sre/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
+        <guid>https://hangops.top/topic/interview/sre/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Sre" /&gt;&lt;h2 id=&#34;1-slaslosli&#34;&gt;1. SLA、SLO、SLI
 &lt;/h2&gt;&lt;p&gt;SLI：服务水平指示器（正常响应数的百分比）&lt;/p&gt;
 &lt;p&gt;SLO：服务水平目标（99%、99.999%、99.99999%）
 必须和时间挂钩&lt;/p&gt;
@@ -1784,11 +1784,11 @@ mtr -rwzbc 100 &lt;target-ip&gt;&lt;/p&gt;
         </item>
         <item>
         <title>SRE面试题汇总 | Liunx</title>
-        <link>http://localhost:1313/topic/interview/liunx/</link>
+        <link>https://hangops.top/topic/interview/liunx/</link>
         <pubDate>Wed, 03 Dec 2025 10:56:44 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/liunx/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
+        <guid>https://hangops.top/topic/interview/liunx/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | Liunx" /&gt;&lt;h2 id=&#34;1-进程线程协程&#34;&gt;1. &lt;strong&gt;进程、线程、协程&lt;/strong&gt;
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;进程：操作系统分配资源的最小单位，CPU、内存、磁盘IO，一个进程可以拥有多个线程。&lt;/li&gt;
 &lt;li&gt;线程：进程内的执行单位，一个进程可以拥有多个线程，线程共享进程的资源。&lt;/li&gt;
@@ -2015,13 +2015,13 @@ lsof | grep deleted&lt;/li&gt;
         </item>
         <item>
         <title>面试 | 滴滴运维开发工程师</title>
-        <link>http://localhost:1313/topic/interview/experience/%E6%BB%B4%E6%BB%B4%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/</link>
+        <link>https://hangops.top/topic/interview/experience/%E6%BB%B4%E6%BB%B4%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/</link>
         <pubDate>Tue, 02 Dec 2025 15:20:45 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/experience/%E6%BB%B4%E6%BB%B4%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 滴滴运维开发工程师" /&gt;&lt;h2 id=&#34;tcp-的连接方式&#34;&gt;TCP 的连接方式
+        <guid>https://hangops.top/topic/interview/experience/%E6%BB%B4%E6%BB%B4%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/</guid>
+        <description>&lt;img src="https://hangops.top/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 滴滴运维开发工程师" /&gt;&lt;h2 id=&#34;tcp-的连接方式&#34;&gt;TCP 的连接方式
 &lt;/h2&gt;&lt;p&gt;TCP 头结构&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/interview/tcp_header.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/interview/tcp_header.png&#34;
 	
 	
 	
@@ -2038,7 +2038,7 @@ lsof | grep deleted&lt;/li&gt;
 &lt;li&gt;RST：表示 TCP 连接中出现异常必须强制断开连接&lt;/li&gt;
 &lt;li&gt;FIN：当通信结束希望断开连接时，通信双方的主机之间就可以相互交换 FIN 位为 1 的 TCP 段&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/interview/tcp.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/interview/tcp.png&#34;
 	
 	
 	
@@ -2053,7 +2053,7 @@ lsof | grep deleted&lt;/li&gt;
 &lt;p&gt;服务端的典型状态流转为：
 CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
 若被动关闭：ESTABLISHED → CLOSE-WAIT → LAST-ACK → CLOSED。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/interview/tcp_close.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/interview/tcp_close.png&#34;
 	
 	
 	
@@ -2097,11 +2097,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>面试 | 智谱华章运维工程师</title>
-        <link>http://localhost:1313/topic/interview/experience/%E6%99%BA%E8%B0%B1%E5%8D%8E%E7%AB%A0%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88/</link>
+        <link>https://hangops.top/topic/interview/experience/%E6%99%BA%E8%B0%B1%E5%8D%8E%E7%AB%A0%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88/</link>
         <pubDate>Tue, 02 Dec 2025 15:20:29 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/experience/%E6%99%BA%E8%B0%B1%E5%8D%8E%E7%AB%A0%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 智谱华章运维工程师" /&gt;&lt;h2 id=&#34;ls-按照时间排序&#34;&gt;ls 按照时间排序
+        <guid>https://hangops.top/topic/interview/experience/%E6%99%BA%E8%B0%B1%E5%8D%8E%E7%AB%A0%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88/</guid>
+        <description>&lt;img src="https://hangops.top/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 智谱华章运维工程师" /&gt;&lt;h2 id=&#34;ls-按照时间排序&#34;&gt;ls 按照时间排序
 &lt;/h2&gt;&lt;p&gt;ls -lt&lt;/p&gt;
 &lt;h2 id=&#34;两个文件按照行diff&#34;&gt;两个文件按照行diff
 &lt;/h2&gt;&lt;p&gt;diff -w test.sh test2.sh&lt;/p&gt;
@@ -2189,11 +2189,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>面试 | 百度信息安全运维</title>
-        <link>http://localhost:1313/topic/interview/experience/%E7%99%BE%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%BF%90%E7%BB%B4/</link>
+        <link>https://hangops.top/topic/interview/experience/%E7%99%BE%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%BF%90%E7%BB%B4/</link>
         <pubDate>Tue, 02 Dec 2025 15:19:58 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/experience/%E7%99%BE%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%BF%90%E7%BB%B4/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 百度信息安全运维" /&gt;&lt;h2 id=&#34;pod-可能存在哪些状态&#34;&gt;pod 可能存在哪些状态
+        <guid>https://hangops.top/topic/interview/experience/%E7%99%BE%E5%BA%A6%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%BF%90%E7%BB%B4/</guid>
+        <description>&lt;img src="https://hangops.top/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 百度信息安全运维" /&gt;&lt;h2 id=&#34;pod-可能存在哪些状态&#34;&gt;pod 可能存在哪些状态
 &lt;/h2&gt;&lt;p&gt;Pod Phase&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Running&lt;/li&gt;
@@ -2334,11 +2334,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>面试 | 字节国际电商</title>
-        <link>http://localhost:1313/topic/interview/experience/%E5%AD%97%E8%8A%82%E5%9B%BD%E9%99%85%E7%94%B5%E5%95%86sre/</link>
+        <link>https://hangops.top/topic/interview/experience/%E5%AD%97%E8%8A%82%E5%9B%BD%E9%99%85%E7%94%B5%E5%95%86sre/</link>
         <pubDate>Tue, 02 Dec 2025 15:19:21 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/experience/%E5%AD%97%E8%8A%82%E5%9B%BD%E9%99%85%E7%94%B5%E5%95%86sre/</guid>
-        <description>&lt;img src="http://localhost:1313/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 字节国际电商" /&gt;&lt;h2 id=&#34;一轮面试&#34;&gt;一轮面试
+        <guid>https://hangops.top/topic/interview/experience/%E5%AD%97%E8%8A%82%E5%9B%BD%E9%99%85%E7%94%B5%E5%95%86sre/</guid>
+        <description>&lt;img src="https://hangops.top/img/interview_experience_cover.jpg" alt="Featured image of post 面试 | 字节国际电商" /&gt;&lt;h2 id=&#34;一轮面试&#34;&gt;一轮面试
 &lt;/h2&gt;&lt;h3 id=&#34;k8s-中几种探针方式&#34;&gt;k8s 中几种探针方式
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;livenessProbe 捕获死锁。决定容器何时重启&lt;/li&gt;
@@ -2360,11 +2360,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>SRE面试题汇总 | 面试专题的一些规划</title>
-        <link>http://localhost:1313/topic/interview/structure/</link>
+        <link>https://hangops.top/topic/interview/structure/</link>
         <pubDate>Tue, 02 Dec 2025 15:06:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/interview/structure/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | 面试专题的一些规划" /&gt;&lt;ul&gt;
+        <guid>https://hangops.top/topic/interview/structure/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/interview_cover.jpg" alt="Featured image of post SRE面试题汇总 | 面试专题的一些规划" /&gt;&lt;ul&gt;
 &lt;li&gt;面试经历&lt;/li&gt;
 &lt;li&gt;liunx&lt;/li&gt;
 &lt;li&gt;container &amp;amp;&amp;amp; k8s&lt;/li&gt;
@@ -2382,11 +2382,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>mysql 常用命令</title>
-        <link>http://localhost:1313/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <link>https://hangops.top/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Mon, 01 Dec 2025 21:14:56 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post mysql 常用命令" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <guid>https://hangops.top/ops/mysql/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post mysql 常用命令" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -2436,14 +2436,14 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>ASG Node 数据盘挂载失败</title>
-        <link>http://localhost:1313/ops/linux/asg-node-disk-issue/</link>
+        <link>https://hangops.top/ops/linux/asg-node-disk-issue/</link>
         <pubDate>Mon, 01 Dec 2025 11:45:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/linux/asg-node-disk-issue/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
+        <guid>https://hangops.top/ops/linux/asg-node-disk-issue/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post ASG Node 数据盘挂载失败" /&gt;&lt;h2 id=&#34;问题背景&#34;&gt;问题背景
 &lt;/h2&gt;&lt;p&gt;data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警&lt;/p&gt;
 &lt;p&gt;内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/linux/asg-node-disk-issue/disk_error.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hangops.top/ops/linux/asg-node-disk-issue/disk_error.png&#34;
 	width=&#34;1567&#34;
 	height=&#34;983&#34;
 	
@@ -2512,11 +2512,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>Hugo ｜ 基础规划和使用方法</title>
-        <link>http://localhost:1313/topic/blogging/hugo_usage_method/</link>
+        <link>https://hangops.top/topic/blogging/hugo_usage_method/</link>
         <pubDate>Thu, 27 Nov 2025 15:16:29 +0800</pubDate>
         
-        <guid>http://localhost:1313/topic/blogging/hugo_usage_method/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
+        <guid>https://hangops.top/topic/blogging/hugo_usage_method/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo ｜ 基础规划和使用方法" /&gt;&lt;h2 id=&#34;hugo-目录结构&#34;&gt;Hugo 目录结构
 &lt;/h2&gt;&lt;p&gt;content/: 存放你的 Markdown 文章（数据库）。&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: 存放前端代码（HTML/CSS 模版）。&lt;/p&gt;
 &lt;p&gt;static/: 存放图片、CNAME 文件等静态资源。&lt;/p&gt;
@@ -2590,11 +2590,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>Vim 使用技巧</title>
-        <link>http://localhost:1313/ops/linux/vim/</link>
+        <link>https://hangops.top/ops/linux/vim/</link>
         <pubDate>Thu, 27 Nov 2025 11:02:53 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/linux/vim/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Vim 使用技巧" /&gt;&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
+        <guid>https://hangops.top/ops/linux/vim/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post Vim 使用技巧" /&gt;&lt;h1 id=&#34;vim-常用命令&#34;&gt;vim 常用命令
 &lt;/h1&gt;&lt;h2 id=&#34;光标移动&#34;&gt;光标移动
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;h&lt;/strong&gt; 或 &lt;strong&gt;退格&lt;/strong&gt;：左移一个字符&lt;/li&gt;
@@ -2686,11 +2686,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>Containerd命令行管理工具</title>
-        <link>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+        <link>https://hangops.top/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Thu, 27 Nov 2025 10:51:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Containerd命令行管理工具" /&gt;&lt;h1 id=&#34;containerd-命令行管理工具&#34;&gt;Containerd 命令行管理工具
+        <guid>https://hangops.top/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post Containerd命令行管理工具" /&gt;&lt;h1 id=&#34;containerd-命令行管理工具&#34;&gt;Containerd 命令行管理工具
 &lt;/h1&gt;&lt;h2 id=&#34;kubernetes-从-docker-转向-containerd-的原因&#34;&gt;Kubernetes 从 Docker 转向 containerd 的原因
 &lt;/h2&gt;&lt;h3 id=&#34;架构层面的原因&#34;&gt;架构层面的原因
 &lt;/h3&gt;&lt;p&gt;kubelet 启动一个容器的流程:&lt;/p&gt;
@@ -2908,15 +2908,15 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>容器网络影响宿主机入网问题排查</title>
-        <link>http://localhost:1313/ops/docker/docker-network-issue/</link>
+        <link>https://hangops.top/ops/docker/docker-network-issue/</link>
         <pubDate>Wed, 26 Nov 2025 10:38:20 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/docker/docker-network-issue/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post 容器网络影响宿主机入网问题排查" /&gt;&lt;h1 id=&#34;容器网络影响宿主机入网问题排查&#34;&gt;容器网络影响宿主机入网问题排查
+        <guid>https://hangops.top/ops/docker/docker-network-issue/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post 容器网络影响宿主机入网问题排查" /&gt;&lt;h1 id=&#34;容器网络影响宿主机入网问题排查&#34;&gt;容器网络影响宿主机入网问题排查
 &lt;/h1&gt;&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
 &lt;/h2&gt;&lt;p&gt;发现172.27.0.0/16，172.26.0.0/16 网段的服务无法访问宿主机的服务&lt;/p&gt;
 &lt;h2 id=&#34;问题排查&#34;&gt;问题排查
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ops/docker/docker-network-issue/ifconfig.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hangops.top/ops/docker/docker-network-issue/ifconfig.png&#34;
 	width=&#34;1046&#34;
 	height=&#34;1028&#34;
 	
@@ -3010,11 +3010,11 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>ansible | 缓存ssh密钥避免每次输入密码</title>
-        <link>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</link>
+        <link>https://hangops.top/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</link>
         <pubDate>Tue, 26 Nov 2024 10:00:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post ansible | 缓存ssh密钥避免每次输入密码" /&gt;&lt;h1 id=&#34;背景&#34;&gt;背景
+        <guid>https://hangops.top/ops/ansible/ansible-%E7%BC%93%E5%AD%98ssh%E5%AF%86%E9%92%A5/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post ansible | 缓存ssh密钥避免每次输入密码" /&gt;&lt;h1 id=&#34;背景&#34;&gt;背景
 &lt;/h1&gt;&lt;p&gt;使用ansible时，为了避免每次执行任务都需要输入ssh密码，我们可以缓存ssh密钥。&lt;/p&gt;
 &lt;h1 id=&#34;ansible-缓存ssh密钥&#34;&gt;ansible 缓存ssh密钥
 &lt;/h1&gt;&lt;ol&gt;
@@ -3033,10 +3033,10 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>Hello World</title>
-        <link>http://localhost:1313/posts/hello-world/</link>
+        <link>https://hangops.top/posts/hello-world/</link>
         <pubDate>Sun, 26 Nov 2023 10:00:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/posts/hello-world/</guid>
+        <guid>https://hangops.top/posts/hello-world/</guid>
         <description>&lt;p&gt;这是我的第一篇 Hugo 博客！&lt;/p&gt;
 &lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？
 &lt;/h2&gt;&lt;p&gt;作为 SRE，我喜欢静态二进制文件的简单和纯粹。&lt;/p&gt;
@@ -3049,10 +3049,10 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>关于我</title>
-        <link>http://localhost:1313/about/</link>
+        <link>https://hangops.top/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/about/</guid>
+        <guid>https://hangops.top/about/</guid>
         <description>&lt;h2 id=&#34;-你好&#34;&gt;👋 你好！
 &lt;/h2&gt;&lt;p&gt;我是 &lt;strong&gt;Liu Hang&lt;/strong&gt;，一名 SRE。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -3095,20 +3095,20 @@ CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED（连接建立）；
         </item>
         <item>
         <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://hangops.top/archives/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://hangops.top/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://hangops.top/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
-        <description>&lt;link href=&#34;http://localhost:1313/pagefind/pagefind-ui.css&#34; rel=&#34;stylesheet&#34;&gt;
-&lt;script src=&#34;http://localhost:1313/pagefind/pagefind-ui.js&#34;&gt;&lt;/script&gt;
+        <guid>https://hangops.top/search/</guid>
+        <description>&lt;link href=&#34;https://hangops.top/pagefind/pagefind-ui.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;script src=&#34;https://hangops.top/pagefind/pagefind-ui.js&#34;&gt;&lt;/script&gt;
 &lt;div id=&#34;search&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
     window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Hang</title>
-        <link>http://localhost:1313/en/posts/</link>
+        <link>https://hangops.top/en/posts/</link>
         <description>Recent content in Posts on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sun, 26 Nov 2023 02:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 26 Nov 2023 02:00:00 +0000</lastBuildDate><atom:link href="https://hangops.top/en/posts/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hello World</title>
-        <link>http://localhost:1313/en/posts/hello-world/</link>
+        <link>https://hangops.top/en/posts/hello-world/</link>
         <pubDate>Sun, 26 Nov 2023 02:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/posts/hello-world/</guid>
+        <guid>https://hangops.top/en/posts/hello-world/</guid>
         <description>&lt;p&gt;This is my first Hugo blog!&lt;/p&gt;
 &lt;h2 id=&#34;why-choose-hugo&#34;&gt;Why Choose Hugo?
 &lt;/h2&gt;&lt;p&gt;As an SRE, I appreciate the simplicity and purity of static binary files.&lt;/p&gt;

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Containerd on Hang</title>
-        <link>http://localhost:1313/tags/containerd/</link>
+        <link>https://hangops.top/tags/containerd/</link>
         <description>Recent content in Containerd on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Thu, 27 Nov 2025 10:51:50 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/containerd/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 27 Nov 2025 10:51:50 +0800</lastBuildDate><atom:link href="https://hangops.top/tags/containerd/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Containerd命令行管理工具</title>
-        <link>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+        <link>https://hangops.top/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Thu, 27 Nov 2025 10:51:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/ops_cover.jpg" alt="Featured image of post Containerd命令行管理工具" /&gt;&lt;h1 id=&#34;containerd-命令行管理工具&#34;&gt;Containerd 命令行管理工具
+        <guid>https://hangops.top/ops/docker/containerd%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/ops_cover.jpg" alt="Featured image of post Containerd命令行管理工具" /&gt;&lt;h1 id=&#34;containerd-命令行管理工具&#34;&gt;Containerd 命令行管理工具
 &lt;/h1&gt;&lt;h2 id=&#34;kubernetes-从-docker-转向-containerd-的原因&#34;&gt;Kubernetes 从 Docker 转向 containerd 的原因
 &lt;/h2&gt;&lt;h3 id=&#34;架构层面的原因&#34;&gt;架构层面的原因
 &lt;/h3&gt;&lt;p&gt;kubelet 启动一个容器的流程:&lt;/p&gt;

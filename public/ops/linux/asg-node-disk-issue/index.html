@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题背景 data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警\n内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。\n解决方法 1 2 3 4 5 6 7 8 9 10 11 12 ... yum install parted -y mkdir -p /data parted -s /dev/nvme1n1 -- mklabel gpt parted -s /dev/nvme1n1 -- mkpart primary ext4 0% 100% partprobe /dev/nvme1n1 udevadm settle while [ ! -e /dev/nvme1n1p1 ]; do sleep 1; done mkfs -t ext4 /dev/nvme1n1p1 mount /dev/nvme1n1p1 /data echo &#39;/dev/nvme1n1p1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab ... parted 中 0 与 0% 的区别 0：表示强制要求分区从磁盘的 第 0 个字节/扇区 开始。\n">
 <title>ASG Node 数据盘挂载失败</title>
 
-<link rel='canonical' href='http://localhost:1313/ops/linux/asg-node-disk-issue/'>
+<link rel='canonical' href='https://hangops.top/ops/linux/asg-node-disk-issue/'>
 
 <link rel="stylesheet" href="/scss/style.min.68d8662d637d4bfd58a141486b21f6b2bd0dd249db2c3513557731573f7ca445.css"><meta property='og:title' content="ASG Node 数据盘挂载失败">
 <meta property='og:description' content="问题背景 data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警\n内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。\n解决方法 1 2 3 4 5 6 7 8 9 10 11 12 ... yum install parted -y mkdir -p /data parted -s /dev/nvme1n1 -- mklabel gpt parted -s /dev/nvme1n1 -- mkpart primary ext4 0% 100% partprobe /dev/nvme1n1 udevadm settle while [ ! -e /dev/nvme1n1p1 ]; do sleep 1; done mkfs -t ext4 /dev/nvme1n1p1 mount /dev/nvme1n1p1 /data echo &#39;/dev/nvme1n1p1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab ... parted 中 0 与 0% 的区别 0：表示强制要求分区从磁盘的 第 0 个字节/扇区 开始。\n">
-<meta property='og:url' content='http://localhost:1313/ops/linux/asg-node-disk-issue/'>
+<meta property='og:url' content='https://hangops.top/ops/linux/asg-node-disk-issue/'>
 <meta property='og:site_name' content='Hang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Troubleshooting' /><meta property='article:published_time' content='2025-12-01T11:45:14&#43;08:00'/><meta property='article:modified_time' content='2025-12-01T11:45:14&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/cover/ops_cover.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Ops' /><meta property='article:tag' content='Troubleshooting' /><meta property='article:published_time' content='2025-12-01T11:45:14&#43;08:00'/><meta property='article:modified_time' content='2025-12-01T11:45:14&#43;08:00'/><meta property='og:image' content='https://hangops.top/img/cover/ops_cover.jpg' />
 <meta name="twitter:title" content="ASG Node 数据盘挂载失败">
 <meta name="twitter:description" content="问题背景 data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报警\n内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。\n解决方法 1 2 3 4 5 6 7 8 9 10 11 12 ... yum install parted -y mkdir -p /data parted -s /dev/nvme1n1 -- mklabel gpt parted -s /dev/nvme1n1 -- mkpart primary ext4 0% 100% partprobe /dev/nvme1n1 udevadm settle while [ ! -e /dev/nvme1n1p1 ]; do sleep 1; done mkfs -t ext4 /dev/nvme1n1p1 mount /dev/nvme1n1p1 /data echo &#39;/dev/nvme1n1p1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab ... parted 中 0 与 0% 的区别 0：表示强制要求分区从磁盘的 第 0 个字节/扇区 开始。\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/img/cover/ops_cover.jpg' />
+    <meta name="twitter:image" content='https://hangops.top/img/cover/ops_cover.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZCZRY28LY"></script>
@@ -218,7 +218,7 @@
                             
 
                             <li>
-                                <a href="http://localhost:1313/en/ops/linux/asg-node-disk-issue/">
+                                <a href="https://hangops.top/en/ops/linux/asg-node-disk-issue/">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
@@ -446,7 +446,7 @@
 
             <div>
                 
-                    <a href="http://localhost:1313/en/ops/linux/asg-node-disk-issue/" class="link">English</a>
+                    <a href="https://hangops.top/en/ops/linux/asg-node-disk-issue/" class="link">English</a>
                 
             </div>
         </footer>
@@ -949,7 +949,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.42920a384ae147944efd4ae25e3fe3ff8eef37d6fd8930a8f5cc347c76b13191.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

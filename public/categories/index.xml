@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Hang</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://hangops.top/categories/</link>
         <description>Recent content in Categories on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 19:45:07 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 19:45:07 +0800</lastBuildDate><atom:link href="https://hangops.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>博客</title>
-        <link>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/</link>
+        <link>https://hangops.top/categories/%E5%8D%9A%E5%AE%A2/</link>
         <pubDate>Mon, 15 Dec 2025 19:45:07 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/</guid>
+        <guid>https://hangops.top/categories/%E5%8D%9A%E5%AE%A2/</guid>
         <description></description>
         </item>
         <item>
         <title>面试</title>
-        <link>http://localhost:1313/categories/%E9%9D%A2%E8%AF%95/</link>
+        <link>https://hangops.top/categories/%E9%9D%A2%E8%AF%95/</link>
         <pubDate>Sat, 06 Dec 2025 18:42:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/%E9%9D%A2%E8%AF%95/</guid>
+        <guid>https://hangops.top/categories/%E9%9D%A2%E8%AF%95/</guid>
         <description></description>
         </item>
         <item>
         <title>运维</title>
-        <link>http://localhost:1313/categories/%E8%BF%90%E7%BB%B4/</link>
+        <link>https://hangops.top/categories/%E8%BF%90%E7%BB%B4/</link>
         <pubDate>Mon, 01 Dec 2025 21:14:56 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/%E8%BF%90%E7%BB%B4/</guid>
+        <guid>https://hangops.top/categories/%E8%BF%90%E7%BB%B4/</guid>
         <description></description>
         </item>
         

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>blog on Hang</title>
-        <link>http://localhost:1313/en/topic/blogging/</link>
+        <link>https://hangops.top/en/topic/blogging/</link>
         <description>Recent content in blog on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 11:45:07 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/topic/blogging/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 11:45:07 +0000</lastBuildDate><atom:link href="https://hangops.top/en/topic/blogging/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo | To-Do List</title>
-        <link>http://localhost:1313/en/topic/blogging/todo/</link>
+        <link>https://hangops.top/en/topic/blogging/todo/</link>
         <pubDate>Thu, 27 Nov 2025 03:04:45 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/topic/blogging/todo/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | To-Do List" /&gt;&lt;h2 id=&#34;-blog-to-do-list&#34;&gt;📝 Blog To-Do List
+        <guid>https://hangops.top/en/topic/blogging/todo/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | To-Do List" /&gt;&lt;h2 id=&#34;-blog-to-do-list&#34;&gt;📝 Blog To-Do List
 &lt;/h2&gt;&lt;h3 id=&#34;-p0&#34;&gt;🔥 P0
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Make the blog indexable by search engines like Google, Baidu, etc.
@@ -144,11 +144,11 @@ Domain: hangops.top, first year ¥14, renewal ¥32&lt;/li&gt;
         </item>
         <item>
         <title>Hugo | How to make a blog searchable by search engines</title>
-        <link>http://localhost:1313/en/topic/blogging/website_discovered/</link>
+        <link>https://hangops.top/en/topic/blogging/website_discovered/</link>
         <pubDate>Mon, 15 Dec 2025 11:45:07 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/topic/blogging/website_discovered/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | How to make a blog searchable by search engines" /&gt;&lt;p&gt;After deploying the blog, you need to ensure that search engines can index the blog.&lt;/p&gt;
+        <guid>https://hangops.top/en/topic/blogging/website_discovered/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | How to make a blog searchable by search engines" /&gt;&lt;p&gt;After deploying the blog, you need to ensure that search engines can index the blog.&lt;/p&gt;
 &lt;h2 id=&#34;google&#34;&gt;Google
 &lt;/h2&gt;&lt;h3 id=&#34;obtain-measurement-id&#34;&gt;Obtain Measurement ID
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/analytics/web/provision/#/provision&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -170,7 +170,7 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
 &lt;p&gt;Log in to &lt;a class=&#34;link&#34; href=&#34;https://search.google.com/search-console&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Google Search Console&lt;/a&gt;. Select &amp;ldquo;Google Analytics&amp;rdquo; under the verification of ownership options and enter your Measurement ID to verify ownership.&lt;/p&gt;
 &lt;p&gt;Here is a screenshot of a successfully submitted sitemap
-&lt;img src=&#34;http://localhost:1313/img/blog/google_search_console.png&#34;
+&lt;img src=&#34;https://hangops.top/img/blog/google_search_console.png&#34;
 	
 	
 	
@@ -184,7 +184,7 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
 &lt;/h3&gt;&lt;p&gt;For a new site, Google may take a few days to several weeks to index all pages.&lt;/p&gt;
 &lt;h4 id=&#34;google-search-console-verification&#34;&gt;Google Search Console Verification
 &lt;/h4&gt;&lt;p&gt;Directly search in the top search box, enter your article link to verify if it has been indexed.
-&lt;img src=&#34;http://localhost:1313/img/blog/gcs01.png&#34;
+&lt;img src=&#34;https://hangops.top/img/blog/gcs01.png&#34;
 	
 	
 	
@@ -196,7 +196,7 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
 &gt;&lt;/p&gt;
 &lt;p&gt;You can also click &amp;ldquo;Request indexing&amp;rdquo; to request Google to index your article.&lt;/p&gt;
 &lt;h4 id=&#34;google-search-verification&#34;&gt;Google Search Verification
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/gcs02.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/blog/gcs02.png&#34;
 	
 	
 	
@@ -217,7 +217,7 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
     &gt;Baidu Search Console&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Add the domain according to the requirements and use normal inclusion to push resources&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/blog/baidu_search.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hangops.top/img/blog/baidu_search.png&#34;
 	
 	
 	
@@ -238,11 +238,11 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
         </item>
         <item>
         <title>Hugo | Waline comment system private deployment</title>
-        <link>http://localhost:1313/en/topic/blogging/deploy_comments/</link>
+        <link>https://hangops.top/en/topic/blogging/deploy_comments/</link>
         <pubDate>Sun, 14 Dec 2025 09:53:12 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/topic/blogging/deploy_comments/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Waline comment system private deployment" /&gt;&lt;h2 id=&#34;waline-comment-system&#34;&gt;Waline Comment System
+        <guid>https://hangops.top/en/topic/blogging/deploy_comments/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Waline comment system private deployment" /&gt;&lt;h2 id=&#34;waline-comment-system&#34;&gt;Waline Comment System
 &lt;/h2&gt;&lt;p&gt;The blog originally used GitHub Giscus as the comment system, but has now migrated to the Waline comment system.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Supports anonymous comments (no login required)&lt;/li&gt;
@@ -462,11 +462,11 @@ Each website in Google Analytics has a unique Measurement ID, formatted as &lt;c
         </item>
         <item>
         <title>Hugo | How to Custom Implement Website Statistics</title>
-        <link>http://localhost:1313/en/topic/blogging/site_statistics/</link>
+        <link>https://hangops.top/en/topic/blogging/site_statistics/</link>
         <pubDate>Thu, 11 Dec 2025 06:23:32 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/topic/blogging/site_statistics/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | How to Custom Implement Website Statistics" /&gt;&lt;h2 id=&#34;some-implementation-methods&#34;&gt;Some Implementation Methods
+        <guid>https://hangops.top/en/topic/blogging/site_statistics/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | How to Custom Implement Website Statistics" /&gt;&lt;h2 id=&#34;some-implementation-methods&#34;&gt;Some Implementation Methods
 &lt;/h2&gt;&lt;p&gt;Currently, there are several ways to implement website statistics functionality that I have seen on the internet:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Statistics based on busuanzi js&lt;/li&gt;
@@ -630,11 +630,11 @@ When reporting the /article/visit API, if it is the homepage (/) or pagination (
         </item>
         <item>
         <title>Hugo | Local Server Deployment</title>
-        <link>http://localhost:1313/en/topic/blogging/blogging_deploy/</link>
+        <link>https://hangops.top/en/topic/blogging/blogging_deploy/</link>
         <pubDate>Sun, 07 Dec 2025 10:31:24 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/topic/blogging/blogging_deploy/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Local Server Deployment" /&gt;&lt;h2 id=&#34;previous-deployment-method-github-pages&#34;&gt;Previous Deployment Method: GitHub Pages
+        <guid>https://hangops.top/en/topic/blogging/blogging_deploy/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Local Server Deployment" /&gt;&lt;h2 id=&#34;previous-deployment-method-github-pages&#34;&gt;Previous Deployment Method: GitHub Pages
 &lt;/h2&gt;&lt;p&gt;Now, we are deploying the website on a server.&lt;/p&gt;
 &lt;h2 id=&#34;installing-basic-software&#34;&gt;Installing Basic Software
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -746,11 +746,11 @@ When reporting the /article/visit API, if it is the homepage (/) or pagination (
         </item>
         <item>
         <title>Hugo | Basic Planning and Usage Method</title>
-        <link>http://localhost:1313/en/topic/blogging/hugo_usage_method/</link>
+        <link>https://hangops.top/en/topic/blogging/hugo_usage_method/</link>
         <pubDate>Thu, 27 Nov 2025 07:16:29 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/topic/blogging/hugo_usage_method/</guid>
-        <description>&lt;img src="http://localhost:1313/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Basic Planning and Usage Method" /&gt;&lt;h2 id=&#34;hugo-directory-structure&#34;&gt;Hugo Directory Structure
+        <guid>https://hangops.top/en/topic/blogging/hugo_usage_method/</guid>
+        <description>&lt;img src="https://hangops.top/img/cover/blog_cover.jpg" alt="Featured image of post Hugo | Basic Planning and Usage Method" /&gt;&lt;h2 id=&#34;hugo-directory-structure&#34;&gt;Hugo Directory Structure
 &lt;/h2&gt;&lt;p&gt;content/: Stores your Markdown articles (database).&lt;/p&gt;
 &lt;p&gt;layouts/ &amp;amp; themes/: Stores frontend code (HTML/CSS templates).&lt;/p&gt;
 &lt;p&gt;static/: Stores images, CNAME files, and other static resources.&lt;/p&gt;

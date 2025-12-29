@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Hang</title>
-        <link>http://localhost:1313/en/categories/</link>
+        <link>https://hangops.top/en/categories/</link>
         <description>Recent content in Categories on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 11:45:07 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 11:45:07 +0000</lastBuildDate><atom:link href="https://hangops.top/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Blog</title>
-        <link>http://localhost:1313/en/categories/blog/</link>
+        <link>https://hangops.top/en/categories/blog/</link>
         <pubDate>Mon, 15 Dec 2025 11:45:07 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/categories/blog/</guid>
+        <guid>https://hangops.top/en/categories/blog/</guid>
         <description></description>
         </item>
         <item>
         <title>Interview</title>
-        <link>http://localhost:1313/en/categories/interview/</link>
+        <link>https://hangops.top/en/categories/interview/</link>
         <pubDate>Sat, 06 Dec 2025 10:42:12 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/categories/interview/</guid>
+        <guid>https://hangops.top/en/categories/interview/</guid>
         <description></description>
         </item>
         <item>
         <title>Operations Maintenance</title>
-        <link>http://localhost:1313/en/categories/operations-maintenance/</link>
+        <link>https://hangops.top/en/categories/operations-maintenance/</link>
         <pubDate>Mon, 01 Dec 2025 13:14:56 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/categories/operations-maintenance/</guid>
+        <guid>https://hangops.top/en/categories/operations-maintenance/</guid>
         <description></description>
         </item>
         

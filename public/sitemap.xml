@@ -2,79 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ops/</loc>
+    <loc>https://hangops.top/ops/</loc>
     <lastmod>2025-12-01T21:14:56+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/ops/"
+                href="https://hangops.top/en/ops/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/ops/"
+                href="https://hangops.top/ops/"
                 />
   </url><url>
-    <loc>http://localhost:1313/topic/</loc>
+    <loc>https://hangops.top/topic/</loc>
     <lastmod>2025-12-15T19:45:07+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/topic/"
+                href="https://hangops.top/en/topic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/topic/"
+                href="https://hangops.top/topic/"
                 />
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://hangops.top/posts/</loc>
     <lastmod>2023-11-26T10:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/posts/"
+                href="https://hangops.top/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/posts/"
+                href="https://hangops.top/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://hangops.top/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/about/"
+                href="https://hangops.top/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/about/"
+                href="https://hangops.top/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://hangops.top/archives/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/archives/"
+                href="https://hangops.top/en/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/archives/"
+                href="https://hangops.top/archives/"
                 />
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://hangops.top/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/search/"
+                href="https://hangops.top/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/search/"
+                href="https://hangops.top/search/"
                 />
   </url>
 </urlset>
