@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Topics on Hang</title>
-        <link>https://hangops.top/en/topic/</link>
+        <link>http://localhost:1313/en/topic/</link>
         <description>Recent content in Topics on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 08:38:33 +0000</lastBuildDate><atom:link href="https://hangops.top/en/topic/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 08:38:33 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/topic/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Scientific Internet Access</title>
-        <link>https://hangops.top/en/topic/scientific-internet/</link>
+        <link>http://localhost:1313/en/topic/scientific-internet/</link>
         <pubDate>Fri, 05 Dec 2025 08:38:33 +0000</pubDate>
         
-        <guid>https://hangops.top/en/topic/scientific-internet/</guid>
+        <guid>http://localhost:1313/en/topic/scientific-internet/</guid>
         <description>&lt;p&gt;This setup tutorial is for personal learning purposes only and must not be used for illegal activities.&lt;/p&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://itlanyan.com/v2ray-tutorial/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

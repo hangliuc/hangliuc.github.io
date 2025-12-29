@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>专题 on Hang</title>
-        <link>https://hangops.top/topic/</link>
+        <link>http://localhost:1313/topic/</link>
         <description>Recent content in 专题 on Hang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 16:38:33 +0800</lastBuildDate><atom:link href="https://hangops.top/topic/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 16:38:33 +0800</lastBuildDate><atom:link href="http://localhost:1313/topic/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>科学上网</title>
-        <link>https://hangops.top/topic/scientific-internet/</link>
+        <link>http://localhost:1313/topic/scientific-internet/</link>
         <pubDate>Fri, 05 Dec 2025 16:38:33 +0800</pubDate>
         
-        <guid>https://hangops.top/topic/scientific-internet/</guid>
+        <guid>http://localhost:1313/topic/scientific-internet/</guid>
         <description>&lt;p&gt;此搭建教程只用于个人学习，不可用于非法用途。&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://itlanyan.com/v2ray-tutorial/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
