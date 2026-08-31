@@ -24,6 +24,7 @@ languages:
         title:  Hang
         weight: 1
         params:
+            description: 专注 SRE 运维技术分享，涵盖 Kubernetes、Docker、Go、AWS 云原生架构实战与踩坑记录。
             comments:
                 waline:
                     locale:
@@ -37,6 +38,7 @@ languages:
         title: Hang
         weight: 1
         params:
+            description: "SRE, operations, cloud-native architecture, Kubernetes, Docker, Go, and AWS in practice."
             comments:
                 waline:
                     locale:
