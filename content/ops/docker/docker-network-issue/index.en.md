@@ -8,6 +8,7 @@ tags:
 - network
 - Troubleshooting
 title: Container network affects host network access troubleshooting
+description: "Troubleshoot Docker bridge subnets and host routing conflicts that prevent containers or external services from reaching the host."
 ---
 
 # Troubleshooting Container Network Impacting Host Network Access

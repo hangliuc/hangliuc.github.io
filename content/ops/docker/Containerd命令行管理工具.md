@@ -1,5 +1,6 @@
 ---
 title: "Containerd命令行管理工具"
+description: "介绍 ctr 和 nerdctl 的常用命令，以及 Kubernetes 从 Docker 切换到 containerd 的原因。"
 date: 2025-11-27T10:51:50+08:00
 draft: false
 categories:

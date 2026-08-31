@@ -6,6 +6,7 @@ draft: false
 tags:
 - K8s
 title: SRE Interview Questions Summary | K8s
+description: "A collection of SRE interview questions covering Kubernetes concepts, components, and operations scenarios."
 ---
 
 ## 1. How Different Modules Communicate with API Server

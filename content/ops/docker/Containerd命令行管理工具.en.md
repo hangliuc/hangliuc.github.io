@@ -7,6 +7,7 @@ tags:
 - Docker
 - containerd
 title: Containerd Command Line Management Tool
+description: "Common ctr and nerdctl commands, with an explanation of why Kubernetes moved from Docker to containerd."
 ---
 
 # Containerd Command Line Management Tool

@@ -1,5 +1,6 @@
 ---
 title: "容器网络影响宿主机入网问题排查"
+description: "排查 Docker 网桥网段与宿主机路由冲突，导致容器或外部服务无法访问宿主机的问题。"
 date: 2025-11-26T10:38:20+08:00
 draft: false
 categories:

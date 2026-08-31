@@ -1,5 +1,6 @@
 ---
 title: "SRE面试题汇总 | K8s"
+description: "汇总 Kubernetes 核心概念、组件和运维场景相关的 SRE 面试题。"
 date: 2025-12-06T18:15:30+08:00
 draft: false
 categories:

@@ -4,6 +4,7 @@ draft: false
 tags:
 - Network
 title: Scientific Internet Access
+description: "Practical notes on network proxies, accessing external technical resources, and related tool configuration."
 ---
 
 This setup tutorial is for personal learning purposes only and must not be used for illegal activities.
