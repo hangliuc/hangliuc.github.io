@@ -23,82 +23,14 @@
     </section>
     
     <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
-        {{/* 统计所有语言的文章总数 */}}
         {{ $totalArticles := 0 }}
         {{ range .Site.Sites }}
             {{ $totalArticles = add $totalArticles (len .RegularPages) }}
         {{ end }}
         
-        {{/* 使用 T 函数翻译文本 */}}
         <span>{{ T "footer.published" }}: <strong>{{ $totalArticles }}</strong> {{ T "footer.articles" }}</span>
-        &nbsp;|&nbsp;
-        <span>{{ T "footer.total_views" }}: <strong id="footer_total_views">...</strong> {{ T "footer.times" }}</span>
-    </section>
-
-    <section style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
-        <span>{{ T "footer.uptime" }}: <strong id="footer_uptime">...</strong></span>
-        &nbsp;|&nbsp;
-        <span>{{ T "footer.site_visits" }}: <strong id="footer_total_site_visits">...</strong> {{ T "footer.times" }}</span>
     </section>
 </footer>
-
-<script>
-(function() {
-    // 简单的语言判断
-    const isEn = window.location.pathname.startsWith('/en/');
-    
-    // 定义时间单位
-    const timeUnits = isEn 
-        ? { d: " days ", h: " hrs ", m: " min ", s: " sec" }
-        : { d: " 天 ", h: " 小时 ", m: " 分 ", s: " 秒" };
-
-    function formatUptime(seconds) {
-        const days = Math.floor(seconds / 86400);
-        seconds %= 86400;
-        const hours = Math.floor(seconds / 3600);
-        seconds %= 3600;
-        const minutes = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-
-        return `${days}${timeUnits.d}${hours}${timeUnits.h}${minutes}${timeUnits.m}${secs}${timeUnits.s}`;
-    }
-
-    const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-    const INFO_URL = isLocal 
-        ? "http://localhost:8080/api/site/info"
-        : "https://hangops.top/api/site/info";
-
-    const VISIT_URL = isLocal 
-        ? "http://localhost:8080/api/site/visit"
-        : "https://hangops.top/api/site/visit";
-
-    // 发送站点访问心跳
-    fetch(VISIT_URL, { method: 'POST' }).catch(() => {});
-
-    // 获取数据并展示
-    fetch(INFO_URL)
-    .then(res => res.json())
-    .then(data => {
-        if(data.total_views !== undefined) {
-            document.getElementById("footer_total_views").innerText = data.total_views.toLocaleString();
-        }
-        if(data.site_total_visits !== undefined) {
-            document.getElementById("footer_total_site_visits").innerText = data.site_total_visits.toLocaleString();
-        }
-        if(data.uptime_seconds !== undefined) {
-            let uptime = data.uptime_seconds;
-            const uptimeEl = document.getElementById("footer_uptime");
-            
-            uptimeEl.innerText = formatUptime(uptime);
-            setInterval(() => {
-                uptime++;
-                uptimeEl.innerText = formatUptime(uptime);
-            }, 1000);
-        }
-    })
-    .catch(console.error);
-})();
-</script>
 
 <div id="back-to-top" class="back-to-top" aria-label="回到顶部">
     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -145,7 +145,7 @@ params:
 
     comments:
         enabled: true
-        provider: waline
+        provider: giscus
 
         disqusjs:
             shortname:
@@ -179,17 +179,6 @@ params:
             autoCreateIssue: false
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
-        waline:
-            serverURL: https://comment.hangops.top
-            lang: zh-CN
-            search: false
-            pageview: 
-            comment: true
-            emoji: 
-                - https://unpkg.com/@waline/emojis@1.4.0/weibo
-            reaction: true
-            requiredMeta:
-                - name
             # locale:
             #     admin: 站长
             #     placeholder: "欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。"
