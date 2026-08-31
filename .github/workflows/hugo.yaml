@@ -56,7 +56,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "https://hangops.top/"
+            --baseURL "https://hangliuc.github.io/"
 
       - name: Index content with Pagefind
         run: npx --yes pagefind@1.4.0 --site public

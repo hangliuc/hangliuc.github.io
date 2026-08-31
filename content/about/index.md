@@ -36,7 +36,7 @@ comments: false
 
 
 ### 🚂 博客架构
-目前关于blog 的一些todo [todo.md](https://hangops.top/topic/blogging/todo/)
+目前关于blog 的一些todo [todo.md](https://hangliuc.github.io/topic/blogging/todo/)
 
 ### 📫 联系我
 - Email: iliuhang@163.com

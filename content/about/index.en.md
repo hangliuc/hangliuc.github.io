@@ -35,7 +35,7 @@ I am **Liu Hang**, a Site Reliability Engineer.
 
 
 ### 🚂 Blog Architecture
-Currently, some todo items related to the blog [todo.md](https://hangops.top/topic/blogging/todo/)
+Currently, some todo items related to the blog [todo.md](https://hangliuc.github.io/topic/blogging/todo/)
 
 ### 📫 Contact Me
 - Email: iliuhang@163.com
