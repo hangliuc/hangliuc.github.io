@@ -1,15 +1,6 @@
-/* 增加侧边栏宽度 */
+/* Keep the desktop navigation readable without narrowing the article column. */
 @media (min-width: 1024px) {
-    .container {
-        /* 默认 250px 1fr */
-        --sidebar-width: 500px; 
-        
-        /* 强制覆盖 Grid 布局 */
-        grid-template-columns: var(--sidebar-width) 1fr;
-    }
-    
-    /* 让左侧 Sidebar 容器也跟进这个宽度 */
-    .sidebar {
-        width: var(--sidebar-width);
+    .left-sidebar {
+        width: 300px;
     }
 }
