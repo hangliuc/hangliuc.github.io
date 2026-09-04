@@ -1,6 +1,6 @@
-/* Keep the desktop navigation readable without narrowing the article column. */
+/* Keep desktop navigation readable while preserving article width. */
 @media (min-width: 1024px) {
     .left-sidebar {
-        width: 300px;
+        width: clamp(260px, 22vw, 300px);
     }
 }
