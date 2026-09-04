@@ -4,3 +4,30 @@
         width: clamp(260px, 22vw, 300px);
     }
 }
+
+/* Keep the square HRunning wordmark complete inside Stack's circular avatar. */
+.sidebar header .site-avatar .site-logo {
+    display: block;
+    box-sizing: border-box;
+    padding: 8%;
+    object-fit: contain;
+    object-position: center;
+    background: #fff;
+    border: 1px solid rgba(16, 61, 105, 0.08);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(16, 36, 64, 0.14);
+}
+
+/* A slightly quieter badge keeps the logo legible without a dark-mode halo. */
+[data-scheme="dark"] {
+    .sidebar header .site-avatar .site-logo {
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+    }
+}
+
+@media (max-width: 767px) {
+    .sidebar header .site-avatar .site-logo {
+        padding: 7%;
+    }
+}

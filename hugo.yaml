@@ -1,9 +1,10 @@
 baseurl: https://hangliuc.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
-title: HangOps | SRE
+title: HRunning
 buildFuture: true 
-copyright: Example Person
+copyright: HRunning
+enableRobotsTXT: true
 outputs:
     home:
         - HTML
@@ -21,7 +22,7 @@ hasCJKLanguage: true
 languages:
     zh-cn:
         languageName: 中文
-        title:  Hang
+        title: HRunning
         weight: 1
         params:
             description: 专注 SRE 运维技术分享，涵盖 Kubernetes、Docker、Go、AWS 云原生架构实战与踩坑记录。
@@ -35,7 +36,7 @@ languages:
                 subtitle: 有建议和问题，欢迎评论或者直接联系我
     en:
         languageName: English
-        title: Hang
+        title: HRunning
         weight: 1
         params:
             description: "SRE, operations, cloud-native architecture, Kubernetes, Docker, Go, and AWS in practice."
@@ -110,7 +111,7 @@ params:
 
     featuredImageField: image
     rssFullContent: true
-    favicon: /img/favicon.ico # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /img/favicon.png # transparent HRunning mark for a smooth browser icon
 
     footer:
         since: 2025
@@ -126,12 +127,11 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        emoji: 🍌
         subtitle: "SRE 运维 / 云原生 / Go"
         avatar:
             enabled: true
             local: true
-            src: img/head_portrait.jpg # 头像大小建议 150x150px
+            src: img/hrunning.jpg # HRunning logo
     search:
         enabled: true
         type: local
@@ -238,16 +238,16 @@ params:
     opengraph:
         twitter:
             # Your Twitter username
-            site:
+            site: Hangliuc
 
             # Available values: summary, summary_large_image
             card: summary_large_image
 
     defaultImage:
         opengraph:
-            enabled: false
-            local: false
-            src:
+            enabled: true
+            local: true
+            src: img/hrunning.jpg
 
     colorScheme:
         # Display toggle
@@ -321,11 +321,11 @@ menu:
           params:
               icon: mail
 
-        # - identifier: twitter
-        #   name: Twitter
-        #   url: https://twitter.com
-        #   params:
-        #       icon: brand-twitter
+        - identifier: x
+          name: X：@Hangliuc
+          url: https://x.com/Hangliuc
+          params:
+              icon: brand-x
 
 
 related:
