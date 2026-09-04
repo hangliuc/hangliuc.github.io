@@ -11,7 +11,7 @@ layout: "search"
 
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ 
+        const search = new PagefindUI({
             element: "#search", 
             showSubResults: true,
             translations: {
@@ -21,6 +21,9 @@ layout: "search"
                 count_many: "找到 [COUNT] 篇",
             }
         });
+
+        const keyword = new URLSearchParams(window.location.search).get("keyword");
+        if (keyword) search.triggerSearch(keyword);
     });
 </script>
 

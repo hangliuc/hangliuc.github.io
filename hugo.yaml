@@ -132,10 +132,6 @@ params:
             enabled: true
             local: true
             src: img/hrunning.jpg # HRunning logo
-    search:
-        enabled: true
-        type: local
-
     article:
         math: false
         toc: true

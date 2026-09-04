@@ -11,7 +11,7 @@ title: Search
 
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ 
+        const search = new PagefindUI({
             element: "#search", 
             showSubResults: true,
             translations: {
@@ -21,6 +21,9 @@ title: Search
                 count_many: "Found [COUNT] documents",
             }
         });
+
+        const keyword = new URLSearchParams(window.location.search).get("keyword");
+        if (keyword) search.triggerSearch(keyword);
     });
 </script>
 
