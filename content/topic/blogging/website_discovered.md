@@ -27,19 +27,19 @@ Hugo 会在生成和部署网站时在 public 文件夹根目录下自动生成 
 登录[谷歌搜索控制台](https://search.google.com/search-console)。在验证所有权的选项中选择 “Google Analytics”，输入你的 Measurement ID 即可验证所有权。
 
 下面就是已经成功提交的截图
-![google 搜索控制台验证所有权](img/blog/google_search_console.png)
+![google 搜索控制台验证所有权](img/blog/google_search_console.webp)
 
 ### 如何验证文章已经被Google 收录
 对于一个新站，Google 可能需要 几天甚至几周 才能把所有页面全部收录
 
 #### Google Search Console 验证
 直接在顶部的搜索框查询，输入你的文章链接，即可验证是否被收录。
-![google 搜索控制台验证所有权](img/blog/gcs01.png)
+![google 搜索控制台验证所有权](img/blog/gcs01.webp)
 
 也可以直接点击请求编入索引，请求 Google 收录你的文章。
 
 #### google 搜索验证
-![google 搜索控制台验证所有权](img/blog/gcs02.png)
+![google 搜索控制台验证所有权](img/blog/gcs02.webp)
 
 
 tips:
@@ -50,7 +50,7 @@ tips:
 - 登录[百度搜索控制台](https://ziyuan.baidu.com/?castk=LTE%3D)
 - 按照要求添加域名后，使用普通收录推送资源
 
-![百度搜索控制台添加域名](img/blog/baidu_search.png)
+![百度搜索控制台添加域名](img/blog/baidu_search.webp)
 - 提交 sitemap.xml 文件时，需要备案号，这里先不添加。
 - api 提交每天会有条数限制
 

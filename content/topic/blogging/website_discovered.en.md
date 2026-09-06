@@ -28,19 +28,19 @@ Hugo automatically generates a sitemap.xml file in the root directory of the pub
 Log in to [Google Search Console](https://search.google.com/search-console). Select "Google Analytics" under the verification of ownership options and enter your Measurement ID to verify ownership.
 
 Here is a screenshot of a successfully submitted sitemap
-![Google Search Console verification of ownership](img/blog/google_search_console.png)
+![Google Search Console verification of ownership](img/blog/google_search_console.webp)
 
 ### How to verify if articles have been indexed by Google
 For a new site, Google may take a few days to several weeks to index all pages.
 
 #### Google Search Console Verification
 Directly search in the top search box, enter your article link to verify if it has been indexed.
-![Google Search Console verification of ownership](img/blog/gcs01.png)
+![Google Search Console verification of ownership](img/blog/gcs01.webp)
 
 You can also click "Request indexing" to request Google to index your article.
 
 #### Google Search Verification
-![Google Search Console verification of ownership](img/blog/gcs02.png)
+![Google Search Console verification of ownership](img/blog/gcs02.webp)
 
 
 tips:
@@ -51,7 +51,7 @@ tips:
 - Log in to [Baidu Search Console](https://ziyuan.baidu.com/?castk=LTE%3D)
 - Add the domain according to the requirements and use normal inclusion to push resources
 
-![Baidu Search Console add domain](img/blog/baidu_search.png)
+![Baidu Search Console add domain](img/blog/baidu_search.webp)
 - When submitting the sitemap.xml file, a filing number is required, so it is not added here.
 - There is a daily limit on the number of API submissions.
 

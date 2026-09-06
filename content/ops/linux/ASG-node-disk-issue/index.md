@@ -13,7 +13,7 @@ data 数据盘挂载失败，日志文件会写入根盘，导致磁盘多次报
 
 内核还没有来得及刷新分区表生成 /dev/nvme1n1p1 设备文件，就执行mkfs 命令，导致格式化失败。
 
-![disk_error.png](disk_error.png)
+![磁盘错误截图](disk_error.webp)
 
 ## 解决方法
 ```shell

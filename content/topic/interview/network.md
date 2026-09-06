@@ -59,7 +59,7 @@ tags:
 | 标头压缩       | 不压缩或简单压缩，冗余信息多                 | 使用 HPACK 压缩，减少冗余，提高加载速度        |
 
 ## 3.TCP 的链接状态
-![alt text](img/interview/tcp_netstat.png)
+![alt text](img/interview/tcp_netstat.webp)
 
 ## 4.为什么TCP是三次握手
 
@@ -196,4 +196,3 @@ ARP作用就是通过ip地址查找后转换成MAC地址，通过ARP高速缓存
 - lvs 是基于 IP 层的负载均衡器，工作在 OSI 模型的第 4 层（传输层），主要用于负载均衡 TCP 和 UDP 流量。
 - nginx 是一个高性能的 Web 服务器和反向代理服务器，也可以用作负载均衡器。它工作在 OSI 模型的第 7 层（应用层），主要用于处理 HTTP 和 HTTPS 请求。
 - haproxy 是一个开源的负载均衡器，工作在 OSI 模型的第 7 层（应用层），主要用于负载均衡 HTTP 和 HTTPS 请求。
-

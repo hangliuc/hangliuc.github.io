@@ -254,9 +254,9 @@ params:
 
     imageProcessing:
         cover:
-            enabled: false
+            enabled: true
         content:
-            enabled: false
+            enabled: true
 
 ### Custom menu
 ### See https://stack.jimmycai.com/config/menu

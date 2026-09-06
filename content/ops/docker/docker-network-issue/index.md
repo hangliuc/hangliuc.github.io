@@ -17,7 +17,7 @@ tags:
 发现172.27.0.0/16，172.26.0.0/16 网段的服务无法访问宿主机的服务
 
 ## 问题排查
-![网卡配置](ifconfig.png)
+![网卡配置](ifconfig.webp)
 
 ```
 docker network ls

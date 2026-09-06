@@ -17,7 +17,7 @@ description: "Troubleshoot Docker bridge subnets and host routing conflicts that
 Services in the 172.27.0.0/16 and 172.26.0.0/16 subnets are unable to access the host's services.
 
 ## Problem Troubleshooting
-![Network Configuration](ifconfig.png)
+![Network Configuration](ifconfig.webp)
 
 ```
 docker network ls

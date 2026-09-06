@@ -13,7 +13,7 @@ The data disk failed to mount, causing log files to be written to the root disk,
 
 The kernel had not yet refreshed the partition table to generate the /dev/nvme1n1p1 device file when the mkfs command was executed, resulting in a failed formatting.
 
-![disk_error.png](disk_error.png)
+![Disk error screenshot](disk_error.webp)
 
 ## Solution
 ```shell

@@ -58,7 +58,7 @@ title: SRE Interview Questions Summary | Network
 | Header Compression | Not compressed or simple compression, redundant information | Uses HPACK compression, reduces redundancy, improves loading speed |
 
 ## 3. TCP Connection States
-![alt text](img/interview/tcp_netstat.png)
+![alt text](img/interview/tcp_netstat.webp)
 
 ## 4. Why TCP is Three-Way Handshake
 
