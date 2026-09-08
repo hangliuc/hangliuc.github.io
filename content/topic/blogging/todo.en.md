@@ -35,9 +35,7 @@ weight: 1
   - [x] Notify wechat, email, and other channels for comments
 - [x] Improve keyword search functionality
 - [x] Add article word count
-- [x] Add an English version of the site, implementing automatic translation from Chinese to English
-  - Script calls a large model to automatically translate Chinese articles into English
-  - Script translation adds intelligent incremental updates (implementation logic: compare file modification time)
+- [x] Add an English version of the site; Chinese and English articles are maintained separately
   - Page header website statistics information adapts to the English version
   - Article top word count and reading volume statistics adapt to the English version
   - The left sidebar switch button changes from a dropdown box to direct switching
