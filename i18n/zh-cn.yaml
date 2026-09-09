@@ -8,4 +8,4 @@ footer:
 article:
   readingTime: "阅读时长: {{ .Count }} 分钟"
   words: "字"         
-  views: "次阅读"     
+  views: "次阅读"

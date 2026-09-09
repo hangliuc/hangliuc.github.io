@@ -32,6 +32,104 @@
     }
 }
 
+/* Give each archive category its own visual entry point. */
+.category-section {
+    .section-title {
+        margin-bottom: 16px;
+    }
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    min-height: 180px;
+    overflow: hidden;
+    border-radius: var(--card-border-radius);
+    background: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    color: #fff;
+    isolation: isolate;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        color: #fff;
+        box-shadow: var(--shadow-l2);
+        transform: translateY(-3px);
+    }
+
+    &:focus-visible {
+        outline: 3px solid var(--accent-color);
+        outline-offset: 3px;
+    }
+
+    &__image,
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image {
+        display: block;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+    }
+
+    &:hover &__image,
+    &:focus-visible &__image {
+        transform: scale(1.04);
+    }
+
+    &__overlay {
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(8, 16, 30, 0.02) 25%, rgba(8, 16, 30, 0.78) 100%);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        min-height: 180px;
+        align-items: flex-end;
+        padding: 22px;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.2;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
+    }
+}
+
+@media (max-width: 767px) {
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .category-card,
+    .category-card__content {
+        min-height: 150px;
+    }
+
+    .category-card__content {
+        padding: 16px;
+    }
+
+    .category-card__title {
+        font-size: 1.8rem;
+    }
+}
+
 /* Keep article covers at a stable ratio when the right sidebar is toggled. */
 .article-page .main-article .article-header .article-image {
     aspect-ratio: 16 / 9;

@@ -2,6 +2,7 @@
 title: "运维" 
 description: "一些运维操作"
 weight: 1  
+image: /img/category/ops.webp
 cascade:
     image: /img/cover/ops_cover.webp
 ---

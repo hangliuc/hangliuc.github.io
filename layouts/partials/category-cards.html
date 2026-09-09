@@ -1,0 +1,31 @@
+{{- $taxonomy := $.Site.GetPage "taxonomyTerm" "categories" -}}
+{{- $categoryImages := dict
+    "AI" "/img/category/ai.webp"
+    "博客" "/img/category/blogging.webp"
+    "面试" "/img/category/interview.webp"
+    "运维" "/img/category/ops.webp"
+-}}
+
+{{- with $taxonomy.Pages -}}
+<section class="category-section" aria-labelledby="category-section-title">
+    <h2 class="section-title" id="category-section-title">{{ T "widget.categoriesCloud.title" }}</h2>
+    <div class="category-grid">
+        {{- range . -}}
+            {{- $image := default "/img/cover/blog_cover.webp" (index $categoryImages .Title) -}}
+            <a class="category-card" href="{{ .RelPermalink }}">
+                <img
+                    class="category-card__image"
+                    src="{{ $image | relURL }}"
+                    alt="{{ .Title }}"
+                    width="1672"
+                    height="941"
+                    loading="lazy">
+                <span class="category-card__overlay" aria-hidden="true"></span>
+                <span class="category-card__content">
+                    <span class="category-card__title">{{ .Title }}</span>
+                </span>
+            </a>
+        {{- end }}
+    </div>
+</section>
+{{- end }}

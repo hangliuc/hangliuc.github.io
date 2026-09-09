@@ -2,6 +2,7 @@
 title: "ops" 
 description: "ops"
 weight: 1  
+image: /img/category/ops.webp
 cascade:
     image: /img/cover/ops_cover.webp
 ---
