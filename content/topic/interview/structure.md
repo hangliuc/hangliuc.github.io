@@ -5,7 +5,6 @@ draft: false
 ---
 
 
-
 - 面试经历
 - liunx
 - container && k8s
@@ -16,6 +15,6 @@ draft: false
 - SRE
 - .....
 
-面试题来自崔亮的博客
+部分面试题来自崔亮的博客
 
 https://www.cuiliangblog.cn/detail/article/89
