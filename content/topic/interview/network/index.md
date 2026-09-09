@@ -59,7 +59,7 @@ tags:
 | 标头压缩       | 不压缩或简单压缩，冗余信息多                 | 使用 HPACK 压缩，减少冗余，提高加载速度        |
 
 ## 3.TCP 的链接状态
-![alt text](img/interview/tcp_netstat.webp)
+![alt text](tcp_netstat.webp)
 
 ## 4.为什么TCP是三次握手
 

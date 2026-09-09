@@ -10,14 +10,14 @@ title: Interview | DiDi Operations and Development Engineer
 
 TCP Header Structure
 
-![TCP header](img/interview/tcp_header.webp)
+![TCP header](tcp_header.webp)
 Control Bits:
 - SYN: Indicates the desire to establish a connection and sets the initial sequence number in the "Sequence Number" field.
 - ACK: Acknowledgment bit, TCP specifies that this bit must be set to 1 except for the SYN packet used to establish the connection, which is used to confirm the receipt of data.
 - RST: Indicates that an abnormal situation has occurred in the TCP connection and the connection must be forcibly disconnected.
 - FIN: When the communication ends and the connection is to be disconnected, both hosts can exchange TCP segments with the FIN bit set to 1.
 
-![TCP connection establishment](img/interview/tcp.webp)
+![TCP connection establishment](tcp.webp)
 
 The state transition of the TCP client revolves around the three stages of "connection establishment - data transmission - connection closure," with the core states including: CLOSED → SYN-SENT → ESTABLISHED → FIN-WAIT-1 → FIN-WAIT-2 → TIME-WAIT → CLOSED (active closure process).
 
@@ -25,7 +25,7 @@ The typical state transition of the server is:
 CLOSED → LISTEN → SYN-RECEIVED → ESTABLISHED (connection establishment);
 if passively closed: ESTABLISHED → CLOSE-WAIT → LAST-ACK → CLOSED.
 
-![TCP connection close](img/interview/tcp_close.webp)
+![TCP connection close](tcp_close.webp)
 
 ## Difference between 502 and 504
 

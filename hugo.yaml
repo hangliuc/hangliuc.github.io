@@ -108,6 +108,7 @@ params:
         - post
         - ops
         - topic
+        - ai
 
     featuredImageField: image
     rssFullContent: true
