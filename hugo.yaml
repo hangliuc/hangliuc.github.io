@@ -3,8 +3,17 @@ languageCode: en-us
 theme: hugo-theme-stack
 title: HRunning
 buildFuture: true 
+enableGitInfo: true
 copyright: HRunning
 enableRobotsTXT: true
+frontmatter:
+    lastmod:
+        - :git
+        - lastmod
+        - modified
+        - :fileModTime
+        - date
+        - publishdate
 outputs:
     home:
         - HTML
